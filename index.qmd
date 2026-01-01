@@ -1,7 +1,7 @@
 ---
 toc: false
 editor: source
-page-layout: custom
+page-layout: full
 resources:
   - "homepage-readings"
 listing:
@@ -12,22 +12,17 @@ listing:
 
 :::::::: content-block
 ::::::: grid
-::::: {#banner .g-col-12 .g-col-md-6 style="margin: 3em 1em 0em 1em"}
-:::: {.content-visible unless-profile="staff-site"}
+::::: {#banner .g-col-12 .g-col-md-6 style="margin: -4em 1em 0em 0em"}
+
 ::: banner-text
 Data Science
 :::
 
 [Math 241 Reed College, Spring 2026]{.smallcaps}
 
-::::
+
 :::::
 
-::: {#hex .g-col-12 .g-col-md-6 .text-center style="margin: 0em 1em 0em 1em"}
-\
-
-![](assets/math141-hex.png){.img-fluid fig-alt="Hex logo of Math 241 logo." width="250"}
-:::
 :::::::
 ::::::::
 

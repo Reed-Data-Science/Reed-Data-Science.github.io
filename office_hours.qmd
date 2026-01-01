@@ -5,10 +5,10 @@ editor: source
 
 Please stop by to introduce yourself or ask some questions about the course! 
 
-We offer two types of office hours for Math 141:
+We offer two types of office hours for Math 241:
 
--   **Instructor office hours** (Grayson), which occur in Library 390. 
--   **Course Assistant office hours** (Alayne, Nat, Remy), which occur in ETC 105B. 
+-   **Instructor office hours**, which occur in Library 390. 
+-   **Course Assistant office hours**, which occur in ETC 105B. 
 
 **Instructor office hours** are a great place to ask questions about the content or course in general. They're also a great place to get help on problems that you are stuck on.
 

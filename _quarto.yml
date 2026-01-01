@@ -3,8 +3,6 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
-    - "!exams/*"
-    - "!labs/data/vitd_subset.csv"
 
 website:
   title: "Math 241"
@@ -12,12 +10,15 @@ website:
   site-url: "https://www.reed-data-science.github.io/"
   favicon: assets/favicon.ico
   navbar:
-    title: false
+    title: "Math 241: Data Science"
     logo: assets/math141-hex.png
     logo-alt: "Math 241 logo"
     background: white
     foreground: "gray-800"
-    left:
+  sidebar:
+    style: "floating"  # or "docked"
+    logo: assets/math141-hex.png
+    contents:
       - href: index.qmd
         text: Home
       - href: syllabus.qmd
