@@ -1,0 +1,309 @@
+scheduled-docs:
+  draft-after: 12/10/25
+  timezone: "-08:00"
+  autonav:
+    hybrid:
+      - title: "Notes"
+        landing-page: notes.qmd
+        type: Notes
+        section-label: unit
+  schedule:
+    - week: 1
+      days:
+        - topic: "Course Introduction & What is a Data Scientist?"
+          display-date: Monday, Jan 26
+          date: 1/26/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk01wed.qmd
+            - type: Slides
+              href: slides/math141_wk01wed.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Jan 28
+          date: 1/28/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk01thu.qmd
+            - type: Lab Instructions
+              href: labs/lab_01_instructions.qmd
+            - type: Slides
+              href: slides/math141_wk01thu.qmd
+      # resources:
+      #   - '<a href="https://join.slack.com/t/reedmath141fall2025/shared_invite/zt-3blne8yip-sTe8uLWC4UbexLAAA7Z~Vw">Join Slack</a>'
+      #   - 'Gradescope course entry code: 7XJR4K'
+    - week: 2
+      days:
+        - topic: "TBD"
+          display-date: Monday, Feb 2
+          date: 2/2/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Feb 4
+          date: 2/4/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 3
+      days:
+        - topic: "TBD"
+          display-date: Monday, Feb 9
+          date: 2/9/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Feb 11
+          date: 2/11/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 4
+      days:
+        - topic: "TBD"
+          display-date: Monday, Feb 16
+          date: 2/16/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Feb 18
+          date: 2/18/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 5
+      days:
+        - topic: "TBD"
+          display-date: Monday, Feb 23
+          date: 2/23/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Feb 25
+          date: 2/25/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 6
+      days:
+        - topic: "TBD"
+          display-date: Monday, Mar 2
+          date: 3/2/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Mar 4
+          date: 3/4/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 7
+      days:
+        - topic: "TBD"
+          display-date: Monday, Mar 9
+          date: 3/9/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Mar 11
+          date: 3/11/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 8
+      days:
+        - topic: "TBD"
+          display-date: Monday, Mar 16
+          date: 3/16/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Mar 18
+          date: 3/18/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: Spring Break
+      days:
+        - topic: "No Class"
+          display-date: Saturday, Mar 21 - Sunday, Mar 29
+    - week: 9
+      days:
+        - topic: "TBD"
+          display-date: Monday, Mar 30
+          date: 3/30/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Apr 1
+          date: 4/1/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 10
+      days:
+        - topic: "TBD"
+          display-date: Monday, Apr 6
+          date: 4/6/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Apr 8
+          date: 4/8/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 11
+      days:
+        - topic: "TBD"
+          display-date: Monday, Apr 13
+          date: 4/13/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Apr 15
+          date: 4/15/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 12
+      days:
+        - topic: "TBD"
+          display-date: Monday, Apr 20
+          date: 4/20/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Apr 22
+          date: 4/22/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 13
+      days:
+        - topic: "TBD"
+          display-date: Monday, Apr 27
+          date: 4/27/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Apr 29
+          date: 4/29/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: 14
+      days:
+        - topic: "TBD"
+          display-date: Monday, Mar 16
+          date: 3/16/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02mon.qmd
+            - type: Slides
+              href: slides/math141_wk02mon.qmd
+        - topic: "TBD"
+          display-date: Wednesday, Mar 18
+          date: 3/18/26
+          docs:
+            - type: Suggested Reading
+              href: readings/readings_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk02wed.qmd
+      # resources:
+      #   - 'Some text'
+    - week: Finals
+      days:
+        - topic: "Final Presentations"
+          display-date: May 11 - 14
+          date: 5/11/26
+          docs:
+            # - type: Suggested Reading
+            #   href: readings/readings_wk02mon.qmd
+            # - type: Slides
+            #   href: slides/math141_wk02mon.qmd
+      # resources:
+      #   - 'Some text'

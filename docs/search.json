@@ -1,0 +1,345 @@
+[
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Instructor: Grayson White (he/him)\n\nEmail: gwhite@reed.edu\nOffice: Library 390\nOffice hours: TBD \n\nCourse Assistants: We will have a course assistant. They will hold office hours and come to class.\n\n\n\n\n\n\n\n\n\n\nLinks and course resources:\nThe course website, reed-data-science.github.io, inlcludes information on the course, lecture slides, public course materials, and links to all other course resources:\n\nSlack, for course correspondence,\nGradescope, for turning in assignments, and\nthe Posit Workbench Server.\n\nMeeting Times:\nWe’ll have a lecture-style meeting twice a week. Attendance is mandatory.\n\nLectures are on Mondays and Wednesdays, 1:10pm - 2:30pm (section: S01) or 2:40pm - 4:00pm (section: S02), Library Room 389.\n“Lectures” will consist of both (1) content delivery from the instructor and (2) interactive activities, worksheets, project work time, and more."
+  },
+  {
+    "objectID": "syllabus.html#useful-information",
+    "href": "syllabus.html#useful-information",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Instructor: Grayson White (he/him)\n\nEmail: gwhite@reed.edu\nOffice: Library 390\nOffice hours: TBD \n\nCourse Assistants: We will have a course assistant. They will hold office hours and come to class.\n\n\n\n\n\n\n\n\n\n\nLinks and course resources:\nThe course website, reed-data-science.github.io, inlcludes information on the course, lecture slides, public course materials, and links to all other course resources:\n\nSlack, for course correspondence,\nGradescope, for turning in assignments, and\nthe Posit Workbench Server.\n\nMeeting Times:\nWe’ll have a lecture-style meeting twice a week. Attendance is mandatory.\n\nLectures are on Mondays and Wednesdays, 1:10pm - 2:30pm (section: S01) or 2:40pm - 4:00pm (section: S02), Library Room 389.\n“Lectures” will consist of both (1) content delivery from the instructor and (2) interactive activities, worksheets, project work time, and more."
+  },
+  {
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nTBD"
+  },
+  {
+    "objectID": "syllabus.html#learning-materials-tools",
+    "href": "syllabus.html#learning-materials-tools",
+    "title": "Syllabus",
+    "section": "Learning Materials & Tools",
+    "text": "Learning Materials & Tools\nTextbooks: We’ll use textbooks for our course, all of which are freely available online:\n\nModern Data Science with R (2e) by Benjamin Baumer, Daniel Kaplan, and Nicholas Horton\nAdvanced R (2e) by Hadley Wickham\nMastering Shiny by Hadley Wickham\nR for Data Science (2e) by Hadley Wickham and Garrett Grolemund\nR Packages (2e) by Hadley Wickham and Jenny Bryan\n\nA hard copy of Modern Data Science with R (2e) is also available at the bookstore.\nTechnologies (R, Positron or RStudio, and Quarto): R is a free and open source programming language, Positron and RStudio are Integrated Development Environments (IDEs) which allows for streamlined use of the R programming language, and Quarto is a markdown language that allows for reproducible documents that include R code, text, images, and much more! Access to these resources is available locally on your own machine, or on the RStudio Server for this course. A laptop that can access the internet is required for this course.\nPlease let me know ASAP if you do not have access to a personal computer!"
+  },
+  {
+    "objectID": "syllabus.html#assignments-activities-and-exams",
+    "href": "syllabus.html#assignments-activities-and-exams",
+    "title": "Syllabus",
+    "section": "Assignments, activities, and exams",
+    "text": "Assignments, activities, and exams\nWe’ll have a few types of assignments, activities, and projects for this course. In particular:\n\nProblem sets:\n\nAlmost every week, we will have a problem set. The problem sets will be assigned on Wednesday at 5pm and due the following week on Wednesday at 9:00am.\nProblem sets will be turned in via Gradescope.\nTo help with various circumstances (expected and unexpected), you have up to 4 additional extensions days that you can use as you need (e.g., 1 additional day for 4 problem sets, 4 additional days for 1 problem set, …) but the extension days must be rounded up to the nearest day (e.g., 2 extra hours = 1 extension day). There is no need to notify me of your use of extension days.\n\nNote: if you use more than your allotted extension days for a problem set in and, no credit will be received for that problem set (e.g., if you have already used 3 extension days, and then turn in a problem set 2 days late, you will receive 0 credit for that problem set).\n\n\nIn-class activities:\n\nDuring lecture, we will include some in-class activities. Including but not limited to:\n\ngroup activities,\nindependent activities,\nlow-stakes quizzes.\n\n\nProjects:\n\nWe’ll have two projects due during the semester and a final project due during final week.\nTentatively, the first two projects will be due on Week 4 and Week 8. The final project will begin after Spring Break.\nNo late projects are accepted."
+  },
+  {
+    "objectID": "syllabus.html#participation-and-attendance",
+    "href": "syllabus.html#participation-and-attendance",
+    "title": "Syllabus",
+    "section": "Participation and attendance",
+    "text": "Participation and attendance\nAttending class and actively engaging with the lecture content and activities in class is crucial to your own and your classmates learning. This is especially true in Math 241: Data Science, as much of the learning will happen through active learning. Because of this, attendance and active participation in class is required for Math 241: Data Science."
+  },
+  {
+    "objectID": "syllabus.html#distribution-requirements",
+    "href": "syllabus.html#distribution-requirements",
+    "title": "Syllabus",
+    "section": "Distribution Requirements",
+    "text": "Distribution Requirements\nThis course can be used towards your Group III, “Natural, Mathematical, and Psychological Science” requirement. It accomplishes the following learning goals for the group:\n\nUse and evaluate quantitative data or modeling, or use logical/mathematical reasoning to evaluate, test or prove statements.\nGiven a problem or question, formulate a hypothesis or conjecture, and design an experiment, collect data or use mathematical reasoning to test or validate it.\nCollect, analyze, and interpret data.\n\nThis course does not satisfy the “primary data collection and analysis” requirement."
+  },
+  {
+    "objectID": "syllabus.html#course-climate",
+    "href": "syllabus.html#course-climate",
+    "title": "Syllabus",
+    "section": "Course Climate",
+    "text": "Course Climate\nWe expect everyone in this class to strive to foster a learning environment that is equitable, inclusive, and welcoming. If you experience any barriers to learning, please come to Professor Grayson White or a college administrator with your concerns.\nCode of Conduct:\nWe expect all members of Math 241 to make participation a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe expect everyone to act and interact in ways that contribute to an open, welcoming, inclusive, and healthy community of learners. You can contribute to a positive learning environment by demonstrating empathy and kindness, being respectful of differing viewpoints and experiences, and giving and gracefully accepting constructive feedback.1"
+  },
+  {
+    "objectID": "syllabus.html#policies",
+    "href": "syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "Policies",
+    "text": "Policies\nLate work policy:\nPlease see the late work policy for each individual assignment type that is included in the Assignments and exams section of the syllabus.\nCollaboration Policy and Academic Honesty:\nWorking with your classmates on difficult and interesting problems can not only help your learning, but also help you get to know each other! Therefore, I encourage you to collaborate on assignments but every piece of work you do must be your own. Copying and pasting other people’s work or code is not acceptable. The Honor Principle must guide your conduct in this class.\nIf you choose to collaborate with a classmate, you must add their name to the top of your assignment, and list them as a collaborator, e.g.:\nCollaborator(s): Elliot Shannon, Romain Boutelet\nBut what is collaboration?:\nFor Math 241, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you must write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited.\nAI Policy:\nArtificial intelligence (AI) tools, such as ChatGPT, Claude, Co-Pilot, Gemini, and others are being used to generate code, analyze data, and much more. However, learning to think critically about a problem at hand, and engaging with your peers, tutors, and instructors when not understanding a concept or question are integral components of a liberal arts education. Further, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently extract knowledge from data and engage in statistical reasoning. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it."
+  },
+  {
+    "objectID": "syllabus.html#footnotes",
+    "href": "syllabus.html#footnotes",
+    "title": "Syllabus",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0.↩︎"
+  },
+  {
+    "objectID": "readings/readings_wk01fri.html",
+    "href": "readings/readings_wk01fri.html",
+    "title": "Math 141: Readings for September 5, 2025",
+    "section": "",
+    "text": "Before coming to lecture today, please read the following material:\n\nMD 2.1 - 2.3\n\n\n\n\nAfter you’ve completed the reading, but before coming to class, please complete the following homework assignment. Bring your responses to this assignment (handwritten or typed) to class on a piece of paper:\n\nMD Learning Checks: LC2.2, LC2.4, LC2.5, LC2.7, LC2.8"
+  },
+  {
+    "objectID": "readings/readings_wk01fri.html#reading",
+    "href": "readings/readings_wk01fri.html#reading",
+    "title": "Math 141: Readings for September 5, 2025",
+    "section": "",
+    "text": "Before coming to lecture today, please read the following material:\n\nMD 2.1 - 2.3"
+  },
+  {
+    "objectID": "readings/readings_wk01fri.html#homework-assignment",
+    "href": "readings/readings_wk01fri.html#homework-assignment",
+    "title": "Math 141: Readings for September 5, 2025",
+    "section": "",
+    "text": "After you’ve completed the reading, but before coming to class, please complete the following homework assignment. Bring your responses to this assignment (handwritten or typed) to class on a piece of paper:\n\nMD Learning Checks: LC2.2, LC2.4, LC2.5, LC2.7, LC2.8"
+  },
+  {
+    "objectID": "labs/lab_01_instructions.html",
+    "href": "labs/lab_01_instructions.html",
+    "title": "Instructions for Accessing Math 141 Labs",
+    "section": "",
+    "text": "R is a wonderful programming language that we will frequently use in our course to visualize and tidy data, create programs to assist computations, create data models, and perform statistical inference. It is free, open-source, and has a large community of users who care about statistics and data science.\nTo begin, note that there are 3 closely related computer processes that we will work with: R, RStudio, and Quarto. It’s worth taking a moment to distinguish between them.\n\nR is a programming language, which can be accessed by typing particular commands into the console or at the command prompt.\nRStudio is an integrated development environment (IDE), and provides a clean user interface for writing and executing R code. This is the main tool we will use to interact with the R language.\nQuarto is a file type we’ll use to write R code and text (similar to .docx, but for programming!). It can record R code, text, and graphical outputs. One of the easiest ways to share your results with others is to distribute your Quarto (or .qmd) file. It’s a “one-stop shop” of statistical work!\n\nRStudio comes in two varieties: RStudio Desktop and RStudio Server. The desktop version is a program you can install on your personal computer, and uses your computer’s resources to perform calculations. On the other hand, the server version can be accessed just using a web-browser, and will perform calculations on Reed’s server; there is no need to install any additional programs. For class purposes, we will use the RStudio Server."
+  },
+  {
+    "objectID": "labs/lab_01_instructions.html#introduction",
+    "href": "labs/lab_01_instructions.html#introduction",
+    "title": "Instructions for Accessing Math 141 Labs",
+    "section": "",
+    "text": "R is a wonderful programming language that we will frequently use in our course to visualize and tidy data, create programs to assist computations, create data models, and perform statistical inference. It is free, open-source, and has a large community of users who care about statistics and data science.\nTo begin, note that there are 3 closely related computer processes that we will work with: R, RStudio, and Quarto. It’s worth taking a moment to distinguish between them.\n\nR is a programming language, which can be accessed by typing particular commands into the console or at the command prompt.\nRStudio is an integrated development environment (IDE), and provides a clean user interface for writing and executing R code. This is the main tool we will use to interact with the R language.\nQuarto is a file type we’ll use to write R code and text (similar to .docx, but for programming!). It can record R code, text, and graphical outputs. One of the easiest ways to share your results with others is to distribute your Quarto (or .qmd) file. It’s a “one-stop shop” of statistical work!\n\nRStudio comes in two varieties: RStudio Desktop and RStudio Server. The desktop version is a program you can install on your personal computer, and uses your computer’s resources to perform calculations. On the other hand, the server version can be accessed just using a web-browser, and will perform calculations on Reed’s server; there is no need to install any additional programs. For class purposes, we will use the RStudio Server."
+  },
+  {
+    "objectID": "labs/lab_01_instructions.html#accessing-this-lab",
+    "href": "labs/lab_01_instructions.html#accessing-this-lab",
+    "title": "Instructions for Accessing Math 141 Labs",
+    "section": "Accessing this Lab",
+    "text": "Accessing this Lab\nIn order to access the lab each week, you’ll have to follow these steps. Here, we detail the process of logging in to the RStudio Server and “cloning” a GitHub repository to get the lab materials. “Cloning”, in this case, means making a copy of my a folder I’ve uploaded with all files and data needed so that you can complete the lab. Anyways, here are the steps:\n\nUse your web browser to navigate to the Reed RStudio server at https://rstudio.reed.edu.\nLog-in using your Reed username and password (the one you use for Moodle, Gmail, etc.).\nIn the Projects dropdown (typically upper right) of RStudio, click the “Project: (None)” button1. Then, click “New Project…”.\n\n\n\n\n\n\nThe project button\n\n\n\n\n\n\n\n\nSelecting “New Project…”\n\n\n\n\n\nA pop-up will appear to ask how you’d like to create the project. You’ll need to click “Version Control” and the “Git” to access the lab materials. After you’ve clicked “Version Control” and “Git”, add the link to the lab materials in the “Repository URL” section:2\nhttps://github.com/Math-141/lab01.git\nFinally, give the Project Directory the name “lab01”\n\n\n\n\n\n\nSelecting Version Control from the pop-up\n\n\n\n\n\n\n\n\nHow things should look after you’ve added the link and project name\n\n\n\n\n\nPress “Create Project”. If all has gone well, you should see “lab01” in the top right corner of RStudio, and some new files for the lab in the bottom right corner of RStudio.\n\n\n\n\n\n\nThe Create Project button\n\n\n\n\n\n\n\n\nA successful cloning of the lab!\n\n\n\n\n\nOpen lab01_yourname.qmd. This is the Quarto document that you’ll complete the lab in. You can (and should) rename this file to include your actual name by checking the box next to the file, clicking “Rename”, and modifying the text to include your name, e.g. lab01_graysonwhite.qmd, rather than lab01_yourname.qmd.\n\nWe’ve also provided a gif of steps 3-6 to help minimize confusion in these steps:\n\n\n\nSteps 3-6, via gif"
+  },
+  {
+    "objectID": "labs/lab_01_instructions.html#footnotes",
+    "href": "labs/lab_01_instructions.html#footnotes",
+    "title": "Instructions for Accessing Math 141 Labs",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you’re already in a project, this button will show that projects name. This shouldn’t be the case for the first lab, but will likely be the case for the remaining labs.↩︎\nThis link will always be the same, but updated for the lab number, e.g. https://github.com/Math-141/lab02.git for lab 2, https://github.com/Math-141/lab10.git for lab 10, etc. You won’t be able to access these projects until the day that the lab is released, though.↩︎"
+  },
+  {
+    "objectID": "office_hours.html",
+    "href": "office_hours.html",
+    "title": "Office Hours",
+    "section": "",
+    "text": "Please stop by to introduce yourself or ask some questions about the course!\nWe offer two types of office hours for Math 141:\n\nInstructor office hours (Grayson), which occur in Library 390.\nCourse Assistant office hours (Alayne, Nat, Remy), which occur in ETC 105B.\n\nInstructor office hours are a great place to ask questions about the content or course in general. They’re also a great place to get help on problems that you are stuck on.\nCourse Assistant office hours are a great place to work on your assignments with fellow students and seek the help of the course assistants whenever you get stuck.\nFurther, each Reed student is entitled to one hour of individual tutoring per course per week. You can sign up for individual tutoring in iris.\nBelow is the schedule of office hours for the week. We will update this calendar in case office hours need to change times or locations."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#goals-for-today",
+    "href": "slides/math141_wk01wed.html#goals-for-today",
+    "title": "Math 241",
+    "section": "Goals for Today",
+    "text": "Goals for Today\n\n\nGetting started in Math 141\n\nCourse structure and technologies\nWhere to find resources\nCourse expectations\n\nStatistical thinking\nData Frames"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#research-interests",
+    "href": "slides/math141_wk01wed.html#research-interests",
+    "title": "Math 241",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nStatistical modeling with environmental applications"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#research-interests-1",
+    "href": "slides/math141_wk01wed.html#research-interests-1",
+    "title": "Math 241",
+    "section": "Research Interests",
+    "text": "Research Interests\nAdvising Undergraduate Forestry Data Science Research"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#getting-started-in-math-141",
+    "href": "slides/math141_wk01wed.html#getting-started-in-math-141",
+    "title": "Math 241",
+    "section": "Getting Started in Math 141",
+    "text": "Getting Started in Math 141\nCourse website\n\n\n\n\n\nThe course website, math-141.github.io, will be the central location for all our course materials.\nWe’ll use a few other resources to navigate Math 141, but all other tools can be accessed by the quick links in the course website!"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#getting-started-in-math-141-1",
+    "href": "slides/math141_wk01wed.html#getting-started-in-math-141-1",
+    "title": "Math 241",
+    "section": "Getting Started in Math 141",
+    "text": "Getting Started in Math 141\nOther Resources\n\n\nReed’s RStudio Server, for coursework,\n\n\n\nA course-wide Slack workspace, for course communication,\n\n\n\nGradescope, for turning in assignments and exams, and\n\n\n\nMoodle, sparingly, for private course materials"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources",
+    "href": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources",
+    "title": "Math 241",
+    "section": "Getting Started in Math 141: Finding Resources",
+    "text": "Getting Started in Math 141: Finding Resources"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources-1",
+    "href": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources-1",
+    "title": "Math 241",
+    "section": "Getting Started in Math 141: Finding Resources",
+    "text": "Getting Started in Math 141: Finding Resources"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources-2",
+    "href": "slides/math141_wk01wed.html#getting-started-in-math-141-finding-resources-2",
+    "title": "Math 241",
+    "section": "Getting Started in Math 141: Finding Resources",
+    "text": "Getting Started in Math 141: Finding Resources"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#math-141-the-whole-game",
+    "href": "slides/math141_wk01wed.html#math-141-the-whole-game",
+    "title": "Math 241",
+    "section": "Math 141: The whole game",
+    "text": "Math 141: The whole game"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#course-expectations-and-structure",
+    "href": "slides/math141_wk01wed.html#course-expectations-and-structure",
+    "title": "Math 241",
+    "section": "Course expectations and structure",
+    "text": "Course expectations and structure"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#my-info",
+    "href": "slides/math141_wk01wed.html#my-info",
+    "title": "Math 241",
+    "section": "My info",
+    "text": "My info\n\n\nName: Grayson White (he/him), you can call me ‘Grayson’\nEmail: gwhite@reed.edu\nOffice: Library 390\nOffice hours: Monday 2:30-4, Wednesday 1-2:30, or by appointment"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#a-typical-day-in-math-141",
+    "href": "slides/math141_wk01wed.html#a-typical-day-in-math-141",
+    "title": "Math 241",
+    "section": "A typical day in Math 141",
+    "text": "A typical day in Math 141"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#learning-outcomes",
+    "href": "slides/math141_wk01wed.html#learning-outcomes",
+    "title": "Math 241",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\n\n\n\n\nIn this course, you will learn how to think critically with data by engaging in the entire data analysis process.\nMost of our time will be spent in the Exploration and Visualization, Data Wrangling, and Modeling and Inference steps, but we will spend some time in each cog!\n\nFirst ~3 weeks in Exploration and Visualization and Data Wrangling\nNext ~3 weeks in Modeling\nFinal ~half of the course in Inference"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#assignments-and-exams",
+    "href": "slides/math141_wk01wed.html#assignments-and-exams",
+    "title": "Math 241",
+    "section": "Assignments and Exams",
+    "text": "Assignments and Exams\n\n\n\n\n\nLab assignments (weekly-ish)\n\nAssigned Thursday in lab\nDue the following Thursday at 9am\nAssigned each week besides exam weeks\n\n\n\n\n\nHomework assignments (daily-ish)\n\nAssigned most days in lecture\nDue in person at the following lecture\nMuch shorter than the labs, often related to the daily reading\n\n\n\n\n\n\n\n\nIn-class activities (semi-regular)\n\nIndividual activities\nGroup activities\nLow-stakes quizzes\n\n\n\n\n\nExams (1 midterm, 1 final)\n\nBoth have a written component and an oral component.\nMidterm written: 10/12 - 10/14\nMidterm orals: 10/15-10/16\nFinal written: reading week\nFinal orals: finals week"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#course-climate",
+    "href": "slides/math141_wk01wed.html#course-climate",
+    "title": "Math 241",
+    "section": "Course Climate",
+    "text": "Course Climate\n\nWe expect everyone in this class to strive to foster a learning environment that is equitable, inclusive, and welcoming. If you experience any barriers to learning, please come to Professor Grayson White or a college administrator with your concerns.\n\nCode of Conduct:\nWe expect all members of Math 141 to make participation a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe expect everyone to act and interact in ways that contribute to an open, welcoming, inclusive, and healthy community of learners. You can contribute to a positive learning environment by demonstrating empathy and kindness, being respectful of differing viewpoints and experiences, and giving and gracefully accepting constructive feedback.1\n\n\n\n\n−+\n01:00\n\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#late-work",
+    "href": "slides/math141_wk01wed.html#late-work",
+    "title": "Math 241",
+    "section": "Late Work",
+    "text": "Late Work\n\n\n\nLabs: up to 4 extensions days can be used throughout the semester.\n\ne.g., 1 additional day for 4 labs, 4 additional days for 1 lab, …\nrounding days up\n\n\n\n\n\nHomeworks: no late homework assignments are accepted, but the lowest three scores will be dropped.\n\n\n\n\nIn-class assignments: cannot be made up.\n\n\n\n\nExams: no late exams are accepted."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#artificial-intelligence-ai-policy",
+    "href": "slides/math141_wk01wed.html#artificial-intelligence-ai-policy",
+    "title": "Math 241",
+    "section": "Artificial Intelligence (AI) Policy",
+    "text": "Artificial Intelligence (AI) Policy\n\nArtificial intelligence (AI) tools, such as ChatGPT, Claude, Gemini, and others are being used to generate code, analyze data, and much more. However, learning to think critically about a problem at hand, and engaging with your peers, tutors, and instructors when not understanding a concept or question are integral components of a liberal arts education. Further, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently extract knowledge from data and engage in statistical reasoning. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.\n\n\n\n\n−+\n01:00\n\n\n\n\nWhy this policy?"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#engagement",
+    "href": "slides/math141_wk01wed.html#engagement",
+    "title": "Math 241",
+    "section": "Engagement",
+    "text": "Engagement\n\n\n \n\n\n\n\n\n\nBeing actively present is key.\n\n\n\nDuring lecture and lab, remove distractions.\n\nWhen we are on our computers, close email, social media, news, etc.\nHide your phone.\n\nI have high expectations but know that all of you (regardless of your stats, math, or computing background) have the ability to meet them."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#math-141-is-about-developing-our-statistical-thinking-skills.",
+    "href": "slides/math141_wk01wed.html#math-141-is-about-developing-our-statistical-thinking-skills.",
+    "title": "Math 241",
+    "section": "Math 141 is about developing our statistical thinking skills.",
+    "text": "Math 141 is about developing our statistical thinking skills.\n\n\nWhat is statistical thinking?\n\n\n\nIt is not the same as mathematical thinking.\n\n\n\nLet’s discover what statistical thinking is through some examples."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#data-in-math-141",
+    "href": "slides/math141_wk01wed.html#data-in-math-141",
+    "title": "Math 241",
+    "section": "Data in Math 141",
+    "text": "Data in Math 141\nWill use a wide-range of real and relevant data examples"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#data-in-math-141-1",
+    "href": "slides/math141_wk01wed.html#data-in-math-141-1",
+    "title": "Math 241",
+    "section": "Data in Math 141",
+    "text": "Data in Math 141\n\n\n\n\n\n\n\nI understand that some of these topics have likely had profound impacts on your lives.\nWe will focus class time on the key course objectives but will use these current topics to empower ourselves and to see how we can productively participate with data."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-1",
+    "href": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-1",
+    "title": "Math 241",
+    "section": "Example: Visualizing COVID Prevalence",
+    "text": "Example: Visualizing COVID Prevalence\n\nIn May of 2020, the Georgia Department of Public Health posted the following graph:\n\n\n\n\n\n\n\n\n\nAt a quick first glance, what story does the graph appear to be telling?\nWhat is misleading about the graph? How could we fix this issue?"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-2",
+    "href": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-2",
+    "title": "Math 241",
+    "section": "Example: Visualizing COVID Prevalence",
+    "text": "Example: Visualizing COVID Prevalence\n\nAfter public outcry, the Georgia Department of Public Health said they made a mistake and posted the following updated graph:\n\n\n\n\n\n\n\n\n\nHow do your conclusions about COVID-19 cases in Georgia change when now interpreting this new graph?"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-3",
+    "href": "slides/math141_wk01wed.html#example-visualizing-covid-prevalence-3",
+    "title": "Math 241",
+    "section": "Example: Visualizing COVID Prevalence",
+    "text": "Example: Visualizing COVID Prevalence\nAlberto Cairo, a journalist and designer, created the second graph of the Georgia COVID-19 data:\n\n \n\n\nA key principle of data visualization is to “help the viewer make meaningful comparisons”.\nWhat comparisons are made easy by the lefthand graph? What about by the righthand graph?\nFrom these graphs, can we get an accurate estimate of the COVID prevalence in these Georgian counties over this two week period?"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#statistical-thinking",
+    "href": "slides/math141_wk01wed.html#statistical-thinking",
+    "title": "Math 241",
+    "section": "Statistical Thinking",
+    "text": "Statistical Thinking\n\nAbout developing reasoning (not just learning definitions and formulae).\nStatistical thinking requires judgment that takes time to develop.\n\nWill see examples and practice applying statistical thinking throughout the course.\n\nDeveloping our statistical thinking skills will allow us to soundly extract knowledge from data!"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#what-areis-data",
+    "href": "slides/math141_wk01wed.html#what-areis-data",
+    "title": "Math 241",
+    "section": "What are/is Data?",
+    "text": "What are/is Data?\n\n\n\n“‘Raw data’ is an oxymoron.” – Lisa Gitelman\n\n\n\n“Data … is information made tractable.” – Catherine D’Ignazio and Lauren Klein"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#data-frames",
+    "href": "slides/math141_wk01wed.html#data-frames",
+    "title": "Math 241",
+    "section": "Data Frames",
+    "text": "Data Frames\nData in spreadsheet-like format where:\n\nRows = Observations/cases\nColumns = Variables\n\n\n\n\n\n\n\nID\nkind\n.pred_AI\n.pred_class\ndetector\nnative\nname\nmodel\n\n\n\n\n1\nHuman\n0.9999942\nAI\nSapling\nNo\nReal TOEFL\nHuman\n\n\n2\nHuman\n0.8281448\nAI\nCrossplag\nNo\nReal TOEFL\nHuman\n\n\n3\nHuman\n0.0002137\nHuman\nCrossplag\nYes\nReal College Essays\nHuman\n\n\n4\nAI\n0.0000000\nHuman\nZeroGPT\nNA\nFake CS224N - GPT3\nGPT3\n\n\n5\nAI\n0.0017841\nHuman\nOriginalityAI\nNA\nFake CS224N - GPT3, PE\nGPT4\n\n\n6\nHuman\n0.0001783\nHuman\nHFOpenAI\nYes\nReal CS224N\nHuman\n\n\n\n\n\n\n\n\n\nData from GPT Detectors Are Biased Against Non-Native English Writers. Weixin Liang, Mert Yuksekgonul, Yining Mao, Eric Wu, James Zou. CellPress Patterns and available in the R package detectors."
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#data-frames-1",
+    "href": "slides/math141_wk01wed.html#data-frames-1",
+    "title": "Math 241",
+    "section": "Data Frames",
+    "text": "Data Frames\n\n\n\n\n\n\nID\nkind\n.pred_AI\n.pred_class\ndetector\nnative\nname\nmodel\n\n\n\n\n1\nHuman\n0.9999942\nAI\nSapling\nNo\nReal TOEFL\nHuman\n\n\n2\nHuman\n0.8281448\nAI\nCrossplag\nNo\nReal TOEFL\nHuman\n\n\n3\nHuman\n0.0002137\nHuman\nCrossplag\nYes\nReal College Essays\nHuman\n\n\n4\nAI\n0.0000000\nHuman\nZeroGPT\nNA\nFake CS224N - GPT3\nGPT3\n\n\n5\nAI\n0.0017841\nHuman\nOriginalityAI\nNA\nFake CS224N - GPT3, PE\nGPT4\n\n\n6\nHuman\n0.0001783\nHuman\nHFOpenAI\nYes\nReal CS224N\nHuman\n\n\n\n\n\n\n\n\nRows = Observations/cases\nWhat are the cases? What does each row represent?"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#data-frames-2",
+    "href": "slides/math141_wk01wed.html#data-frames-2",
+    "title": "Math 241",
+    "section": "Data Frames",
+    "text": "Data Frames\n\n\n\n\n\n\nID\nkind\n.pred_AI\n.pred_class\ndetector\nnative\nname\nmodel\n\n\n\n\n1\nHuman\n0.9999942\nAI\nSapling\nNo\nReal TOEFL\nHuman\n\n\n2\nHuman\n0.8281448\nAI\nCrossplag\nNo\nReal TOEFL\nHuman\n\n\n3\nHuman\n0.0002137\nHuman\nCrossplag\nYes\nReal College Essays\nHuman\n\n\n4\nAI\n0.0000000\nHuman\nZeroGPT\nNA\nFake CS224N - GPT3\nGPT3\n\n\n5\nAI\n0.0017841\nHuman\nOriginalityAI\nNA\nFake CS224N - GPT3, PE\nGPT4\n\n\n6\nHuman\n0.0001783\nHuman\nHFOpenAI\nYes\nReal CS224N\nHuman\n\n\n\n\n\n\n\n\nColumns = Variables\nVariables: Describe characteristics of the observations\n\nQuantitative: Numerical in nature\nCategorical: Values are categories\nIdentification: Uniquely identify each case"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#next-time",
+    "href": "slides/math141_wk01wed.html#next-time",
+    "title": "Math 241",
+    "section": "Next time",
+    "text": "Next time"
+  },
+  {
+    "objectID": "slides/math141_wk01wed.html#next-time-1",
+    "href": "slides/math141_wk01wed.html#next-time-1",
+    "title": "Math 241",
+    "section": "Next time",
+    "text": "Next time\nProblem 1 of Lab 1: Create your own Dear Data postcard!\n\n\n\n\n\n\n\n\n\nStep 1: Collect data on some aspect of your life.\nStep 2: Find a story in your data and determine your postcard recipient.\nStep 3: Figure out how you want to visualize the story.\nStep 4+: Visualize your data on a blank postcard.\n\n\n\nBring a laptop to lab tomorrow!"
+  }
+]

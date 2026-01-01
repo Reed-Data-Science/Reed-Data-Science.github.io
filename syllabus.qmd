@@ -1,0 +1,202 @@
+---
+title: "Syllabus"
+subtitle: |
+  Math 241: Data Science \
+  Reed College \ 
+  Spring 2026
+author: "Grayson White"
+format:
+  html: default
+  pdf: default
+editor: 
+  mode: source
+---
+
+## Useful Information
+
+**Instructor**: Grayson White (he/him) 
+
+-   Email: [gwhite@reed.edu](mailto:gwhite@reed.edu)
+-   Office: Library 390
+-   Office hours: TBD 
+    <!-- - If the available times do not work for you, I am more than happy to schedule a meeting by appointment. Please [email me](mailto:gwhite@reed.edu) or send me a Slack message to set up a time to meet.  -->
+
+**Course Assistants**: We will have a course assistant. They will hold office hours and come to class. 
+
+<!-- We have three course assistants for Math 141 this semester. A course assistant will be present at each lab section. Further, each course assistant will hold office hours during the week. *All course assistant office hours will be held in **ETC 105B***. Feel free to go to any course assistant's office hours, even if they are not the course assistant for your lab section. The course assistants are: -->
+
+<!-- -   Remy Pham  -->
+<!--     - Lab section: 9am - 10:20am -->
+<!--     - Office hours: Monday & Friday: 5pm - 6:30pm -->
+<!-- -   Alayne Zhang  -->
+<!--     - Lab section: 10:30am - 11:50am -->
+<!--     - Office Hours: Tuesday & Thursday: 5:15pm - 6:45pm -->
+<!-- -   Nat Lincoln  -->
+<!--     - Lab section: 1:40pm - 3:00pm Lab -->
+<!--     - Office Hours: Wednesday: 5pm - 7pm, Monday: 6:30pm - 7:30pm -->
+
+
+**Links and course resources**:
+
+The course website, [reed-data-science.github.io](https://reed-data-science.github.io/), inlcludes information on the course, lecture slides, public course materials, and links to all other course resources:
+
+-   Slack, for course correspondence,
+-   Gradescope, for turning in assignments, and
+-   the Posit Workbench Server.
+
+
+**Meeting Times**:
+
+We'll have a lecture-style meeting twice a week. **Attendance is mandatory**. 
+
+-   Lectures are on Mondays and Wednesdays, 1:10pm - 2:30pm (section: S01) or 2:40pm - 4:00pm (section: S02), Library Room 389.
+
+-   "Lectures" will consist of both (1) content delivery from the instructor and (2) interactive activities, worksheets, project work time, and more. 
+
+
+
+## Learning Outcomes
+
+TBD
+
+<!-- In this course, you will learn how to think critically with data by engaging in the entire data analysis process. While most of our time will be spent learning techniques related to the *Exploration and Visualization* step and the *Modeling and Inference* step, you will also practice the other important components of analyzing data. Furthermore, since computation is an integral part of modern statistical work, you will learn to write `R` code -- leveraging the `RStudio` user interface -- to analyze data and will become familiar with several tidyverse `R` packages. You will also develop a reproducible and shareable workflow by using `Quarto` documents for all analyses. -->
+
+<!-- By the end of the course, you will have improved your data acumen and your ability to think statistically. More concretely, you will be better able to accomplish the following tasks, which have been broken down by steps of the data analysis workflow: -->
+
+<!-- ![](slides/img/DAW.jpeg){width=65% fig-align='center'} -->
+
+<!-- **Question formulation:** -->
+
+<!-- -   Translate a research problem into a set of questions that can be answered with data. -->
+<!-- -   Formulate data questions as measurable statements about parameters in a model. -->
+
+<!-- **Data acquisition:** -->
+
+<!-- -   Determine the necessary data to conduct analyses. -->
+<!-- -   Reflect on how design structures and data collection impact potential conclusions. -->
+<!-- -   Identify potential ethical concerns surrounding data collection and data privacy. -->
+
+<!-- **Data wrangling:** -->
+
+<!-- -   Explore datasets to determine what wrangling may be required (e.g., removing missing values, filtering out variables or observations, collapsing categories of a categorical variable). -->
+<!-- -   Apply basic data wrangling operations. -->
+
+<!-- **Exploration and Visualization:** -->
+
+<!-- -   Understand key principles of designing and creating effective data visualizations. -->
+<!-- -   Master creating graphs and drawing sound conclusions from graphs. -->
+<!-- -   Compute and interpret summary statistics. -->
+
+<!-- **Modeling and Inference:** -->
+
+<!-- -   Understand and be able to explain key probabilistic and inferential concepts, such as, sampling, variability, random variables, distributions, confidence, and significance. -->
+<!-- -   Determine the correct model for a given problem and set of data. -->
+<!-- -   Appropriately apply and draw inferences from a statistical model, including quantifying and interpreting the uncertainty in model estimates. -->
+<!-- -   Consider the ethical implications of various modeling practices. -->
+
+<!-- **Communicating Findings:** -->
+
+<!-- -   Develop a reproducible workflow using Quarto documents. -->
+<!-- -   Interpret and communicate results of statistical analyses effectively for both a statistical and a non-statistical audience. -->
+<!-- -   Be able to reflect on the data involved in an analysis and show a curiosity for other ways of examining and thinking about the data. -->
+
+
+
+
+
+## Learning Materials & Tools
+
+**Textbooks**: We'll use textbooks for our course, all of which are freely available online: 
+
+
+-   [Modern Data Science with R (2e)](https://mdsr-book.github.io/mdsr2e/) by Benjamin Baumer, Daniel Kaplan, and Nicholas Horton
+-   [Advanced R (2e)](https://adv-r.hadley.nz/index.html) by Hadley Wickham
+-   [Mastering Shiny](https://mastering-shiny.org/index.html) by Hadley Wickham
+-   [R for Data Science (2e)](https://r4ds.hadley.nz/) by Hadley Wickham and Garrett Grolemund
+-   [R Packages (2e)](https://r-pkgs.org/) by Hadley Wickham and Jenny Bryan 
+
+A hard copy of *Modern Data Science with R (2e)* is also available at the bookstore. 
+
+
+**Technologies (R, Positron or RStudio, and Quarto)**: R is a free and open source programming language, Positron and RStudio are Integrated Development Environments (IDEs) which allows for streamlined use of the R programming language, and Quarto is a markdown language that allows for reproducible documents that include R code, text, images, and much more! Access to these resources is available locally on your own machine, or on the [RStudio Server](https://www.rstudio.reed.edu) for this course. A laptop that can access the internet is required for this course.
+
+**Please let me know ASAP if you do not have access to a personal computer!**
+
+
+
+
+
+## Assignments, activities, and exams
+
+We'll have a few types of assignments, activities, and projects for this course. In particular: 
+
+-   **Problem sets**:
+    - Almost every week, we will have a problem set. The problem sets will be assigned on Wednesday at 5pm and due the following week on Wednesday at 9:00am. 
+    - Problem sets will be turned in via Gradescope. 
+    - To help with various circumstances (expected and unexpected), you have up to 4 additional extensions days that you can use as you need (e.g., 1 additional day for 4 problem sets, 4 additional days for 1 problem set, ...) but the extension days must be rounded up to the nearest day (e.g., 2 extra hours = 1 extension day). There is no need to notify me of your use of extension days. 
+        - Note: if you use more than your allotted extension days for a problem set in and, no credit will be received for that problem set (e.g., if you have already used 3 extension days, and then turn in a problem set 2 days late, you will receive 0 credit for that problem set). 
+    
+-   **In-class activities**:
+    - During lecture, we will include some in-class activities. Including but not limited to: 
+        - group activities,
+        - independent activities,
+        - low-stakes quizzes.
+    
+-   **Projects**:
+    - We'll have two projects due during the semester and a final project due during final week.
+    - Tentatively, the first two projects will be due on Week 4 and Week 8. The final project will begin after Spring Break. 
+    - No late projects are accepted.
+    
+## Participation and attendance
+
+Attending class and actively engaging with the lecture content and activities in class is crucial to your own and your classmates learning. This is especially true in Math 241: Data Science, as much of the learning will happen through active learning. Because of this, **attendance and active participation in class is required** for Math 241: Data Science. 
+
+## Distribution Requirements
+
+This course can be used towards your **Group III, “Natural, Mathematical, and Psychological Science”** requirement. It accomplishes the following learning goals for the group:
+
+1. Use and evaluate quantitative data or modeling, or use logical/mathematical reasoning to evaluate, test or prove statements.
+2. Given a problem or question, formulate a hypothesis or conjecture, and design an experiment, collect data or use mathematical reasoning to test or validate it.
+3. Collect, analyze, and interpret data.
+
+This course does **not** satisfy the "primary data collection and analysis" requirement.
+
+
+
+## Course Climate
+
+We expect everyone in this class to strive to foster a learning environment that is equitable, inclusive, and welcoming. If you experience any barriers to learning, please come to Professor Grayson White or a college administrator with your concerns.
+
+**Code of Conduct**:
+
+We expect all members of Math 241 to make participation a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.
+
+We expect everyone to act and interact in ways that contribute to an open, welcoming, inclusive, and healthy community of learners. You can contribute to a positive learning environment by demonstrating empathy and kindness, being respectful of differing viewpoints and experiences, and giving and gracefully accepting constructive feedback.[^1]
+
+[^1]: This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html), version 2.0.
+
+
+
+## Policies
+
+**Late work policy**:
+
+Please see the late work policy for each individual assignment type that is included in the *Assignments and exams* section of the syllabus. 
+
+**Collaboration Policy and Academic Honesty**:
+
+Working with your classmates on difficult and interesting problems can not only help your learning, but also help you get to know each other! Therefore, I encourage you to collaborate on assignments but every piece of work you do must be your own. Copying and pasting other people’s work or code is not acceptable. The Honor Principle must guide your conduct in this class. 
+
+If you choose to collaborate with a classmate, **you must add their name to the top of your assignment**, and list them as a collaborator, e.g.:
+
+Collaborator(s): Elliot Shannon, Romain Boutelet
+
+*But what is collaboration?*:
+
+For Math 241, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you **must** write up your own problem solutions individually and cannot copy other's solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited. 
+
+
+**AI Policy**:
+
+Artificial intelligence (AI) tools, such as ChatGPT, Claude, Co-Pilot, Gemini, and others are being used to generate code, analyze data, and much more. However, learning to think critically about a problem at hand, and engaging with your peers, tutors, and instructors when not understanding a concept or question are integral components of a liberal arts education. Further, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently extract knowledge from data and engage in statistical reasoning. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.
+
