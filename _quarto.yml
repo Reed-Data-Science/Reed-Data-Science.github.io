@@ -32,12 +32,12 @@ website:
       - icon: r-circle-fill
         href: https://rstudio.reed.edu/
         aria-label: RStudio Server
-      # - icon: bar-chart-fill
-      #   href: https://www.gradescope.com/courses/1100763
-      #   aria-label: Gradescope
-      # - icon: door-closed-fill
-      #   href: https://moodle.reed.edu/
-      #   aria-label: Moodle
+      - icon: bar-chart-fill
+        href: https://www.gradescope.com/courses/1231801
+        aria-label: Gradescope
+      - icon: door-closed-fill
+        href: https://moodle.reed.edu/
+        aria-label: Moodle
 
 format:
   html:

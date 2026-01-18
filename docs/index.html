@@ -79,9 +79,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-week','listing-days',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-week','listing-days','listing-resources',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-week","listing-days"],
+      searchColumns: ["listing-week","listing-days","listing-resources"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -169,9 +169,11 @@ window.Quarto = {
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./assets/math141-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main">
+      <div class="sidebar-tools-main tools-wide">
     <a href="https://reed-data-science.slack.com" title="" class="quarto-navigation-tool px-1" aria-label="Slack"><i class="bi bi-chat-dots-fill"></i></a>
     <a href="https://rstudio.reed.edu/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Server"><i class="bi bi-r-circle-fill"></i></a>
+    <a href="https://www.gradescope.com/courses/1231801" title="" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-bar-chart-fill"></i></a>
+    <a href="https://moodle.reed.edu/" title="" class="quarto-navigation-tool px-1" aria-label="Moodle"><i class="bi bi-door-closed-fill"></i></a>
 </div>
       </div>
     <div class="sidebar-menu-container"> 
@@ -248,7 +250,7 @@ window.Quarto = {
     <p>Wednesday, Jan 28</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">Data Visualization</span><br>
+    <p><span class="daily-topic">Data Visualization I: Principles</span><br>
     
       
         
@@ -274,7 +276,11 @@ window.Quarto = {
   <p><span">Resources</span"></p>
   <ul>
   
-    <li>None this week</li>
+    
+      <li><a href="https://join.slack.com/t/reed-data-science/shared_invite/zt-3m9hhwi5f-javjb99NvUzwcC8r1MCXjg">Join Slack</a></li>
+    
+      <li>Gradescope course entry code: ZJPD33</li>
+    
   
   </ul>
   </div>
@@ -289,7 +295,7 @@ window.Quarto = {
     <p>Monday, Feb 2</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">Plotting with ggplot2</span><br>
+    <p><span class="daily-topic">Data Visualization II: Plotting with ggplot2</span><br>
     
       
         
@@ -309,7 +315,7 @@ window.Quarto = {
     <p>Wednesday, Feb 4</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">Advanced ggplot2 and animation</span><br>
+    <p><span class="daily-topic">Data Visualization III: Advanced ggplot2 and animation</span><br>
     
       
         
@@ -362,7 +368,7 @@ window.Quarto = {
     <p>Monday, Feb 9</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Wrangling I</span><br>
     
       
         
@@ -382,7 +388,7 @@ window.Quarto = {
     <p>Wednesday, Feb 11</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Wrangling II</span><br>
     
       
         
@@ -435,7 +441,7 @@ window.Quarto = {
     <p>Monday, Feb 16</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Joins</span><br>
     
       
         
@@ -455,7 +461,7 @@ window.Quarto = {
     <p>Wednesday, Feb 18</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Reshaping data</span><br>
     
       
         
@@ -492,7 +498,7 @@ window.Quarto = {
     <p>Monday, Feb 23</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Spatial data</span><br>
     
       
         
@@ -512,7 +518,7 @@ window.Quarto = {
     <p>Wednesday, Feb 25</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Lists</span><br>
     
       
         
@@ -549,7 +555,7 @@ window.Quarto = {
     <p>Monday, Mar 2</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Functions</span><br>
     
       
         
@@ -569,7 +575,7 @@ window.Quarto = {
     <p>Wednesday, Mar 4</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Iteration</span><br>
     
       
         
@@ -606,7 +612,7 @@ window.Quarto = {
     <p>Monday, Mar 9</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">Leaflet</span><br>
     
       
         
@@ -626,7 +632,7 @@ window.Quarto = {
     <p>Wednesday, Mar 11</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">shiny</span><br>
     
       
         
@@ -663,7 +669,7 @@ window.Quarto = {
     <p>Monday, Mar 16</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">shiny</span><br>
     
       
         
@@ -683,7 +689,7 @@ window.Quarto = {
     <p>Wednesday, Mar 18</p>
     </div>
     <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
+    <p><span class="daily-topic">project work day</span><br>
     
       
         
@@ -993,63 +999,6 @@ window.Quarto = {
   
     <div class="date-cell">
     <p>Wednesday, Apr 29</p>
-    </div>
-    <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
-    
-      
-        
-          <button type="button" class="btn btn-success" disabled="">Suggested Reading</button>
-        
-      
-        
-          <button type="button" class="btn btn-success" disabled="">Slides</button>
-        
-      
-    
-    </p>
-    </div>
-    
-  
-  
-  </div>
-  <div class="resources">
-  <p><span">Resources</span"></p>
-  <ul>
-  
-    <li>None this week</li>
-  
-  </ul>
-  </div>
-  </div>
-
-  <h4 class="anchored">Week 14</h4>
-  <div class="week-x-box">
-  <div class="daily-sched">
-
-  
-    <div class="date-cell">
-    <p>Monday, Mar 16</p>
-    </div>
-    <div class="materials-cell">
-    <p><span class="daily-topic">TBD</span><br>
-    
-      
-        
-          <button type="button" class="btn btn-success" disabled="">Suggested Reading</button>
-        
-      
-        
-          <button type="button" class="btn btn-success" disabled="">Slides</button>
-        
-      
-    
-    </p>
-    </div>
-    
-  
-    <div class="date-cell">
-    <p>Wednesday, Mar 18</p>
     </div>
     <div class="materials-cell">
     <p><span class="daily-topic">TBD</span><br>

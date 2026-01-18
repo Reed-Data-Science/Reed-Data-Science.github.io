@@ -110,9 +110,11 @@ ul.task-list li input[type="checkbox"] {
       <a href="./index.html" class="sidebar-logo-link">
       <img src="./assets/math141-hex.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-      <div class="sidebar-tools-main">
+      <div class="sidebar-tools-main tools-wide">
     <a href="https://reed-data-science.slack.com" title="" class="quarto-navigation-tool px-1" aria-label="Slack"><i class="bi bi-chat-dots-fill"></i></a>
     <a href="https://rstudio.reed.edu/" title="" class="quarto-navigation-tool px-1" aria-label="RStudio Server"><i class="bi bi-r-circle-fill"></i></a>
+    <a href="https://www.gradescope.com/courses/1231801" title="" class="quarto-navigation-tool px-1" aria-label="Gradescope"><i class="bi bi-bar-chart-fill"></i></a>
+    <a href="https://moodle.reed.edu/" title="" class="quarto-navigation-tool px-1" aria-label="Moodle"><i class="bi bi-door-closed-fill"></i></a>
 </div>
       </div>
     <div class="sidebar-menu-container"> 
@@ -207,11 +209,11 @@ Spring 2026</p><p></p>
 <!--     - Lab section: 1:40pm - 3:00pm Lab -->
 <!--     - Office Hours: Wednesday: 5pm - 7pm, Monday: 6:30pm - 7:30pm -->
 <p><strong>Links and course resources</strong>:</p>
-<p>The course website, <a href="https://reed-data-science.github.io/">reed-data-science.github.io</a>, inlcludes information on the course, lecture slides, public course materials, and links to all other course resources:</p>
+<p>The course website, <a href="https://reed-data-science.github.io/">reed-data-science.github.io</a>, includes information on the course, lecture slides, public course materials, and links to all other course resources:</p>
 <ul>
 <li>Slack, for course correspondence,</li>
-<li>Gradescope, for turning in assignments, and</li>
-<li>the Posit Workbench Server.</li>
+<li>Gradescope, for turning in (most) assignments, and</li>
+<li>the RStudio Server.</li>
 </ul>
 <p><strong>Meeting Times</strong>:</p>
 <p>We’ll have a lecture-style meeting twice a week. <strong>Attendance is mandatory</strong>.</p>
@@ -222,33 +224,13 @@ Spring 2026</p><p></p>
 </section>
 <section id="learning-outcomes" class="level2">
 <h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
-<p>TBD</p>
-<!-- In this course, you will learn how to think critically with data by engaging in the entire data analysis process. While most of our time will be spent learning techniques related to the *Exploration and Visualization* step and the *Modeling and Inference* step, you will also practice the other important components of analyzing data. Furthermore, since computation is an integral part of modern statistical work, you will learn to write `R` code -- leveraging the `RStudio` user interface -- to analyze data and will become familiar with several tidyverse `R` packages. You will also develop a reproducible and shareable workflow by using `Quarto` documents for all analyses. -->
-<!-- By the end of the course, you will have improved your data acumen and your ability to think statistically. More concretely, you will be better able to accomplish the following tasks, which have been broken down by steps of the data analysis workflow: -->
-<!-- ![](slides/img/DAW.jpeg){width=65% fig-align='center'} -->
-<!-- **Question formulation:** -->
-<!-- -   Translate a research problem into a set of questions that can be answered with data. -->
-<!-- -   Formulate data questions as measurable statements about parameters in a model. -->
-<!-- **Data acquisition:** -->
-<!-- -   Determine the necessary data to conduct analyses. -->
-<!-- -   Reflect on how design structures and data collection impact potential conclusions. -->
-<!-- -   Identify potential ethical concerns surrounding data collection and data privacy. -->
-<!-- **Data wrangling:** -->
-<!-- -   Explore datasets to determine what wrangling may be required (e.g., removing missing values, filtering out variables or observations, collapsing categories of a categorical variable). -->
-<!-- -   Apply basic data wrangling operations. -->
-<!-- **Exploration and Visualization:** -->
-<!-- -   Understand key principles of designing and creating effective data visualizations. -->
-<!-- -   Master creating graphs and drawing sound conclusions from graphs. -->
-<!-- -   Compute and interpret summary statistics. -->
-<!-- **Modeling and Inference:** -->
-<!-- -   Understand and be able to explain key probabilistic and inferential concepts, such as, sampling, variability, random variables, distributions, confidence, and significance. -->
-<!-- -   Determine the correct model for a given problem and set of data. -->
-<!-- -   Appropriately apply and draw inferences from a statistical model, including quantifying and interpreting the uncertainty in model estimates. -->
-<!-- -   Consider the ethical implications of various modeling practices. -->
-<!-- **Communicating Findings:** -->
-<!-- -   Develop a reproducible workflow using Quarto documents. -->
-<!-- -   Interpret and communicate results of statistical analyses effectively for both a statistical and a non-statistical audience. -->
-<!-- -   Be able to reflect on the data involved in an analysis and show a curiosity for other ways of examining and thinking about the data. -->
+<p>By the end of the course, you will be able to:</p>
+<ul>
+<li>Comfortably use <code>R</code> for data management, cleaning, and visualization.</li>
+<li>Apply advanced data wrangling techniques to clean, merge, reshape, read in, and summarize data.</li>
+<li>Work with non-traditional data types (e.g., spatial data, text data, dates).</li>
+<li>Communicate about data and analysis to a non-specialist audience both orally and in writing.</li>
+</ul>
 </section>
 <section id="learning-materials-tools" class="level2">
 <h2 class="anchored" data-anchor-id="learning-materials-tools">Learning Materials &amp; Tools</h2>
@@ -270,7 +252,7 @@ Spring 2026</p><p></p>
 <ul>
 <li><strong>Problem sets</strong>:
 <ul>
-<li>Almost every week, we will have a problem set. The problem sets will be assigned on Wednesday at 5pm and due the following week on Wednesday at 9:00am.</li>
+<li>Most weeks, we will have a problem set. The problem sets will be assigned on Wednesday at 5pm and due the following week on Wednesday at 9:00am.</li>
 <li>Problem sets will be turned in via Gradescope.</li>
 <li>To help with various circumstances (expected and unexpected), you have up to 4 additional extensions days that you can use as you need (e.g., 1 additional day for 4 problem sets, 4 additional days for 1 problem set, …) but the extension days must be rounded up to the nearest day (e.g., 2 extra hours = 1 extension day). There is no need to notify me of your use of extension days.
 <ul>
@@ -282,21 +264,19 @@ Spring 2026</p><p></p>
 <li>During lecture, we will include some in-class activities. Including but not limited to:
 <ul>
 <li>group activities,</li>
-<li>independent activities,</li>
-<li>low-stakes quizzes.</li>
+<li>independent activities.</li>
 </ul></li>
 </ul></li>
 <li><strong>Projects</strong>:
 <ul>
-<li>We’ll have two projects due during the semester and a final project due during final week.</li>
-<li>Tentatively, the first two projects will be due on Week 4 and Week 8. The final project will begin after Spring Break.</li>
+<li>We’ll have two mini-projects due during the semester and a final project due during final week.</li>
 <li>No late projects are accepted.</li>
 </ul></li>
 </ul>
 </section>
 <section id="participation-and-attendance" class="level2">
 <h2 class="anchored" data-anchor-id="participation-and-attendance">Participation and attendance</h2>
-<p>Attending class and actively engaging with the lecture content and activities in class is crucial to your own and your classmates learning. This is especially true in Math 241: Data Science, as much of the learning will happen through active learning. Because of this, <strong>attendance and active participation in class is required</strong> for Math 241: Data Science.</p>
+<p>Attending class and actively engaging with the lecture content and activities in class is crucial to your own and your classmates learning. This is especially true in Math 241: Data Science, as much of the learning will happen through active learning. Because of this, I will be taking attendance at each lecture and noting participation in class and in Slack.</p>
 </section>
 <section id="distribution-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="distribution-requirements">Distribution Requirements</h2>
@@ -326,7 +306,11 @@ Spring 2026</p><p></p>
 <p><em>But what is collaboration?</em>:</p>
 <p>For Math 241, collaboration can look like: working with classmates together on a given problem, doing scratch work, helping each other get un-stuck on a part of a problem, and even coming to a solution. However, you <strong>must</strong> write up your own problem solutions individually and cannot copy other’s solutions (even those who you have collaborated with). Further, copying code from a collaborator, classmate, or generative AI tool (see the following section) is strictly prohibited.</p>
 <p><strong>AI Policy</strong>:</p>
-<p>Artificial intelligence (AI) tools, such as ChatGPT, Claude, Co-Pilot, Gemini, and others are being used to generate code, analyze data, and much more. However, learning to think critically about a problem at hand, and engaging with your peers, tutors, and instructors when not understanding a concept or question are integral components of a liberal arts education. Further, a key goal of this course is for you to learn how to thoughtfully, ethically, and independently extract knowledge from data and engage in statistical reasoning. Therefore, the use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course. If you have questions about whether a tool is allowed for this course, ask the Instructor before using it.</p>
+<p>Artificial intelligence (AI) tools, such as ChatGPT, Claude, Co-Pilot, Gemini, and others are being used to generate code, analyze data, write, and much more (and they are getting quite good at many of these tasks!). On the other hand, learning to think critically about a problem at hand, and engaging with your peers, tutors, and instructors when not understanding a concept or question are integral components of a liberal arts education. This dichotomy puts Math 241 in a interesting position as a course which aims to provide a cutting edge data science education at a liberal arts college. One of my main goals as the instructor of this course is to turn each of you into high quality data scientists who have a deep understanding of the R programming language and the ability to communicate insights about data on your own. Because of this, we will take a nuanced approach to engaging with AI tools in this course:</p>
+<p><strong>For all content delivered or assigned before Spring Break</strong>: The use of generative AI tools, such as ChatGPT and others, are strictly prohibited in any stage of the work process for this course.</p>
+<p><strong>After we return from Spring Break</strong>: Along with other material, I will teach about how to effectively engage with AI tools as a data scientist. We will learn how to effectively debug and write code with AI tools. Assignments after Spring Break will have clear instructions regarding the ways that you are (and are not) allowed to engage with AI on them. Note that you may <strong>never</strong> use AI tools in the writing process for this course.</p>
+<p>Always, if you have questions about whether a tool is allowed for this course or if the way you plan to engage with a tool is allowed, ask the instructor before using it.</p>
+<p><strong>Why this policy?</strong>: In today’s job market, understanding generative AI tools and being able to engage with them is a key skill for data scientists and software engineers. However, relying too heavily on AI tools to write your code and think for you prohibits understanding of the core concepts that make you a good programmer and data scientist. Therefore, I want to help build you a strong base of understanding early in the course so that you can use that base understanding throughout the times in your life where you engage with data.</p>
 
 
 </section>

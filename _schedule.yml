@@ -18,7 +18,7 @@ scheduled-docs:
               href: readings/readings_wk01wed.qmd
             - type: Slides
               href: slides/math141_wk01wed.qmd
-        - topic: "Data Visualization"
+        - topic: "Data Visualization I: Principles"
           display-date: Wednesday, Jan 28
           date: 1/28/26
           docs:
@@ -28,12 +28,12 @@ scheduled-docs:
               href: labs/lab_01_instructions.qmd
             - type: Slides
               href: slides/math141_wk01thu.qmd
-      # resources:
-      #   - '<a href="https://join.slack.com/t/reedmath141fall2025/shared_invite/zt-3blne8yip-sTe8uLWC4UbexLAAA7Z~Vw">Join Slack</a>'
-      #   - 'Gradescope course entry code: 7XJR4K'
+      resources:
+        - '<a href="https://join.slack.com/t/reed-data-science/shared_invite/zt-3m9hhwi5f-javjb99NvUzwcC8r1MCXjg">Join Slack</a>'
+        - 'Gradescope course entry code: ZJPD33'
     - week: 2
       days:
-        - topic: "Plotting with ggplot2"
+        - topic: "Data Visualization II: Plotting with ggplot2"
           display-date: Monday, Feb 2
           date: 2/2/26
           docs:
@@ -41,7 +41,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Advanced ggplot2 and animation"
+        - topic: "Data Visualization III: Advanced ggplot2 and animation"
           display-date: Wednesday, Feb 4
           date: 2/4/26
           docs:
@@ -59,7 +59,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 3
       days:
-        - topic: "TBD"
+        - topic: "Wrangling I"
           display-date: Monday, Feb 9
           date: 2/9/26
           docs:
@@ -67,7 +67,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Wrangling II"
           display-date: Wednesday, Feb 11
           date: 2/11/26
           docs:
@@ -85,7 +85,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 4
       days:
-        - topic: "TBD"
+        - topic: "Joins"
           display-date: Monday, Feb 16
           date: 2/16/26
           docs:
@@ -93,7 +93,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Reshaping data"
           display-date: Wednesday, Feb 18
           date: 2/18/26
           docs:
@@ -105,7 +105,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 5
       days:
-        - topic: "TBD"
+        - topic: "Spatial data"
           display-date: Monday, Feb 23
           date: 2/23/26
           docs:
@@ -113,7 +113,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Lists"
           display-date: Wednesday, Feb 25
           date: 2/25/26
           docs:
@@ -125,7 +125,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 6
       days:
-        - topic: "TBD"
+        - topic: "Functions"
           display-date: Monday, Mar 2
           date: 3/2/26
           docs:
@@ -133,7 +133,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Iteration"
           display-date: Wednesday, Mar 4
           date: 3/4/26
           docs:
@@ -145,7 +145,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 7
       days:
-        - topic: "TBD"
+        - topic: "Leaflet"
           display-date: Monday, Mar 9
           date: 3/9/26
           docs:
@@ -153,7 +153,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "shiny"
           display-date: Wednesday, Mar 11
           date: 3/11/26
           docs:
@@ -165,7 +165,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 8
       days:
-        - topic: "TBD"
+        - topic: "shiny"
           display-date: Monday, Mar 16
           date: 3/16/26
           docs:
@@ -173,7 +173,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "project work day"
           display-date: Wednesday, Mar 18
           date: 3/18/26
           docs:
@@ -280,26 +280,6 @@ scheduled-docs:
         - topic: "TBD"
           display-date: Wednesday, Apr 29
           date: 4/29/26
-          docs:
-            - type: Suggested Reading
-              href: readings/readings_wk02wed.qmd
-            - type: Slides
-              href: slides/math141_wk02wed.qmd
-      # resources:
-      #   - 'Some text'
-    - week: 14
-      days:
-        - topic: "TBD"
-          display-date: Monday, Mar 16
-          date: 3/16/26
-          docs:
-            - type: Suggested Reading
-              href: readings/readings_wk02mon.qmd
-            - type: Slides
-              href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
-          display-date: Wednesday, Mar 18
-          date: 3/18/26
           docs:
             - type: Suggested Reading
               href: readings/readings_wk02wed.qmd
