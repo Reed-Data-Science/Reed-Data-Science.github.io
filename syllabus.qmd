@@ -92,7 +92,7 @@ A hard copy of *Modern Data Science with R (2e)* is also available at the bookst
 We'll have a few types of assignments, activities, and projects for this course. In particular: 
 
 -   **Problem sets**:
-    - Most weeks, we will have a problem set. The problem sets will be assigned on Wednesday at 5pm and due the following week on Wednesday at 9:00am. 
+    - Most weeks, we will have a problem set. The problem sets will be assigned on Wednesday before 10pm and due the following week on Thursday by 9am. 
     - Problem sets will be turned in via Gradescope. 
     - To help with various circumstances (expected and unexpected), you have up to 4 additional extensions days that you can use as you need (e.g., 1 additional day for 4 problem sets, 4 additional days for 1 problem set, ...) but the extension days must be rounded up to the nearest day (e.g., 2 extra hours = 1 extension day). There is no need to notify me of your use of extension days. 
         - Note: if you use more than your allotted extension days for a problem set in and, no credit will be received for that problem set (e.g., if you have already used 3 extension days, and then turn in a problem set 2 days late, you will receive 0 credit for that problem set). 
