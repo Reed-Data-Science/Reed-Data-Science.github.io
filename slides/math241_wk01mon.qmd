@@ -35,7 +35,7 @@ library(tidyverse)
 
 ::::: columns
 ::: {.column .center width="60%"}
-![](img/DAW.jpeg){width="90%"}
+![](img/r-hex.jpg){width="90%"}
 :::
 
 ::: {.column .center width="40%"}

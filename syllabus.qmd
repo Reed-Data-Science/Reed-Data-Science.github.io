@@ -87,7 +87,7 @@ A hard copy of *Modern Data Science with R (2e)* is also available at the bookst
 
 
 
-## Assignments, activities, and exams
+## Assignments, Activities, and Projects
 
 We'll have a few types of assignments, activities, and projects for this course. In particular: 
 
@@ -106,7 +106,7 @@ We'll have a few types of assignments, activities, and projects for this course.
     - We'll have two mini-projects due during the semester and a final project due during final week.
     - No late projects are accepted.
     
-## Participation and attendance
+## Participation and Attendance
 
 Attending class and actively engaging with the lecture content and activities in class is crucial to your own and your classmates learning. This is especially true in Math 241: Data Science, as much of the learning will happen through active learning. Because of this, I will be taking attendance at each lecture and noting participation in class and in Slack. 
 
@@ -140,7 +140,7 @@ We expect everyone to act and interact in ways that contribute to an open, welco
 
 **Late work policy**:
 
-Please see the late work policy for each individual assignment type that is included in the *Assignments and exams* section of the syllabus. 
+Please see the late work policy for each individual assignment type that is included in the *Assignments, Activities, and Projects* section of the syllabus. 
 
 **Collaboration Policy and Academic Honesty**:
 

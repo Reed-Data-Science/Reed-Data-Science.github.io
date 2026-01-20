@@ -6,18 +6,18 @@ project:
 
 website:
   title: "Math 241"
-  image: assets/math141-hex.png
+#  image: assets/math141-hex.png
   site-url: "https://www.reed-data-science.github.io/"
-  favicon: assets/favicon.ico
+#  favicon: assets/favicon.ico
   navbar:
     title: "Math 241: Data Science"
-    logo: assets/math141-hex.png
+#    logo: assets/math141-hex.png
     logo-alt: "Math 241 logo"
     background: white
     foreground: "gray-800"
   sidebar:
     style: "floating"  # or "docked"
-    logo: assets/math141-hex.png
+    logo: slides/img/r-hex.jpg
     contents:
       - href: index.qmd
         text: Home
