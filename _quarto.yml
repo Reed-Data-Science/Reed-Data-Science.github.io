@@ -15,16 +15,6 @@ website:
     logo-alt: "Math 241 logo"
     background: white
     foreground: "gray-800"
-  sidebar:
-    style: "floating"  # or "docked"
-    logo: slides/img/r-hex.jpg
-    contents:
-      - href: index.qmd
-        text: Home
-      - href: syllabus.qmd
-        text: Syllabus
-      - href: office_hours.qmd
-        text: Office Hours
     tools:
       - icon: chat-dots-fill
         href: https://reed-data-science.slack.com
@@ -38,6 +28,16 @@ website:
       - icon: door-closed-fill
         href: https://moodle.reed.edu/
         aria-label: Moodle
+  sidebar:
+    style: "floating"  # or "docked"
+    logo: slides/img/r-hex.jpg
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: office_hours.qmd
+        text: Office Hours
 
 format:
   html:

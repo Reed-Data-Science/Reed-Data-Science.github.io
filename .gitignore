@@ -6,3 +6,4 @@
 /.quarto/
 *.Rproj
 .DS_Store
+**/*.quarto_ipynb
