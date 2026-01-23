@@ -43,7 +43,7 @@ library(tidyverse)
 
 [Data Science]{.custom-title}
 
-<br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br>
 
 [Grayson White]{.custom-subtitle}
 
@@ -53,28 +53,42 @@ library(tidyverse)
 
 ------------------------------------------------------------------------
 
-::: {style="margin-top: 80px; font-size: 3em; color: #3F6574; text-align: center;"}
-
-Before we get started...
-
-if you are on the waitlist, please sign in to class here: [tinyurl.com/math141-wait](https://tinyurl.com/math141-wait)
-:::
 
 
-------------------------------------------------------------------------
+## Goals for Today (and next time)
 
-## Goals for Today
+:::: {.columns}
 
-::: {.nonincremental}
+::: {.column width='50%'}
 
--   Getting started in Math 141
+::: {.nonincremental .fragment}
+
+**Today:**
+
+-   Getting started in Math 241
     - Course structure and technologies
     - Where to find resources 
     - Course expectations
--   Statistical thinking 
--   Data Frames
 
 :::
+
+:::
+
+::: {.column width='50%'}
+
+::: {.nonincremental .fragment}
+
+**Wednesday:**
+
+-   Decomposing graphics
+
+
+:::
+
+:::
+
+::::
+
 
 
 # But first, let me quickly introduce myself...
@@ -167,6 +181,19 @@ ggplot() +
 ![](img/ufds.png){width=60%}
 
 :::
+
+
+------------------------------------------------------------------------
+
+
+## Sidebar: Undergraduate Forestry Data Science Research
+
+
+-   This summer, I'll be hiring Reed students in my undergraduate forestry data science (UFDS) program!
+
+
+-   For more info (and to apply!) see the website [ufds-lab.com](https://ufds-lab.com/)
+
 
 
 ## Getting Started in Math 141
