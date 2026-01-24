@@ -21,19 +21,13 @@ editor:
 -   Office hours: TBD 
     <!-- - If the available times do not work for you, I am more than happy to schedule a meeting by appointment. Please [email me](mailto:gwhite@reed.edu) or send me a Slack message to set up a time to meet.  -->
 
-**Course Assistants**: We will have a course assistant. They will hold office hours and come to class. 
+**Course Assistant**:  Chris Li (they/them)
 
-<!-- We have three course assistants for Math 141 this semester. A course assistant will be present at each lab section. Further, each course assistant will hold office hours during the week. *All course assistant office hours will be held in **ETC 105B***. Feel free to go to any course assistant's office hours, even if they are not the course assistant for your lab section. The course assistants are: -->
+-   Email: [yiyuanli@reed.edu](mailto:yiyuanli@reed.edu)
+-   Office: ETC 105B
+-   Office hours: Monday and Wednesday, 4:30pm - 6:00pm
 
-<!-- -   Remy Pham  -->
-<!--     - Lab section: 9am - 10:20am -->
-<!--     - Office hours: Monday & Friday: 5pm - 6:30pm -->
-<!-- -   Alayne Zhang  -->
-<!--     - Lab section: 10:30am - 11:50am -->
-<!--     - Office Hours: Tuesday & Thursday: 5:15pm - 6:45pm -->
-<!-- -   Nat Lincoln  -->
-<!--     - Lab section: 1:40pm - 3:00pm Lab -->
-<!--     - Office Hours: Wednesday: 5pm - 7pm, Monday: 6:30pm - 7:30pm -->
+In addition to holding office hours, Chris will attend class on Monday's and will be available to help via Slack. 
 
 
 **Links and course resources**:
@@ -47,7 +41,7 @@ The course website, [reed-data-science.github.io](https://reed-data-science.gith
 
 **Meeting Times**:
 
-We'll have a lecture-style meeting twice a week. **Attendance is mandatory**. 
+We'll have a lecture-style meeting twice a week. **Attendance is required** (please see the *Participation and Attendance* section of the syllabus. 
 
 -   Lectures are on Mondays and Wednesdays, 1:10pm - 2:30pm (section: S01) or 2:40pm - 4:00pm (section: S02), Library Room 389.
 
@@ -103,7 +97,7 @@ We'll have a few types of assignments, activities, and projects for this course.
         - independent activities.
     
 -   **Projects**:
-    - We'll have two mini-projects due during the semester and a final project due during final week.
+    - We'll have two projects for this course. The first will be presented before spring break, and the second will be presented during finals week.
     - No late projects are accepted.
     
 ## Participation and Attendance

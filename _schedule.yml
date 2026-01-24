@@ -10,11 +10,11 @@ scheduled-docs:
   schedule:
     - week: 1
       days:
-        - topic: "Course Introduction & What is a Data Scientist?"
+        - topic: "Course Introduction & Statistical Computing"
           display-date: Monday, Jan 26
           date: 1/26/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk01wed.qmd
             - type: Slides
               href: slides/math141_wk01wed.qmd
@@ -22,12 +22,18 @@ scheduled-docs:
           display-date: Wednesday, Jan 28
           date: 1/28/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk01thu.qmd
             - type: Lab Instructions
               href: labs/lab_01_instructions.qmd
             - type: Slides
               href: slides/math141_wk01thu.qmd
+        - topic: "Problem Set 0 Released"
+          display-date: Thursday, Jan 29 9:00am
+          date: 1/29/26
+          docs:
+            - type: Problem Set 0
+              href: psets/pset00.qmd
       resources:
         - '<a href="https://join.slack.com/t/reed-data-science/shared_invite/zt-3m9hhwi5f-javjb99NvUzwcC8r1MCXjg">Join Slack</a>'
         - 'Gradescope course entry code: ZJPD33'
@@ -37,19 +43,19 @@ scheduled-docs:
           display-date: Monday, Feb 2
           date: 2/2/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Data Visualization III: Advanced ggplot2 and animation"
+        - topic: "Data Visualization III: Advanced ggplot2 and customization"
           display-date: Wednesday, Feb 4
           date: 2/4/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 1 Released"
+        - topic: "Problem Set 0 Due, Problem Set 1 Released"
           display-date: Thursday, Feb 5 9:00am
           date: 2/5/26
           docs:
@@ -59,19 +65,19 @@ scheduled-docs:
       #   - 'Some text'
     - week: 3
       days:
-        - topic: "Wrangling I"
+        - topic: "Plot animation with gganimate and Wrangling I"
           display-date: Monday, Feb 9
           date: 2/9/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Wrangling II"
+        - topic: "Wrangling II, plotly, and workflow"
           display-date: Wednesday, Feb 11
           date: 2/11/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -85,102 +91,129 @@ scheduled-docs:
       #   - 'Some text'
     - week: 4
       days:
-        - topic: "Joins"
+        - topic: "Joins and reshaping data"
           display-date: Monday, Feb 16
           date: 2/16/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Reshaping data"
+        - topic: "Spatial data I: static"
           display-date: Wednesday, Feb 18
           date: 2/18/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 2 Due, Problem Set 3 Released"
+          display-date: Thursday, Feb 19 9:00am
+          date: 2/19/26
+          docs:
+            - type: Problem Set 3
+              href: psets/pset03.qmd
       # resources:
       #   - 'Some text'
     - week: 5
       days:
-        - topic: "Spatial data"
+        - topic: "Spatial data II: interactive"
           display-date: Monday, Feb 23
           date: 2/23/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Lists"
+        - topic: "shiny I"
           display-date: Wednesday, Feb 25
           date: 2/25/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 3 Due, Project 1 Released"
+          display-date: Thursday, Feb 26 9:00am
+          date: 2/26/26
+          docs:
+            - type: Project 1
+              href: projects/proj01.qmd
       # resources:
       #   - 'Some text'
     - week: 6
       days:
-        - topic: "Functions"
+        - topic: "shiny II"
           display-date: Monday, Mar 2
           date: 3/2/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Iteration"
+        - topic: "dates/factors/strings"
           display-date: Wednesday, Mar 4
           date: 3/4/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 4 Released"
+          display-date: Thursday, Mar 5 9:00am
+          date: 3/5/26
+          docs:
+            - type: Problem Set 4
+              href: psets/pset04.qmd
       # resources:
       #   - 'Some text'
     - week: 7
       days:
-        - topic: "Leaflet"
+        - topic: "string manipulation and regular expressions"
           display-date: Monday, Mar 9
           date: 3/9/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "shiny"
+        - topic: "Control flow"
           display-date: Wednesday, Mar 11
           date: 3/11/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 4 Due, Problem Set 5 Released"
+          display-date: Thursday, Mar 11 9:00am
+          date: 3/11/26
+          docs:
+            - type: Problem Set 5
+              href: psets/pset05.qmd
       # resources:
       #   - 'Some text'
     - week: 8
       days:
-        - topic: "shiny"
+        - topic: "Functions"
           display-date: Monday, Mar 16
           date: 3/16/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "project work day"
+        - topic: "Project 1 presentations"
           display-date: Wednesday, Mar 18
           date: 3/18/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 5 Due"
+          display-date: Thursday, Mar 18 9:00am
+          date: 3/18/26
       # resources:
       #   - 'Some text'
     - week: Spring Break
@@ -189,19 +222,19 @@ scheduled-docs:
           display-date: Saturday, Mar 21 - Sunday, Mar 29
     - week: 9
       days:
-        - topic: "TBD"
+        - topic: "Iteration"
           display-date: Monday, Mar 30
           date: 3/30/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "ellmer"
           display-date: Wednesday, Apr 1
           date: 4/1/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -209,19 +242,19 @@ scheduled-docs:
       #   - 'Some text'
     - week: 10
       days:
-        - topic: "TBD"
+        - topic: "R packages: introduction"
           display-date: Monday, Apr 6
           date: 4/6/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "R packages: documentation"
           display-date: Wednesday, Apr 8
           date: 4/8/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -229,19 +262,19 @@ scheduled-docs:
       #   - 'Some text'
     - week: 11
       days:
-        - topic: "TBD"
+        - topic: "R packages: testing"
           display-date: Monday, Apr 13
           date: 4/13/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "R packages: dissemination"
           display-date: Wednesday, Apr 15
           date: 4/15/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -253,7 +286,7 @@ scheduled-docs:
           display-date: Monday, Apr 20
           date: 4/20/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
@@ -261,7 +294,7 @@ scheduled-docs:
           display-date: Wednesday, Apr 22
           date: 4/22/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -273,7 +306,7 @@ scheduled-docs:
           display-date: Monday, Apr 27
           date: 4/27/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
@@ -281,7 +314,7 @@ scheduled-docs:
           display-date: Wednesday, Apr 29
           date: 4/29/26
           docs:
-            - type: Suggested Reading
+            - type: Reading
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
@@ -289,11 +322,11 @@ scheduled-docs:
       #   - 'Some text'
     - week: Finals
       days:
-        - topic: "Final Presentations"
+        - topic: "Final Project Presentations"
           display-date: May 11 - 14
           date: 5/11/26
           docs:
-            # - type: Suggested Reading
+            # - type: Reading
             #   href: readings/readings_wk02mon.qmd
             # - type: Slides
             #   href: slides/math141_wk02mon.qmd
