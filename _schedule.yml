@@ -99,7 +99,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Spatial data I: static"
+        - topic: "Types of data in R"
           display-date: Wednesday, Feb 18
           date: 2/18/26
           docs:
@@ -117,7 +117,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 5
       days:
-        - topic: "Spatial data II: interactive"
+        - topic: "Spatial data I: static"
           display-date: Monday, Feb 23
           date: 2/23/26
           docs:
@@ -125,7 +125,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "shiny I"
+        - topic: "Spatial data II: interactive"
           display-date: Wednesday, Feb 25
           date: 2/25/26
           docs:
@@ -133,17 +133,17 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 3 Due, Project 1 Released"
+        - topic: "Problem Set 3 Due, Problem Set 4 Released"
           display-date: Thursday, Feb 26 9:00am
           date: 2/26/26
           docs:
-            - type: Project 1
-              href: projects/proj01.qmd
+            - type: Problem Set 4
+              href: psets/pset04.qmd
       # resources:
       #   - 'Some text'
     - week: 6
       days:
-        - topic: "shiny II"
+        - topic: "shiny I"
           display-date: Monday, Mar 2
           date: 3/2/26
           docs:
@@ -151,7 +151,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "dates/factors/strings"
+        - topic: "shiny II"
           display-date: Wednesday, Mar 4
           date: 3/4/26
           docs:
@@ -159,17 +159,17 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 4 Released"
+        - topic: "Problem Set 4 Due, Project 1 Released"
           display-date: Thursday, Mar 5 9:00am
           date: 3/5/26
           docs:
-            - type: Problem Set 4
-              href: psets/pset04.qmd
+            - type: Project 1
+              href: projects/proj01.qmd
       # resources:
       #   - 'Some text'
     - week: 7
       days:
-        - topic: "string manipulation and regular expressions"
+        - topic: "dates/factors/strings"
           display-date: Monday, Mar 9
           date: 3/9/26
           docs:
@@ -177,7 +177,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Control flow"
+        - topic: "string manipulation and regular expressions"
           display-date: Wednesday, Mar 11
           date: 3/11/26
           docs:
@@ -185,17 +185,11 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 4 Due, Problem Set 5 Released"
-          display-date: Thursday, Mar 11 9:00am
-          date: 3/11/26
-          docs:
-            - type: Problem Set 5
-              href: psets/pset05.qmd
       # resources:
       #   - 'Some text'
     - week: 8
       days:
-        - topic: "Functions"
+        - topic: "Control flow"
           display-date: Monday, Mar 16
           date: 3/16/26
           docs:
@@ -203,7 +197,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Project 1 presentations"
+        - topic: "Project 1 presentations (Project 1 due)"
           display-date: Wednesday, Mar 18
           date: 3/18/26
           docs:
@@ -211,9 +205,6 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 5 Due"
-          display-date: Thursday, Mar 18 9:00am
-          date: 3/18/26
       # resources:
       #   - 'Some text'
     - week: Spring Break
@@ -222,7 +213,7 @@ scheduled-docs:
           display-date: Saturday, Mar 21 - Sunday, Mar 29
     - week: 9
       days:
-        - topic: "Iteration and lists"
+        - topic: "Functions"
           display-date: Monday, Mar 30
           date: 3/30/26
           docs:
@@ -230,7 +221,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "ellmer"
+        - topic: "Iteration"
           display-date: Wednesday, Apr 1
           date: 4/1/26
           docs:
@@ -238,11 +229,17 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 5 Released"
+          display-date: Thursday, Apr 2 9:00am
+          date: 4/2/26
+          docs:
+            - type: Problem Set 5
+              href: psets/pset05.qmd
       # resources:
       #   - 'Some text'
     - week: 10
       days:
-        - topic: "R packages: introduction"
+        - topic: "Debugging with generative AI: ellmer"
           display-date: Monday, Apr 6
           date: 4/6/26
           docs:
@@ -250,7 +247,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "R packages: documentation"
+        - topic: "R packages: introduction"
           display-date: Wednesday, Apr 8
           date: 4/8/26
           docs:
@@ -258,11 +255,17 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 5 Due, Problem Set 6 Released"
+          display-date: Thursday, Apr 9 9:00am
+          date: 4/9/26
+          docs:
+            - type: Problem Set 6
+              href: psets/pset06.qmd
       # resources:
       #   - 'Some text'
     - week: 11
       days:
-        - topic: "R packages: testing"
+        - topic: "R packages: documentation"
           display-date: Monday, Apr 13
           date: 4/13/26
           docs:
@@ -270,7 +273,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "R packages: dissemination"
+        - topic: "R packages: testing"
           display-date: Wednesday, Apr 15
           date: 4/15/26
           docs:
@@ -278,11 +281,17 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+        - topic: "Problem Set 6 Due, Project 2 Released"
+          display-date: Thursday, Apr 9 9:00am
+          date: 4/9/26
+          docs:
+            - type: Problem Set 6
+              href: projects/proj02.qmd
       # resources:
       #   - 'Some text'
     - week: 12
       days:
-        - topic: "TBD"
+        - topic: "R packages: dissemination"
           display-date: Monday, Apr 20
           date: 4/20/26
           docs:
@@ -290,7 +299,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Web scraping"
           display-date: Wednesday, Apr 22
           date: 4/22/26
           docs:
@@ -302,7 +311,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 13
       days:
-        - topic: "TBD"
+        - topic: "SQL and databases"
           display-date: Monday, Apr 27
           date: 4/27/26
           docs:
@@ -310,7 +319,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "TBD"
+        - topic: "Wrap up"
           display-date: Wednesday, Apr 29
           date: 4/29/26
           docs:
