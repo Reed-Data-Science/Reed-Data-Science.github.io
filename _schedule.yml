@@ -222,7 +222,7 @@ scheduled-docs:
           display-date: Saturday, Mar 21 - Sunday, Mar 29
     - week: 9
       days:
-        - topic: "Iteration"
+        - topic: "Iteration and lists"
           display-date: Monday, Mar 30
           date: 3/30/26
           docs:
