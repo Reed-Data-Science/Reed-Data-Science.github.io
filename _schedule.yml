@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 12/10/25
+  draft-after: 1/27/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -14,20 +14,18 @@ scheduled-docs:
           display-date: Monday, Jan 26
           date: 1/26/26
           docs:
-            - type: Reading
-              href: readings/readings_wk01wed.qmd
             - type: Slides
-              href: slides/math141_wk01wed.qmd
+              href: slides/math241_wk01mon.qmd
         - topic: "Data Visualization I: Principles"
           display-date: Wednesday, Jan 28
           date: 1/28/26
           docs:
             - type: Reading
-              href: readings/readings_wk01thu.qmd
-            - type: Lab Instructions
-              href: labs/lab_01_instructions.qmd
+              href: readings/readings_wk01wed.qmd
             - type: Slides
-              href: slides/math141_wk01thu.qmd
+              href: slides/math241_wk01wed.qmd
+            - type: Activity
+              href: in_class/activity1.qmd
         - topic: "Problem Set 0 Released"
           display-date: Thursday, Jan 29 9:00am
           date: 1/29/26

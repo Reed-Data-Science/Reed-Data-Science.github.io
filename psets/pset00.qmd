@@ -1,0 +1,38 @@
+---
+title: "Setup and Data Viz Considerations"
+subtitle: "Math 241: Lab 0"
+format: html
+editor: source
+toc: false
+---
+
+## Due: Thursday, Feb 5th, 9am PT.
+
+## Problem 1: Setup
+
+In this class, we'll encounter a variety of technologies. This problem aims to help you navigate setting up some of those technologies.
+
+### part a: GitHub
+
+We'll use GitHub for collaboration and portfolio building, so each of you need to have a GitHub profile. If you don't have a GitHub profile already, go to [https://github.com/](https://github.com/) and sign up for one. Once you've signed up for an account, please add it to the [Google Sheet](https://docs.google.com/spreadsheets/d/1yhQfUwGpKj1bQYg3rmDybKobVkh-tjnY-GcYn4LTf7c/edit?usp=sharing) so that I can add you to the Reed-Data-Science organization. Note: you'll need to be logged in to your Reed google account to edit the Google Sheet.
+
+### part b: R and RStudio (or Positron!)
+
+We'll use `R` and RStudio/Positron for computing in this class. `R` is a statistical programming language, while RStudio and Positron are Integrated Development Environments (IDEs) that allow you to run `R`, view files, view `R` code output, and much more! Reed has an [RStudio Server](https://rstudio.reed.edu/) where you can run `R` and RStudio in the cloud, but for this class I would recommend a local installation of both `R` and RStudio. Positron is a new IDE from Posit (the company that makes RStudio) you are welcomed and encouraged to try out Positron, although I may not be able to provide as good of problem solving for any issues related to your IDE if you use Positron. Positron seems to be the hot new thing, and I imagine in the next ~5 years we will see a steep decline of RStudio use in favor of Positron for `R` users and data scientists.
+
+To install `R` and RStudio, follow the [directions from Posit's website](https://posit.co/download/rstudio-desktop/).
+
+To install Positron, see this [link from Posit's website](https://positron.posit.co/download.html). 
+
+**Note**: always make sure to have `R` installed before installing your IDE. 
+
+
+## Problem 2: Data Visualization
+
+On Wednesday in class we talked about considerations for data visualization. In this problem, I'd like you to find two data visualizations "in the wild". In particular, I'd like you to find one data visualization that you think is very good at accurately portraying the story/answering the research question at hand, and another that is quite bad at the task. For both data visualizations, make sure they are portraying real data, and not simulated or fake data. Once you've found your visualizations, post an image (or link to, if interactive) in our `datasci-in-the-wild` Slack channel, along with a few sentences about why you believe the data visualization to be quite good/bad. Also, make sure to respond to at least two other data visualizations posted in the channel.
+
+If you're having trouble finding a data visualization, some places to consider might be: 
+
+-   [The New York Times](https://www.nytimes.com/)
+-   [Information is beautiful](https://informationisbeautiful.net/)
+-   [r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/) or its other half, [r/dataisugly](https://www.reddit.com/r/dataisugly/)
