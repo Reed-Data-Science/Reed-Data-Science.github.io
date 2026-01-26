@@ -819,7 +819,7 @@ ggplotly(p)
 I have a few `R` packages on the [Comprehensive R Archival Network](https://cran.r-project.org/):
 
 * `gglm`: Produces diagnostic plots for linear models with the `ggplot2` package as its back-end.
-* `saeczi`: Contains a two-stage model-based estimator to do estimation in areas that are zero-inflated.
+* `forested`: A data package that contains US Forest Service data in Washington state.
 
 :::: {.columns}
 
@@ -831,7 +831,7 @@ I have a few `R` packages on the [Comprehensive R Archival Network](https://cran
 
 ::: {.column width="50%" .fragment}
 
-![](img/saeczi.png){width="30%"}
+![](img/forested.png){width="30%"}
 
 :::
 
