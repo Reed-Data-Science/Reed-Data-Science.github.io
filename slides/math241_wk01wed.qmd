@@ -86,6 +86,9 @@ theme_update(text = element_text(size = 20))
 ::::
 
 
+# First: P-set 0
+
+
 # Let's start with the language we will use to describe the components of a graph:
 
 ::: {.fragment}
@@ -507,11 +510,12 @@ math241_form <- read_csv("data/Background Survey for Math 241_ Data Science (Res
                                         "Moderate experience",
                                         "Expert"))
 
-ggplot(data = math241_form, mapping = aes(x = tidyr)) +
+ggplot(data = math241_form, mapping = aes(x = ggplot2)) +
   geom_bar(fill = "#A71F69", color = "white") +
-  labs(x = "tidyr Experience",
+  labs(x = "ggplot2 Experience",
        y = "Number of students") +
-  coord_flip()
+  coord_flip() + 
+  scale_y_continuous(breaks = 0:12)
 ```
 
 :::
@@ -520,8 +524,8 @@ ggplot(data = math241_form, mapping = aes(x = tidyr)) +
 
 ```{r, echo = FALSE}
 math241_form %>%
-  count(tidyr) %>%
-ggplot(aes(x = "", y = n, fill = tidyr)) +
+  count(ggplot2) %>%
+ggplot(aes(x = "", y = n, fill = ggplot2)) +
   geom_bar(stat = "identity", width=1) +
   coord_polar("y", start=0)   +
   theme_void() +
@@ -598,6 +602,8 @@ Difficult to respect with spatial data.  Why?
 include_graphics("img/climate-action.png") 
 ```
 
+- [Land doesn't vote, people do.](https://storymaps.arcgis.com/stories/0e636a652d44484b9457f953994b212b)
+
 ------------------------------------------------------------------------
 
 ## Consideration: [Respect the principle of proportional ink.](https://projects.fivethirtyeight.com/gop-house-2022/) 
@@ -610,7 +616,7 @@ include_graphics("img/waffle.png")
 
 ------------------------------------------------------------------------
 
-## Consideration: [Try to have a high data-ink ratio.](https://vizdata.org/slides/01/01-layers-1.html#/section)
+## Consideration: Try to have a high data-ink ratio.
 
 **Data-ink ratio**: "proportion of a graphic's ink devoted to the non-redundant display of data-information." -- Edward Tufte
 
@@ -634,7 +640,7 @@ include_graphics("img/mean-area-decade-scatter-1.png")
 
 ::::
 
-Hat tip: Mine Çetinkaya-Rundel
+Credit: Mine Çetinkaya-Rundel
 
 ------------------------------------------------------------------------
 
@@ -848,7 +854,7 @@ ggplot(data = idaho_plots, mapping = aes(x = elev, y = BA_TPA_ADJ)) +
 :::
 ------------------------------------------------------------------------
 
-## Consideration: [Make important comparisons easy.](https://serialmentor.com/dataviz/visualizing-proportions.html)
+## Consideration: Make important comparisons easy.
 
 Which graph makes it easy to conclude that the ruling coalition (FDP + SPD) have a majority?
 
@@ -858,7 +864,7 @@ include_graphics("img/bundestag.png")
 
 ------------------------------------------------------------------------
 
-## Consideration: [Make important comparisons easy.](https://serialmentor.com/dataviz/visualizing-proportions.html) {.smaller}
+## Consideration: Make important comparisons easy. {.smaller}
 
 Which graph makes it easy to see how a company's market share changes over time? (Warning: Fake data.)
 
@@ -968,7 +974,7 @@ p1 <- ggplot(data = math241_form, mapping = aes(x = ggplot2, fill = dplyr)) +
   guides(fill = guide_legend(nrow = 2, byrow = TRUE))
 
 p2 <- ggplot(data = math241_form, mapping = aes(x = ggplot2, fill = dplyr)) +
-  geom_bar(color = "white", linewidth = 2) +
+  geom_bar(color = "black", linewidth = 2) +
   labs(x = "ggplot2 Experience",
        y = "Number of students") +
   coord_flip() +
@@ -1012,15 +1018,17 @@ p1 + p2
 
 :::
 
-::: {.fragment}
+::: {.fragment .nonincremental}
 
-* Let's spend some time considering the strengths and weaknesses of some graphs via an activity.
+* Let's spend some time considering the strengths and weaknesses of some graphs via an [activity](../in_class/activity1.qmd).
     + Pick out the:
         + Clearest story
         + Most memorable
         + Best overall
 
 :::
+
+* Be ready to present one of your graphs to the class, if we have time.
 
 ```{r}
 #| echo: false

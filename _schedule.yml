@@ -16,6 +16,8 @@ scheduled-docs:
           docs:
             - type: Slides
               href: slides/math241_wk01mon.qmd
+            - type: Slides (PDF)
+              href: pdfs/math241_wk01mon.pdf
         - topic: "Data Visualization I: Principles"
           display-date: Wednesday, Jan 28
           date: 1/28/26
