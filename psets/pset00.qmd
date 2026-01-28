@@ -6,7 +6,9 @@ editor: source
 toc: false
 ---
 
-## Due: Thursday, Feb 5th, 9am PT.
+## Due: Wednesday, Feb 4th, 9am PT.
+
+**NOTE**: for this problem set only, this is due on WEDNESDAY 9am, not THURSDAY 9am!
 
 ## Problem 1: Setup
 
@@ -26,9 +28,9 @@ To install Positron, see this [link from Posit's website](https://positron.posit
 
 **Note**: always make sure to have `R` installed before installing your IDE. 
 
-### part c (OPTIONAL, for now): Connect git, GitHub and RStudio (or Positron)
+### part c: Connect git, GitHub and RStudio (or Positron)
 
-We will spend some time in class going through these steps in the coming weeks, but I wanted to give you the option to try it on your own if you'd like to. If you're feeling up for it, I'd suggest trying this step. These instructions are based on pieces of [Happy git with R](https://happygitwithr.com/), in particular chapters 6, 7, and 9. 
+These instructions are based on pieces of [Happy git with R](https://happygitwithr.com/), in particular chapters 6, 7, and 9. Depending on your computer, setup, or just luck, this step can become difficult/frustrating. If you are having trouble with this step, please come to office hours for help!  
 
 In order to have your computer talk with GitHub, you'll need to install git on your computer. Sometimes, git is already installed on your computer, and you can check it by running
 
@@ -76,13 +78,50 @@ and then enter the token when prompted. If also this has gone well, you are set!
 Unless... you're running Linux. If you're running Linux, I am happy to help you get git working correctly, but I'd say the first step is to read and follow Danielle Navarro's [blog post](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/), in addition to the steps above. 
 
 
+### part d: testing
+
+To make sure everything is working correctly, run
+
+```{r}
+#| eval: false
+gitcreds::gitcreds_get()
+```
+
+in an R session/console. You should see something like
+
+```
+<gitcreds>
+  protocol: https
+  host    : github.com
+  username: PersonalAccessToken
+  password: <-- hidden -->
+```
+
+but if you see
+
+```
+Error in throw(new_error("gitcreds_no_credentials", url = url)) : 
+  Could not find any credentials
+```
+
+something has gone wrong. 
+
+
+### part e: congrats!
+
+If you've made it this far, congrats! You've successfully set up git, GitHub, and your IDE on your local machine! We'll spend time in class during week 2 talking about how to use all of these tools, but for now you are good to go.
+
+If you've had trouble with any of these steps, please come to office hours so that we can debug and get you set up. 
+
+
 
 ## Problem 2: Data Visualization
 
-On Wednesday in class we talked about considerations for data visualization. In this problem, I'd like you to find two data visualizations "in the wild". In particular, I'd like you to find one data visualization that you think is very good at accurately portraying the story/answering the research question at hand, and another that is quite bad at the task. For both data visualizations, make sure they are portraying real data, and not simulated or fake data. Once you've found your visualizations, post an image (or link to, if interactive) in our `datasci-in-the-wild` Slack channel, along with a few sentences about why you believe the data visualization to be quite good/bad. Also, make sure to respond to at least two other data visualizations posted in the channel.
+On Wednesday in class we talked about considerations for data visualization. In this problem, I'd like you to find two data visualizations "in the wild". In particular, I'd like you to find one data visualization that you think is very good at accurately portraying the story/answering the research question at hand, and another that is quite bad at the task. For both data visualizations, make sure they are portraying real data, and not simulated or fake data. Once you've found your visualizations, post an image (or link to, if interactive) in our `datasci-in-the-wild` Slack channel, along with a few sentences about why you believe the data visualization to be quite good/bad. In your discussion of the graphs, make sure to mention the aesthetic mappings and other attributes of the graphs. Also, make sure to respond to and engage with at least one data viz from two other people in the channel.
 
 If you're having trouble finding a data visualization, some places to consider might be: 
 
--   [The New York Times](https://www.nytimes.com/)
+-   [The New York Times](https://www.nytimes.com/), in particular their [What's going on in this graph?](https://www.nytimes.com/column/whats-going-on-in-this-graph) column.
 -   [Information is beautiful](https://informationisbeautiful.net/)
 -   [r/dataisbeautiful](https://www.reddit.com/r/dataisbeautiful/) or its other half, [r/dataisugly](https://www.reddit.com/r/dataisugly/)
+

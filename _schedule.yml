@@ -26,14 +26,16 @@ scheduled-docs:
               href: readings/readings_wk01wed.qmd
             - type: Slides
               href: slides/math241_wk01wed.qmd
+            - type: Slides (PDF)
+              href: pdfs/math241_wk01wed.pdf
             - type: Activity
               href: in_class/activity1.qmd
         - topic: "Problem Set 0 Released"
           display-date: Thursday, Jan 29 9:00am
           date: 1/29/26
           docs:
-            # - type: Problem Set 0
-            #   href: psets/pset00.qmd
+            - type: Problem Set 0
+              href: psets/pset00.qmd
       resources:
         - '<a href="https://join.slack.com/t/reed-data-science/shared_invite/zt-3m9hhwi5f-javjb99NvUzwcC8r1MCXjg">Join Slack</a>'
         - 'Gradescope course entry code: ZJPD33'
