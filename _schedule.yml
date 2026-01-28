@@ -22,10 +22,10 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk01wed.qmd
-            # - type: Slides
-            #   href: slides/math241_wk01wed.qmd
-            # - type: Activity
-            #   href: in_class/activity1.qmd
+            - type: Slides
+              href: slides/math241_wk01wed.qmd
+            - type: Activity
+              href: in_class/activity1.qmd
         - topic: "Problem Set 0 Released"
           display-date: Thursday, Jan 29 9:00am
           date: 1/29/26
