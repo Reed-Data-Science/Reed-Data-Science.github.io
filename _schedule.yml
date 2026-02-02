@@ -47,8 +47,8 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk02mon.qmd
-            # - type: Slides
-            #   href: slides/math141_wk02mon.qmd
+            - type: Slides
+              href: slides/math241_wk02mon.qmd
         - topic: "Data Visualization III: Advanced ggplot2 and customization"
           display-date: Wednesday, Feb 4
           date: 2/4/26
@@ -56,7 +56,7 @@ scheduled-docs:
             - type: Reading
               href: readings/readings_wk02wed.qmd
             # - type: Slides
-            #   href: slides/math141_wk02wed.qmd
+            #   href: slides/math241_wk02wed.qmd
         - topic: "Problem Set 0 Due, Problem Set 1 Released"
           display-date: Thursday, Feb 5 9:00am
           date: 2/5/26
