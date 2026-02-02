@@ -193,7 +193,7 @@
     "href": "slides/math241_wk02mon.html#layer-order-sometimes-matters-2",
     "title": "Math 241",
     "section": "Layer order (sometimes) matters",
-    "text": "Layer order (sometimes) matters\n\n\nggplot(data = Births2015, \n       mapping = aes(x = date, y = births,\n                     color = wday)) + \n  geom_line() + \n  geom_point(color = \"#ff006e\") + \n  theme(legend.position = \"bottom\")"
+    "text": "Layer order (sometimes) matters\n\n\nggplot(data = Births2015, \n       mapping = aes(x = date, y = births,\n                     color = wday)) + \n  geom_line() + \n  geom_point(color = \"#ff006e\") + \n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n\nInheriting aesthetics discussion."
   },
   {
     "objectID": "slides/math241_wk02mon.html#lets-explore-other-geoms",
@@ -221,7 +221,7 @@
     "href": "slides/math241_wk02mon.html#adding-curves-2",
     "title": "Math 241",
     "section": "Adding Curve(s)",
-    "text": "Adding Curve(s)\n\n\nggplot(data = Births2015, \n       mapping = aes(x = date, y = births,\n                     color = wday)) + \n  geom_point() + \n  geom_smooth(color = \"black\", se = FALSE) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n\nWhat happened?"
+    "text": "Adding Curve(s)\n\n\nggplot(data = Births2015, \n       mapping = aes(x = date, y = births,\n                     color = wday)) + \n  geom_point() + \n  geom_smooth(color = \"black\", se = FALSE) +\n  theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n\nWhat happened?\nInheriting aesthetics discussion."
   },
   {
     "objectID": "slides/math241_wk02mon.html#new-example-movies-and-the-bechdel-test",
@@ -308,11 +308,18 @@
     "text": "Can display more than frequencies!\n\n\nmovies_ag &lt;- group_by(movies,\n                      rated, binary) %&gt;%\n  summarize(mean_budget = mean(budget))\n\nggplot(data = movies_ag,\n       mapping = aes(x = rated,\n                     y = binary,\n                     fill = mean_budget)) + \n  geom_tile() +\n  scale_fill_viridis_c(direction = -1) +\n  theme(legend.position = \"bottom\")"
   },
   {
+    "objectID": "slides/math241_wk02mon.html#can-display-more-than-frequencies-1",
+    "href": "slides/math241_wk02mon.html#can-display-more-than-frequencies-1",
+    "title": "Math 241",
+    "section": "Can display more than frequencies!",
+    "text": "Can display more than frequencies!\n\n\noptions(scipen = 999) # turn off scientific notation\n\nmovies_ag &lt;- group_by(movies,\n                      rated, binary) %&gt;%\n  summarize(mean_budget = mean(budget))\n\nggplot(data = movies_ag,\n       mapping = aes(x = rated,\n                     y = binary,\n                     fill = mean_budget)) + \n  geom_tile() +\n  scale_fill_viridis_c(direction = -1,\n                       guide = guide_colorbar(angle = 90)) +\n  theme(legend.position = \"bottom\")"
+  },
+  {
     "objectID": "slides/math241_wk02mon.html#distributions-geom_histogram",
     "href": "slides/math241_wk02mon.html#distributions-geom_histogram",
     "title": "Math 241",
     "section": "Distributions: geom_histogram",
-    "text": "Distributions: geom_histogram\n\n\nggplot(movies, aes(x = budget)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\nVerbalize the mapping."
+    "text": "Distributions: geom_histogram\n\n\nggplot(movies, aes(x = budget)) +\n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\nDescribe the mapping."
   },
   {
     "objectID": "slides/math241_wk02mon.html#distributions-geom_histogram-1",
@@ -333,21 +340,21 @@
     "href": "slides/math241_wk02mon.html#distributions-geom_histogram-3",
     "title": "Math 241",
     "section": "Distributions: geom_histogram",
-    "text": "Distributions: geom_histogram\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram(bins = 50,\n                 alpha = 0.4,\n                 position = \"identity\")\n\n\n\n\n\n\n\n\n\n\nStill problematic"
+    "text": "Distributions: geom_histogram\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram(bins = 50,\n                 alpha = 0.4,\n                 position = \"identity\")\n\n\n\n\n\n\n\n\n\n\nStill problematic."
   },
   {
-    "objectID": "slides/math241_wk02mon.html#one-option-facetting",
-    "href": "slides/math241_wk02mon.html#one-option-facetting",
+    "objectID": "slides/math241_wk02mon.html#one-option-faceting",
+    "href": "slides/math241_wk02mon.html#one-option-faceting",
     "title": "Math 241",
-    "section": "One option: Facetting",
-    "text": "One option: Facetting\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram(bins = 50) +\n  facet_wrap(~binary) +\n  guides(fill = \"none\")"
+    "section": "One option: Faceting",
+    "text": "One option: Faceting\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram(bins = 50) +\n  facet_wrap(~binary) +\n  guides(fill = \"none\")"
   },
   {
-    "objectID": "slides/math241_wk02mon.html#one-option-facetting-1",
-    "href": "slides/math241_wk02mon.html#one-option-facetting-1",
+    "objectID": "slides/math241_wk02mon.html#one-option-faceting-1",
+    "href": "slides/math241_wk02mon.html#one-option-faceting-1",
     "title": "Math 241",
-    "section": "One option: Facetting",
-    "text": "One option: Facetting\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram() +\n  facet_grid(rated ~ binary, scales = \"free_y\") +\n  guides(fill = \"none\")"
+    "section": "One option: Faceting",
+    "text": "One option: Faceting\n\n\nggplot(movies, aes(x = budget, \n                   fill = binary)) +\n  geom_histogram() +\n  facet_grid(rated ~ binary, scales = \"free_y\") +\n  guides(fill = \"none\")"
   },
   {
     "objectID": "slides/math241_wk02mon.html#another-option-geom_density",

@@ -368,7 +368,7 @@ $ day_of_week  &lt;dbl&gt; 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1,
 </div>
 </div>
 </section>
-<section id="example-cycles-related-to-day-of-the-week-1" class="slide level2">
+<section id="example-cycles-related-to-day-of-the-week-1" class="slide level2 smaller">
 <h2>Example: Cycles related to day of the week?</h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
@@ -591,6 +591,9 @@ $ day_of_week  &lt;dbl&gt; 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1,
 </div>
 </div>
 </div></div>
+<ul>
+<li class="fragment">Inheriting aesthetics discussion.</li>
+</ul>
 </section>
 <section id="lets-explore-other-geoms" class="slide level2">
 <h2>Let’s explore other <strong>geom</strong>s</h2>
@@ -693,7 +696,8 @@ $ day_of_week  &lt;dbl&gt; 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1,
 </div>
 </div></div>
 <ul>
-<li>What happened?</li>
+<li class="fragment"><p>What happened?</p></li>
+<li class="fragment"><p>Inheriting aesthetics discussion.</p></li>
 </ul>
 </section>
 <section id="new-example-movies-and-the-bechdel-test" class="slide level2">
@@ -881,7 +885,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Describe the mapping.</li>
+<li>Describe the mapping.</li>
 </ul>
 </section>
 <section id="two-categorical-variables-geom_bar-1" class="slide level2">
@@ -902,7 +906,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Describe the mapping.</li>
+<li>Describe the mapping.</li>
 </ul>
 </section>
 <section id="two-categorical-variables-geom_bar-2" class="slide level2">
@@ -923,7 +927,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Describe the mapping.</li>
+<li>Describe the mapping.</li>
 </ul>
 </section>
 <section id="two-categorical-variables-geom_tile" class="slide level2">
@@ -947,7 +951,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Describe the mapping.</li>
+<li>Describe the mapping.</li>
 </ul>
 </section>
 <section id="two-categorical-variables-geom_tile-1" class="slide level2">
@@ -1000,8 +1004,33 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 </section>
-<section class="slide level2">
-
+<section id="can-display-more-than-frequencies-1" class="slide level2">
+<h2>Can display more than frequencies!</h2>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># turn off scientific notation</span></span>
+<span id="cb37-2"><a></a></span>
+<span id="cb37-3"><a></a>movies_ag <span class="ot">&lt;-</span> <span class="fu">group_by</span>(movies,</span>
+<span id="cb37-4"><a></a>                      rated, binary) <span class="sc">%&gt;%</span></span>
+<span id="cb37-5"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_budget =</span> <span class="fu">mean</span>(budget))</span>
+<span id="cb37-6"><a></a></span>
+<span id="cb37-7"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> movies_ag,</span>
+<span id="cb37-8"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> rated,</span>
+<span id="cb37-9"><a></a>                     <span class="at">y =</span> binary,</span>
+<span id="cb37-10"><a></a>                     <span class="at">fill =</span> mean_budget)) <span class="sc">+</span> </span>
+<span id="cb37-11"><a></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb37-12"><a></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>,</span>
+<span id="cb37-13"><a></a>                       <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(<span class="at">angle =</span> <span class="dv">90</span>)) <span class="sc">+</span></span>
+<span id="cb37-14"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk02mon_files/figure-revealjs/movies9.2-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
 </section></section>
 <section>
 <section id="what-are-useful-geoms-graphs-for-visualizing-distributions" class="title-slide slide level1 center">
@@ -1012,8 +1041,8 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_histogram</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget)) <span class="sc">+</span></span>
-<span id="cb37-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget)) <span class="sc">+</span></span>
+<span id="cb38-2"><a></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1024,17 +1053,17 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Verbalize the mapping.</li>
+<li>Describe the mapping.</li>
 </ul>
 </section>
 <section id="distributions-geom_histogram-1" class="slide level2">
 <h2>Distributions: <code>geom_histogram</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget)) <span class="sc">+</span></span>
-<span id="cb38-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
-<span id="cb38-3"><a></a>                 <span class="at">color =</span> <span class="st">"white"</span>,</span>
-<span id="cb38-4"><a></a>                 <span class="at">fill =</span> <span class="st">"darkcyan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget)) <span class="sc">+</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
+<span id="cb39-3"><a></a>                 <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb39-4"><a></a>                 <span class="at">fill =</span> <span class="st">"darkcyan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1052,10 +1081,10 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_histogram</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
-<span id="cb39-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
-<span id="cb39-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
-<span id="cb39-4"><a></a>                 <span class="at">color =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
+<span id="cb40-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
+<span id="cb40-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
+<span id="cb40-4"><a></a>                 <span class="at">color =</span> <span class="st">"white"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1073,11 +1102,11 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_histogram</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
-<span id="cb40-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
-<span id="cb40-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>,</span>
-<span id="cb40-4"><a></a>                 <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
-<span id="cb40-5"><a></a>                 <span class="at">position =</span> <span class="st">"identity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
+<span id="cb41-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
+<span id="cb41-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>,</span>
+<span id="cb41-4"><a></a>                 <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb41-5"><a></a>                 <span class="at">position =</span> <span class="st">"identity"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1088,18 +1117,18 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 <ul>
-<li class="fragment">Still problematic</li>
+<li>Still problematic.</li>
 </ul>
 </section>
-<section id="one-option-facetting" class="slide level2">
-<h2>One option: Facetting</h2>
+<section id="one-option-faceting" class="slide level2">
+<h2>One option: Faceting</h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
-<span id="cb41-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
-<span id="cb41-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb41-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>binary) <span class="sc">+</span></span>
-<span id="cb41-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
+<span id="cb42-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
+<span id="cb42-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
+<span id="cb42-4"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>binary) <span class="sc">+</span></span>
+<span id="cb42-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1110,15 +1139,15 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 </div>
 </div></div>
 </section>
-<section id="one-option-facetting-1" class="slide level2">
-<h2>One option: Facetting</h2>
+<section id="one-option-faceting-1" class="slide level2">
+<h2>One option: Faceting</h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
-<span id="cb42-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
-<span id="cb42-3"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
-<span id="cb42-4"><a></a>  <span class="fu">facet_grid</span>(rated <span class="sc">~</span> binary, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb42-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
+<span id="cb43-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
+<span id="cb43-3"><a></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb43-4"><a></a>  <span class="fu">facet_grid</span>(rated <span class="sc">~</span> binary, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb43-5"><a></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1133,10 +1162,10 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Another option: <code>geom_density</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
-<span id="cb43-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
-<span id="cb43-3"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>)  <span class="sc">+</span></span>
-<span id="cb43-4"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget, </span>
+<span id="cb44-2"><a></a>                   <span class="at">fill =</span> binary)) <span class="sc">+</span></span>
+<span id="cb44-3"><a></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>)  <span class="sc">+</span></span>
+<span id="cb44-4"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1151,9 +1180,9 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_boxplot</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
-<span id="cb44-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
-<span id="cb44-3"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
+<span id="cb45-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
+<span id="cb45-3"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1168,10 +1197,10 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_boxplot</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
-<span id="cb45-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
-<span id="cb45-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">varwidth =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb45-4"><a></a>               <span class="at">notch =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
+<span id="cb46-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
+<span id="cb46-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">varwidth =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb46-4"><a></a>               <span class="at">notch =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1190,10 +1219,10 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_boxplot</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
-<span id="cb46-2"><a></a>                   <span class="at">y =</span> budget,</span>
-<span id="cb46-3"><a></a>                   <span class="at">fill =</span> rated)) <span class="sc">+</span></span>
-<span id="cb46-4"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
+<span id="cb47-2"><a></a>                   <span class="at">y =</span> budget,</span>
+<span id="cb47-3"><a></a>                   <span class="at">fill =</span> rated)) <span class="sc">+</span></span>
+<span id="cb47-4"><a></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1208,9 +1237,9 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_violin</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
-<span id="cb47-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
-<span id="cb47-3"><a></a>  <span class="fu">geom_violin</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
+<span id="cb48-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
+<span id="cb48-3"><a></a>  <span class="fu">geom_violin</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1228,12 +1257,12 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <h2>Distributions: <code>geom_violin</code></h2>
 <div class="cell columns column-output-location" data-layout-align="center">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
-<span id="cb48-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
-<span id="cb48-3"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span> </span>
-<span id="cb48-4"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> .<span class="dv">1</span>,</span>
-<span id="cb48-5"><a></a>              <span class="at">width =</span> .<span class="dv">1</span>,</span>
-<span id="cb48-6"><a></a>              <span class="at">color =</span> <span class="st">"darkcyan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> binary, </span>
+<span id="cb49-2"><a></a>                   <span class="at">y =</span> budget)) <span class="sc">+</span></span>
+<span id="cb49-3"><a></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span> </span>
+<span id="cb49-4"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> .<span class="dv">1</span>,</span>
+<span id="cb49-5"><a></a>              <span class="at">width =</span> .<span class="dv">1</span>,</span>
+<span id="cb49-6"><a></a>              <span class="at">color =</span> <span class="st">"darkcyan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

@@ -228,7 +228,7 @@ glimpse(Births2015)
 
 ------------------------------------------------------------------------
 
-## Example: Cycles related to day of the week?
+## Example: Cycles related to day of the week? {.smaller}
 
 ```{r birthsPlot2}
 #| output-location: column
@@ -394,6 +394,8 @@ ggplot(data = Births2015,
   theme(legend.position = "bottom")
 ```
 
+- Inheriting aesthetics discussion.
+
 
 ------------------------------------------------------------------------
 
@@ -459,11 +461,9 @@ ggplot(data = Births2015,
   theme(legend.position = "bottom")
 ```
 
-::: {.nonincremental}
-
 * What happened?
 
-:::
+* Inheriting aesthetics discussion.
 
 ------------------------------------------------------------------------
 
@@ -611,7 +611,11 @@ ggplot(data = movies,
   geom_bar()
 ```
 
+::: {.nonincremental}
+
 * Describe the mapping.
+
+:::
 
 
 ------------------------------------------------------------------------
@@ -626,8 +630,11 @@ ggplot(data = movies,
   geom_bar(position = "fill")
 ```
 
+::: {.nonincremental}
+
 * Describe the mapping.
 
+:::
 
 ------------------------------------------------------------------------
 
@@ -641,8 +648,11 @@ ggplot(data = movies,
   geom_bar(position = "dodge")
 ```
 
+::: {.nonincremental}
+
 * Describe the mapping.
 
+:::
 
 ------------------------------------------------------------------------
 
@@ -659,8 +669,11 @@ ggplot(data = movies_ag,
   geom_tile()
 ```
 
+::: {.nonincremental}
+
 * Describe the mapping.
 
+:::
 
 ------------------------------------------------------------------------
 
@@ -703,6 +716,27 @@ ggplot(data = movies_ag,
 
 ------------------------------------------------------------------------
 
+## Can display more than frequencies!
+
+```{r movies9.2}
+#| output-location: column
+options(scipen = 999) # turn off scientific notation
+
+movies_ag <- group_by(movies,
+                      rated, binary) %>%
+  summarize(mean_budget = mean(budget))
+
+ggplot(data = movies_ag,
+       mapping = aes(x = rated,
+                     y = binary,
+                     fill = mean_budget)) + 
+  geom_tile() +
+  scale_fill_viridis_c(direction = -1,
+                       guide = guide_colorbar(angle = 90)) +
+  theme(legend.position = "bottom")
+```
+
+
 # What are useful `geom`s (graphs) for visualizing distributions?
 
 ------------------------------------------------------------------------
@@ -715,8 +749,11 @@ ggplot(movies, aes(x = budget)) +
   geom_histogram()
 ```
 
-* Verbalize the mapping.
+::: {.nonincremental}
 
+* Describe the mapping.
+
+:::
 
 ------------------------------------------------------------------------
 
@@ -761,12 +798,15 @@ ggplot(movies, aes(x = budget,
                  position = "identity")
 ```
 
-* Still problematic
+::: {.nonincremental}
 
+* Still problematic.
+
+:::
 
 ------------------------------------------------------------------------
 
-## One option: Facetting
+## One option: Faceting
 
 ```{r movies14}
 #| output-location: column
@@ -780,7 +820,7 @@ ggplot(movies, aes(x = budget,
 
 ------------------------------------------------------------------------
 
-## One option: Facetting
+## One option: Faceting
 
 ```{r movies14b}
 #| output-location: column
