@@ -456,8 +456,8 @@ ggplot(data = Births2015,
 ggplot(data = Births2015, 
        mapping = aes(x = date, y = births,
                      color = wday)) + 
-  geom_point() + 
   geom_smooth(color = "black", se = FALSE) +
+  geom_point() + 
   theme(legend.position = "bottom")
 ```
 
@@ -688,7 +688,7 @@ ggplot(data = movies_ag,
                      y = binary,
                      fill = n)) + 
   geom_tile() +
-  scale_fill_viridis_c(direction = -1)
+  scale_fill_distiller(palette = 4)
 ```
 
 * Change the `fill` scale!
@@ -764,7 +764,7 @@ ggplot(movies, aes(x = budget)) +
 ggplot(movies, aes(x = budget)) +
   geom_histogram(bins = 50, 
                  color = "white",
-                 fill = "darkcyan")
+                 fill = "darkcyan") 
 ```
 
 * Can modify the mapping via the `binwidth` or `bins` arguments
@@ -906,6 +906,7 @@ ggplot(movies, aes(x = binary,
 
 ```{r movies21}
 #| output-location: column
+
 ggplot(movies, aes(x = binary, 
                    y = budget)) +
   geom_violin() + 

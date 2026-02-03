@@ -683,8 +683,8 @@ $ day_of_week  &lt;dbl&gt; 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 1,
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> Births2015, </span>
 <span id="cb21-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> births,</span>
 <span id="cb21-3"><a></a>                     <span class="at">color =</span> wday)) <span class="sc">+</span> </span>
-<span id="cb21-4"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb21-5"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb21-6"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
@@ -965,7 +965,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <span id="cb35-5"><a></a>                     <span class="at">y =</span> binary,</span>
 <span id="cb35-6"><a></a>                     <span class="at">fill =</span> n)) <span class="sc">+</span> </span>
 <span id="cb35-7"><a></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
-<span id="cb35-8"><a></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-8"><a></a>  <span class="fu">scale_fill_distiller</span>(<span class="at">palette =</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -1063,7 +1063,7 @@ $ error         &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">ggplot</span>(movies, <span class="fu">aes</span>(<span class="at">x =</span> budget)) <span class="sc">+</span></span>
 <span id="cb39-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, </span>
 <span id="cb39-3"><a></a>                 <span class="at">color =</span> <span class="st">"white"</span>,</span>
-<span id="cb39-4"><a></a>                 <span class="at">fill =</span> <span class="st">"darkcyan"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-4"><a></a>                 <span class="at">fill =</span> <span class="st">"darkcyan"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
