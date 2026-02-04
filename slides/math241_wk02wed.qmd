@@ -473,7 +473,7 @@ ggplot(data = Births2015,
 
 ::: {.column width='50%'}
 
-And there are lots more ways to annotate your graph (shaded regions, spike lines...).  
+And there are lots more ways to annotate your graph (shaded regions, other context...).  
 
 
 A few notes:
