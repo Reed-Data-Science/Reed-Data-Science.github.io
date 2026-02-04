@@ -65,6 +65,7 @@ theme_update(text = element_text(size = 20))
 * P-Set 1 available now.
     + Will discuss how to access the p-sets today!
     + Due at 9am the following Thursday
+* My [Undergraduate Forestry Data Science summer research program](https://ufds-lab.com/) application deadline is **THIS FRIDAY!**
 
 :::
 
@@ -107,354 +108,21 @@ theme_update(text = element_text(size = 20))
 ::::
 
 
+## P-set tips
 
-# First: GitHub workflow demo
+- Start on your problem sets **early**, and **ask questions** (in Slack, office hours, the internet) when you get stuck!
+- Problem sets are meant to be engaged with over multiple days. It is a lot less effective for your learning if you try to sprint through it the day before it is due. 
+- If/when you get stuck, it can be helpful to take a break! Some things to try:
+    - Go onto another problem, solving it may give you ideas as to how to solve the one you are stuck on. 
+    - Think about the problem as you are brushing your teeth or laying in bed. 
+    - Time where you are "bored"/giving your brain time to wander can be helpful for problem solving. 
 
 
-## Reproducible Workflow
 
-* One where if you shared your data and work with someone else, they could reproduce your results.
+# Now: GitHub workflow demo
 
-* Not the same as **replication**: Where someone collects new data following your same design to see if they get the same results.
 
 
-:::: {.columns}
-
-::: {.column width="60%" .nonincremental .fragment}
-
-* `Quarto` documents allow us to include our `R` code, output, and narrative in the same place. 
-    + Load the **raw** data.
-    + Be transparent about all the analysis steps.
-    + Even if you don't showcase the `R` code in the output file, it is contained in the `Rmd` file.
-
-:::
-
-::: {.column width="40%" .fragment}
-
-
-```{r  out.width = "40%", echo=FALSE, fig.align='center'}
-include_graphics("img/quarto.png") 
-```
-
-:::
-
-::::
-
-------------------------------------------------------------------------
-
-
-## Creating `repr`oducible `ex`amples with `reprex`
-
-```{r, echo = FALSE, out.width= "15%"}
-knitr::include_graphics("img/reprex.png")
-``` 
-
-
-::: {.fragment}
-
-#### Why do I need to learn to create reproducible technical examples?
-
-
-
-- So that you can ask and answer questions in our class Slack Workspace or Stack Overflow or other `R` help sites!
-
-:::
-
-------------------------------------------------------------------------
-
-# First, let's take a look at some bad examples!
-
-
-
-## What is wrong with this coding question?
-
-<br>
-
-I am trying to create a plot and I can't get the bars to do what I want them to.  Help?!
-
-
-
-------------------------------------------------------------------------
-
-
-## What is wrong with this coding question?
-
-<br>
-
-
-I want to do the following but it isn't working:
-
-thing <- read.csv("long/file/path/thing.csv")
-
-ggplot(thing, aes(x = factor(that))) + geom_bar()
-
-
-Help?!
-
-
-
-------------------------------------------------------------------------
-
-
-## What is wrong with this coding question?
-
-<br>
-
-
-I want to reorder the bars of my plot but can't get it working.  Help!
-
-```{r}
-#| output: false
-library(tidyverse)
-library(palmerpenguins)
-
-penguins <- penguins %>%
-  group_by(species) %>%
-  mutate(mean_flipper = mean(flipper_length_mm)) %>%
-  ungroup() %>%
-  mutate(long = case_when(flipper_length_mm < mean(flipper_length_mm) ~ "no",
-                           flipper_length_mm >= mean(flipper_length_mm) ~ "yes"))  
-
-penguins %>%
-  ggplot(mapping = aes(x = factor(species))) +
-  geom_bar()
-
-penguins %>%
-  count(species)
-```
-
-
-------------------------------------------------------------------------
-
-
-## What is wrong with this coding question?
-
-<br>
-
-
-I want to reorder the bars of my plot but can't get it working.  Help!
-
-```{r, eval = FALSE}
-rm(list = ls())
-
-library(tidyverse)
-library(palmerpenguins)
-
-penguins %>%
-  ggplot(mapping = aes(x = factor(species))) +
-  geom_bar()
-
-```
-
-
-
-------------------------------------------------------------------------
-
-
-## [What makes a good coding question?](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)
-
-
-
-
-
-* It uses a **minimal** dataset to reproduce the issue.
-
-* It includes the **shortest** amount of  **runnable** code necessary to reproduce the issue.
-
-* It doesn't wreak havoc on other people's computers.
-
-* It includes code **and output** so that others don't have to run it!
-
-::: {.fragment .nonincremental}
-
-* It includes any necessary information on the used packages, R version, system, etc.
-    + Should not be a concern for our class Slack since we are all on the same RStudio Server.
-    + Can use `packageVersion("tidyverse")` or `sessionInfo()` to find this information.
-
-:::
-
-------------------------------------------------------------------------
-
-
-## Minimal Dataset: two good options
-
-::: {.fragment}
-
-Create a toy data frame.
-
-```{r}
-dat <- data.frame(animal = c("cat", "dog", "mouse"), 
-                  weight = c(5, 10, 0.5))
-dat
-```
-
-:::
-
-
-::: {.fragment}
-    
-Use a built-in dataset or a dataset from a particular package.
-
-```{r}
-library(palmerpenguins)
-penguins
-```
-
-:::
-
-------------------------------------------------------------------------
-
-
-## Minimal Code
-
-Include the **necessary** libraries.
-
-Test run the code in a restarted R session to make sure it is runnable!
-
-```{r, fig.width = 5}
-library(tidyverse)
-library(palmerpenguins)
-
-penguins %>%
-  ggplot(mapping = aes(x = factor(species))) +
-  geom_bar()
-```
-
-
-
-------------------------------------------------------------------------
-
-
-## Make sure your code is copy-and-paste-able!
-
-Don't copy from the console.
-
-```{r, eval = FALSE}
-> library(tidyverse)
-> library(palmerpenguins)
-> 
-> penguins %>%
-+     ggplot(mapping = aes(x = factor(species))) +
-+     geom_bar()
-```
-
-
-
-------------------------------------------------------------------------
-
-
-## Make sure your code is copy-and-paste-able!
-
-
-![](img/screenshot.png)
-
-
-
-------------------------------------------------------------------------
-
-
-## Now we have our reproducible example:
-
-
-::: {.fragment}
-
-How can I reorder the bars in the ggplot to go from the most frequent to the least frequent category?
-
-```{r, fig.width = 4}
-#| output-location: column
-library(tidyverse)
-library(palmerpenguins)
-
-penguins %>%
-  ggplot(mapping = aes(x = factor(species))) +
-  geom_bar()
-```
-
-:::
-
-
-::: {.fragment}
-
-**How can we easily share it?**
-
-* Using the `reprex()` function in the `reprex` package.
-
-:::
-
-------------------------------------------------------------------------
-
-
-## `reprex` Practice Time!
-
-
-But first: **Q**: What is an R script file?
-
-
-::: {.fragment}
-
-* A text file for entering R commands.
-
-:::
-
-
-::: {.fragment}
-
-**Q**: How is an R script file different from a Quarto or RMarkdown document?
-
-:::
-
-
-::: {.fragment}
-
-* You only put code in an `R` script.  
-* If you add any text you must comment it out with `#`.
-* Think of it as a single `R` chunk that you won't knit into an output document.
-* Useful when writing a lot of code and want to compartmentalize.
-
-
-:::
-
-------------------------------------------------------------------------
-
-
-## `reprex` Practice Time!
-
-
-::: {.nonincremental}
-
-(1) In **Session**, select "Clear Workspace" and then "Restart R".
-
-(2) Open a script file and include in the top line:
-
-```{r}
-library(reprex)
-```
-
-
-(3) Put the code you want to use in the script file and make sure it runs.  
-
-```{r, eval = FALSE}
-library(tidyverse)
-library(palmerpenguins)
-
-penguins %>%
-  ggplot(mapping = aes(x = factor(species))) +
-  geom_bar()
-```
-
-
-
-(4) Surround the code with `reprex({ ... }, venue = "slack")` and run it.
-
-(5) An md file will pop up. Copy all the contents of that file.  
-
-(6) Head over to the `#coding-qa` channel and paste in the contents as a reply to the `reprex` practice message.  A text box will pop-up and select "Apply". 
-
-(7) Above your code, type your question.  Then hit "Send".
-
-:::
-
-------------------------------------------------------------------------
 
 
 ## Recap Data: Births2015
@@ -968,6 +636,22 @@ ggplot(data = idaho_plots,
 ------------------------------------------------------------------------
 
 
+## Color Options: Saturation
+
+
+```{r fia8.2}
+#| output-location: column
+ggplot(data = idaho_plots,
+       mapping = aes(x = elev,
+                     y = log10(COUNT_TPA_ADJ))) +
+  geom_bin2d() + 
+  scale_fill_distiller(palette = "Purples", 
+                       direction = 1)
+```
+
+------------------------------------------------------------------------
+
+
 
 ## ColorBrewer YlGn palette
 
@@ -1246,6 +930,354 @@ ggsave(filename = "my_nice_figure.png",
 ------------------------------------------------------------------------
 
 
+
+## Reproducible Workflow
+
+* One where if you shared your data and work with someone else, they could reproduce your results.
+
+* Not the same as **replication**: Where someone collects new data following your same design to see if they get the same results.
+
+
+:::: {.columns}
+
+::: {.column width="60%" .nonincremental .fragment}
+
+* `Quarto` documents allow us to include our `R` code, output, and narrative in the same place. 
+    + Load the **raw** data.
+    + Be transparent about all the analysis steps.
+    + Even if you don't showcase the `R` code in the output file, it is contained in the `qmd` file.
+
+:::
+
+::: {.column width="40%" .fragment}
+
+
+```{r  out.width = "40%", echo=FALSE, fig.align='center'}
+include_graphics("img/quarto.png") 
+```
+
+:::
+
+::::
+
+------------------------------------------------------------------------
+
+
+## Creating `repr`oducible `ex`amples with `reprex`
+
+```{r, echo = FALSE, out.width= "15%"}
+knitr::include_graphics("img/reprex.png")
+``` 
+
+
+::: {.fragment}
+
+#### Why do I need to learn to create reproducible technical examples?
+
+
+
+- So that you can ask and answer questions in our class Slack Workspace or Stack Overflow or other `R` help sites!
+
+:::
+
+
+
+# First, let's take a look at some bad examples!
+
+
+
+## What is wrong with this coding question?
+
+<br>
+
+I am trying to create a plot and I can't get the bars to do what I want them to.  Help?!
+
+
+
+------------------------------------------------------------------------
+
+
+## What is wrong with this coding question?
+
+<br>
+
+
+I want to do the following but it isn't working:
+
+thing <- read.csv("long/file/path/thing.csv")
+
+ggplot(thing, aes(x = factor(that))) + geom_bar()
+
+
+Help?!
+
+
+
+------------------------------------------------------------------------
+
+
+## What is wrong with this coding question?
+
+<br>
+
+
+I want to reorder the bars of my plot but can't get it working.  Help!
+
+```{r}
+#| output: false
+library(tidyverse)
+library(palmerpenguins)
+
+penguins <- penguins %>%
+  group_by(species) %>%
+  mutate(mean_flipper = mean(flipper_length_mm)) %>%
+  ungroup() %>%
+  mutate(long = case_when(flipper_length_mm < mean(flipper_length_mm) ~ "no",
+                           flipper_length_mm >= mean(flipper_length_mm) ~ "yes"))  
+
+penguins %>%
+  ggplot(mapping = aes(x = factor(species))) +
+  geom_bar()
+
+penguins %>%
+  count(species)
+```
+
+
+------------------------------------------------------------------------
+
+
+## What is wrong with this coding question?
+
+<br>
+
+
+I want to reorder the bars of my plot but can't get it working.  Help!
+
+```{r, eval = FALSE}
+rm(list = ls())
+
+library(tidyverse)
+library(palmerpenguins)
+
+penguins %>%
+  ggplot(mapping = aes(x = factor(species))) +
+  geom_bar()
+
+```
+
+
+
+------------------------------------------------------------------------
+
+
+## [What makes a good coding question?](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)
+
+
+
+
+
+* It uses a **minimal** dataset to reproduce the issue.
+
+* It includes the **shortest** amount of  **runnable** code necessary to reproduce the issue.
+
+* It doesn't wreak havoc on other people's computers.
+
+* It includes code **and output** so that others don't have to run it!
+
+::: {.fragment .nonincremental}
+
+* It includes any necessary information on the used packages, R version, system, etc.
+    + Should not be a concern for our class Slack since we are all on the same RStudio Server.
+    + Can use `packageVersion("tidyverse")` or `sessionInfo()` to find this information.
+
+:::
+
+------------------------------------------------------------------------
+
+
+## Minimal Dataset: two good options
+
+::: {.fragment}
+
+Create a toy data frame.
+
+```{r}
+dat <- data.frame(animal = c("cat", "dog", "mouse"), 
+                  weight = c(5, 10, 0.5))
+dat
+```
+
+:::
+
+
+::: {.fragment}
+    
+Use a built-in dataset or a dataset from a particular package.
+
+```{r}
+library(palmerpenguins)
+penguins
+```
+
+:::
+
+------------------------------------------------------------------------
+
+
+## Minimal Code
+
+Include the **necessary** libraries.
+
+Test run the code in a restarted R session to make sure it is runnable!
+
+```{r, fig.width = 5}
+library(tidyverse)
+library(palmerpenguins)
+
+penguins %>%
+  ggplot(mapping = aes(x = factor(species))) +
+  geom_bar()
+```
+
+
+
+------------------------------------------------------------------------
+
+
+## Make sure your code is copy-and-paste-able!
+
+Don't copy from the console.
+
+```{r, eval = FALSE}
+> library(tidyverse)
+> library(palmerpenguins)
+> 
+> penguins %>%
++     ggplot(mapping = aes(x = factor(species))) +
++     geom_bar()
+```
+
+
+
+------------------------------------------------------------------------
+
+
+## Make sure your code is copy-and-paste-able!
+
+
+![](img/screenshot.png)
+
+
+
+------------------------------------------------------------------------
+
+
+## Now we have our reproducible example:
+
+
+::: {.fragment}
+
+How can I reorder the bars in the ggplot to go from the most frequent to the least frequent category?
+
+```{r, fig.width = 4}
+#| output-location: column
+library(tidyverse)
+library(palmerpenguins)
+
+penguins %>%
+  ggplot(mapping = aes(x = factor(species))) +
+  geom_bar()
+```
+
+:::
+
+
+::: {.fragment}
+
+**How can we easily share it?**
+
+* Using the `reprex()` function in the `reprex` package.
+
+:::
+
+------------------------------------------------------------------------
+
+
+## `reprex` Practice Time!
+
+
+But first: **Q**: What is an R script file?
+
+
+::: {.fragment}
+
+* A text file for entering R commands.
+
+:::
+
+
+::: {.fragment}
+
+**Q**: How is an R script file different from a Quarto or RMarkdown document?
+
+:::
+
+
+::: {.fragment}
+
+* You only put code in an `R` script.  
+* If you add any text you must comment it out with `#`.
+* Think of it as a single `R` chunk that you won't knit into an output document.
+* Useful when writing a lot of code and want to compartmentalize.
+
+
+:::
+
+------------------------------------------------------------------------
+
+
+## `reprex` Practice Time!
+
+
+::: {.nonincremental}
+
+(1) In **Session**, select "Clear Workspace" and then "Restart R".
+
+(2) Open a script file and include in the top line:
+
+```{r}
+library(reprex)
+```
+
+
+(3) Put the code you want to use in the script file and make sure it runs.  
+
+```{r, eval = FALSE}
+library(tidyverse)
+library(palmerpenguins)
+
+penguins %>%
+  ggplot(mapping = aes(x = factor(species))) +
+  geom_bar()
+```
+
+
+
+(4) Surround the code with `reprex({ ... }, venue = "slack")` and run it.
+
+(5) An md file will pop up. Copy all the contents of that file.  
+
+(6) Head over to the `#coding-qa` channel and paste in the contents as a reply to the `reprex` practice message.  A text box will pop-up and select "Apply". 
+
+(7) Above your code, type your question.  Then hit "Send".
+
+:::
+
+------------------------------------------------------------------------
+
+
+
 ### Next week
 
 
@@ -1257,6 +1289,7 @@ ggsave(filename = "my_nice_figure.png",
 * Hone our data wrangling skills
 
 * P-set 1 due on Thursday 2/12
+
 
 
 :::

@@ -1019,7 +1019,7 @@
     "href": "slides/math241_wk02wed.html#announcements",
     "title": "Math 241",
     "section": "Announcements",
-    "text": "Announcements\n\nOffice Hours Schedule\nP-Set 1 available now.\n\nWill discuss how to access the p-sets today!\nDue at 9am the following Thursday"
+    "text": "Announcements\n\nOffice Hours Schedule\nP-Set 1 available now.\n\nWill discuss how to access the p-sets today!\nDue at 9am the following Thursday\n\nMy Undergraduate Forestry Data Science summer research program application deadline is THIS FRIDAY!"
   },
   {
     "objectID": "slides/math241_wk02wed.html#week-2-goals",
@@ -1029,102 +1029,11 @@
     "text": "Week 2 Goals\n\n\nMon Lecture\n\nBasics of ggplot2\nExplore several geoms.\nAnd a little data wrangling with dplyr as needed!\n\n\nWed Lecture\n\nGitHub workflow overview\nLearn how to ask coding questions well.\nGraphing context!\n\nLabels\nHighlighting\nUseful text\n\nLook at more geoms.\nExplore further customizations.\n\nColor\nThemes"
   },
   {
-    "objectID": "slides/math241_wk02wed.html#reproducible-workflow",
-    "href": "slides/math241_wk02wed.html#reproducible-workflow",
+    "objectID": "slides/math241_wk02wed.html#p-set-tips",
+    "href": "slides/math241_wk02wed.html#p-set-tips",
     "title": "Math 241",
-    "section": "Reproducible Workflow",
-    "text": "Reproducible Workflow\n\nOne where if you shared your data and work with someone else, they could reproduce your results.\nNot the same as replication: Where someone collects new data following your same design to see if they get the same results.\n\n\n\n\nQuarto documents allow us to include our R code, output, and narrative in the same place.\n\nLoad the raw data.\nBe transparent about all the analysis steps.\nEven if you don’t showcase the R code in the output file, it is contained in the Rmd file."
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#creating-reproducible-examples-with-reprex",
-    "href": "slides/math241_wk02wed.html#creating-reproducible-examples-with-reprex",
-    "title": "Math 241",
-    "section": "Creating reproducible examples with reprex",
-    "text": "Creating reproducible examples with reprex\n\n\n\n\n\n\n\n\n\n\nWhy do I need to learn to create reproducible technical examples?\n\nSo that you can ask and answer questions in our class Slack Workspace or Stack Overflow or other R help sites!"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question",
-    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question",
-    "title": "Math 241",
-    "section": "What is wrong with this coding question?",
-    "text": "What is wrong with this coding question?\n\nI am trying to create a plot and I can’t get the bars to do what I want them to. Help?!"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-1",
-    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-1",
-    "title": "Math 241",
-    "section": "What is wrong with this coding question?",
-    "text": "What is wrong with this coding question?\n\nI want to do the following but it isn’t working:\nthing &lt;- read.csv(“long/file/path/thing.csv”)\nggplot(thing, aes(x = factor(that))) + geom_bar()\nHelp?!"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-2",
-    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-2",
-    "title": "Math 241",
-    "section": "What is wrong with this coding question?",
-    "text": "What is wrong with this coding question?\n\nI want to reorder the bars of my plot but can’t get it working. Help!\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins &lt;- penguins %&gt;%\n  group_by(species) %&gt;%\n  mutate(mean_flipper = mean(flipper_length_mm)) %&gt;%\n  ungroup() %&gt;%\n  mutate(long = case_when(flipper_length_mm &lt; mean(flipper_length_mm) ~ \"no\",\n                           flipper_length_mm &gt;= mean(flipper_length_mm) ~ \"yes\"))  \n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\npenguins %&gt;%\n  count(species)"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-3",
-    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-3",
-    "title": "Math 241",
-    "section": "What is wrong with this coding question?",
-    "text": "What is wrong with this coding question?\n\nI want to reorder the bars of my plot but can’t get it working. Help!\n\nrm(list = ls())\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#what-makes-a-good-coding-question",
-    "href": "slides/math241_wk02wed.html#what-makes-a-good-coding-question",
-    "title": "Math 241",
-    "section": "What makes a good coding question?",
-    "text": "What makes a good coding question?\n\nIt uses a minimal dataset to reproduce the issue.\nIt includes the shortest amount of runnable code necessary to reproduce the issue.\nIt doesn’t wreak havoc on other people’s computers.\nIt includes code and output so that others don’t have to run it!\n\n\n\nIt includes any necessary information on the used packages, R version, system, etc.\n\nShould not be a concern for our class Slack since we are all on the same RStudio Server.\nCan use packageVersion(\"tidyverse\") or sessionInfo() to find this information."
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#minimal-dataset-two-good-options",
-    "href": "slides/math241_wk02wed.html#minimal-dataset-two-good-options",
-    "title": "Math 241",
-    "section": "Minimal Dataset: two good options",
-    "text": "Minimal Dataset: two good options\n\nCreate a toy data frame.\n\ndat &lt;- data.frame(animal = c(\"cat\", \"dog\", \"mouse\"), \n                  weight = c(5, 10, 0.5))\ndat\n\n  animal weight\n1    cat    5.0\n2    dog   10.0\n3  mouse    0.5\n\n\n\n\nUse a built-in dataset or a dataset from a particular package.\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 10\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;, mean_flipper &lt;dbl&gt;, long &lt;chr&gt;"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#minimal-code",
-    "href": "slides/math241_wk02wed.html#minimal-code",
-    "title": "Math 241",
-    "section": "Minimal Code",
-    "text": "Minimal Code\nInclude the necessary libraries.\nTest run the code in a restarted R session to make sure it is runnable!\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able",
-    "href": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able",
-    "title": "Math 241",
-    "section": "Make sure your code is copy-and-paste-able!",
-    "text": "Make sure your code is copy-and-paste-able!\nDon’t copy from the console.\n\n&gt; library(tidyverse)\n&gt; library(palmerpenguins)\n&gt; \n&gt; penguins %&gt;%\n+     ggplot(mapping = aes(x = factor(species))) +\n+     geom_bar()"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able-1",
-    "href": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able-1",
-    "title": "Math 241",
-    "section": "Make sure your code is copy-and-paste-able!",
-    "text": "Make sure your code is copy-and-paste-able!"
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#now-we-have-our-reproducible-example",
-    "href": "slides/math241_wk02wed.html#now-we-have-our-reproducible-example",
-    "title": "Math 241",
-    "section": "Now we have our reproducible example:",
-    "text": "Now we have our reproducible example:\n\nHow can I reorder the bars in the ggplot to go from the most frequent to the least frequent category?\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nHow can we easily share it?\n\nUsing the reprex() function in the reprex package."
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#reprex-practice-time",
-    "href": "slides/math241_wk02wed.html#reprex-practice-time",
-    "title": "Math 241",
-    "section": "reprex Practice Time!",
-    "text": "reprex Practice Time!\nBut first: Q: What is an R script file?\n\n\nA text file for entering R commands.\n\n\n\nQ: How is an R script file different from a Quarto or RMarkdown document?\n\n\n\nYou only put code in an R script.\n\nIf you add any text you must comment it out with #.\nThink of it as a single R chunk that you won’t knit into an output document.\nUseful when writing a lot of code and want to compartmentalize."
-  },
-  {
-    "objectID": "slides/math241_wk02wed.html#reprex-practice-time-1",
-    "href": "slides/math241_wk02wed.html#reprex-practice-time-1",
-    "title": "Math 241",
-    "section": "reprex Practice Time!",
-    "text": "reprex Practice Time!\n\nIn Session, select “Clear Workspace” and then “Restart R”.\nOpen a script file and include in the top line:\n\n\nlibrary(reprex)\n\n\nPut the code you want to use in the script file and make sure it runs.\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\n\n\nSurround the code with reprex({ ... }, venue = \"slack\") and run it.\nAn md file will pop up. Copy all the contents of that file.\nHead over to the #coding-qa channel and paste in the contents as a reply to the reprex practice message. A text box will pop-up and select “Apply”.\nAbove your code, type your question. Then hit “Send”."
+    "section": "P-set tips",
+    "text": "P-set tips\n\nStart on your problem sets early, and ask questions (in Slack, office hours, the internet) when you get stuck!\nProblem sets are meant to be engaged with over multiple days. It is a lot less effective for your learning if you try to sprint through it the day before it is due.\nIf/when you get stuck, it can be helpful to take a break! Some things to try:\n\nGo onto another problem, solving it may give you ideas as to how to solve the one you are stuck on.\nThink about the problem as you are brushing your teeth or laying in bed.\nTime where you are “bored”/giving your brain time to wander can be helpful for problem solving."
   },
   {
     "objectID": "slides/math241_wk02wed.html#recap-data-births2015",
@@ -1302,6 +1211,13 @@
     "text": "Color Options: Saturation\n\n\nggplot(data = idaho_plots,\n       mapping = aes(x = elev,\n                     y = log10(COUNT_TPA_ADJ))) +\n  geom_bin2d() + \n  scale_fill_distiller(palette = \"Purples\")"
   },
   {
+    "objectID": "slides/math241_wk02wed.html#color-options-saturation-1",
+    "href": "slides/math241_wk02wed.html#color-options-saturation-1",
+    "title": "Math 241",
+    "section": "Color Options: Saturation",
+    "text": "Color Options: Saturation\n\n\nggplot(data = idaho_plots,\n       mapping = aes(x = elev,\n                     y = log10(COUNT_TPA_ADJ))) +\n  geom_bin2d() + \n  scale_fill_distiller(palette = \"Purples\", \n                       direction = 1)"
+  },
+  {
     "objectID": "slides/math241_wk02wed.html#colorbrewer-ylgn-palette",
     "href": "slides/math241_wk02wed.html#colorbrewer-ylgn-palette",
     "title": "Math 241",
@@ -1370,5 +1286,103 @@
     "title": "Math 241",
     "section": "Themes",
     "text": "Themes\n\n\nggplot(data = Births2015,\n       mapping = aes(x = date, y = births,\n                     color = wday)) + \n  geom_point()  +\n  theme(axis.title.x = \n        element_text(color = \"#C1D82F\", size = 20), \n        axis.title.y = \n        element_text(color = \"#00857D\", size = 25),\n        axis.text.x = \n        element_text(color = \"#C1D82F\", size = 12),\n        axis.text.y = \n        element_text(color = \"#FF7401\", size = 18))"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#reproducible-workflow",
+    "href": "slides/math241_wk02wed.html#reproducible-workflow",
+    "title": "Math 241",
+    "section": "Reproducible Workflow",
+    "text": "Reproducible Workflow\n\nOne where if you shared your data and work with someone else, they could reproduce your results.\nNot the same as replication: Where someone collects new data following your same design to see if they get the same results.\n\n\n\n\nQuarto documents allow us to include our R code, output, and narrative in the same place.\n\nLoad the raw data.\nBe transparent about all the analysis steps.\nEven if you don’t showcase the R code in the output file, it is contained in the qmd file."
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#creating-reproducible-examples-with-reprex",
+    "href": "slides/math241_wk02wed.html#creating-reproducible-examples-with-reprex",
+    "title": "Math 241",
+    "section": "Creating reproducible examples with reprex",
+    "text": "Creating reproducible examples with reprex\n\n\n\n\n\n\n\n\n\n\nWhy do I need to learn to create reproducible technical examples?\n\nSo that you can ask and answer questions in our class Slack Workspace or Stack Overflow or other R help sites!"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question",
+    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question",
+    "title": "Math 241",
+    "section": "What is wrong with this coding question?",
+    "text": "What is wrong with this coding question?\n\nI am trying to create a plot and I can’t get the bars to do what I want them to. Help?!"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-1",
+    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-1",
+    "title": "Math 241",
+    "section": "What is wrong with this coding question?",
+    "text": "What is wrong with this coding question?\n\nI want to do the following but it isn’t working:\nthing &lt;- read.csv(“long/file/path/thing.csv”)\nggplot(thing, aes(x = factor(that))) + geom_bar()\nHelp?!"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-2",
+    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-2",
+    "title": "Math 241",
+    "section": "What is wrong with this coding question?",
+    "text": "What is wrong with this coding question?\n\nI want to reorder the bars of my plot but can’t get it working. Help!\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins &lt;- penguins %&gt;%\n  group_by(species) %&gt;%\n  mutate(mean_flipper = mean(flipper_length_mm)) %&gt;%\n  ungroup() %&gt;%\n  mutate(long = case_when(flipper_length_mm &lt; mean(flipper_length_mm) ~ \"no\",\n                           flipper_length_mm &gt;= mean(flipper_length_mm) ~ \"yes\"))  \n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\npenguins %&gt;%\n  count(species)"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-3",
+    "href": "slides/math241_wk02wed.html#what-is-wrong-with-this-coding-question-3",
+    "title": "Math 241",
+    "section": "What is wrong with this coding question?",
+    "text": "What is wrong with this coding question?\n\nI want to reorder the bars of my plot but can’t get it working. Help!\n\nrm(list = ls())\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#what-makes-a-good-coding-question",
+    "href": "slides/math241_wk02wed.html#what-makes-a-good-coding-question",
+    "title": "Math 241",
+    "section": "What makes a good coding question?",
+    "text": "What makes a good coding question?\n\nIt uses a minimal dataset to reproduce the issue.\nIt includes the shortest amount of runnable code necessary to reproduce the issue.\nIt doesn’t wreak havoc on other people’s computers.\nIt includes code and output so that others don’t have to run it!\n\n\n\nIt includes any necessary information on the used packages, R version, system, etc.\n\nShould not be a concern for our class Slack since we are all on the same RStudio Server.\nCan use packageVersion(\"tidyverse\") or sessionInfo() to find this information."
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#minimal-dataset-two-good-options",
+    "href": "slides/math241_wk02wed.html#minimal-dataset-two-good-options",
+    "title": "Math 241",
+    "section": "Minimal Dataset: two good options",
+    "text": "Minimal Dataset: two good options\n\nCreate a toy data frame.\n\ndat &lt;- data.frame(animal = c(\"cat\", \"dog\", \"mouse\"), \n                  weight = c(5, 10, 0.5))\ndat\n\n  animal weight\n1    cat    5.0\n2    dog   10.0\n3  mouse    0.5\n\n\n\n\nUse a built-in dataset or a dataset from a particular package.\n\nlibrary(palmerpenguins)\npenguins\n\n# A tibble: 344 × 10\n   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n 1 Adelie  Torgersen           39.1          18.7               181        3750\n 2 Adelie  Torgersen           39.5          17.4               186        3800\n 3 Adelie  Torgersen           40.3          18                 195        3250\n 4 Adelie  Torgersen           NA            NA                  NA          NA\n 5 Adelie  Torgersen           36.7          19.3               193        3450\n 6 Adelie  Torgersen           39.3          20.6               190        3650\n 7 Adelie  Torgersen           38.9          17.8               181        3625\n 8 Adelie  Torgersen           39.2          19.6               195        4675\n 9 Adelie  Torgersen           34.1          18.1               193        3475\n10 Adelie  Torgersen           42            20.2               190        4250\n# ℹ 334 more rows\n# ℹ 4 more variables: sex &lt;fct&gt;, year &lt;int&gt;, mean_flipper &lt;dbl&gt;, long &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#minimal-code",
+    "href": "slides/math241_wk02wed.html#minimal-code",
+    "title": "Math 241",
+    "section": "Minimal Code",
+    "text": "Minimal Code\nInclude the necessary libraries.\nTest run the code in a restarted R session to make sure it is runnable!\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able",
+    "href": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able",
+    "title": "Math 241",
+    "section": "Make sure your code is copy-and-paste-able!",
+    "text": "Make sure your code is copy-and-paste-able!\nDon’t copy from the console.\n\n&gt; library(tidyverse)\n&gt; library(palmerpenguins)\n&gt; \n&gt; penguins %&gt;%\n+     ggplot(mapping = aes(x = factor(species))) +\n+     geom_bar()"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able-1",
+    "href": "slides/math241_wk02wed.html#make-sure-your-code-is-copy-and-paste-able-1",
+    "title": "Math 241",
+    "section": "Make sure your code is copy-and-paste-able!",
+    "text": "Make sure your code is copy-and-paste-able!"
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#now-we-have-our-reproducible-example",
+    "href": "slides/math241_wk02wed.html#now-we-have-our-reproducible-example",
+    "title": "Math 241",
+    "section": "Now we have our reproducible example:",
+    "text": "Now we have our reproducible example:\n\nHow can I reorder the bars in the ggplot to go from the most frequent to the least frequent category?\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\n\n\n\n\n\n\n\n\n\n\n\nHow can we easily share it?\n\nUsing the reprex() function in the reprex package."
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#reprex-practice-time",
+    "href": "slides/math241_wk02wed.html#reprex-practice-time",
+    "title": "Math 241",
+    "section": "reprex Practice Time!",
+    "text": "reprex Practice Time!\nBut first: Q: What is an R script file?\n\n\nA text file for entering R commands.\n\n\n\nQ: How is an R script file different from a Quarto or RMarkdown document?\n\n\n\nYou only put code in an R script.\n\nIf you add any text you must comment it out with #.\nThink of it as a single R chunk that you won’t knit into an output document.\nUseful when writing a lot of code and want to compartmentalize."
+  },
+  {
+    "objectID": "slides/math241_wk02wed.html#reprex-practice-time-1",
+    "href": "slides/math241_wk02wed.html#reprex-practice-time-1",
+    "title": "Math 241",
+    "section": "reprex Practice Time!",
+    "text": "reprex Practice Time!\n\nIn Session, select “Clear Workspace” and then “Restart R”.\nOpen a script file and include in the top line:\n\n\nlibrary(reprex)\n\n\nPut the code you want to use in the script file and make sure it runs.\n\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = factor(species))) +\n  geom_bar()\n\n\nSurround the code with reprex({ ... }, venue = \"slack\") and run it.\nAn md file will pop up. Copy all the contents of that file.\nHead over to the #coding-qa channel and paste in the contents as a reply to the reprex practice message. A text box will pop-up and select “Apply”.\nAbove your code, type your question. Then hit “Send”."
   }
 ]
