@@ -1,0 +1,218 @@
+---
+pagetitle: "Animation and Interactivity"
+editor: source
+format: 
+  revealjs:
+    html-math-method: mathjax
+    chalkboard: true
+    incremental: true
+    theme: [default, custom.scss]
+    height: 900
+    width: 1600
+    slide-number: c
+    auto-stretch: false
+    callout-appearance: simple
+    pdf-max-pages-per-slide: 2
+    menu: 
+      side: right
+      numbers: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.retina = 3, fig.align = 'center',
+                      fig.asp = 0.75, fig.width = 8)
+library(knitr)
+library(tidyverse)
+# 
+# options(htmltools.preserve.raw = FALSE)
+theme_update(text = element_text(size = 20))
+```
+
+::::: columns
+::: {.column .center width="60%"}
+![](img/r-hex.jpg){width="90%"}
+:::
+
+::: {.column .center width="40%"}
+<br>
+
+[Animation and Interactivity]{.custom-title}
+
+<br> <br> <br> <br> <br>
+
+[Grayson White]{.custom-subtitle}
+
+[Math 241 <br> Week 3 \| Fall 2025]{.custom-subtitle}
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Announcements
+
+::: {.nonincremental}
+
+* [Office Hours Schedule](https://reed-data-science.github.io/office_hours.html)
+    - Problem Set 1 due **tomorrow** at 9am.
+
+:::
+
+------------------------------------------------------------------------
+
+
+## Week 3 Goals
+
+:::: {.columns}
+
+::: {.column width='50%' .nonincremental .fragment}
+
+**Mon Lecture**
+
+* Think about reproducibility and learn how to ask coding questions well.
+
+* Motivate and work on data wrangling.
+
+:::
+
+::: {.column width='50%' .nonincremental .fragment}
+
+**Wed Lecture**
+
+* Plot animation.
+* GitHub workflow review.
+
+
+:::
+
+::::
+
+------------------------------------------------------------------------
+
+
+
+
+
+# New dataset: volcanic eruptions
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+#### What wrangling do we need to do to get from raw data to wrangled data?
+
+```{r}
+#head(eruptions)
+```
+
+
+
+------------------------------------------------------------------------
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+#### What wrangling do we need to do to get from raw data to wrangled data?
+
+
+```{r}
+#head(eruptions_aleutian)
+```
+
+
+
+------------------------------------------------------------------------
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+* More `filter()`ing
+
+```{r}
+# eruptions_aleutian <- eruptions %>%
+#   filter(Longitude > -172.164, Longitude < -157.1507, 
+#          Latitude > 50.977, Latitude < 59.5617,
+#          StartYear >= 2000)
+# eruptions_aleutian
+```
+
+
+------------------------------------------------------------------------
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+* `mutate()`: Create new variables or modify existing variables
+
+
+```{r}
+# eruptions_aleutian <- eruptions %>%
+#   filter(Longitude > -172.164, Longitude < -157.1507, 
+#          Latitude > 50.977, Latitude < 59.5617,
+#          StartYear >= 2000) %>%
+#   mutate(StartDate = make_date(StartYear, StartMonth, StartDay),
+#          EndDate = make_date(EndYear, EndMonth, EndDay),
+#          Start = as.numeric(StartDate - as_date("2000-01-01")),
+#          End = as.numeric(EndDate - as_date("2000-01-01")))
+# eruptions_aleutian
+```
+
+
+------------------------------------------------------------------------
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+`select()`: Subset the variables
+
+```{r}
+# eruptions_aleutian <- eruptions %>%
+#   filter(Longitude > -172.164, Longitude < -157.1507, 
+#          Latitude > 50.977, Latitude < 59.5617,
+#          StartYear >= 2000) %>%
+#   mutate(StartDate = make_date(StartYear, StartMonth, StartDay),
+#          EndDate = make_date(EndYear, EndMonth, EndDay),
+#          Start = as.numeric(StartDate - as_date("2000-01-01")),
+#          End = as.numeric(EndDate - as_date("2000-01-01"))) %>%
+#   select(VolcanoName, Latitude, Longitude,
+#          Start, End)
+# eruptions_aleutian
+```
+
+
+------------------------------------------------------------------------
+
+
+### Wrangling [Eruptions](https://volcano.si.edu/database/search_eruption_results.cfm)
+
+`drop_na()`: Remove any row that has a missing value for particular variables
+
+```{r}
+# eruptions_aleutian <- eruptions %>%
+#   filter(Longitude > -172.164, Longitude < -157.1507, 
+#          Latitude > 50.977, Latitude < 59.5617,
+#          StartYear >= 2000) %>%
+#   mutate(StartDate = make_date(StartYear, StartMonth, StartDay),
+#          EndDate = make_date(EndYear, EndMonth, EndDay),
+#          Start = as.numeric(StartDate - as_date("2000-01-01")),
+#          End = as.numeric(EndDate - as_date("2000-01-01"))) %>%
+#   select(VolcanoName, Latitude, Longitude,
+#          Start, End) %>%
+#   drop_na(Start, End)
+# eruptions_aleutian
+```
+
+
+------------------------------------------------------------------------
+
+
+
+
+## Next Week

@@ -1,6 +1,6 @@
 ---
 title: "Setup and Data Viz Considerations"
-subtitle: "Math 241: Lab 0"
+subtitle: "Math 241: Problem Set 0"
 format: html
 editor: source
 toc: false

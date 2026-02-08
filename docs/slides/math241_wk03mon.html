@@ -188,6 +188,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -505,17 +507,705 @@
 <li><p>Head over to the <code>#coding-qa</code> channel and paste in the contents as a reply to the <code>reprex</code> practice message. A text box will pop-up and select “Apply”.</p></li>
 <li><p>Above your code, type your question. Then hit “Send”.</p></li>
 </ol>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="data-wrangling" class="title-slide slide level1 center">
 <h1>Data Wrangling</h1>
 
 </section>
-<section id="next-week" class="slide level2">
-<h2>Next Week</h2>
+<section id="data-wrangling-1" class="slide level2">
+<h2>Data Wrangling</h2>
+<ul>
+<li class="fragment">So far, we’ve focused primarily on <strong>data visualization</strong>!</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>However, in order to make <strong>beautiful</strong> graphics, sometimes we have to go from</li>
+</ul>
+<p><strong>messy</strong> data ➡️ <strong>beautiful, wrangled, and cleaned</strong> data</p>
+</div>
+</section>
+<section id="example-data-in-the-wild" class="slide level2">
+<h2>Example: <a href="https://www.bts.gov/content/age-and-availability-amtrak-locomotive-and-car-fleets">Data In the Wild</a></h2>
+<p>Many datasets on the internet are often in <strong>Display Format</strong>, not <strong>Analysis Format</strong>.</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/bts.png" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<ul>
+<li class="fragment"><p>And, sometimes we’d like to modify a dataset to help us answer a specific question, or display the data in a particular way.</p></li>
+<li class="fragment"><p>Many of you have already needed to do some data wrangling in Problem Set 1.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="recall-this-visualization-from-week-1-day-1" class="slide level2">
+<h2>Recall this visualization from Week 1, Day 1</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk03mon_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">We need to be able to wrangle the data to make this visualization!</li>
+</ul>
+</section>
+<section id="recall-this-visualization-from-week-1-day-1-1" class="slide level2">
+<h2>Recall this visualization from Week 1, Day 1</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk03mon_files/figure-revealjs/unnamed-chunk-15-1.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>And to make the <strong>animated</strong> version!</li>
+</ul>
+<ul>
+<li class="fragment">In order to make these visualizations, we have to learn how to <strong>wrangle data</strong>!</li>
+</ul>
+</section>
+<section id="data-wrangling-2" class="slide level2">
+<h2>Data Wrangling</h2>
+<ul>
+<li class="fragment">What is it?
+<ul>
+<li class="fragment">Any processing you have to do to the data to summarize, visualize, model it.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Examples:
+<ul>
+<li>Recoding 999 as “NA”</li>
+<li>Removing rows</li>
+<li>Creating new variables</li>
+<li>Recoding category variables</li>
+<li>Fixing variable types</li>
+<li>Reshaping data into a format that satisfies the tidy data principles</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="data-wrangling-3" class="slide level2">
+<h2>Data Wrangling</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>We are going to learn <strong>several</strong> packages to help us wrangle data.</p></li>
+<li><p>We’ll learn the core of <code>dplyr</code> right now!</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/data_wrangling_packages.010.jpeg" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="math-241-dplyr-experience" class="slide level2">
+<h2>Math 241 <code>dplyr</code> Experience</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk03mon_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="dplyr-core-functions" class="slide level2">
+<h2><code>dplyr</code> core functions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="dplyr-for-data-wrangling">dplyr for Data Wrangling</h3>
+<ul>
+<li class="fragment">Common wrangling verbs:
+<ul>
+<li class="fragment"><code>select()</code></li>
+<li class="fragment"><code>mutate()</code></li>
+<li class="fragment"><code>filter()</code></li>
+<li class="fragment"><code>arrange()</code></li>
+<li class="fragment"><code>summarize()</code></li>
+<li class="fragment"><code>drop_na()</code></li>
+<li class="fragment"><code>count()</code></li>
+</ul></li>
+<li class="fragment">One action:
+<ul>
+<li class="fragment"><code>group_by()</code></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="pipe-for-chaining-together-commands">Pipe for chaining together commands</h3>
+<ul>
+<li class="fragment"><code>magrittr</code> pipe: <code>%&gt;%</code></li>
+<li class="fragment">New base <code>R</code> (native) pipe: <code>|&gt;</code>
+<ul>
+<li class="fragment">Less flexible in some scenarios, but…</li>
+<li class="fragment">Don’t need to load a package to use it</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section id="new-data-babynames" class="slide level2">
+<h2>New data: <code>babynames</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(babynames)</span>
+<span id="cb13-2"><a></a><span class="fu">head</span>(babynames)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+   year sex   name          n   prop
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+1  1880 F     Mary       7065 0.0724
+2  1880 F     Anna       2604 0.0267
+3  1880 F     Emma       2003 0.0205
+4  1880 F     Elizabeth  1939 0.0199
+5  1880 F     Minnie     1746 0.0179
+6  1880 F     Margaret   1578 0.0162</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What does each row represent?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames">Wrangling <code>babynames</code></h3>
+<h4 id="what-wrangling-do-we-need-to-do-to-get-from-raw-data-to-wrangled-data">What wrangling do we need to do to get from raw data to wrangled data?</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">library</span>(babynames)</span>
+<span id="cb15-2"><a></a><span class="fu">data</span>(<span class="st">"babynames"</span>)</span>
+<span id="cb15-3"><a></a><span class="fu">head</span>(babynames)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+   year sex   name          n   prop
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;
+1  1880 F     Mary       7065 0.0724
+2  1880 F     Anna       2604 0.0267
+3  1880 F     Emma       2003 0.0205
+4  1880 F     Elizabeth  1939 0.0199
+5  1880 F     Minnie     1746 0.0179
+6  1880 F     Margaret   1578 0.0162</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">head</span>(babynames_math241)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   year [2]
+   year name        n
+  &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt;
+1  2017 Grayson  8767
+2  2017 Lenny     118
+3  2017 Megan     624
+4  2017 Michael 12612
+5  2016 Grayson  8817
+6  2016 Lenny     134</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-1">Wrangling <code>babynames</code></h3>
+<p><code>filter()</code>: Subset rows based on logic statements.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> <span class="fu">filter</span>(babynames, </span>
+<span id="cb19-2"><a></a>                            name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>, </span>
+<span id="cb19-3"><a></a>                                        <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>))</span>
+<span id="cb19-4"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 675 × 5
+    year sex   name        n    prop
+   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt;
+ 1  1880 M     Michael   354 0.00299
+ 2  1881 M     Michael   298 0.00275
+ 3  1882 M     Michael   321 0.00263
+ 4  1883 M     Michael   307 0.00273
+ 5  1884 M     Michael   373 0.00304
+ 6  1885 M     Michael   370 0.00319
+ 7  1886 M     Michael   348 0.00292
+ 8  1887 M     Michael   345 0.00316
+ 9  1888 M     Michael   466 0.00359
+10  1889 M     Michael   377 0.00317
+# ℹ 665 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-2">Wrangling <code>babynames</code></h3>
+<p><code>%&gt;%</code> (the pipe): Inserts current line as first argument in the next line.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> <span class="fu">filter</span>(babynames, </span>
+<span id="cb21-2"><a></a>                            name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb21-3"><a></a>                                        <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>))</span>
+<span id="cb21-4"><a></a></span>
+<span id="cb21-5"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 675 × 5
+    year sex   name        n    prop
+   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt;
+ 1  1880 M     Michael   354 0.00299
+ 2  1881 M     Michael   298 0.00275
+ 3  1882 M     Michael   321 0.00263
+ 4  1883 M     Michael   307 0.00273
+ 5  1884 M     Michael   373 0.00304
+ 6  1885 M     Michael   370 0.00319
+ 7  1886 M     Michael   348 0.00292
+ 8  1887 M     Michael   345 0.00316
+ 9  1888 M     Michael   466 0.00359
+10  1889 M     Michael   377 0.00317
+# ℹ 665 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-3">Wrangling <code>babynames</code></h3>
+<p><code>%&gt;%</code> (the pipe): Inserts current line as first argument in the next line.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> <span class="fu">filter</span>(babynames, </span>
+<span id="cb23-2"><a></a>                            name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb23-3"><a></a>                                        <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>))</span>
+<span id="cb23-4"><a></a></span>
+<span id="cb23-5"><a></a><span class="co"># this operation does exactly the same thing as above</span></span>
+<span id="cb23-6"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb23-7"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb23-8"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>))</span>
+<span id="cb23-9"><a></a></span>
+<span id="cb23-10"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 675 × 5
+    year sex   name        n    prop
+   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt;
+ 1  1880 M     Michael   354 0.00299
+ 2  1881 M     Michael   298 0.00275
+ 3  1882 M     Michael   321 0.00263
+ 4  1883 M     Michael   307 0.00273
+ 5  1884 M     Michael   373 0.00304
+ 6  1885 M     Michael   370 0.00319
+ 7  1886 M     Michael   348 0.00292
+ 8  1887 M     Michael   345 0.00316
+ 9  1888 M     Michael   466 0.00359
+10  1889 M     Michael   377 0.00317
+# ℹ 665 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-4">Wrangling <code>babynames</code></h3>
+<p><code>summarize()</code>: Compute an aggregation measure (e.g., mean, standard deviation).</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb25-3"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb25-5"><a></a></span>
+<span id="cb25-6"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+        n
+    &lt;int&gt;
+1 4892634</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-5">Wrangling <code>babynames</code></h3>
+<p><code>group_by()</code>: Create groups for how future operations should be computed.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb27-3"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a></a>  <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span></span>
+<span id="cb27-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb27-6"><a></a></span>
+<span id="cb27-7"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  name          n
+  &lt;chr&gt;     &lt;int&gt;
+1 Grayson   74707
+2 Lenny      7768
+3 Megan    437623
+4 Michael 4372536</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What are we missing?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-6">Wrangling <code>babynames</code></h3>
+<p><code>group_by()</code>: Create groups for how future operations should be computed.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb29-3"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a></a>  <span class="fu">group_by</span>(year, name) <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) </span>
+<span id="cb29-6"><a></a></span>
+<span id="cb29-7"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 431 × 3
+# Groups:   year [138]
+    year name        n
+   &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt;
+ 1  1880 Michael   354
+ 2  1881 Michael   298
+ 3  1882 Michael   321
+ 4  1883 Michael   307
+ 5  1884 Michael   373
+ 6  1885 Michael   370
+ 7  1886 Michael   348
+ 8  1887 Michael   345
+ 9  1888 Michael   466
+10  1889 Michael   377
+# ℹ 421 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-7">Wrangling <code>babynames</code></h3>
+<p><code>group_by()</code>: Create groups for how future operations should be computed.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb31-3"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a></a>  <span class="fu">group_by</span>(year, name) <span class="sc">%&gt;%</span></span>
+<span id="cb31-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb31-6"><a></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb31-7"><a></a></span>
+<span id="cb31-8"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 431 × 3
+    year name        n
+   &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt;
+ 1  1880 Michael   354
+ 2  1881 Michael   298
+ 3  1882 Michael   321
+ 4  1883 Michael   307
+ 5  1884 Michael   373
+ 6  1885 Michael   370
+ 7  1886 Michael   348
+ 8  1887 Michael   345
+ 9  1888 Michael   466
+10  1889 Michael   377
+# ℹ 421 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What did <code>ungroup()</code> do?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-babynames-8">Wrangling <code>babynames</code></h3>
+<p><code>arrange()</code>: Order the rows by variable(s).</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a>babynames_math241 <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Grayson"</span>, <span class="st">"Michael"</span>,</span>
+<span id="cb33-3"><a></a>                     <span class="st">"Megan"</span>, <span class="st">"Lenny"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a></a>  <span class="fu">group_by</span>(year, name) <span class="sc">%&gt;%</span></span>
+<span id="cb33-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb33-6"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb33-7"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(year))</span>
+<span id="cb33-8"><a></a></span>
+<span id="cb33-9"><a></a>babynames_math241</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 431 × 3
+    year name        n
+   &lt;dbl&gt; &lt;chr&gt;   &lt;int&gt;
+ 1  2017 Grayson  8767
+ 2  2017 Lenny     118
+ 3  2017 Megan     624
+ 4  2017 Michael 12612
+ 5  2016 Grayson  8817
+ 6  2016 Lenny     134
+ 7  2016 Megan     744
+ 8  2016 Michael 14091
+ 9  2015 Grayson  8071
+10  2015 Lenny     177
+# ℹ 421 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="new-data-pets-ive-had" class="slide level2">
+<h2>New data: pets I’ve had</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>my_pets <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb35-2"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Pickle"</span>, <span class="st">"Kyle"</span>, <span class="st">"Nubs"</span>),</span>
+<span id="cb35-3"><a></a>  <span class="at">type =</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"cat"</span>, <span class="st">"cat"</span>, <span class="st">"cat"</span>),</span>
+<span id="cb35-4"><a></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="cn">NA</span>),</span>
+<span id="cb35-5"><a></a>  <span class="at">birthplace =</span> <span class="fu">c</span>(<span class="st">"Washington"</span>, <span class="cn">NA</span>, <span class="st">"Utah"</span>, <span class="cn">NA</span>)</span>
+<span id="cb35-6"><a></a>)</span>
+<span id="cb35-7"><a></a></span>
+<span id="cb35-8"><a></a>my_pets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age birthplace
+1   Dude  dog   8 Washington
+2 Pickle  cat   6       &lt;NA&gt;
+3   Kyle  cat   4       Utah
+4   Nubs  cat  NA       &lt;NA&gt;</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets">Wrangling <code>my_pets</code></h3>
+<p><code>select()</code>: retain particular columns.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a></a>  <span class="fu">select</span>(name, type, age)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age
+1   Dude  dog   8
+2 Pickle  cat   6
+3   Kyle  cat   4
+4   Nubs  cat  NA</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-1">Wrangling <code>my_pets</code></h3>
+<p><code>select()</code>: retain particular columns.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a>my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a></a>  <span class="fu">select</span>(<span class="sc">-</span>birthplace)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age
+1   Dude  dog   8
+2 Pickle  cat   6
+3   Kyle  cat   4
+4   Nubs  cat  NA</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-2">Wrangling <code>my_pets</code></h3>
+<p><code>drop_na()</code>: Remove any row that has a missing value for particular variables.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a></a>  <span class="fu">drop_na</span>(birthplace)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name type age birthplace
+1 Dude  dog   8 Washington
+2 Kyle  cat   4       Utah</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-3">Wrangling <code>my_pets</code></h3>
+<p><code>mutate()</code>: Create new variables or modify existing variables</p>
+<ul>
+<li class="fragment"><strong>Use case</strong>: pet years!
+<ul>
+<li class="fragment">8 for large dog, 7 for cats</li>
+<li class="fragment">(I’m not an animal scientist)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>my_pets <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a></a>  <span class="co"># bad solution</span></span>
+<span id="cb43-3"><a></a>  <span class="fu">mutate</span>(<span class="at">age_pet_years =</span> age <span class="sc">*</span> <span class="fl">7.5</span>)</span>
+<span id="cb43-4"><a></a></span>
+<span id="cb43-5"><a></a>my_pets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age birthplace age_pet_years
+1   Dude  dog   8 Washington            60
+2 Pickle  cat   6       &lt;NA&gt;            45
+3   Kyle  cat   4       Utah            30
+4   Nubs  cat  NA       &lt;NA&gt;            NA</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-4">Wrangling <code>my_pets</code></h3>
+<p><code>mutate()</code>: Create new variables or modify existing variables</p>
+<ul>
+<li><strong>Use case</strong>: pet years!
+<ul>
+<li>8 for large dog, 7 for cats</li>
+<li>(I’m not an animal scientist)</li>
+</ul></li>
+</ul>
+<p>Better solution: use <code>case_when()</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>my_pets <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a></a>  <span class="fu">mutate</span>(<span class="at">age_pet_years =</span> <span class="fu">case_when</span>(</span>
+<span id="cb45-3"><a></a>    type <span class="sc">==</span> <span class="st">"dog"</span> <span class="sc">~</span> <span class="dv">8</span> <span class="sc">*</span> age,</span>
+<span id="cb45-4"><a></a>    type <span class="sc">==</span> <span class="st">"cat"</span> <span class="sc">~</span> <span class="dv">7</span> <span class="sc">*</span> age</span>
+<span id="cb45-5"><a></a>    ))</span>
+<span id="cb45-6"><a></a></span>
+<span id="cb45-7"><a></a>my_pets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age birthplace age_pet_years
+1   Dude  dog   8 Washington            64
+2 Pickle  cat   6       &lt;NA&gt;            42
+3   Kyle  cat   4       Utah            28
+4   Nubs  cat  NA       &lt;NA&gt;            NA</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-5">Wrangling <code>my_pets</code></h3>
+<p>More <code>filter()</code>ing</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>pets_who_can_drink <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">21</span>)</span>
+<span id="cb47-3"><a></a></span>
+<span id="cb47-4"><a></a>pets_who_can_drink</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age birthplace age_pet_years
+1   Dude  dog   8 Washington            64
+2 Pickle  cat   6       &lt;NA&gt;            42
+3   Kyle  cat   4       Utah            28</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-6">Wrangling <code>my_pets</code></h3>
+<p>More <code>filter()</code>ing: Nubs seemed like he was pretty old</p>
+<p>Logical operators: <code>&amp;</code> means ‘and’</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>pets_who_can_drink <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">21</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(age_pet_years))</span>
+<span id="cb49-3"><a></a></span>
+<span id="cb49-4"><a></a>pets_who_can_drink</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] name          type          age           birthplace    age_pet_years
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What went wrong here???</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-7">Wrangling <code>my_pets</code></h3>
+<p>More <code>filter()</code>ing: Nubs seemed like he was pretty old</p>
+<p>Logical operators: <code>|</code> means ‘or’</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>pets_who_can_drink <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">21</span> <span class="sc">|</span> <span class="fu">is.na</span>(age_pet_years))</span>
+<span id="cb51-3"><a></a></span>
+<span id="cb51-4"><a></a>pets_who_can_drink</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    name type age birthplace age_pet_years
+1   Dude  dog   8 Washington            64
+2 Pickle  cat   6       &lt;NA&gt;            42
+3   Kyle  cat   4       Utah            28
+4   Nubs  cat  NA       &lt;NA&gt;            NA</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-8">Wrangling <code>my_pets</code></h3>
+<p>More <code>filter()</code>ing</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>old_cats <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">30</span>, type <span class="sc">==</span> <span class="st">"dog"</span>)</span>
+<span id="cb53-3"><a></a></span>
+<span id="cb53-4"><a></a>old_cats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name type age birthplace age_pet_years
+1 Dude  dog   8 Washington            64</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">In a <code>filter()</code>, the comma implicitly means <code>&amp;</code></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-9">Wrangling <code>my_pets</code></h3>
+<p><code>%in%</code> vs.&nbsp;<code>==</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">==</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Kyle"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name type age birthplace age_pet_years
+1 Dude  dog   8 Washington            64</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What went wrong here?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="wrangling-my_pets-10">Wrangling <code>my_pets</code></h3>
+<p><code>%in%</code> vs.&nbsp;<code>==</code></p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>my_pets <span class="sc">%&gt;%</span></span>
+<span id="cb57-2"><a></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Dude"</span>, <span class="st">"Kyle"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  name type age birthplace age_pet_years
+1 Dude  dog   8 Washington            64
+2 Kyle  cat   4       Utah            28</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment">What went wrong here?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="activity" class="title-slide slide level1 center">
+<h1>Activity</h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_f67a0bfb" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<ul>
+<li class="fragment">Use some of our data wrangling skills to make <strong>animated</strong> and <strong>interactive</strong> graphics!</li>
+</ul>
 
 
 </section></section>

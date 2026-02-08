@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    - "!*_download.qmd"
 
 website:
   title: "Math 241"
