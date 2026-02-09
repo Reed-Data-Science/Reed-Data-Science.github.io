@@ -71,7 +71,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 3
       days:
-        - topic: "Plot animation with gganimate and Wrangling I"
+        - topic: "Data Wrangling and asking good questions"
           display-date: Monday, Feb 9
           date: 2/9/26
           docs:
@@ -83,7 +83,7 @@ scheduled-docs:
               href: in_class/activity2.qmd
             - type: Activity (download)
               href: in_class/activity2_download.qmd
-        - topic: "Wrangling II, plotly, and workflow"
+        - topic: "Animation and interactivity"
           display-date: Wednesday, Feb 11
           date: 2/11/26
           docs:

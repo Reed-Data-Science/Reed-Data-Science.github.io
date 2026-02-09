@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!*_download.qmd"
+    - "!admin/*"
 
 website:
   title: "Math 241"

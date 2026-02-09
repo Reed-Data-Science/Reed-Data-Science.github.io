@@ -87,7 +87,7 @@ theme_update(text = element_text(size = 20))
 
 **Wed Lecture**
 
-* Plot animation.
+* Plot animation and interactivity.
 * GitHub workflow review.
 
 
