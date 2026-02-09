@@ -79,6 +79,8 @@ scheduled-docs:
               href: readings/readings_wk03mon.qmd
             - type: Slides
               href: slides/math241_wk03mon.qmd
+            - type: Slides (PDF)
+              href: pdfs/math241_wk03mon.pdf
             - type: Activity (instructions)
               href: in_class/activity2.qmd
             - type: Activity (download)
