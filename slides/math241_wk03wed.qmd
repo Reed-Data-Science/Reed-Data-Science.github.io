@@ -871,9 +871,176 @@ ggplotly(p, tooltip = "text")
 -   We'll explore interactivity more in Problem Set 2. 
 
 
+# Workflow
+
+------------------------------------------------------------------------
+
+## Workflow review
+
+-   I'd like to spend a little bit more time discussing workflow with git, RStudio, and Positron
+
+-   And give you some slides to reference
+
+------------------------------------------------------------------------
 
 
-## Next Week
+## RStudio Projects / Positron Folders
+
+
+
+:::: {.columns}
+
+::: {.column width='50%' .nonincremental}
+
+* Where does your analysis live?
+    + Working directory
+        + Where `R` looks for files you ask it to load.
+        + Where `R` puts files you ask it to save.
+
+:::
+
+::: {.column width='50%'}
+
+```{r, echo = FALSE, out.width= '60%'}
+knitr::include_graphics("img/console_wd_maurvie.png")
+```
+
+:::
+
+::::
+
+```{r}
+getwd()
+```
+
+
+::: {.fragment}
+
+* For a given project, your analyses should live in the folder where you store the files associated with the project.
+    + In other words, **working directory = project folder**.
+
+* Common default: Working directory = home directory    
+
+* Can change the working directory with `setwd()` but instead we will use RStudio Projects or Positron Folders.
+
+:::
+
+------------------------------------------------------------------------
+
+
+## RStudio Projects and Positron Folders
+
+**RStudio Projects** and **Positron Folders**: Feature that helps you organize your work.
+
+* Each problem set will get it's own RStudio Project or Positron Folder
+    
+
+* The working directory is the home directory of the project.
+
+::: {.fragment .nonincremental}
+
+* **Question**: My RStudio Project is `Reed-Data-Science.github.io`. Why does the file path end a folder furhter there when I run the following?
+
+```{r}
+getwd()
+```
+
+:::
+
+* R code executed in Quarto documents gets the working directory where that document lives, not the project directory
+    - Confusing! But sometimes nice...
+
+
+------------------------------------------------------------------------
+
+
+## Projects and Workflow
+
+* Create an RStudio Project / Positron Folder for each analysis project.
+    + We will have nine RStudio Projects / Positron Folders for this course:
+        + An RStudio Project / Positron Folders for each of Labs 1 - 6
+        + An RStudio Project / Positron Folders for project 1
+        + An RStudio Project / Positron Folders for project 2
+
+
+* Each of these RStudio Projects / Positron Folders will be synced with `git` and GitHub
+
+------------------------------------------------------------------------
+
+
+## git and GitHub
+
+* **git**: Version control system
+    + Think fancier type of *Track Changes*.
+
+* **GitHub**: Hosting service for git projects (which are called repositories)
+    + Think fancier type of *DropBox* or *Google Drive*.
+
+* Useful resource when getting started: [https://happygitwithr.com/](https://happygitwithr.com/)
+
+
+
+
+------------------------------------------------------------------------
+
+
+## Git Real
+
+::: {.fragment .nonincremental}
+
+* Git is a *decentralized* version control system.
+    + Each collaborator has a complete version of the repo.
+    + Everyone can work offline and simultaneously.
+    + GitHub holds the master copy.
+    
+:::
+
+::: {.fragment .nonincremental}
+
+* git is not friendly and can be frustrating.
+      + BUT, the version control and collaborative rewards are big!
+
+:::
+
+::: {.fragment .nonincremental}
+
+* [GitHub.com](GitHub.com) is a great place to develop an online presence.
+
+:::
+
+
+::: {.fragment .nonincremental}
+
+* If you end up with a mess of errors, then don't worry but come see one of the instructors for help.
+    + It happens to [everyone](https://xkcd.com/1597/).
+    
+:::
+
+
+------------------------------------------------------------------------
+
+
+## Main Message: 
+
+### Github Repo = `RStudio` Project or `Positron` Folder
+
+* A **repo**, short for repository, is the folder that contains all of the files for the project on [GitHub.com](GitHub.com).
+
+::: {.fragment .nonincremental}
+ 
+* Under the **Reed-Data-Science** GitHub Organization you currently have 1 repo:
+    + `pset01-username`: Just you and the Math 241 teaching team (me, course assistant, graders) can access
+    + Soon, you'll have `pset02-username`
+    
+:::
+
+* For each repo, you should create an `RStudio` Project or Positron folder (with version control).
+
+
+------------------------------------------------------------------------
+
+
+### Next Week
 
 ::: {.nonincremental}
 
@@ -881,5 +1048,20 @@ ggplotly(p, tooltip = "text")
     - **Monday**: reshaping and joining data. 
     - **Wednesday**: learn about different data types in `R` (beyond `data.frames`)
     
+:::
+
+<br>
+
+
+### On the Horizon
+
+::: {.nonincremental}
+
+
+-   **Week 5**: spatial data
+
+-   **Week 6**: Interactive dashboards with `shiny` (and Project 1 assigned!)
+
+
 :::
     
