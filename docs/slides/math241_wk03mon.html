@@ -348,7 +348,6 @@
 <ul>
 <li>It includes any necessary information on the used packages, R version, system, etc.
 <ul>
-<li>Should not be a concern for our class Slack since we are all on the same RStudio Server.</li>
 <li>Can use <code>packageVersion("tidyverse")</code> or <code>sessionInfo()</code> to find this information.</li>
 </ul></li>
 </ul>
@@ -1101,7 +1100,6 @@
 
 <h3 id="wrangling-my_pets-6">Wrangling <code>my_pets</code></h3>
 <p>More <code>filter()</code>ing: Nubs seemed like he was pretty old</p>
-<p>Logical operators: <code>&amp;</code> means ‘and’</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>pets_who_can_drink <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
 <span id="cb49-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">21</span> <span class="sc">&amp;</span> <span class="fu">is.na</span>(age_pet_years))</span>
@@ -1113,14 +1111,14 @@
 </div>
 </div>
 <ul>
-<li class="fragment">What went wrong here???</li>
+<li class="fragment"><p>What went wrong here???</p></li>
+<li class="fragment"><p>Logical operators: <code>&amp;</code> means ‘and’</p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <h3 id="wrangling-my_pets-7">Wrangling <code>my_pets</code></h3>
 <p>More <code>filter()</code>ing: Nubs seemed like he was pretty old</p>
-<p>Logical operators: <code>|</code> means ‘or’</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>pets_who_can_drink <span class="ot">&lt;-</span> my_pets <span class="sc">%&gt;%</span></span>
 <span id="cb51-2"><a></a>  <span class="fu">filter</span>(age_pet_years <span class="sc">&gt;</span> <span class="dv">21</span> <span class="sc">|</span> <span class="fu">is.na</span>(age_pet_years))</span>
@@ -1134,6 +1132,9 @@
 4   Nubs  cat  NA       &lt;NA&gt;            NA</code></pre>
 </div>
 </div>
+<ul>
+<li class="fragment">Logical operators: <code>|</code> means ‘or’</li>
+</ul>
 </section>
 <section class="slide level2">
 
@@ -1182,19 +1183,13 @@
 2 Kyle  cat   4       Utah            28</code></pre>
 </div>
 </div>
-<ul>
-<li class="fragment">What went wrong here?</li>
-</ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="activity" class="title-slide slide level1 center">
 <h1>Activity</h1>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c9bffce8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_431321ee" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>

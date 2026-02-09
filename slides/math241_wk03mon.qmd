@@ -256,7 +256,6 @@ penguins %>%
 ::: {.fragment .nonincremental}
 
 * It includes any necessary information on the used packages, R version, system, etc.
-    + Should not be a concern for our class Slack since we are all on the same RStudio Server.
     + Can use `packageVersion("tidyverse")` or `sessionInfo()` to find this information.
 
 :::
@@ -986,9 +985,6 @@ pets_who_can_drink
 
 More `filter()`ing: Nubs seemed like he was pretty old
 
-Logical operators: `&` means 'and'
-
-
 ```{r}
 pets_who_can_drink <- my_pets %>%
   filter(age_pet_years > 21 & is.na(age_pet_years))
@@ -997,6 +993,9 @@ pets_who_can_drink
 ```
 
 -   What went wrong here???
+
+-   Logical operators: `&` means 'and'
+
 
 
 
@@ -1008,15 +1007,14 @@ pets_who_can_drink
 
 More `filter()`ing: Nubs seemed like he was pretty old
 
-Logical operators: `|` means 'or'
-
-
 ```{r}
 pets_who_can_drink <- my_pets %>%
   filter(age_pet_years > 21 | is.na(age_pet_years))
 
 pets_who_can_drink
 ```
+
+-   Logical operators: `|` means 'or'
 
 
 
@@ -1068,12 +1066,6 @@ my_pets %>%
 my_pets %>%
   filter(name %in% c("Dude", "Kyle"))
 ```
-
-- What went wrong here?
-
-
-
-------------------------------------------------------------------------
 
 
 

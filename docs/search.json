@@ -130,7 +130,7 @@
     "href": "slides/math241_wk03mon.html#what-makes-a-good-coding-question",
     "title": "Math 241",
     "section": "What makes a good coding question?",
-    "text": "What makes a good coding question?\n\nIt uses a minimal dataset to reproduce the issue.\nIt includes the shortest amount of runnable code necessary to reproduce the issue.\nIt doesn’t wreak havoc on other people’s computers.\nIt includes code and output so that others don’t have to run it!\n\n\n\nIt includes any necessary information on the used packages, R version, system, etc.\n\nShould not be a concern for our class Slack since we are all on the same RStudio Server.\nCan use packageVersion(\"tidyverse\") or sessionInfo() to find this information."
+    "text": "What makes a good coding question?\n\nIt uses a minimal dataset to reproduce the issue.\nIt includes the shortest amount of runnable code necessary to reproduce the issue.\nIt doesn’t wreak havoc on other people’s computers.\nIt includes code and output so that others don’t have to run it!\n\n\n\nIt includes any necessary information on the used packages, R version, system, etc.\n\nCan use packageVersion(\"tidyverse\") or sessionInfo() to find this information."
   },
   {
     "objectID": "slides/math241_wk03mon.html#minimal-dataset-two-good-options",
