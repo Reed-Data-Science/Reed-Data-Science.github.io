@@ -91,14 +91,13 @@ theme_update(text = element_text(size = 20))
 
 * Recall some ideas about inheriting aesthetics.
 * Plot animation and interactivity.
-* Formalize some ideas about GitHub workflow and RStudiio Projects / Positron folders.
+* Formalize some ideas about GitHub workflow and RStudio Projects / Positron folders.
 
 
 :::
 
 ::::
 
-------------------------------------------------------------------------
 
 # First up: some further discussion of inheriting aesthetics
 
@@ -754,6 +753,8 @@ apropos("^view_")
 
 
 - Check the [documentation for `gganimate`](https://gganimate.com/index.html) for even more excellent examples! 
+
+- And the [`gganimate` cheatsheet](https://rstudio.github.io/cheatsheets/gganimate.pdf) is an excellent resource!
 
 
 
