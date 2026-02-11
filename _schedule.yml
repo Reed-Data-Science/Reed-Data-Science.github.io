@@ -93,6 +93,8 @@ scheduled-docs:
               href: readings/readings_wk03wed.qmd
             - type: Slides
               href: slides/math241_wk03wed.qmd
+            - type: Slides (PDF)
+              href: pdfs/math241_wk03wed.pdf
         - topic: "Problem Set 1 Due, Problem Set 2 Released"
           display-date: Thursday, Feb 12 9:00am
           date: 2/12/26
