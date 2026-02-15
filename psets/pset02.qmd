@@ -1,0 +1,11 @@
+---
+title: "Interactive Data Visualization and Data Wrangling"
+subtitle: "Math 241: Problem Set 2"
+format: html
+editor: source
+toc: false
+---
+
+## Due: Thursday, Feb 19th, 9am PT on Gradescope.
+
+Please access the problem set through our [GitHub organization](https://github.com/Reed-Data-Science/) by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :) 

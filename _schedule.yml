@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 2/11/26
+  draft-after: 2/16/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -105,22 +105,20 @@ scheduled-docs:
       #   - 'Some text'
     - week: 4
       days:
-        - topic: "Joins and reshaping data"
+        - topic: "Data types and more wrangling"
           display-date: Monday, Feb 16
           date: 2/16/26
           docs:
-            - type: Reading
-              href: readings/readings_wk02mon.qmd
             - type: Slides
-              href: slides/math141_wk02mon.qmd
-        - topic: "Types of data in R"
+              href: slides/math241_wk04mon.qmd
+        - topic: "Joins and reshaping data"
           display-date: Wednesday, Feb 18
           date: 2/18/26
           docs:
             - type: Reading
-              href: readings/readings_wk02wed.qmd
+              href: readings/readings_wk04wed.qmd
             - type: Slides
-              href: slides/math141_wk02wed.qmd
+              href: slides/math241_wk04wed.qmd
         - topic: "Problem Set 2 Due, Problem Set 3 Released"
           display-date: Thursday, Feb 19 9:00am
           date: 2/19/26

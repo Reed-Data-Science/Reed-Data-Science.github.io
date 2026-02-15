@@ -49,7 +49,7 @@ library(tidyverse)
 
 [Grayson White]{.custom-subtitle}
 
-[Math 241 <br> Week 1 \| Fall 2025]{.custom-subtitle}
+[Math 241 <br> Week 1 \| Spring 2026]{.custom-subtitle}
 :::
 :::::
 
