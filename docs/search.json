@@ -91,13 +91,6 @@
     "text": "What We Need First\n\nNeed a robust understanding of wrangling data frames.\nNeed to explore more data objects in R.\nNeed to learn how to interact with and wrangle these data objects."
   },
   {
-    "objectID": "slides/math241_wk04mon.html#dplyr-review",
-    "href": "slides/math241_wk04mon.html#dplyr-review",
-    "title": "Math 241",
-    "section": "dplyr review",
-    "text": "dplyr review"
-  },
-  {
     "objectID": "slides/math241_wk04mon.html#data-census-2000-from-openintro",
     "href": "slides/math241_wk04mon.html#data-census-2000-from-openintro",
     "title": "Math 241",
@@ -221,7 +214,7 @@
     "href": "slides/math241_wk04mon.html#vectorized",
     "title": "Math 241",
     "section": "Vectorized",
-    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -6.964514  2.343418  4.812274"
+    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -5.6211595 -0.4795656  3.9374729"
   },
   {
     "objectID": "slides/math241_wk04mon.html#vectorized-caution",

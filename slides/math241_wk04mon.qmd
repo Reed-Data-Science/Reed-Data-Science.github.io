@@ -163,9 +163,10 @@ knitr::include_graphics("img/fia_dash.png")
 * Need to learn how to interact with and wrangle these **data objects**.
 
 
-------------------------------------------------------------------------
 
-## `dplyr` review
+# `dplyr` review
+
+------------------------------------------------------------------------
 
 
 ## Data: Census 2000 (from `openintro`)
@@ -819,7 +820,11 @@ x[a]
 
 # So what about **generic vectors/lists**?
 
-* Recall they are heterogeneous collections of any type of `R` objects.
+::: {.fragment}
+
+Recall they are heterogeneous collections of any type of `R` objects.
+
+:::
 
 ------------------------------------------------------------------------
 
@@ -952,7 +957,7 @@ knitr::include_graphics("img/innerobject2.png")
 Let's relate `list()`s to our favorite R object: `data.frame()`s!
 
 * `data.frame()`s are `list()`s.
-* Each variable of a `data.frame`() is an atomic `vector()`.
+* Each variable of a `data.frame()` is an atomic `vector()`.
 * The `vector()`s all have the same length but not necessary the same class.
 
 ------------------------------------------------------------------------

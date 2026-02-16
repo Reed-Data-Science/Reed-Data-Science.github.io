@@ -226,7 +226,7 @@
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f9b68bed" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_c7b3d6fa" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -295,8 +295,10 @@
 <li class="fragment"><p>Need to learn how to interact with and wrangle these <strong>data objects</strong>.</p></li>
 </ul>
 </section>
-<section id="dplyr-review" class="slide level2">
-<h2><code>dplyr</code> review</h2>
+<section>
+<section id="dplyr-review" class="title-slide slide level1 center">
+<h1><code>dplyr</code> review</h1>
+
 </section>
 <section id="data-census-2000-from-openintro" class="slide level2">
 <h2>Data: Census 2000 (from <code>openintro</code>)</h2>
@@ -646,7 +648,7 @@
 </div>
 </div>
 <p><strong>Q:</strong> <em>Now</em> what is the denominator for the proportions in the new <code>p</code> variable?</p>
-</section>
+</section></section>
 <section>
 <section id="now-type-of-data-objects" class="title-slide slide level1 center">
 <h1>Now: type of data objects</h1>
@@ -1084,7 +1086,7 @@
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">5</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -6.964514  2.343418  4.812274</code></pre>
+<pre><code>[1] -5.6211595 -0.4795656  3.9374729</code></pre>
 </div>
 </div>
 </div></div>
@@ -1181,9 +1183,9 @@
 <section>
 <section id="so-what-about-generic-vectorslists" class="title-slide slide level1 center">
 <h1>So what about <strong>generic vectors/lists</strong>?</h1>
-<ul>
-<li class="fragment">Recall they are heterogeneous collections of any type of <code>R</code> objects.</li>
-</ul>
+<div class="fragment">
+<p>Recall they are heterogeneous collections of any type of <code>R</code> objects.</p>
+</div>
 </section>
 <section class="slide level2">
 
@@ -1364,7 +1366,7 @@ $holidays
 <p>Let’s relate <code>list()</code>s to our favorite R object: <code>data.frame()</code>s!</p>
 <ul>
 <li class="fragment"><code>data.frame()</code>s are <code>list()</code>s.</li>
-<li class="fragment">Each variable of a <code>data.frame</code>() is an atomic <code>vector()</code>.</li>
+<li class="fragment">Each variable of a <code>data.frame()</code> is an atomic <code>vector()</code>.</li>
 <li class="fragment">The <code>vector()</code>s all have the same length but not necessary the same class.</li>
 </ul>
 </section>
