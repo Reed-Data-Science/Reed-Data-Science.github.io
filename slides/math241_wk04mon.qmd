@@ -63,9 +63,14 @@ theme_update(text = element_text(size = 20))
 
 * Welcome to the newly admitted students!
 
-* [Course Interest Form](https://forms.gle/kUti3ERaBfU4qCyd7)
+* [Office hours](https://reed-data-science.github.io/office_hours.html) time change going forward.
 
 :::
+
+::: {.fragment .nonincremental}
+
+* [Course Interest Form](https://forms.gle/kUti3ERaBfU4qCyd7)
+
 
 ![](img/course_interest_form.jpg){fig-align='center' width='30%'}
 
@@ -74,7 +79,7 @@ theme_update(text = element_text(size = 20))
 countdown::countdown(4)
 ```
 
-
+:::
 ------------------------------------------------------------------------
 
 
