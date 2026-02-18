@@ -2503,7 +2503,7 @@
     "href": "slides/math241_wk04mon.html#vectorized",
     "title": "Math 241",
     "section": "Vectorized",
-    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -6.406714 -2.121730  5.834835"
+    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -4.455525 -1.126027  5.017191"
   },
   {
     "objectID": "slides/math241_wk04mon.html#vectorized-caution",
@@ -2594,160 +2594,160 @@
     "href": "slides/math241_wk04wed_activity.html#loading-data",
     "title": "Math 241",
     "section": "Loading data",
-    "text": "Loading data\nWe’ll create the x and y tibbles in R:\n\nlibrary(tidyverse)\nx &lt;- tibble(spp_code = c(\"ABBA\", \"BEPA\", \"PIST\"),\n            common_name = c(\"balsum fir\", \"paper birch\", \"white pine\"))\n\ny &lt;- tibble(spp_code = c(\"ABBA\", \"BEPA\", \"LALA\"),\n            latin_name = c(\"Abies balsamea\", \n                           \"Betula papyrifera\",\n                           \"Larix laricina\"))"
+    "text": "Loading data\nWe’ll create the x and y data frames in R:\n\nlibrary(tidyverse)\nx &lt;- data.frame(spp_code = c(\"ABBA\", \"BEPA\", \"PIST\"),\n                common_name = c(\"balsum fir\", \"paper birch\", \"white pine\"))\n\ny &lt;- data.frame(spp_code = c(\"ABBA\", \"BEPA\", \"LALA\"),\n                latin_name = c(\"Abies balsamea\", \n                               \"Betula papyrifera\",\n                               \"Larix laricina\"))"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#loading-data-1",
     "href": "slides/math241_wk04wed_activity.html#loading-data-1",
     "title": "Math 241",
     "section": "Loading data",
-    "text": "Loading data\nWe’ll create the x and y tibbles in R:\n\nx\n\n# A tibble: 3 × 2\n  spp_code common_name\n  &lt;chr&gt;    &lt;chr&gt;      \n1 ABBA     balsum fir \n2 BEPA     paper birch\n3 PIST     white pine \n\ny\n\n# A tibble: 3 × 2\n  spp_code latin_name       \n  &lt;chr&gt;    &lt;chr&gt;            \n1 ABBA     Abies balsamea   \n2 BEPA     Betula papyrifera\n3 LALA     Larix laricina"
+    "text": "Loading data\nWe’ll create the x and y data frames in R:\n\nx\n\n  spp_code common_name\n1     ABBA  balsum fir\n2     BEPA paper birch\n3     PIST  white pine\n\ny\n\n  spp_code        latin_name\n1     ABBA    Abies balsamea\n2     BEPA Betula papyrifera\n3     LALA    Larix laricina"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q1.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q1.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q1. Write the code to get this output",
-    "text": "Q1. Write the code to get this output\n\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n\n\n\n−+\n01:00"
+    "text": "Q1. Write the code to get this output\n\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     PIST  white pine              &lt;NA&gt;\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q1.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q1.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q1. Write the code to get this output",
-    "text": "Q1. Write the code to get this output\n\nleft_join(x, y, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;"
+    "text": "Q1. Write the code to get this output\n\nleft_join(x, y, by = \"spp_code\")\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     PIST  white pine              &lt;NA&gt;"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q2.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q2.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q2. Write the code to get this output",
-    "text": "Q2. Write the code to get this output\n\n\n# A tibble: 4 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n4 LALA     &lt;NA&gt;        Larix laricina   \n\n\n\n−+\n01:00"
+    "text": "Q2. Write the code to get this output\n\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     PIST  white pine              &lt;NA&gt;\n4     LALA        &lt;NA&gt;    Larix laricina\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q2.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q2.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q2. Write the code to get this output",
-    "text": "Q2. Write the code to get this output\n\nfull_join(x, y, by = \"spp_code\")\n\n# A tibble: 4 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 PIST     white pine  &lt;NA&gt;             \n4 LALA     &lt;NA&gt;        Larix laricina"
+    "text": "Q2. Write the code to get this output\n\nfull_join(x, y, by = \"spp_code\")\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     PIST  white pine              &lt;NA&gt;\n4     LALA        &lt;NA&gt;    Larix laricina"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q3.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q3.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q3. Write the code to get this output",
-    "text": "Q3. Write the code to get this output\n\n\n# A tibble: 3 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 LALA     Larix laricina    &lt;NA&gt;       \n\n\n\n−+\n01:00"
+    "text": "Q3. Write the code to get this output\n\n\n  spp_code        latin_name common_name\n1     ABBA    Abies balsamea  balsum fir\n2     BEPA Betula papyrifera paper birch\n3     LALA    Larix laricina        &lt;NA&gt;\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q3.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q3.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q3. Write the code to get this output",
-    "text": "Q3. Write the code to get this output\n\nleft_join(y, x, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 LALA     Larix laricina    &lt;NA&gt;"
+    "text": "Q3. Write the code to get this output\n\nleft_join(y, x, by = \"spp_code\")\n\n  spp_code        latin_name common_name\n1     ABBA    Abies balsamea  balsum fir\n2     BEPA Betula papyrifera paper birch\n3     LALA    Larix laricina        &lt;NA&gt;"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q4.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q4.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q4. Write the code to get this output",
-    "text": "Q4. Write the code to get this output\n\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 LALA     &lt;NA&gt;        Larix laricina   \n\n\n\n−+\n01:00"
+    "text": "Q4. Write the code to get this output\n\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     LALA        &lt;NA&gt;    Larix laricina\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q4.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q4.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q4. Write the code to get this output",
-    "text": "Q4. Write the code to get this output\n\nright_join(x, y, by = \"spp_code\")\n\n# A tibble: 3 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n3 LALA     &lt;NA&gt;        Larix laricina"
+    "text": "Q4. Write the code to get this output\n\nright_join(x, y, by = \"spp_code\")\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n3     LALA        &lt;NA&gt;    Larix laricina"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q5.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q5.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q5. Write the code to get this output",
-    "text": "Q5. Write the code to get this output\n\n\n# A tibble: 2 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera\n\n\n\n−+\n01:00"
+    "text": "Q5. Write the code to get this output\n\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q5.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q5.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q5. Write the code to get this output",
-    "text": "Q5. Write the code to get this output\n\ninner_join(x, y, by = \"spp_code\")\n\n# A tibble: 2 × 3\n  spp_code common_name latin_name       \n  &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA     balsum fir  Abies balsamea   \n2 BEPA     paper birch Betula papyrifera"
+    "text": "Q5. Write the code to get this output\n\ninner_join(x, y, by = \"spp_code\")\n\n  spp_code common_name        latin_name\n1     ABBA  balsum fir    Abies balsamea\n2     BEPA paper birch Betula papyrifera"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q6.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q6.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q6. Write the code to get this output",
-    "text": "Q6. Write the code to get this output\n\n\n# A tibble: 4 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 LALA     Larix laricina    &lt;NA&gt;       \n4 PIST     &lt;NA&gt;              white pine \n\n\n\n−+\n01:00"
+    "text": "Q6. Write the code to get this output\n\n\n  spp_code        latin_name common_name\n1     ABBA    Abies balsamea  balsum fir\n2     BEPA Betula papyrifera paper birch\n3     LALA    Larix laricina        &lt;NA&gt;\n4     PIST              &lt;NA&gt;  white pine\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q6.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q6.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q6. Write the code to get this output",
-    "text": "Q6. Write the code to get this output\n\nfull_join(y, x, by = \"spp_code\")\n\n# A tibble: 4 × 3\n  spp_code latin_name        common_name\n  &lt;chr&gt;    &lt;chr&gt;             &lt;chr&gt;      \n1 ABBA     Abies balsamea    balsum fir \n2 BEPA     Betula papyrifera paper birch\n3 LALA     Larix laricina    &lt;NA&gt;       \n4 PIST     &lt;NA&gt;              white pine"
+    "text": "Q6. Write the code to get this output\n\nfull_join(y, x, by = \"spp_code\")\n\n  spp_code        latin_name common_name\n1     ABBA    Abies balsamea  balsum fir\n2     BEPA Betula papyrifera paper birch\n3     LALA    Larix laricina        &lt;NA&gt;\n4     PIST              &lt;NA&gt;  white pine"
   },
   {
-    "objectID": "slides/math241_wk04wed_activity.html#consider-a-third-tibble-z",
-    "href": "slides/math241_wk04wed_activity.html#consider-a-third-tibble-z",
+    "objectID": "slides/math241_wk04wed_activity.html#consider-a-third-data-frame-z",
+    "href": "slides/math241_wk04wed_activity.html#consider-a-third-data-frame-z",
     "title": "Math 241",
-    "section": "Consider a third tibble, z:",
-    "text": "Consider a third tibble, z:\n\nz &lt;- x %&gt;%\n  rename(species_code = spp_code)\nz\n\n# A tibble: 3 × 2\n  species_code common_name\n  &lt;chr&gt;        &lt;chr&gt;      \n1 ABBA         balsum fir \n2 BEPA         paper birch\n3 PIST         white pine"
+    "section": "Consider a third data frame, z:",
+    "text": "Consider a third data frame, z:\n\nz &lt;- x %&gt;%\n  rename(species_code = spp_code)\nz\n\n  species_code common_name\n1         ABBA  balsum fir\n2         BEPA paper birch\n3         PIST  white pine"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q7.-write-the-code-to-get-this-output",
     "href": "slides/math241_wk04wed_activity.html#q7.-write-the-code-to-get-this-output",
     "title": "Math 241",
     "section": "Q7. Write the code to get this output",
-    "text": "Q7. Write the code to get this output\n\n\n# A tibble: 3 × 3\n  species_code common_name latin_name       \n  &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA         balsum fir  Abies balsamea   \n2 BEPA         paper birch Betula papyrifera\n3 PIST         white pine  &lt;NA&gt;             \n\n\n\n−+\n01:00"
+    "text": "Q7. Write the code to get this output\n\n\n  species_code common_name        latin_name\n1         ABBA  balsum fir    Abies balsamea\n2         BEPA paper birch Betula papyrifera\n3         PIST  white pine              &lt;NA&gt;\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q7.-write-the-code-to-get-this-output-1",
     "href": "slides/math241_wk04wed_activity.html#q7.-write-the-code-to-get-this-output-1",
     "title": "Math 241",
     "section": "Q7. Write the code to get this output",
-    "text": "Q7. Write the code to get this output\n\nleft_join(z, y, by = c(\"species_code\" = \"spp_code\"))\n\n# A tibble: 3 × 3\n  species_code common_name latin_name       \n  &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;            \n1 ABBA         balsum fir  Abies balsamea   \n2 BEPA         paper birch Betula papyrifera\n3 PIST         white pine  &lt;NA&gt;"
+    "text": "Q7. Write the code to get this output\n\nleft_join(z, y, by = c(\"species_code\" = \"spp_code\"))\n\n  species_code common_name        latin_name\n1         ABBA  balsum fir    Abies balsamea\n2         BEPA paper birch Betula papyrifera\n3         PIST  white pine              &lt;NA&gt;"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q8.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "href": "slides/math241_wk04wed_activity.html#q8.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "title": "Math 241",
     "section": "Q8. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q8. Write the code to get this output (hint: use a filtering join)\n\n\n# A tibble: 2 × 2\n  spp_code latin_name       \n  &lt;chr&gt;    &lt;chr&gt;            \n1 ABBA     Abies balsamea   \n2 BEPA     Betula papyrifera\n\n\n\n−+\n01:00"
+    "text": "Q8. Write the code to get this output (hint: use a filtering join)\n\n\n  spp_code        latin_name\n1     ABBA    Abies balsamea\n2     BEPA Betula papyrifera\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q8.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "href": "slides/math241_wk04wed_activity.html#q8.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "title": "Math 241",
     "section": "Q8. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q8. Write the code to get this output (hint: use a filtering join)\n\nsemi_join(y, x, by = \"spp_code\")\n\n# A tibble: 2 × 2\n  spp_code latin_name       \n  &lt;chr&gt;    &lt;chr&gt;            \n1 ABBA     Abies balsamea   \n2 BEPA     Betula papyrifera"
+    "text": "Q8. Write the code to get this output (hint: use a filtering join)\n\nsemi_join(y, x, by = \"spp_code\")\n\n  spp_code        latin_name\n1     ABBA    Abies balsamea\n2     BEPA Betula papyrifera"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q9.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "href": "slides/math241_wk04wed_activity.html#q9.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "title": "Math 241",
     "section": "Q9. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q9. Write the code to get this output (hint: use a filtering join)\n\n\n# A tibble: 1 × 2\n  species_code common_name\n  &lt;chr&gt;        &lt;chr&gt;      \n1 PIST         white pine \n\n\n\n−+\n01:00"
+    "text": "Q9. Write the code to get this output (hint: use a filtering join)\n\n\n  species_code common_name\n1         PIST  white pine\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q9.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "href": "slides/math241_wk04wed_activity.html#q9.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "title": "Math 241",
     "section": "Q9. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q9. Write the code to get this output (hint: use a filtering join)\n\nanti_join(z, y, by = c(\"species_code\" = \"spp_code\"))\n\n# A tibble: 1 × 2\n  species_code common_name\n  &lt;chr&gt;        &lt;chr&gt;      \n1 PIST         white pine"
+    "text": "Q9. Write the code to get this output (hint: use a filtering join)\n\nanti_join(z, y, by = c(\"species_code\" = \"spp_code\"))\n\n  species_code common_name\n1         PIST  white pine"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q10.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "href": "slides/math241_wk04wed_activity.html#q10.-write-the-code-to-get-this-output-hint-use-a-filtering-join",
     "title": "Math 241",
     "section": "Q10. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q10. Write the code to get this output (hint: use a filtering join)\n\n\n# A tibble: 1 × 2\n  spp_code latin_name    \n  &lt;chr&gt;    &lt;chr&gt;         \n1 LALA     Larix laricina\n\n\n\n−+\n01:00"
+    "text": "Q10. Write the code to get this output (hint: use a filtering join)\n\n\n  spp_code     latin_name\n1     LALA Larix laricina\n\n\n\n−+\n01:00"
   },
   {
     "objectID": "slides/math241_wk04wed_activity.html#q10.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "href": "slides/math241_wk04wed_activity.html#q10.-write-the-code-to-get-this-output-hint-use-a-filtering-join-1",
     "title": "Math 241",
     "section": "Q10. Write the code to get this output (hint: use a filtering join)",
-    "text": "Q10. Write the code to get this output (hint: use a filtering join)\n\nanti_join(y, x, by = \"spp_code\")\n\n# A tibble: 1 × 2\n  spp_code latin_name    \n  &lt;chr&gt;    &lt;chr&gt;         \n1 LALA     Larix laricina\n\n# or \nanti_join(y, z, by = c(\"spp_code\" = \"species_code\"))\n\n# A tibble: 1 × 2\n  spp_code latin_name    \n  &lt;chr&gt;    &lt;chr&gt;         \n1 LALA     Larix laricina"
+    "text": "Q10. Write the code to get this output (hint: use a filtering join)\n\nanti_join(y, x, by = \"spp_code\")\n\n  spp_code     latin_name\n1     LALA Larix laricina\n\n# or \nanti_join(y, z, by = c(\"spp_code\" = \"species_code\"))\n\n  spp_code     latin_name\n1     LALA Larix laricina"
   }
 ]

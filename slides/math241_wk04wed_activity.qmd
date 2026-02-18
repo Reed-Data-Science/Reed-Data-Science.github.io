@@ -60,22 +60,22 @@ theme_update(text = element_text(size = 20))
 
 ## Loading data
 
-We'll create the `x` and `y` tibbles in `R`:
+We'll create the `x` and `y` data frames in `R`:
 
 ```{r, echo = TRUE}
 library(tidyverse)
-x <- tibble(spp_code = c("ABBA", "BEPA", "PIST"),
-            common_name = c("balsum fir", "paper birch", "white pine"))
+x <- data.frame(spp_code = c("ABBA", "BEPA", "PIST"),
+                common_name = c("balsum fir", "paper birch", "white pine"))
 
-y <- tibble(spp_code = c("ABBA", "BEPA", "LALA"),
-            latin_name = c("Abies balsamea", 
-                           "Betula papyrifera",
-                           "Larix laricina"))
+y <- data.frame(spp_code = c("ABBA", "BEPA", "LALA"),
+                latin_name = c("Abies balsamea", 
+                               "Betula papyrifera",
+                               "Larix laricina"))
 ```
 
 ## Loading data
 
-We'll create the `x` and `y` tibbles in `R`:
+We'll create the `x` and `y` data frames in `R`:
 
 ```{r, echo = TRUE}
 x
@@ -166,7 +166,7 @@ countdown::countdown(1)
 full_join(y, x, by = "spp_code")
 ```
 
-## Consider a third tibble, `z`:
+## Consider a third data frame, `z`:
 
 ```{r}
 z <- x %>%
