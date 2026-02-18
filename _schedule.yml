@@ -121,6 +121,8 @@ scheduled-docs:
               href: readings/readings_wk04wed.qmd
             - type: Slides
               href: slides/math241_wk04wed.qmd
+            - type: Slides (PDF)
+              href: pdfs/math241_wk04wed.pdf
             - type: Activity
               href: slides/math241_wk04wed_activity.qmd
         - topic: "Problem Set 2 Due, Problem Set 3 Released"
