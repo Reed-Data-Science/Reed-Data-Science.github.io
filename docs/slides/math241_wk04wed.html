@@ -320,8 +320,8 @@
 <section id="motivating-example-forest-inventory" class="slide level2">
 <h2>Motivating example: forest inventory</h2>
 <ul>
-<li class="fragment">It is common in forestry, and in particular forest inventory, to have <strong>multiple tibbles</strong> where data are stored due to a variety of factors.</li>
-<li class="fragment">In order to perform most statistical analyses, you must have the necessary data in <strong>one tibble</strong>.</li>
+<li class="fragment">It is common in forestry, and in particular forest inventory, to have <strong>multiple data frames</strong> where data are stored due to a variety of factors.</li>
+<li class="fragment">In order to perform most statistical analyses, you must have the necessary data in <strong>one data frame</strong>.</li>
 <li class="fragment">Example: the US Forest Service, Forest Inventory &amp; Analysis stores plot-level, tree-level, subplot-level, … data in one database. Researchers must combine these data into a singular table to do analyses.</li>
 </ul>
 </section>
@@ -329,11 +329,11 @@
 <h2>Types of Data Joins</h2>
 <p>The <code>dplyr</code> package, which is part of the <code>tidyverse</code>, includes functions for two general types of joins:</p>
 <ul>
-<li class="fragment"><em>Mutating joins</em>, which combine the <strong>columns</strong> of tibbles <code>x</code> and <code>y</code>, and</li>
-<li class="fragment"><em>Filtering joins</em>, which match the <strong>rows</strong> of tibbles <code>x</code> and <code>y</code>.</li>
+<li class="fragment"><em>Mutating joins</em>, which combine the <strong>columns</strong> of data frames <code>x</code> and <code>y</code>, and</li>
+<li class="fragment"><em>Filtering joins</em>, which match the <strong>rows</strong> of data frames <code>x</code> and <code>y</code>.</li>
 </ul>
 <div class="fragment">
-<p>Think of how <code>mutate()</code> adds columns to a tibble, while <code>filter()</code> removes rows.</p>
+<p>Think of how <code>mutate()</code> adds columns to a data frame, while <code>filter()</code> removes rows.</p>
 </div>
 </section>
 <section id="example-data" class="slide level2">
@@ -849,7 +849,7 @@ $ `2005_Height` &lt;dbl&gt; NA, 817, 323, 738, 366, 669, 647, 269, NA, 270, NA, 
 <p>Enter, <code>pivot_longer()</code>.</p>
 <p><code>pivot_longer()</code>, a function from <code>tidyr</code> takes four key arguments:</p>
 <ul>
-<li class="fragment"><code>.data</code>: the data (tibble) you’d like to pivot,</li>
+<li class="fragment"><code>.data</code>: the data you’d like to pivot,</li>
 <li class="fragment"><code>cols</code>: the columns you’d like to pivot,</li>
 <li class="fragment"><code>names_to</code>: the new column that will be created which takes the column names from <code>cols</code> as values, and</li>
 <li class="fragment"><code>values_to</code>: the new column that will be created which takes the column values from <code>cols</code> as values.</li>
@@ -923,7 +923,7 @@ $ `2005_Height` &lt;dbl&gt; NA, 817, 323, 738, 366, 669, 647, 269, NA, 270, NA, 
 <li class="fragment"><code>tidyr</code> has an aptly named function, <code>pivot_wider()</code>.</li>
 <li class="fragment">Key arguments of <code>pivot_wider()</code>:
 <ul>
-<li class="fragment"><code>.data</code>: the tibble to widen,</li>
+<li class="fragment"><code>.data</code>: the data frame to widen,</li>
 <li class="fragment"><code>names_from</code>: the column that contains values which will be assigned as the new column names,</li>
 <li class="fragment"><code>values_from</code>: the column that contains</li>
 </ul></li>
@@ -941,7 +941,7 @@ $ `2005_Height` &lt;dbl&gt; NA, 817, 323, 738, 366, 669, 647, 269, NA, 270, NA, 
 </div>
 </div>
 <ul>
-<li class="fragment">This results in the same tibble that we started with!</li>
+<li class="fragment">This results in the same data frame that we started with!</li>
 </ul>
 </section>
 <section id="other-useful-tidyr-functions" class="slide level2">

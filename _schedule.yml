@@ -119,8 +119,10 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk04wed.qmd
-            # - type: Slides
-            #   href: slides/math241_wk04wed.qmd
+            - type: Slides
+              href: slides/math241_wk04wed.qmd
+            - type: Activity
+              href: slides/math241_wk04wed_activity.qmd
         - topic: "Problem Set 2 Due, Problem Set 3 Released"
           display-date: Thursday, Feb 19 9:00am
           date: 2/19/26

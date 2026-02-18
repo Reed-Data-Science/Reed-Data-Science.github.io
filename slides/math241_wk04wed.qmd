@@ -209,8 +209,8 @@ Today, we'll look at a few ways to join the following tables `x` and `y`:
 ## Motivating example: forest inventory
 
 
--   It is common in forestry, and in particular forest inventory, to have **multiple tibbles** where data are stored due to a variety of factors.
--   In order to perform most statistical analyses, you must have the necessary data in **one tibble**.
+-   It is common in forestry, and in particular forest inventory, to have **multiple data frames** where data are stored due to a variety of factors.
+-   In order to perform most statistical analyses, you must have the necessary data in **one data frame**.
 -   Example: the US Forest Service, Forest Inventory & Analysis stores plot-level, tree-level, subplot-level, ... data in one database. Researchers must combine these data into a singular table to do analyses. 
 
 
@@ -220,12 +220,12 @@ Today, we'll look at a few ways to join the following tables `x` and `y`:
 
 The `dplyr` package, which is part of the `tidyverse`, includes functions for two general types of joins:
 
--   *Mutating joins*, which combine the **columns** of tibbles `x` and `y`, and
--   *Filtering joins*, which match the **rows** of tibbles `x` and `y`.
+-   *Mutating joins*, which combine the **columns** of data frames `x` and `y`, and
+-   *Filtering joins*, which match the **rows** of data frames `x` and `y`.
 
 ::: {.fragment}
 
-Think of how `mutate()` adds columns to a tibble, while `filter()` removes rows.
+Think of how `mutate()` adds columns to a data frame, while `filter()` removes rows.
 
 :::
 
@@ -685,7 +685,7 @@ Enter, `pivot_longer()`.
 
 `pivot_longer()`, a function from `tidyr` takes four key arguments:
 
--   `.data`: the data (tibble) you'd like to pivot, 
+-   `.data`: the data you'd like to pivot, 
 -   `cols`: the columns you'd like to pivot,
 -   `names_to`: the new column that will be created which takes the column names from `cols` as values, and
 -   `values_to`: the new column that will be created which takes the column values from `cols` as values.
@@ -744,7 +744,7 @@ face_long
 -   For this example, we will just widen the `face_long` dataset back to its original form. 
 -   `tidyr` has an aptly named function, `pivot_wider()`.
 -   Key arguments of `pivot_wider()`:
-    -   `.data`: the tibble to widen,
+    -   `.data`: the data frame to widen,
     -   `names_from`: the column that contains values which will be assigned as the new column names,
     -   `values_from`: the column that contains 
 
@@ -760,7 +760,7 @@ all_equal(face, face_wide)
 
 
 
--   This results in the same tibble that we started with! 
+-   This results in the same data frame that we started with! 
 
 
 
