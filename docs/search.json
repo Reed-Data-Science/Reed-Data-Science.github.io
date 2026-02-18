@@ -98,6 +98,27 @@
     "text": "Coding Style\n\nPart of writing easily reproducible code.\nLots of reasonable coding styles.\nImportant piece is consistency across all coders on a project.\nSome suggestions:\n\nUse spaces liberally.\nLet R help you with the proper indenting.\nThink carefully about names.\n\nCheck out the Tidyverse Style Guide."
   },
   {
+    "objectID": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames",
+    "href": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames",
+    "title": "Math 241",
+    "section": "A cautionary tale: tibble()s vs. data.frame()s",
+    "text": "A cautionary tale: tibble()s vs. data.frame()s\n\nTibbles are a special type of data frame that come with the tidyverse\nThey have nicer printing behavior, and, as mentioned briefly last class, a different subsetting behavior.\nLet’s look at an example:\n\n\n\nlibrary(tidyverse)\nboop &lt;- data.frame(x = 1:3, y = c(\"cat\", \"dog\", \"bird\"))\nbeep &lt;- tibble(x = 1:3, y = c(\"cat\", \"dog\", \"bird\"))\n\n\n\n\n\nboop\n\n  x    y\n1 1  cat\n2 2  dog\n3 3 bird\n\n\n\n\nbeep\n\n# A tibble: 3 × 2\n      x y    \n  &lt;int&gt; &lt;chr&gt;\n1     1 cat  \n2     2 dog  \n3     3 bird"
+  },
+  {
+    "objectID": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames-1",
+    "href": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames-1",
+    "title": "Math 241",
+    "section": "A cautionary tale: tibble()s vs. data.frame()s",
+    "text": "A cautionary tale: tibble()s vs. data.frame()s\n\n\n\nboop[2]\n\n     y\n1  cat\n2  dog\n3 bird\n\nclass(boop[2])\n\n[1] \"data.frame\"\n\n\n\n\nbeep[2]\n\n# A tibble: 3 × 1\n  y    \n  &lt;chr&gt;\n1 cat  \n2 dog  \n3 bird \n\nclass(beep[2])\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\n\n\n\n\nboop[1, 2]\n\n[1] \"cat\"\n\nclass(boop[1, 2])\n\n[1] \"character\"\n\n\n\n\nbeep[1, 2]\n\n# A tibble: 1 × 1\n  y    \n  &lt;chr&gt;\n1 cat  \n\nclass(beep[1, 2])\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\n\n\n\n\n\nboop[[1, 2]]\n\n[1] \"cat\"\n\n\n\n\nbeep[[1, 2]]\n\n[1] \"cat\""
+  },
+  {
+    "objectID": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames-2",
+    "href": "slides/math241_wk04wed.html#a-cautionary-tale-tibbles-vs.-data.frames-2",
+    "title": "Math 241",
+    "section": "A cautionary tale: tibble()s vs. data.frame()s",
+    "text": "A cautionary tale: tibble()s vs. data.frame()s\n\ntibble()s have subsetting behavior that is consistent with list()s\nAnd even though data.frame()s are lists, they do not have this consistent behavior\nThis is frustrating! Be careful."
+  },
+  {
     "objectID": "slides/math241_wk04wed.html#relational-data",
     "href": "slides/math241_wk04wed.html#relational-data",
     "title": "Math 241",
@@ -2503,7 +2524,7 @@
     "href": "slides/math241_wk04mon.html#vectorized",
     "title": "Math 241",
     "section": "Vectorized",
-    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -4.455525 -1.126027  5.017191"
+    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -3.366308 -1.033700  6.520999"
   },
   {
     "objectID": "slides/math241_wk04mon.html#vectorized-caution",

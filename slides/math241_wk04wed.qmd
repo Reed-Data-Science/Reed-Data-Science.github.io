@@ -155,6 +155,138 @@ clean <- select(dataset, thing1, thing2) %>%
 
 ------------------------------------------------------------------------
 
+## A cautionary tale: `tibble`()s vs. `data.frame`()s
+
+
+-   Tibbles are a special type of data frame that come with the `tidyverse`
+-   They have nicer printing behavior, and, as mentioned briefly last class, a different subsetting behavior.
+-   Let's look at an example:
+
+::: {.fragment}
+
+```{r}
+library(tidyverse)
+boop <- data.frame(x = 1:3, y = c("cat", "dog", "bird"))
+beep <- tibble(x = 1:3, y = c("cat", "dog", "bird"))
+```
+
+:::
+
+
+:::: {.columns .fragment}
+
+::: {.column width="50%"}
+
+```{r}
+boop
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+beep
+```
+
+
+:::
+
+::::
+
+
+------------------------------------------------------------------------
+
+## A cautionary tale: `tibble`()s vs. `data.frame`()s
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+boop[2]
+class(boop[2])
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+beep[2]
+class(beep[2])
+```
+
+
+:::
+
+::::
+
+<br>
+
+:::: {.columns .fragment}
+
+::: {.column width="50%"}
+
+```{r}
+boop[1, 2]
+class(boop[1, 2])
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+beep[1, 2]
+class(beep[1, 2])
+```
+
+
+:::
+
+::::
+
+
+<br>
+
+:::: {.columns .fragment}
+
+::: {.column width="50%"}
+
+```{r}
+boop[[1, 2]]
+```
+
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+beep[[1, 2]]
+```
+
+
+:::
+
+::::
+
+
+------------------------------------------------------------------------
+
+## A cautionary tale: `tibble`()s vs. `data.frame`()s
+
+-   `tibble()`s have subsetting behavior that is consistent with `list()`s
+-   And even though `data.frame()`s are lists, they do not have this consistent behavior
+-   This is frustrating! Be careful. 
+
+------------------------------------------------------------------------
+
 ## Relational Data
 
 :::: {.columns}
