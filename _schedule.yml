@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 2/18/26
+  draft-after: 2/25/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -135,22 +135,22 @@ scheduled-docs:
       #   - 'Some text'
     - week: 5
       days:
-        - topic: "Spatial data I: static"
+        - topic: "Spatial data I"
           display-date: Monday, Feb 23
           date: 2/23/26
           docs:
             - type: Reading
-              href: readings/readings_wk02mon.qmd
-            - type: Slides
-              href: slides/math141_wk02mon.qmd
-        - topic: "Spatial data II: interactive"
+              href: readings/readings_wk05mon.qmd
+            # - type: Slides
+            #   href: slides/math241_wk05mon.qmd
+        - topic: "Spatial data II"
           display-date: Wednesday, Feb 25
           date: 2/25/26
           docs:
             - type: Reading
-              href: readings/readings_wk02wed.qmd
-            - type: Slides
-              href: slides/math141_wk02wed.qmd
+              href: readings/readings_wk05wed.qmd
+            # - type: Slides
+            #   href: slides/math241_wk05wed.qmd
         - topic: "Problem Set 3 Due, Problem Set 4 Released"
           display-date: Thursday, Feb 26 9:00am
           date: 2/26/26
