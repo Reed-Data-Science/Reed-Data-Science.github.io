@@ -141,8 +141,8 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk05mon.qmd
-            # - type: Slides
-            #   href: slides/math241_wk05mon.qmd
+            - type: Slides
+              href: slides/math241_wk05mon.qmd
         - topic: "Spatial data II"
           display-date: Wednesday, Feb 25
           date: 2/25/26
