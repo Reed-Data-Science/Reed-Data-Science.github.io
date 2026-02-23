@@ -86,7 +86,6 @@ theme_update(text = element_text(size = 20))
 
 * Geospatial computations
     - distance
-    - (spatial) correlation
     - spatial joins
 
 * Raster data
@@ -143,6 +142,88 @@ Focus on creating the following types of maps:
 
 ::::
 
+
+------------------------------------------------------------------------
+
+### Spatial Data Example: Cholera Outbreak in 1854
+
+:::: {.columns}
+
+::: {.column width='60%'}
+
+The most famous early analysis of geospatial data was done by physician John Snow in 1854.
+
+::: {.fragment}
+
+Cholera outbreaks were common in 19th century London
+
+- *believed* to be an airborne disease caused by breathing foul air
+
+:::
+
+::: {.fragment}
+
+**Outbreak in 1854:** over 600 deaths in Soho, London
+
+- John Snow collects data, thinks *contaminated water* is the cause
+
+- At the time water was provided by competing private firms *from water pumps*
+
+- Snow recorded locations of (i) deaths and (ii) water pumps
+
+:::
+
+:::
+
+::: {.column width='40%'}
+
+```{r, echo=FALSE, out.width='100%'}
+include_graphics("img/snow_map.png")
+```
+
+:::
+
+::::
+
+------------------------------------------------------------------------
+
+### A simple visual model (Tobler 1994):
+
+:::: {.columns}
+
+::: {.column width='50%' .nonincremental}
+
+This figure:
+
+- **Red Dots:** Cholera cases
+
+- **Blue Triangles:** Pumps
+
+- **Blue Lines:** Closest pump is contained in each section
+
+<br>
+
+**Q:** What pattern do you notice?
+
+**Q:** What are some possible explanations for the "outliers"? (deaths that don't match up with the pattern)
+
+:::
+
+::: {.column width='50%'}
+
+```{r, echo=FALSE, out.width='90%'}
+include_graphics("img/snow_map_voronoi.png")
+```
+
+:::
+
+::::
+
+::: {.fragment}
+
+**Conclusion**: Visualizing spatial data can help us see key patterns
+
+:::
 
 ------------------------------------------------------------------------
 
@@ -1456,7 +1537,7 @@ wa %>%
 
 ::: {.fragment .nonincremental}
 
-### Resources for learning more about spatial data?
+### Resources for learning more about spatial data
 
 * Dig into wrangling spatial data with the `sf` package: [https://github.com/rstudio/cheatsheets/blob/master/sf.pdf](https://github.com/rstudio/cheatsheets/blob/master/sf.pdf)
 

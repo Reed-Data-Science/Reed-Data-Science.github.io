@@ -2812,5 +2812,355 @@
     "title": "Math 241",
     "section": "Spatial Data Structures",
     "text": "Spatial Data Structures\n\nOften stored in special data structures\n\nEx: Shapefile(s)\nConsist of geometric objects like points, lines, and polygons\n\n\n\n\nVisualizing Spatial Data\n\nNeed to draw the map\nAdd metadata on top of the map\n\nColor in regions\nDots"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#week-5-goals",
+    "href": "slides/math241_wk05wed.html#week-5-goals",
+    "title": "Math 241",
+    "section": "Week 5 Goals",
+    "text": "Week 5 Goals\n\n\nMon Lecture\n\nIntroduction to spatial data\n\npoint data\npolygon data\n\nStatic and interactive maps with point and polygon data\n\nbase layers (almost as good as merino)\ncoordinate reference systems / projections\npopups and additional context\nstatic graphs with sf and ggplot2\ninteractive graphs with leaflet\n\n\n\nWed Lecture\n\nGeospatial computations\n\ndistance\nspatial joins\n\nRaster data\n\nwhat is it?\nextracting values by polygons"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#why-do-we-need-to-talk-about-spatial-data",
+    "href": "slides/math241_wk05wed.html#why-do-we-need-to-talk-about-spatial-data",
+    "title": "Math 241",
+    "section": "Why do we need to talk about spatial data?",
+    "text": "Why do we need to talk about spatial data?\nSpatial data, like dates and text data, are fundamentally different from numerical data.\n\nSpatial coordinates are encoded as numbers, but have special meaning.\n\n\nSpatial statistics concerns building and interpreting models that include spatial coordinates.\n\nWe won’t talk much about this much in this course\nBased on Waldo Tobler’s First Law of Geography: “Everything is related to everything else, but near things are more related than distant things.”"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#ex-cholera-outbreak-in-1854",
+    "href": "slides/math241_wk05wed.html#ex-cholera-outbreak-in-1854",
+    "title": "Math 241",
+    "section": "Ex: Cholera Outbreak in 1854",
+    "text": "Ex: Cholera Outbreak in 1854\n\n\nThe most famous early analysis of geospatial data was done by physician John Snow in 1854.\n\nCholera outbreaks were common in 19th century London\n\nbelieved to be an airborne disease caused by breathing foul air\n\n\n\nOutbreak in 1854: over 600 deaths in Soho, London\n\nJohn Snow collects data, thinks contaminated water is the cause\nAt the time water was provided by competing private firms from water pumps\nSnow recorded locations of (i) deaths and (ii) water pumps"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#a-simple-visual-model-tobler-1994",
+    "href": "slides/math241_wk05wed.html#a-simple-visual-model-tobler-1994",
+    "title": "Math 241",
+    "section": "A simple visual model (Tobler 1994):",
+    "text": "A simple visual model (Tobler 1994):\n\n\nThis figure:\n\nRed Dots: Cholera cases\nBlue Triangles: Pumps\nBlue Lines: Closest pump is contained in each section\n\n\nQ: What pattern do you notice?\nQ: What are some possible explanations for the “outliers”? (deaths that don’t match up with the pattern)"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#conclusion",
+    "href": "slides/math241_wk05wed.html#conclusion",
+    "title": "Math 241",
+    "section": "Conclusion",
+    "text": "Conclusion\nVisualizing spatial data can help us see key patterns\n\nWe’re going to learn how to make visualizations of spatial data in R\n\nFor this, we’ll mostly use the sf package"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#revisiting-snows-cholera-map",
+    "href": "slides/math241_wk05wed.html#revisiting-snows-cholera-map",
+    "title": "Math 241",
+    "section": "Revisiting Snow’s cholera map",
+    "text": "Revisiting Snow’s cholera map\nYou can download Snow’s cholera map data here.\n\n# Read in the package\nlibrary(sf)\n\n# Defining a path with the location of all the \n# NOTE: the path may differ on your computer!\npath &lt;- \"data/SnowGIS_SHP\" \n\n# listing all files in the folder\nlist.files(path)\n\n [1] \"Cholera_Deaths.dbf\"          \"Cholera_Deaths.prj\"         \n [3] \"Cholera_Deaths.sbn\"          \"Cholera_Deaths.sbx\"         \n [5] \"Cholera_Deaths.shp\"          \"Cholera_Deaths.shx\"         \n [7] \"OSMap_Grayscale.tfw\"         \"OSMap_Grayscale.tif\"        \n [9] \"OSMap_Grayscale.tif.aux.xml\" \"OSMap_Grayscale.tif.ovr\"    \n[11] \"OSMap.tfw\"                   \"OSMap.tif\"                  \n[13] \"Pumps.dbf\"                   \"Pumps.prj\"                  \n[15] \"Pumps.sbx\"                   \"Pumps.shp\"                  \n[17] \"Pumps.shx\"                   \"README.txt\"                 \n[19] \"SnowMap.tfw\"                 \"SnowMap.tif\"                \n[21] \"SnowMap.tif.aux.xml\"         \"SnowMap.tif.ovr\""
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-1",
+    "href": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-1",
+    "title": "Math 241",
+    "section": "Revisiting Snow’s cholera map",
+    "text": "Revisiting Snow’s cholera map\n\nlist.files(path)\n\n [1] \"Cholera_Deaths.dbf\"          \"Cholera_Deaths.prj\"         \n [3] \"Cholera_Deaths.sbn\"          \"Cholera_Deaths.sbx\"         \n [5] \"Cholera_Deaths.shp\"          \"Cholera_Deaths.shx\"         \n [7] \"OSMap_Grayscale.tfw\"         \"OSMap_Grayscale.tif\"        \n [9] \"OSMap_Grayscale.tif.aux.xml\" \"OSMap_Grayscale.tif.ovr\"    \n[11] \"OSMap.tfw\"                   \"OSMap.tif\"                  \n[13] \"Pumps.dbf\"                   \"Pumps.prj\"                  \n[15] \"Pumps.sbx\"                   \"Pumps.shp\"                  \n[17] \"Pumps.shx\"                   \"README.txt\"                 \n[19] \"SnowMap.tfw\"                 \"SnowMap.tif\"                \n[21] \"SnowMap.tif.aux.xml\"         \"SnowMap.tif.ovr\"            \n\n\n6 files with the name \"Cholera_Deaths\"\n\nThese correspond to the shapefile for Cholera Deaths\nThis shapefile has all the information we need\nWe can look at all the shapefiles in the folder with st_layers()\n\n\nst_layers(path)\n\nDriver: ESRI Shapefile \nAvailable layers:\n      layer_name geometry_type features fields                       crs_name\n1 Cholera_Deaths         Point      250      2 OSGB36 / British National Grid\n2          Pumps         Point        8      1 OSGB36 / British National Grid\n\n\n\nPumps is another shapefile"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-2",
+    "href": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-2",
+    "title": "Math 241",
+    "section": "Revisiting Snow’s cholera map",
+    "text": "Revisiting Snow’s cholera map\nWe use the st_read() function to read shapefiles\n\nCholeraDeaths &lt;- st_read(path, layer = \"Cholera_Deaths\")\n\nReading layer `Cholera_Deaths' from data source \n  `/Users/grwhite/courses/math-241/Reed-Data-Science.github.io/slides/data/SnowGIS_SHP' \n  using driver `ESRI Shapefile'\nSimple feature collection with 250 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 529160.3 ymin: 180857.9 xmax: 529655.9 ymax: 181306.2\nProjected CRS: OSGB36 / British National Grid"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-3",
+    "href": "slides/math241_wk05wed.html#revisiting-snows-cholera-map-3",
+    "title": "Math 241",
+    "section": "Revisiting Snow’s cholera map",
+    "text": "Revisiting Snow’s cholera map\nCholera_Deaths is a data.frame in addition to being an sf (shapefile) object.\n\nclass(CholeraDeaths)\n\n[1] \"sf\"         \"data.frame\"\n\n\nLooking at the first three rows:\n\nCholeraDeaths[1:3, ]\n\nSimple feature collection with 3 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 529308.7 ymin: 181020.3 xmax: 529314.4 ymax: 181031.4\nProjected CRS: OSGB36 / British National Grid\n  Id Count                  geometry\n1  0     3 POINT (529308.7 181031.4)\n2  0     2 POINT (529312.2 181025.2)\n3  0     1 POINT (529314.4 181020.3)\n\n\n\n\nId and Count work like any other (numeric) variable:\n\n\nmean(CholeraDeaths$Count)\n\n[1] 1.956\n\n\n\nBut the geometry variable is a special sf-specific variable type"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#a-first-map",
+    "href": "slides/math241_wk05wed.html#a-first-map",
+    "title": "Math 241",
+    "section": "A first map",
+    "text": "A first map\nYou can use the geom_sf() function from the sf package to plot shapefiles\n\nggplot(CholeraDeaths) +\n  geom_sf() \n\n\n\n\n\n\n\n\n\nnote that we don’t need to specify aes() because it is obvious from the data what to use to make the plot"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#adding-the-pumps",
+    "href": "slides/math241_wk05wed.html#adding-the-pumps",
+    "title": "Math 241",
+    "section": "Adding the Pumps",
+    "text": "Adding the Pumps\n\npumps &lt;- st_read(path, layer = \"Pumps\")\n\nReading layer `Pumps' from data source \n  `/Users/grwhite/courses/math-241/Reed-Data-Science.github.io/slides/data/SnowGIS_SHP' \n  using driver `ESRI Shapefile'\nSimple feature collection with 8 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 529183.7 ymin: 180660.5 xmax: 529748.9 ymax: 181193.7\nProjected CRS: OSGB36 / British National Grid"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#adding-the-pumps-1",
+    "href": "slides/math241_wk05wed.html#adding-the-pumps-1",
+    "title": "Math 241",
+    "section": "Adding the Pumps",
+    "text": "Adding the Pumps\n\nggplot(CholeraDeaths) +\n  geom_sf() +\n  geom_sf(data = pumps, size = 3, color = \"red\")"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#adding-some-context-with-a-map",
+    "href": "slides/math241_wk05wed.html#adding-some-context-with-a-map",
+    "title": "Math 241",
+    "section": "Adding some context with a map",
+    "text": "Adding some context with a map\nCan use annotation_map_tile() to add background map from Open Street Map:\n\nlibrary(ggspatial)\nlibrary(prettymapr)\nlibrary(raster)\n\nggplot(CholeraDeaths) + \n  annotation_map_tile(type = \"osm\", zoomin = 0) + \n  geom_sf() +\n  geom_sf(data = pumps, color = \"red\")"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#projections",
+    "href": "slides/math241_wk05wed.html#projections",
+    "title": "Math 241",
+    "section": "Projections",
+    "text": "Projections\nYou can see information on a shapefile’s projection with st_crs()\n\nst_crs(CholeraDeaths)\n\nCoordinate Reference System:\n  User input: OSGB36 / British National Grid \n  wkt:\nPROJCRS[\"OSGB36 / British National Grid\",\n    BASEGEOGCRS[\"OSGB36\",\n        DATUM[\"Ordnance Survey of Great Britain 1936\",\n            ELLIPSOID[\"Airy 1830\",6377563.396,299.3249646,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4277]],\n    CONVERSION[\"British National Grid\",\n        METHOD[\"Transverse Mercator\",\n            ID[\"EPSG\",9807]],\n        PARAMETER[\"Latitude of natural origin\",49,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8801]],\n        PARAMETER[\"Longitude of natural origin\",-2,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8802]],\n        PARAMETER[\"Scale factor at natural origin\",0.9996012717,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8805]],\n        PARAMETER[\"False easting\",400000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8806]],\n        PARAMETER[\"False northing\",-100000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8807]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Engineering survey, topographic mapping.\"],\n        AREA[\"United Kingdom (UK) - offshore to boundary of UKCS within 49°45'N to 61°N and 9°W to 2°E; onshore Great Britain (England, Wales and Scotland). Isle of Man onshore.\"],\n        BBOX[49.75,-9.01,61.01,2.01]],\n    ID[\"EPSG\",27700]]"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#transforming-projections",
+    "href": "slides/math241_wk05wed.html#transforming-projections",
+    "title": "Math 241",
+    "section": "Transforming Projections",
+    "text": "Transforming Projections\nWe can use the st_transform() function to re-project data onto a different coordinate system\n\nCholeraDeaths %&gt;%\n  st_transform(4326) # 4326 means \"WGS84\" = a popular coordinate system\n\nSimple feature collection with 250 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -0.1400738 ymin: 51.51186 xmax: -0.1329335 ymax: 51.51583\nGeodetic CRS:  WGS 84\nFirst 10 features:\n   Id Count                    geometry\n1   0     3 POINT (-0.1379301 51.51342)\n2   0     2  POINT (-0.137883 51.51336)\n3   0     1 POINT (-0.1378529 51.51332)\n4   0     1 POINT (-0.1378119 51.51326)\n5   0     4  POINT (-0.1377668 51.5132)\n6   0     2 POINT (-0.1375369 51.51318)\n7   0     2 POINT (-0.1382004 51.51336)\n8   0     2  POINT (-0.138045 51.51333)\n9   0     3 POINT (-0.1382761 51.51332)\n10  0     2 POINT (-0.1382234 51.51343)\n\n\n\nSpecifically, for the Cholera dataset, the different coordinate systems really don’t matter very much. But when you’re working with data at different scales it can matter."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#geospatial-computations-1",
+    "href": "slides/math241_wk05wed.html#geospatial-computations-1",
+    "title": "Math 241",
+    "section": "Geospatial Computations",
+    "text": "Geospatial Computations\nJust like we can perform computations with numerical or factor data, we can compute new variables using spatial data\nWe’ll look at a few helpful sf functions:\n\nst_distance(): compute distances between spatial objects\nst_area(): compute area enclosed by a spatial object\nst_centroid(): compute the centroid of a spatial object\nst_length(): compute the length of a spatial object\nst_intersection() and st_difference(): compute intersections or set differences of spatial objects\nst_join(): merge spatial data based on spatial relationships"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#distances-st_distance",
+    "href": "slides/math241_wk05wed.html#distances-st_distance",
+    "title": "Math 241",
+    "section": "Distances: st_distance()",
+    "text": "Distances: st_distance()\nCan use the st_distance() function to compute the distance between two spatial objects:\n\nlibrary(sf)\n# calculate distance between the first five landmarks\ndistance_matrix &lt;- st_distance(landmarks[1:5, ])\ndistance_matrix\n\nUnits: [m]\n         [,1]      [,2]      [,3]      [,4]      [,5]\n[1,]    0.000 1328.4169 1333.0100 1824.4163 1390.4456\n[2,] 1328.417    0.0000  598.0400  508.1877  201.6394\n[3,] 1333.010  598.0400    0.0000  946.0184  799.6426\n[4,] 1824.416  508.1877  946.0184    0.0000  448.1404\n[5,] 1390.446  201.6394  799.6426  448.1404    0.0000\n\n\n\n\n\ndistance_matrix %&gt;%\n  units::set_units(\"mi\") # distance in miles\n\nUnits: [mi]\n          [,1]      [,2]      [,3]      [,4]      [,5]\n[1,] 0.0000000 0.8254400 0.8282940 1.1336397 0.8639829\n[2,] 0.8254400 0.0000000 0.3716048 0.3157732 0.1252929\n[3,] 0.8282940 0.3716048 0.0000000 0.5878286 0.4968749\n[4,] 1.1336397 0.3157732 0.5878286 0.0000000 0.2784615\n[5,] 0.8639829 0.1252929 0.4968749 0.2784615 0.0000000\n\n\n\n\nThis distance is “as the crow flies”\n\nThere are other options (e.g., distance by driving) – see Chapter 18 in MDSR!"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#distances-st_distance-1",
+    "href": "slides/math241_wk05wed.html#distances-st_distance-1",
+    "title": "Math 241",
+    "section": "Distances: st_distance()",
+    "text": "Distances: st_distance()\nThis distance is “as the crow flies”\n\nThere are other options (e.g., distance by driving) – see Chapter 18 in MDSR!"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#distances-st_distance-2",
+    "href": "slides/math241_wk05wed.html#distances-st_distance-2",
+    "title": "Math 241",
+    "section": "Distances: st_distance()",
+    "text": "Distances: st_distance()\n\n# ggplot(CholeraDeaths) +\n#   geom_sf(aes(color = factor(nearest_pump))) +\n#   geom_sf(data = pumps, size = 3)"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#distances-st_distance-3",
+    "href": "slides/math241_wk05wed.html#distances-st_distance-3",
+    "title": "Math 241",
+    "section": "Distances: st_distance()",
+    "text": "Distances: st_distance()\nThis distance is “as the crow flies”\n\nThere are other options (e.g., distance by driving) – see Chapter 18 in MDSR!"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#ex-macleish-property",
+    "href": "slides/math241_wk05wed.html#ex-macleish-property",
+    "title": "Math 241",
+    "section": "Ex: MacLeish Property",
+    "text": "Ex: MacLeish Property\nSee: https://www.smith.edu/academics/applied-learning-research/sustainable-smith/macleish-field-station\n\nliberal arts field station\n250 acre area of forest and pasture land near Whately, MA\nSmith College community can use the space for artistic inquiry, environmental research, outdoor education, low-impact recreation\n\nCan read in spatial data from macleish package\n\nlibrary(macleish)"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#ex-macleish-property-1",
+    "href": "slides/math241_wk05wed.html#ex-macleish-property-1",
+    "title": "Math 241",
+    "section": "Ex: MacLeish Property",
+    "text": "Ex: MacLeish Property\nPulling:\n\nThe boundary of the property\nThe streams that go through the property\n\n\nboundary &lt;- macleish_layers %&gt;% pluck(\"boundary\")\nstreams &lt;- macleish_layers %&gt;% pluck(\"streams\")\n\n\nboundary\n\nSimple feature collection with 1 feature and 1 field\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: -72.68725 ymin: 42.44297 xmax: -72.67238 ymax: 42.45885\nGeodetic CRS:  WGS 84\n             area                       geometry\n1 255.0989 [acre] POLYGON ((-72.68133 42.4553...\n\nstreams\n\nSimple feature collection with 13 features and 1 field\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68641 ymin: 42.43476 xmax: -72.67133 ymax: 42.45892\nGeodetic CRS:  WGS 84\nFirst 10 features:\n   Id                       geometry\n1   1 LINESTRING (-72.67247 42.45...\n2   1 LINESTRING (-72.67357 42.45...\n3   1 LINESTRING (-72.67652 42.45...\n4   1 LINESTRING (-72.67715 42.45...\n5   1 LINESTRING (-72.67652 42.45...\n6   1 LINESTRING (-72.67628 42.45...\n7   1 LINESTRING (-72.67409 42.45...\n8   3 LINESTRING (-72.67979 42.45...\n9   3 LINESTRING (-72.68109 42.45...\n10  3 LINESTRING (-72.68275 42.45..."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#macleish-property-plotting",
+    "href": "slides/math241_wk05wed.html#macleish-property-plotting",
+    "title": "Math 241",
+    "section": "MacLeish Property: Plotting",
+    "text": "MacLeish Property: Plotting\n\n\nggplot() + \n  geom_sf(data = boundary) + \n  geom_sf(data = streams, color = \"skyblue\", size = 1.1) + \n  geom_sf(data = landmarks, color = \"deeppink\") + \n  theme_classic()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#calculating-area-st_area",
+    "href": "slides/math241_wk05wed.html#calculating-area-st_area",
+    "title": "Math 241",
+    "section": "Calculating area: st_area()",
+    "text": "Calculating area: st_area()\nThe boundary dataset already reports the area of the plot:\n\nboundary$area\n\n255.0989 [acre]\n\n\n\n\nBut we could calculate it ourselves with the st_area() function\n\nst_area(boundary) %&gt;%\n  units::set_units(\"acres\")\n\n255.0989 [acres]"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#centroids-st_centroid",
+    "href": "slides/math241_wk05wed.html#centroids-st_centroid",
+    "title": "Math 241",
+    "section": "Centroids: st_centroid()",
+    "text": "Centroids: st_centroid()\nCan calculate the centroid of the boundary using the st_centroid()\n\nboundary_center &lt;- boundary %&gt;%\n  st_centroid()\nboundary_center\n\nSimple feature collection with 1 feature and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -72.67969 ymin: 42.45164 xmax: -72.67969 ymax: 42.45164\nGeodetic CRS:  WGS 84\n             area                   geometry\n1 255.0989 [acre] POINT (-72.67969 42.45164)\n\n\n\n\nggplot() + \n  geom_sf(data = boundary) + \n  geom_sf(data = streams, color = \"skyblue\", size = 1.1) + \n  geom_sf(data = landmarks, color = \"deeppink\") + \n  geom_sf(data = boundary_center, shape = 5, size = 2, color = \"tomato\") + \n  labs(caption = \"Red diamond indicates boundary center.\") + \n  theme_classic()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#centroids-st_centroid-1",
+    "href": "slides/math241_wk05wed.html#centroids-st_centroid-1",
+    "title": "Math 241",
+    "section": "Centroids: st_centroid()",
+    "text": "Centroids: st_centroid()\n\nggplot(boundary) + \n  geom_sf() + \n  scale_x_continuous(breaks = c(-72.677, -72.683)) + \n  geom_sf(data = streams, color = \"blue\", size = 1.5) + \n  geom_sf(data = boundary_center, color = \"red\", size = 1.5)"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#lengths-of-linesedges-st_length",
+    "href": "slides/math241_wk05wed.html#lengths-of-linesedges-st_length",
+    "title": "Math 241",
+    "section": "Lengths of lines/edges: st_length()",
+    "text": "Lengths of lines/edges: st_length()\nCan compute the length of each stream with the st_length() function (from sf)\n\nstreams &lt;- streams %&gt;%\n  mutate(length = st_length(geometry))\nstreams\n\nSimple feature collection with 13 features and 2 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68641 ymin: 42.43476 xmax: -72.67133 ymax: 42.45892\nGeodetic CRS:  WGS 84\nFirst 10 features:\n   Id                       geometry         length\n1   1 LINESTRING (-72.67247 42.45...  593.33436 [m]\n2   1 LINESTRING (-72.67357 42.45...  412.27916 [m]\n3   1 LINESTRING (-72.67652 42.45...  137.87960 [m]\n4   1 LINESTRING (-72.67715 42.45...   40.25734 [m]\n5   1 LINESTRING (-72.67652 42.45...   51.02365 [m]\n6   1 LINESTRING (-72.67628 42.45...  592.79892 [m]\n7   1 LINESTRING (-72.67409 42.45... 2152.43892 [m]\n8   3 LINESTRING (-72.67979 42.45... 1651.25471 [m]\n9   3 LINESTRING (-72.68109 42.45...  316.21854 [m]\n10  3 LINESTRING (-72.68275 42.45...  388.25983 [m]"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#lengths-of-linesedges-st_length-1",
+    "href": "slides/math241_wk05wed.html#lengths-of-linesedges-st_length-1",
+    "title": "Math 241",
+    "section": "Lengths of lines/edges: st_length()",
+    "text": "Lengths of lines/edges: st_length()\nColoring streams by length:\n\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams, aes(color = as.numeric(length))) + \n  scale_color_distiller(palette = \"Blues\", direction = 1) + \n  labs(color = \"Stream Length (m)\") + \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\nst_intersection() can retain only the parts of the streams that lie within the boundary:\n\nstreams_within &lt;- st_intersection(streams, boundary)\nstreams_within\n\nSimple feature collection with 11 features and 3 fields\nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -72.68622 ymin: 42.44482 xmax: -72.67416 ymax: 42.45657\nGeodetic CRS:  WGS 84\nFirst 10 features:\n   Id         length            area                       geometry\n3   1  137.87960 [m] 255.0989 [acre] LINESTRING (-72.67652 42.45...\n4   1   40.25734 [m] 255.0989 [acre] LINESTRING (-72.67715 42.45...\n5   1   51.02365 [m] 255.0989 [acre] LINESTRING (-72.67652 42.45...\n6   1  592.79892 [m] 255.0989 [acre] MULTILINESTRING ((-72.67628...\n7   1 2152.43892 [m] 255.0989 [acre] LINESTRING (-72.67448 42.44...\n8   3 1651.25471 [m] 255.0989 [acre] LINESTRING (-72.67979 42.45...\n9   3  316.21854 [m] 255.0989 [acre] LINESTRING (-72.68109 42.45...\n10  3  388.25983 [m] 255.0989 [acre] LINESTRING (-72.68275 42.45...\n11  3  135.79141 [m] 255.0989 [acre] LINESTRING (-72.68275 42.45...\n12  3  362.65554 [m] 255.0989 [acre] LINESTRING (-72.68385 42.44...\n\n\n\nNote that the intersection returns the lines from streams not the polygon from boundary."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-1",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-1",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\n\n\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams, color = \"skyblue\") + \n  theme_void()\n\n\n\n\n\n\n\n\n\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams_within, color = \"skyblue\") + \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-2",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-2",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\nst_difference() can retain only the parts of the streams that lie outside the boundary:\n\n\nstreams_outside &lt;- st_difference(streams, boundary) \nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams_outside, color = \"skyblue\") + \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-3",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-3",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\nAnother example: Let’s pull out the trails in this station\n\ntrails &lt;- macleish_layers$trails\ntrails\n\nSimple feature collection with 15 features and 2 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\nFirst 10 features:\n               name  color                       geometry\n1   Porcupine Trail  White LINESTRING (-72.68291 42.45...\n2      Western Loop    Red LINESTRING (-72.68111 42.45...\n3  Poplar Hill Road   Road LINESTRING (-72.68155 42.45...\n4  Vernal Pool Loop Yellow LINESTRING (-72.68265 42.44...\n5      Eastern Loop   Blue LINESTRING (-72.68113 42.45...\n6      Western Loop    Red LINESTRING (-72.68401 42.45...\n7      Western Loop    Red LINESTRING (-72.68088 42.44...\n8       entry trail      - LINESTRING (-72.68088 42.44...\n9      Eastern Loop   Blue LINESTRING (-72.68063 42.45...\n10         Easy Out    Red LINESTRING (-72.67962 42.45..."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-4",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-4",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\n\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams, color = \"skyblue\") +\n  geom_sf(data = trails, color = \"chocolate4\") + \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-5",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-5",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\n…and see where they intersect with the streams!\n\nintersections &lt;- st_intersection(trails, streams) \nintersections\n\nSimple feature collection with 10 features and 4 fields\nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -72.68389 ymin: 42.44529 xmax: -72.67941 ymax: 42.45644\nGeodetic CRS:  WGS 84\n                name  color Id        length                       geometry\n8        entry trail      -  3 1651.2547 [m]     POINT (-72.68015 42.44796)\n9       Eastern Loop   Blue  3 1651.2547 [m]     POINT (-72.67989 42.45126)\n13  Snowmobile Trail   &lt;NA&gt;  3 1651.2547 [m] MULTIPOINT ((-72.67992 42.4...\n15          Driveway   &lt;NA&gt;  3 1651.2547 [m]      POINT (-72.67968 42.4495)\n6       Western Loop    Red  3  316.2185 [m]     POINT (-72.68267 42.44952)\n1    Porcupine Trail  White  3  388.2598 [m]     POINT (-72.68293 42.45028)\n6.1     Western Loop    Red  3  388.2598 [m]     POINT (-72.68299 42.45024)\n4   Vernal Pool Loop Yellow  3  362.6555 [m]     POINT (-72.68389 42.44893)\n3   Poplar Hill Road   Road  3  603.8115 [m]     POINT (-72.68152 42.45644)\n14  Snowmobile Trail   &lt;NA&gt;  3  603.8115 [m]     POINT (-72.68153 42.45644)\n\n\n\nNote that the intersection geometries are now points"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-6",
+    "href": "slides/math241_wk05wed.html#intersections-st_intersection-and-st_difference-6",
+    "title": "Math 241",
+    "section": "Intersections: st_intersection() and st_difference()",
+    "text": "Intersections: st_intersection() and st_difference()\n\n\ntrails_within &lt;- st_intersection(trails, boundary)\ntrails_outside &lt;- st_difference(trails, boundary)\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = streams_within, \n          color = \"skyblue\") + \n  geom_sf(data = streams_outside, \n          color = \"skyblue\",\n          linetype = \"dashed\") + \n  geom_sf(data = trails_within, \n          color = \"chocolate4\") + \n  geom_sf(data = trails_outside,\n          color = \"chocolate4\",\n          linetype = \"dashed\") + \n  geom_sf(data = intersections,\n          shape = 21, \n          fill = \"yellow\",\n          size = 3)  + \n  theme_void()\n\n\n\n\n\n\n\n\n\n\nPlotted stream crossing!"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation",
+    "href": "slides/math241_wk05wed.html#aggregation",
+    "title": "Math 241",
+    "section": "Aggregation",
+    "text": "Aggregation\nLet’s look at the trails data frame a little more:\n\ntrails %&gt;%\n  arrange(name)\n\nSimple feature collection with 15 features and 2 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\nFirst 10 features:\n               name color                       geometry\n1          Driveway  &lt;NA&gt; LINESTRING (-72.68088 42.44...\n2      Eastern Loop  Blue LINESTRING (-72.68113 42.45...\n3      Eastern Loop  Blue LINESTRING (-72.68063 42.45...\n4          Easy Out   Red LINESTRING (-72.67962 42.45...\n5          Easy Out  &lt;NA&gt; LINESTRING (-72.68144 42.45...\n6  Poplar Hill Road  Road LINESTRING (-72.68155 42.45...\n7  Poplar Hill Road  Road LINESTRING (-72.68087 42.44...\n8   Porcupine Trail White LINESTRING (-72.68291 42.45...\n9  Snowmobile Trail  &lt;NA&gt; LINESTRING (-72.68053 42.45...\n10 Snowmobile Trail  &lt;NA&gt; LINESTRING (-72.68053 42.45...\n\n\nWhat is odd about this data frame?"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-1",
+    "href": "slides/math241_wk05wed.html#aggregation-1",
+    "title": "Math 241",
+    "section": "Aggregation",
+    "text": "Aggregation\nLet’s look at the “Eastern Loop”\n\neastern &lt;- trails %&gt;% filter(name==\"Eastern Loop\")\neastern\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68127 ymin: 42.45033 xmax: -72.67783 ymax: 42.4585\nGeodetic CRS:  WGS 84\n          name color                       geometry\n1 Eastern Loop  Blue LINESTRING (-72.68113 42.45...\n2 Eastern Loop  Blue LINESTRING (-72.68063 42.45...\n\n\n\n\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = eastern, color = \"chocolate4\") + \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-2",
+    "href": "slides/math241_wk05wed.html#aggregation-2",
+    "title": "Math 241",
+    "section": "Aggregation",
+    "text": "Aggregation\nWhat are the pieces of this trail?\n\n\npart_one &lt;- eastern[1, ]\npart_two &lt;- eastern[2, ]\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = part_one, \n          color = \"chocolate4\") + # part 1\n  geom_sf(data = part_two, \n          color = \"chocolate4\",\n          linetype = \"dashed\") + # part 2 \n  theme_void()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-3",
+    "href": "slides/math241_wk05wed.html#aggregation-3",
+    "title": "Math 241",
+    "section": "Aggregation",
+    "text": "Aggregation\nFor plotting this is fine, but what if we wanted to compare the lengths of each trail?\n\ntrails %&gt;%\n  mutate(trail_length = st_length(geometry)) %&gt;%\n  arrange(desc(trail_length))\n\nSimple feature collection with 15 features and 3 fields\nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\nFirst 10 features:\n               name  color  trail_length                       geometry\n1  Snowmobile Trail   &lt;NA&gt; 1346.9147 [m] LINESTRING (-72.68053 42.45...\n2  Snowmobile Trail   &lt;NA&gt; 1229.1787 [m] LINESTRING (-72.68053 42.45...\n3      Eastern Loop   Blue 1107.9588 [m] LINESTRING (-72.68063 42.45...\n4      Western Loop    Red  969.0932 [m] LINESTRING (-72.68111 42.45...\n5  Poplar Hill Road   Road  900.5781 [m] LINESTRING (-72.68155 42.45...\n6      Eastern Loop   Blue  831.2864 [m] LINESTRING (-72.68113 42.45...\n7   Porcupine Trail  White  699.7393 [m] LINESTRING (-72.68291 42.45...\n8  Vernal Pool Loop Yellow  360.3882 [m] LINESTRING (-72.68265 42.44...\n9       entry trail      -  207.9817 [m] LINESTRING (-72.68088 42.44...\n10     Western Loop    Red  193.7101 [m] LINESTRING (-72.68401 42.45...\n\n\nThe same trail comes up multiple times! How can we combine them?\n\n\ngroup_by() and summarize()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize",
+    "href": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize",
+    "title": "Math 241",
+    "section": "Aggregation: group_by and summarize()",
+    "text": "Aggregation: group_by and summarize()\n\ntrails_combined &lt;- trails %&gt;%\n  group_by(name) %&gt;%\n  summarize(trail_length = sum(st_length(geometry))) %&gt;%\n  arrange(desc(trail_length))\ntrails_combined\n\nSimple feature collection with 9 features and 2 fields\nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\n# A tibble: 9 × 3\n  name             trail_length                                         geometry\n  &lt;chr&gt;                     [m]                                   &lt;GEOMETRY [°]&gt;\n1 Snowmobile Trail        2576. MULTILINESTRING ((-72.68053 42.45106, -72.68035…\n2 Eastern Loop            1939. MULTILINESTRING ((-72.68113 42.45531, -72.68111…\n3 Western Loop            1350. MULTILINESTRING ((-72.68111 42.45526, -72.68129…\n4 Poplar Hill Road        1040. MULTILINESTRING ((-72.68155 42.45649, -72.68149…\n5 Porcupine Trail          700. LINESTRING (-72.68291 42.45021, -72.68296 42.45…\n6 Vernal Pool Loop         360. LINESTRING (-72.68265 42.44944, -72.68274 42.44…\n7 entry trail              208. LINESTRING (-72.68088 42.44783, -72.68072 42.44…\n8 Driveway                 173. LINESTRING (-72.68088 42.44878, -72.68082 42.44…\n9 Easy Out                 136. MULTILINESTRING ((-72.67962 42.45643, -72.67965…\n\n\nOnly one row now for each trail."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-1",
+    "href": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-1",
+    "title": "Math 241",
+    "section": "Aggregation: group_by and summarize()",
+    "text": "Aggregation: group_by and summarize()\nBut what happens to the geometry?\n\n\n\ntrails %&gt;% st_geometry()\n\nGeometry set for 15 features \nGeometry type: LINESTRING\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\nFirst 5 geometries:\n\n\n\n\n\n\ntrails_combined %&gt;% st_geometry()\n\nGeometry set for 9 features \nGeometry type: GEOMETRY\nDimension:     XY\nBounding box:  xmin: -72.68513 ymin: 42.44177 xmax: -72.67731 ymax: 42.4618\nGeodetic CRS:  WGS 84\nFirst 5 geometries:\n\n\n\n\n\nIn trails_combined, you’ll notice that the trails that combined are now listed a MULTILINESTRING\nthis is how sf can “combine” multiple geometries into the same row of data."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-2",
+    "href": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-2",
+    "title": "Math 241",
+    "section": "Aggregation: group_by and summarize()",
+    "text": "Aggregation: group_by and summarize()\n\n\n\n# Not combining\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = trails,\n          color = \"chocolate4\") + \n  theme_void()\n\n\n\n\n\n\n\n\n\n\n# Combined\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = trails_combined,\n          color = \"chocolate4\") + \n  theme_void()\n\n\n\n\n\n\n\n\n\nFind the difference in the plots!!\n\n\n\n−+\n01:00"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#merging-spatial-data-st_join",
+    "href": "slides/math241_wk05wed.html#merging-spatial-data-st_join",
+    "title": "Math 241",
+    "section": "Merging Spatial data: st_join()",
+    "text": "Merging Spatial data: st_join()\n\nforests &lt;- macleish_layers$forests %&gt;% \n  select(type, geometry)\ncamp_sites &lt;- macleish_layers$camp_sites %&gt;% \n  select(name, geometry)\n\n\n\n\n\nforests\n\nSimple feature collection with 54 features and 1 field\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -72.68726 ymin: 42.44292 xmax: -72.67237 ymax: 42.45884\nGeodetic CRS:  WGS 84\nFirst 10 features:\n                             type                       geometry\n1                            &lt;NA&gt; MULTIPOLYGON (((-72.68079 4...\n2               Abandoned Pasture MULTIPOLYGON (((-72.67814 4...\n3     Active Pasture and Hayfield MULTIPOLYGON (((-72.67974 4...\n4       Recently Cut Birch Forest MULTIPOLYGON (((-72.6793 42...\n5     Old Field White Pine Forest MULTIPOLYGON (((-72.67976 4...\n6  Old Pasture Black Birch Forest MULTIPOLYGON (((-72.67976 4...\n7     Active Pasture and Hayfield MULTIPOLYGON (((-72.67988 4...\n8              Sugar Maple Forest MULTIPOLYGON (((-72.68026 4...\n9       Recently Cut Birch Forest MULTIPOLYGON (((-72.68038 4...\n10    Old Field White Pine Forest MULTIPOLYGON (((-72.68087 4...\n\n\n\n\ncamp_sites\n\nSimple feature collection with 2 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -72.67958 ymin: 42.45098 xmax: -72.67815 ymax: 42.45855\nGeodetic CRS:  WGS 84\n# A tibble: 2 × 2\n  name                        geometry\n  &lt;chr&gt;                    &lt;POINT [°]&gt;\n1 Group Campsite  (-72.67815 42.45098)\n2 Remote Campsite (-72.67958 42.45855)"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#merging-spatial-data-st_join-1",
+    "href": "slides/math241_wk05wed.html#merging-spatial-data-st_join-1",
+    "title": "Math 241",
+    "section": "Merging Spatial data: st_join()",
+    "text": "Merging Spatial data: st_join()\n\n\nlibrary(ggsflabel)\nggplot(boundary) + \n  geom_sf() + \n  geom_sf(data = forests, fill = \"forestgreen\", \n          alpha = 0.2) + \n  geom_sf(data = camp_sites, size = 4) + \n  geom_sf_label_repel(data = camp_sites,\n                      aes(label = name)) + \n  theme_void()\n\n\n\n\n\n\n\n\n\nWhat if we wanted to know which forests these campsites are in?"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#merging-spatial-data-st_join-2",
+    "href": "slides/math241_wk05wed.html#merging-spatial-data-st_join-2",
+    "title": "Math 241",
+    "section": "Merging Spatial data: st_join()",
+    "text": "Merging Spatial data: st_join()\nst_join() can merge datasets on spatial data.\n\ncamp_sites_forests &lt;- st_join(camp_sites, forests, left = TRUE)\ncamp_sites_forests\n\nSimple feature collection with 2 features and 2 fields\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: -72.67958 ymin: 42.45098 xmax: -72.67815 ymax: 42.45855\nGeodetic CRS:  WGS 84\n# A tibble: 2 × 3\n  name                        geometry type                       \n* &lt;chr&gt;                    &lt;POINT [°]&gt; &lt;chr&gt;                      \n1 Group Campsite  (-72.67815 42.45098) Old Field White Pine Forest\n2 Remote Campsite (-72.67958 42.45855) Sugar Maple Forest         \n\n\n\n\nSetting left = TRUE yields a left_join() here. left = FALSE would yield an inner_join().\n\n\nYou can set the join argument to specify how you want to connect the geometries.\n\njoin = st_interests is the default, but other st_*() functions can be specified."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#new-data-macleish-property",
+    "href": "slides/math241_wk05wed.html#new-data-macleish-property",
+    "title": "Math 241",
+    "section": "New data: MacLeish Property",
+    "text": "New data: MacLeish Property\n\nliberal arts field station at Smith College\n250 acre area of forest and pasture land near Whately, MA\nSmith College community can use the space for artistic inquiry, environmental research, outdoor education, low-impact recreation\n\n\nCan read in spatial data from macleish package\n\nlibrary(macleish)\nstr(macleish_layers, max.level = 1)\n\nList of 12\n $ landmarks        :Classes 'sf' and 'data.frame': 14 obs. of  2 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"Label\"\n $ forests          :Classes 'sf' and 'data.frame': 54 obs. of  5 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA NA NA\n  .. ..- attr(*, \"names\")= chr [1:4] \"VegType_20\" \"VegType_21\" \"Sheet1__Ve\" \"type\"\n $ streams          :Classes 'sf' and 'data.frame': 13 obs. of  2 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"Id\"\n $ challenge_courses:Classes 'sf' and 'data.frame': 12 obs. of  24 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA NA NA NA NA NA NA NA NA ...\n  .. ..- attr(*, \"names\")= chr [1:23] \"ele\" \"time\" \"magvar\" \"geoidheigh\" ...\n $ buildings        :Classes 'sf' and 'data.frame': 27 obs. of  2 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"name\"\n $ wetlands         :Classes 'sf' and 'data.frame': 7 obs. of  12 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA NA NA NA NA NA NA NA NA ...\n  .. ..- attr(*, \"names\")= chr [1:11] \"WETCODE\" \"IT_VALC\" \"IT_VALDESC\" \"POLY_CODE\" ...\n $ boundary         :Classes 'sf' and 'data.frame': 1 obs. of  2 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"area\"\n $ research         :Classes 'sf' and 'data.frame': 32 obs. of  11 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA NA NA NA NA NA NA NA NA\n  .. ..- attr(*, \"names\")= chr [1:10] \"OBJECTID\" \"Id\" \"GapControl\" \"BUFF_DIST\" ...\n $ soil             :Classes 'sf' and 'data.frame': 3 obs. of  2 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"OBJECTID\"\n $ trails           :Classes 'sf' and 'data.frame': 15 obs. of  3 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA\n  .. ..- attr(*, \"names\")= chr [1:2] \"name\" \"color\"\n $ camp_sites       : sf [2 × 2] (S3: sf/tbl_df/tbl/data.frame)\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA\n  .. ..- attr(*, \"names\")= chr \"name\"\n $ elevation        :Classes 'sf' and 'data.frame': 13 obs. of  7 variables:\n  ..- attr(*, \"sf_column\")= chr \"geometry\"\n  ..- attr(*, \"agr\")= Factor w/ 3 levels \"constant\",\"aggregate\",..: NA NA NA NA NA NA\n  .. ..- attr(*, \"names\")= chr [1:6] \"OBJECTID\" \"Shape_Leng\" \"Shape_Area\" \"CONTOUR_FT\" ..."
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#macleish-property",
+    "href": "slides/math241_wk05wed.html#macleish-property",
+    "title": "Math 241",
+    "section": "MacLeish Property",
+    "text": "MacLeish Property\nPulling:\n\nThe landmarks on the property (POINTS)\nThe boundary of the property (POLYGON)\nThe streams that go through the property (New geometry: LINESTRING)\n\n\nlandmarks &lt;- macleish_layers$landmarks\nboundary &lt;- macleish_layers$boundary\nstreams &lt;- macleish_layers$streams"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-3",
+    "href": "slides/math241_wk05wed.html#aggregation-group_by-and-summarize-3",
+    "title": "Math 241",
+    "section": "Aggregation: group_by and summarize()",
+    "text": "Aggregation: group_by and summarize()"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#what-are-raster-data",
+    "href": "slides/math241_wk05wed.html#what-are-raster-data",
+    "title": "Math 241",
+    "section": "What are raster data?",
+    "text": "What are raster data?\n\nSo far, we’ve dealt with (multi)points, (multi)polygons, and line(string) data!\n\nThese all fall into the family of “vector” spatial data\nCalled “vectors” since they are made up of discrete x, y coordinates that compose a shape.\n\nNow, we are entering into the world of raster spatial data.\nRaster data are arrays of spatially indexed cells, each of the same size\nThink: spatially indexed matrix. Each cell..\n\nis a predefined size square\nis the same size as the other cells\nhas value(s) attached to it"
+  },
+  {
+    "objectID": "slides/math241_wk05wed.html#raster-data-example",
+    "href": "slides/math241_wk05wed.html#raster-data-example",
+    "title": "Math 241",
+    "section": "Raster data: example",
+    "text": "Raster data: example\n90m x 90m elevation data in M333 “ecoprovince”\n\n\n\n\n\n\n\n\n\n\nEach pixel is a 90m x 90m square and has an elevation value assigned to it."
   }
 ]
