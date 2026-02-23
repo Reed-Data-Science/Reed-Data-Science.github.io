@@ -902,7 +902,7 @@ mean(forested_with_M333_elev$elevation == forested_with_M333_elev$M333_elev,
      na.rm = TRUE)
 ```
 
-- When the data are available, we get the same result as the package has! 
+- When the data are available, we get the same result as the package! 
 
 
 

@@ -396,11 +396,11 @@ ggplot(forested, aes(x = lon,
 
 ### Simple Features Maps
 
-* Typically spatial data doesn't come in the lat-long format given in the `forested` package.
+* We'd often like to take spatial data that comes in the lat-long format given in the `forested` package and convert it to a format that accounts for the projection.
 
 * Often use the "simple features" standard produced by the Open Geospatial Consortium
     + R package: `sf` handles this type of data
-    + Within `ggplot2`: `geom_sf()` and `coord_sf()` work with `sf`
+    + Within `ggplot2`, `geom_sf()` and `coord_sf()` work with `sf`
     
 * In reality, this is the lat-long data, but encoded in a way that preserves projection information. 
 
@@ -725,7 +725,7 @@ vars
 ### Choropleth Map Showing Median Household Income
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 ggplot(data = wa, 
        mapping = 
          aes(geometry = geometry,
@@ -742,7 +742,7 @@ ggplot(data = wa,
 ### Choropleth Map
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 ggplot(data = wa, 
        mapping = 
          aes(geometry = geometry,
@@ -762,7 +762,7 @@ ggplot(data = wa,
 ### Choropleth Map
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 ggplot(data = wa, 
        mapping = 
          aes(geometry = geometry)) + 
@@ -826,7 +826,7 @@ head(wa$short_name)
 ### Choropleth Map
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 ggplot(data = wa, 
        mapping = 
          aes(geometry = geometry)) + 
@@ -846,7 +846,7 @@ ggplot(data = wa,
 ### Choropleth Map
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 #devtools::install_github("yutannihilation/ggsflabel")
 library(ggsflabel)
 ggplot(data = wa, 
@@ -881,7 +881,7 @@ wa_cities
 
 
 ```{r}
-#| output-location: column-fragment
+#| output-location: column
 library(ggrepel)
 ggplot() + 
   geom_sf(data = wa,
