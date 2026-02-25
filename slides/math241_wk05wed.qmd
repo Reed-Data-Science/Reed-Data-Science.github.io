@@ -794,7 +794,7 @@ The `tidyterra` package gives us some nice `geom_*()` functions to use with `Spa
 ```{r}
 library(tidyterra)
 ggplot() + 
-  geom_spatraster(data = r, na.rm = TRUE) + 
+  geom_spatraster(data = r) + 
   scale_fill_viridis_c(na.value = NA) + 
   labs(fill = "Elevation (m)") + 
   theme_bw()
