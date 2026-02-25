@@ -90,6 +90,8 @@ theme_update(text = element_text(size = 20))
 
 * Raster data
     - what is it? 
+    - rasters as base layers
+    - rasters as data
     - extracting values by polygons
 
 
@@ -195,7 +197,9 @@ distance_matrix
 ```
 <br>
 
-::: {.fragment}
+:::: {.columns}
+
+::: {.column .fragment}
 
 ```{r}
 library(units)
@@ -206,13 +210,15 @@ distance_matrix %>%
 
 :::
 
-::: {.fragment .nonincremental}
+::: {.column .fragment .nonincremental}
 
 This distance is **"as the crow flies"**
 
 - There are other options (e.g., distance by driving) -- see Chapter 18 in MDSR!
 
 :::
+
+::::
 
 ------------------------------------------------------------------------
 
@@ -513,42 +519,6 @@ trails_combined
 
 ## Aggregation: `group_by` and `summarize()`
 
-But what happens to the geometry?
-
-:::: {.columns}
-
-::: {.column width='48%'}
-
-```{r}
-trails %>% st_geometry()
-```
-
-:::
-
-::: {.column width='4%'}
-
-:::
-
-::: {.column width='48%'}
-
-```{r}
-trails_combined %>% st_geometry()
-```
-
-:::
-
-::::
-
-<br>
-
-- In `trails_combined`, you'll notice that the **trails that combined are now listed a `MULTILINESTRING`**
-
-- this is how `sf` can "combine" multiple geometries into the same row of data.
-
-------------------------------------------------------------------------
-
-## Aggregation: `group_by` and `summarize()`
-
 :::: {.columns}
 
 ::: {.column width='48%'}
@@ -595,7 +565,7 @@ countdown::countdown(1)
 
 ::: {.column}
 
-![](img/thesamepicture.jpg)
+![](img/thesamepicture.jpg){fig-align='center'}
 
 :::
 
@@ -690,17 +660,67 @@ You can set the `join` argument to specify *how* you want to connect the geometr
 
 - Raster data are arrays of spatially indexed cells, each of the same size
 
-- Think: **spatially indexed matrix**. Each cell..
+- Think: **spatially indexed** <u>**matrix**</u> or <u>**image**</u>. Each cell / pixel..
     - is a predefined size square
-    - is the same size as the other cells
+    - is the same size as the other cells / pixels
     - has value(s) attached to it
 
 
 ------------------------------------------------------------------------
 
-## Raster data: example
+## Raster data: two hats
 
-90m x 90m elevation data in M333 "ecoprovince"
+- We'll use raster data in two distinct ways:
+    - as a **base layer** for maps, and
+    - as **data** for maps.
+
+
+------------------------------------------------------------------------
+
+## Raster as base layer: example
+
+2.39m x 2.39m imagery in the Macleish property
+
+```{r}
+#| echo: false
+library(basemaps)
+library(terra)
+library(tidyterra)
+library(sf)
+
+rast <- basemap_terra(ext = boundary,
+                      map_service = "esri",
+                      map_type = "world_imagery",
+                      verbose = FALSE)
+
+
+ggplot() + 
+  geom_spatraster_rgb(data = rast) + 
+  geom_sf(data = boundary, alpha = 0.5, fill = "grey", color = "orange") + 
+  geom_sf(data = streams_within, 
+          color = "skyblue") + 
+  geom_sf(data = streams_outside %>% st_intersection(boundary),
+          color = "skyblue",
+          linetype = "dashed") +
+  geom_sf(data = trails_within, 
+          color = "chocolate4") + 
+  geom_sf(data = trails_outside %>% st_intersection(boundary),
+          color = "chocolate4",
+          linetype = "dashed") +
+  geom_sf(data = intersections,
+          shape = 21, 
+          fill = "yellow",
+          size = 3)  + 
+  theme_void()
+```
+
+- Each pixel is a 2.39m x 2.39m square and has RED, GREEN, BLUE (RGB) values assigned to it.
+
+------------------------------------------------------------------------
+
+## Raster as data: example
+
+90m x 90m elevation data in M333 "ecoprovince" (NE Washington, N Idaho, W Montana)
 
 ```{r}
 #| echo: false
@@ -765,8 +785,11 @@ r
 
 The `tidyterra` package gives us some nice `geom_*()` functions to use with `SpatRaster`s and `SpatVector`s. 
 
+:::: {.columns}
+
+::: {.column}
+
 ```{r}
-#| output-location: column
 library(tidyterra)
 ggplot() + 
   geom_spatraster(data = r, na.rm = TRUE) + 
@@ -774,6 +797,18 @@ ggplot() +
   labs(fill = "Elevation (m)") + 
   theme_bw()
 ```
+
+:::
+
+::: {.column}
+
+- Main functions: 
+    - `geom_spatraster()` for rasters as data
+    - `geom_spatraster_rgb()` for rasters as baselayers
+
+:::
+
+::::
 
 ------------------------------------------------------------------------
 
@@ -920,6 +955,138 @@ leaflet() %>%
 
 ------------------------------------------------------------------------
 
+### Plotting rasters with raster base layers
+
+
+```{r}
+#| output-location: column
+library(basemaps) # to get the raster base layers
+
+wa_id_mt <- tigris::states(progress_bar = FALSE) %>%
+  filter(NAME %in% c("Washington",
+                     "Idaho",
+                     "Montana"))
+
+rast <- basemap_terra(ext = wa_id_mt,
+                      map_service = "esri",
+                      map_type = "world_imagery",
+                      verbose = FALSE)
+
+ggplot() + 
+  geom_spatraster_rgb(data = rast) + 
+  geom_spatraster(data = r) + 
+  scale_fill_viridis_c(na.value = NA) + 
+  labs(fill = "Elevation (m)") +
+  theme_void() +
+  theme(legend.position = "bottom",
+        legend.title.position = "top")
+```
+
+- Using rasters in two ways: base layer and as data!
+
+
+------------------------------------------------------------------------
+
+### Returning to the Macleish Property
+
+We can use a raster base layer and put vector data on top of it! 
+
+
+```{r}
+#| output-location: column
+rast <- basemap_terra(
+  # recall, `boundary` is the boundary 
+  # of the Macleish property
+  ext = boundary,
+  map_service = "esri",
+  map_type = "world_imagery",
+  verbose = FALSE
+  )
+
+ggplot() + 
+  geom_spatraster_rgb(data = rast) + 
+  geom_sf(data = boundary,
+          alpha = 0.5,
+          fill = "grey",
+          color = "orange")
+```
+
+
+------------------------------------------------------------------------
+
+### Returning to the Macleish Property
+
+We can use a raster base layer and put vector data on top of it! 
+
+
+```{r}
+#| output-location: column
+ggplot() + 
+  geom_spatraster_rgb(data = rast) + 
+  geom_sf(data = boundary,
+          alpha = 0.5,
+          fill = "grey",
+          color = "orange") + 
+  geom_sf(data = streams_within, 
+          color = "skyblue") + 
+  geom_sf(data = streams_outside,
+          color = "skyblue",
+          linetype = "dashed") +
+  geom_sf(data = trails_within, 
+          color = "chocolate4") + 
+  geom_sf(data = trails_outside ,
+          color = "chocolate4",
+          linetype = "dashed") +
+  geom_sf(data = intersections,
+          shape = 21, 
+          fill = "yellow",
+          size = 3)  + 
+  theme_void()
+```
+
+
+------------------------------------------------------------------------
+
+### Returning to the Macleish Property
+
+We can use a raster base layer and put vector data on top of it! 
+
+
+```{r}
+#| output-location: column
+ggplot() + 
+  geom_spatraster_rgb(data = rast) + 
+  geom_sf(data = boundary,
+          alpha = 0.5,
+          fill = "grey",
+          color = "orange") + 
+  geom_sf(data = streams_within, 
+          color = "skyblue") + 
+  geom_sf(data = streams_outside %>%
+            st_intersection(boundary),
+          color = "skyblue",
+          linetype = "dashed") +
+  geom_sf(data = trails_within, 
+          color = "chocolate4") + 
+  geom_sf(data = trails_outside %>%
+            st_intersection(boundary),
+          color = "chocolate4",
+          linetype = "dashed") +
+  geom_sf(data = intersections,
+          shape = 21, 
+          fill = "yellow",
+          size = 3)  + 
+  theme_void()
+```
+
+::: {.nonincremental}
+
+- Note the use of `st_intersection()`
+
+:::
+
+
+------------------------------------------------------------------------
 
 ### Spatial data: just scratching the surface
 
