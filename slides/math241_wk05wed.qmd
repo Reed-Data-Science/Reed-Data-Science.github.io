@@ -1090,9 +1090,11 @@ ggplot() +
 
 ### Spatial data: just scratching the surface
 
-- There is so much more we can do with rasters (and all the spatial data types we have learned about)! 
-
 - We could spend all semester on spatial data...
+
+- There is so much more we can do with rasters 
+    - raster algebra (adding / multiplying / etc. rasters)
+    - reprojecting rasters to different resolutions
 
 - You'll have opportunities in your projects to use spatial data if you'd like to! 
 
