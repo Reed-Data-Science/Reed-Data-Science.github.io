@@ -163,8 +163,8 @@ scheduled-docs:
           docs:
             - type: Problem Set 4
               href: psets/pset04.qmd
-      # resources:
-      #   - 'Some text'
+      resources:
+        - 'Fill out the <a href="https://forms.gle/Q3pk5LhZAJohpbHT6">Project 1 Preferences Form</a>'
     - week: 6
       days:
         - topic: "shiny I"
