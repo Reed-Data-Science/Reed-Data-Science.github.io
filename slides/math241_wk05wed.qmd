@@ -699,12 +699,14 @@ ggplot() +
   geom_sf(data = boundary, alpha = 0.5, fill = "grey", color = "orange") + 
   geom_sf(data = streams_within, 
           color = "skyblue") + 
-  geom_sf(data = streams_outside %>% st_intersection(boundary),
+  geom_sf(data = streams_outside %>%
+            st_intersection(boundary),
           color = "skyblue",
           linetype = "dashed") +
   geom_sf(data = trails_within, 
           color = "chocolate4") + 
-  geom_sf(data = trails_outside %>% st_intersection(boundary),
+  geom_sf(data = trails_outside %>%
+            st_intersection(boundary),
           color = "chocolate4",
           linetype = "dashed") +
   geom_sf(data = intersections,

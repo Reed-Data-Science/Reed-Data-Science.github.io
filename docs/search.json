@@ -2566,7 +2566,7 @@
     "href": "slides/math241_wk04mon.html#vectorized",
     "title": "Math 241",
     "section": "Vectorized",
-    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -4.5236471 -0.6337423  5.3188367"
+    "text": "Vectorized\n\nR is built to work with vectors.\nMany operations are vectorized: will happen component-wise when given a vector as input.\n\n\n\n\ny &lt;- c(4, 1, 7)\ny + 4\n\n[1]  8  5 11\n\ny * 2\n\n[1]  8  2 14\n\n\n\n\nx &lt;- c(-4, 0, 2)\ny + x\n\n[1] 0 1 9\n\nrnorm(n = 3, mean = c(-5, 0, 5))\n\n[1] -4.1991505 -0.2651559  5.1958987"
   },
   {
     "objectID": "slides/math241_wk04mon.html#vectorized-caution",
