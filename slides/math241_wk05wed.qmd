@@ -240,7 +240,7 @@ But we could calculate it ourselves with the **`st_area()`** function
 
 ```{r}
 st_area(boundary) %>%
-  set_units("acres")
+  set_units("acres") 
 ```
 
 :::

@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 2/25/26
+  draft-after: 3/5/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -167,28 +167,29 @@ scheduled-docs:
         - 'Fill out the <a href="https://forms.gle/Q3pk5LhZAJohpbHT6">Project 1 Preferences Form</a>'
     - week: 6
       days:
-        - topic: "shiny I"
+        - topic: "shiny I (Project I Groups Assigned)"
           display-date: Monday, Mar 2
           date: 3/2/26
           docs:
             - type: Reading
-              href: readings/readings_wk02mon.qmd
-            - type: Slides
-              href: slides/math141_wk02mon.qmd
-        - topic: "shiny II"
+              href: readings/readings_wk06.qmd
+            # - type: Slides
+            #   href: slides/math241_wk06mon.qmd
+            # - type: Project I Groups
+            #   href: projects/proj01_groups.qmd
+        - topic: "shiny II (Project I Instructions Released)"
           display-date: Wednesday, Mar 4
           date: 3/4/26
           docs:
             - type: Reading
-              href: readings/readings_wk02wed.qmd
-            - type: Slides
-              href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 4 Due, Project 1 Released"
+              href: readings/readings_wk06.qmd
+            # - type: Slides
+            #   href: slides/math241_wk06wed.qmd
+            # - type: Project I Instructions
+            #   href: projects/proj01.qmd
+        - topic: "Problem Set 4 Due"
           display-date: Thursday, Mar 5 9:00am
           date: 3/5/26
-          docs:
-            - type: Project 1
-              href: projects/proj01.qmd
       # resources:
       #   - 'Some text'
     - week: 7
@@ -221,7 +222,7 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Project 1 presentations (Project 1 due)"
+        - topic: "Project 1 Peer Feedback Day (Project 1 DRAFT due)"
           display-date: Wednesday, Mar 18
           date: 3/18/26
           docs:
@@ -229,6 +230,11 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
+            - type: Project I Peer Feedback
+              href: projects/proj01_peerfeedback.qmd
+        - topic: "Project I Written Peer Feedback Due (5pm)"
+          display-date: Friday, Mar 20
+          date: 3/20/26
       # resources:
       #   - 'Some text'
     - week: Spring Break
@@ -259,6 +265,9 @@ scheduled-docs:
           docs:
             - type: Problem Set 5
               href: psets/pset05.qmd
+        - topic: "Project I Final Product and Data Scientist Statement Due (5pm)"
+          display-date: Friday, Apr 3
+          date: 4/3/26
       # resources:
       #   - 'Some text'
     - week: 10
