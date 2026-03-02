@@ -173,10 +173,10 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk06.qmd
-            # - type: Slides
-            #   href: slides/math241_wk06mon.qmd
-            # - type: Project I Groups
-            #   href: projects/proj01_groups.qmd
+            - type: Slides
+              href: slides/math241_wk06mon.qmd
+            - type: Project I Groups
+              href: projects/proj01_groups.qmd
         - topic: "shiny II (Project I Instructions Released)"
           display-date: Wednesday, Mar 4
           date: 3/4/26
@@ -232,7 +232,7 @@ scheduled-docs:
               href: slides/math141_wk02wed.qmd
             - type: Project I Peer Feedback
               href: projects/proj01_peerfeedback.qmd
-        - topic: "Project I Written Peer Feedback Due (5pm)"
+        - topic: "Project I Written Peer Feedback Due (10pm)"
           display-date: Friday, Mar 20
           date: 3/20/26
       # resources:
@@ -265,7 +265,7 @@ scheduled-docs:
           docs:
             - type: Problem Set 5
               href: psets/pset05.qmd
-        - topic: "Project I Final Product and Data Scientist Statement Due (5pm)"
+        - topic: "Project I Final Product and Data Scientist Statement Due (10pm)"
           display-date: Friday, Apr 3
           date: 4/3/26
       # resources:

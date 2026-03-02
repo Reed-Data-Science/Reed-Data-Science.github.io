@@ -70,6 +70,174 @@
     "text": "Footnotes\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0.↩︎"
   },
   {
+    "objectID": "slides/math241_wk06mon.html#week-6-goals",
+    "href": "slides/math241_wk06mon.html#week-6-goals",
+    "title": "Math 241",
+    "section": "Week 6 Goals",
+    "text": "Week 6 Goals\n\n\nMon Lecture\n\nIntroduction to shiny applications\nGet Project 1 group assignments\n\n\nWed Lecture\n\nshiny dashboards with Quarto\nGet all the details about Project 1"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#interactivity-with-shiny",
+    "href": "slides/math241_wk06mon.html#interactivity-with-shiny",
+    "title": "Math 241",
+    "section": "Interactivity with shiny",
+    "text": "Interactivity with shiny\nshiny: Framework for creating web applications\n\nWe will go from R code in a script file to an interactive web page.\nLet’s look at some examples!\n\nForest Service\nMovie Explorer\nOregon Wastewater Treatment Plants\nThe app we are going to create today"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#main-components",
+    "href": "slides/math241_wk06mon.html#main-components",
+    "title": "Math 241",
+    "section": "Main Components",
+    "text": "Main Components\nIn the example apps,\n\nwhat features of the apps did we interact with? And,\nwhat changed based on our selections?\n\n\n\n\nInputs: What user manipulates\n\nText\nSliders\nDropdown menus\nAction buttons\n\n\n\n\nOutput: What changes based on user’s selections\n\nGraphs\nMaps\nTables\nText\n\n\n\n\n\nUse reactive programming\n\nUpdate outputs when inputs change"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#main-components-1",
+    "href": "slides/math241_wk06mon.html#main-components-1",
+    "title": "Math 241",
+    "section": "Main Components",
+    "text": "Main Components\n\nUI: User interface\n\nDefines how your app looks\n\n\n\n\nServer function\n\nDefines how your app works\n\n\n\n\n\nlibrary(shiny)\n\n# User interface\nui &lt;- fluidPage()\n\n# Server function\nserver &lt;- function(input, output){}\n\n# Creates app\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#app-building-workflow",
+    "href": "slides/math241_wk06mon.html#app-building-workflow",
+    "title": "Math 241",
+    "section": "App Building Workflow",
+    "text": "App Building Workflow\nStarting a New App:\n\nFor today and Wednesday, clone the repo “Reed-Data-Science/learn-shiny”\nWithin the “ShinyApps” folder, there is a folder called “my_first_app”.\nYou will see a script file (not a .qmd) called “app.r” within the “my_first_app” folder.\nFollowing this folder and file structure is best practice for creating shiny apps.\n\n\n\nRevising an App:\n\nWrite some code in “app.r”.\nClick “Run App”.\n\nNotice what happens in the console.\n\nExperiment with the app.\nStop the app.\nRepeat.\n\n\nGood habit early on:\n\nWrite static code somewhere (in a .r or .qmd) before you start the app.\n\nModify to be reactive when put in “app.r”.\n\n\n\nLet’s practice together!"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#base-components",
+    "href": "slides/math241_wk06mon.html#base-components",
+    "title": "Math 241",
+    "section": "Base Components",
+    "text": "Base Components\n\nlibrary(shiny)\n\n# User interface\nui &lt;- fluidPage()\n\n# Server function\nserver &lt;- function(input, output){}\n\n# Creates app\nshinyApp(ui = ui, server = server)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#libraries",
+    "href": "slides/math241_wk06mon.html#libraries",
+    "title": "Math 241",
+    "section": "Libraries",
+    "text": "Libraries\n\nMake sure to put all the necessary libraries at the top of your app.R file.\n\nDon’t include calls to install.packages(), though.\nLike qmds, our apps must be self-contained.\n\n\n\n\n# Libraries\nlibrary(shiny)\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#setting-up-the-room",
+    "href": "slides/math241_wk06mon.html#setting-up-the-room",
+    "title": "Math 241",
+    "section": "Setting up the Room",
+    "text": "Setting up the Room\n\n\nThe ui functions generate HTML code for the web page.\n\nfluidPage(): Layout function\ntitlePanel(): Adds title\nsidebarLayout(): Splits app into side panel and main panel.\n\n\n\n\n\n\n\n\n\n\n\nSource: Dean Attali"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#setting-up-the-room-1",
+    "href": "slides/math241_wk06mon.html#setting-up-the-room-1",
+    "title": "Math 241",
+    "section": "Setting up the Room",
+    "text": "Setting up the Room\n\n\nThe ui functions generate HTML code for the web page.\n\nfluidPage(): Layout function\ntitlePanel(): Adds title\nsidebarLayout(): Splits app into side panel and main panel.\n\n\n\n# User interface\nui &lt;- fluidPage(\n  titlePanel(title = \"Insert title\"),\n  sidebarLayout(\n    sidebarPanel(\n    ),\n    mainPanel(\n    )\n  )\n)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#input-text",
+    "href": "slides/math241_wk06mon.html#input-text",
+    "title": "Math 241",
+    "section": "Input: Text",
+    "text": "Input: Text\ntextInput(): Allow user to interact with the app by providing text\n\n\n# User interface\nui &lt;- fluidPage(\n  titlePanel(\"Which Math 241 name is most popular?\"),\n  sidebarLayout(\n    sidebarPanel(\n      # Create a text input widget\n      textInput(inputId = \"names\",\n               label = \"Enter Math 241 names here\",\n               value = \"Grayson\"),\n      p(\"Put a single space between the names.\")\n    ),\n    mainPanel(\n      \n    )\n  )\n)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#output-graph",
+    "href": "slides/math241_wk06mon.html#output-graph",
+    "title": "Math 241",
+    "section": "Output: Graph",
+    "text": "Output: Graph\nplotOutput(): Tells Shiny where to render the graph.\n\n\n# User interface\nui &lt;- fluidPage(\n  titlePanel(\"Which Math 241 name is most popular?\"),\n  sidebarLayout(\n    sidebarPanel(\n      # Create a text input widget\n      textInput(inputId = \"names\",\n               label = \"Enter Math 241 names here\",\n               value = \"Grayson\"),\n      p(\"Put a single space between the names.\")\n    ),\n    mainPanel(\n      plotOutput(outputId = \"graph\")\n    )\n  )\n)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#ui-controls",
+    "href": "slides/math241_wk06mon.html#ui-controls",
+    "title": "Math 241",
+    "section": "UI Controls",
+    "text": "UI Controls\nAll these UI functions are just a way for us to generate HTML (without needing to learn HTML).\n\n\ntextInput(inputId = \"names\",\n          label = \"Enter Math 241 names here\",\n          value = \"Grayson\")\n\n\nEnter Math 241 names here"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#bringing-it-to-life",
+    "href": "slides/math241_wk06mon.html#bringing-it-to-life",
+    "title": "Math 241",
+    "section": "Bringing it to Life!",
+    "text": "Bringing it to Life!\nTwo important arguments for the server() function:\n\ninput is a named list that controls the input widgets.\n\nEX: input$names controls the textInput() widget\n\noutput is a named list that controls the objects to display.\n\nEX: output$graph\n\n\n\n\nserver &lt;- function(input, output){\n}"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#bringing-it-to-life-1",
+    "href": "slides/math241_wk06mon.html#bringing-it-to-life-1",
+    "title": "Math 241",
+    "section": "Bringing it to Life!",
+    "text": "Bringing it to Life!\n\nserver &lt;- function(input, output){\n  \n  output$graph &lt;- renderPlot({\n    dat_names &lt;- babynames %&gt;%\n      group_by(year, name) %&gt;%\n      summarize(n = sum(n)) %&gt;%\n      group_by(year) %&gt;%\n      mutate(prop = n/sum(n)) %&gt;%\n      filter(name %in% c(unlist(str_split(input$names, \" \"))),\n             year &gt;= 1980) \n    \n    ggplot(data = dat_names, \n           mapping = aes(x = year, y = prop,color = name)) +\n  geom_line(linewidth = 2)\n  })\n}"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#first-app-2",
+    "href": "slides/math241_wk06mon.html#first-app-2",
+    "title": "Math 241",
+    "section": "First App!",
+    "text": "First App!\n\nLet’s make sure we got all the pieces into our app and then interact with it.\nQuestions?"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#reactive-expressions",
+    "href": "slides/math241_wk06mon.html#reactive-expressions",
+    "title": "Math 241",
+    "section": "Reactive Expressions",
+    "text": "Reactive Expressions\n\nHow is our code redundant?\nLet’s try to fix it!\nCan’t create a static data frame.\n\nNeed it to be reactive!"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#reactive-expressions-1",
+    "href": "slides/math241_wk06mon.html#reactive-expressions-1",
+    "title": "Math 241",
+    "section": "Reactive Expressions",
+    "text": "Reactive Expressions\n\n  dat_names &lt;- reactive({ \n    babynames %&gt;%\n    group_by(year, name) %&gt;%\n    summarize(n = sum(n)) %&gt;%\n    group_by(year) %&gt;%\n    mutate(prop = n/sum(n)) %&gt;%\n    filter(name %in% c(unlist(str_split(input$names, \" \"))),\n           year &gt;= 1980) \n  })\n\n\n\nCall reactive expressions like you would a function with no arguments.\n\n  output$graph &lt;- renderPlot({\n    ggplot(data = dat_names(), \n           mapping = aes(x = year, y = prop, color = name)) +\n      geom_line(linewidth = 2)\n  })"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#detour-clean-up-the-datatable",
+    "href": "slides/math241_wk06mon.html#detour-clean-up-the-datatable",
+    "title": "Math 241",
+    "section": "Detour: Clean Up the DataTable",
+    "text": "Detour: Clean Up the DataTable\n\n  dat_names_agg &lt;- reactive({ \n    dat_names() %&gt;%\n      group_by(name) %&gt;%\n      summarize(count = sum(n)) %&gt;%\n      arrange(desc(count))\n  })\n    \n  output$table &lt;-  renderDT({\n     datatable(dat_names_agg(), \n              options = list(paging = FALSE,\n                             searching = FALSE,\n                             orderClasses = TRUE))\n\n  })"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#radiobuttons",
+    "href": "slides/math241_wk06mon.html#radiobuttons",
+    "title": "Math 241",
+    "section": "radioButtons()",
+    "text": "radioButtons()\n\nWithin the ui:\n\n\n\nradioButtons(\n  inputId = \"variable\",\n  label = \"Variable of Interest\",\n  choices = c(\"n\", \"prop\"),\n  selected = \"prop\"\n)\n\n\n\n\n\nWithin the server() function:\n\nMust handle the tidy eval issue\n\n\n\n\n\n  output$graph &lt;- renderPlot({\n    \n    ggplot(data = dat_names(), \n         mapping = aes(x = year, y = .data[[input$variable]],\n                       color = name)) +\n      geom_line(linewidth = 2)\n  })"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#sliderinput",
+    "href": "slides/math241_wk06mon.html#sliderinput",
+    "title": "Math 241",
+    "section": "sliderInput()",
+    "text": "sliderInput()\n\nWithin the ui:\n\n\n\nsliderInput(\n  \"year_range\",\n  \"Range of Years:\",\n  min = min(babynames$year),\n  max = max(babynames$year),\n  value = c(1980, 2010)\n)\n\n\n\n\n\nWithin the server() function:\n\n\n\n\n  dat_names &lt;- reactive({ \n    babynames %&gt;%\n      group_by(year, name) %&gt;%\n      summarize(n = sum(n)) %&gt;%\n      group_by(year) %&gt;%\n      mutate(prop = n/sum(n)) %&gt;%\n      filter(name %in% c(unlist(str_split(input$names, \" \"))),\n             year &gt;= input$year_range[1], \n             year &lt;= input$year_range[2]) \n  })"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#sliderinput-1",
+    "href": "slides/math241_wk06mon.html#sliderinput-1",
+    "title": "Math 241",
+    "section": "sliderInput()",
+    "text": "sliderInput()\n\nWithin the ui:\n\n\nsliderInput(\n  \"year_range\",\n  \"Range of Years:\",\n  min = min(babynames$year),\n  max = max(babynames$year),\n  value = c(1980, 2010),\n  sep = \"\"\n)"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#selectizeinput",
+    "href": "slides/math241_wk06mon.html#selectizeinput",
+    "title": "Math 241",
+    "section": "selectizeInput()",
+    "text": "selectizeInput()\n\nWithin the ui:\n\n\n\n      selectizeInput(inputId = \"names\",\n                label = \"Enter Math 241 names here\",\n                choices = NULL,\n                multiple = TRUE)\n\n\n\n\nWithin the server() function:\n\n\n\nserver &lt;- function(input, output, session){\n  \n  updateSelectizeInput(session, 'names', \n                       choices = unique(babynames$name), \n                       server = TRUE)\n  \n}"
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#building-outputs",
+    "href": "slides/math241_wk06mon.html#building-outputs",
+    "title": "Math 241",
+    "section": "Building Outputs",
+    "text": "Building Outputs\nServer-side:\n\nSave the object with output$___.\nUse a render___({}) function to create the object.\n\nLook at shiny R cheatsheet for examples.\n\nAccess inputs with input$___.\n\n\nUI-side:\n\n\nPlace output with ___Output()."
+  },
+  {
+    "objectID": "slides/math241_wk06mon.html#next-steps",
+    "href": "slides/math241_wk06mon.html#next-steps",
+    "title": "Math 241",
+    "section": "Next Steps",
+    "text": "Next Steps\nTroubleshooting common issues:\n\nMust comma separate all the elements in the ui.\nBut don’t add a comma after the last element in the ui.\n\nUp Next on Wednesday:\n\nUploading apps to www.shinyapps.io\nshiny with leaflet maps and plotly graphs\nDisplaying the code in your app\nModifying the layout and adding HTML components\nDashboards with Quarto or flexdashboard\nMore practice"
+  },
+  {
     "objectID": "slides/math241_wk05mon.html#week-5-goals",
     "href": "slides/math241_wk05mon.html#week-5-goals",
     "title": "Math 241",
@@ -1505,11 +1673,32 @@
     "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
+    "objectID": "projects/proj01.html",
+    "href": "projects/proj01.html",
+    "title": "Math 241",
+    "section": "",
+    "text": "In this project, your group will create an interactive dashboard using R shiny and/or Quarto dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\nA button that pop-ups the source code.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, we recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nIf you are working as a group, one suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
+  },
+  {
+    "objectID": "projects/proj01.html#project-guidelines",
+    "href": "projects/proj01.html#project-guidelines",
+    "title": "Math 241",
+    "section": "",
+    "text": "In this project, your group will create an interactive dashboard using R shiny and/or Quarto dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\nA button that pop-ups the source code.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, we recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nIf you are working as a group, one suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
+  },
+  {
+    "objectID": "projects/proj01.html#timeline",
+    "href": "projects/proj01.html#timeline",
+    "title": "Math 241",
+    "section": "Timeline",
+    "text": "Timeline\n\n3/2: Receive project groups\n3/4: Receive project instructions and invite to your group’s GitHub repo.\n\nPlease use your assigned Math 241 GitHub repo for this project.\n\n3/18 (noon): Post a working draft of your dashboard to https://www.shinyapps.io/\n\nWorking draft must:\n\nMake use of at least one real-world dataset.\nHave at least one user input.\nHave at least one reactive graph (or map) and at least one reactive table.\nHave relevant text so that your peers can navigate around the dashboard independently.\n\nOnly one group member needs to post the group’s app to shinyapps.io.\n\n3/18 (noon): Post the link to the group’s dashboard to this spreadsheet.\n3/18 - 3/20: Peer feedback period\n\nEach person will provide feedback on the dashboards of two groups.\nMore guidance on providing feedback will be given in class that week.\nPeer feedback is due 3/20 at 10pm.\n\n4/3 10pm: Link for the final version of dashboard should be added to this spreadsheet and PDF of your data scientist’s statement should be submitted on Gradescope."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Math 241",
     "section": "",
-    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    dates/factors/strings\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    Control flow\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (5pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Functions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Iteration\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 2 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Apr 3\n    \n    \n    Project I Final Product and Data Scientist Statement Due (5pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Debugging with generative AI: ellmer\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    R packages: introduction\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 9 9:00am\n    \n    \n    Problem Set 5 Due, Problem Set 6 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    R packages: documentation\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: testing\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 9 9:00am\n    \n    \n    Problem Set 6 Due, Project 2 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: dissemination\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    Web scraping\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    SQL and databases\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Wrap up\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    May 11 - 14\n    \n    \n    Final Project Presentations\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
+    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Groups\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    dates/factors/strings\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    Control flow\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Functions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Iteration\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 2 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Apr 3\n    \n    \n    Project I Final Product and Data Scientist Statement Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Debugging with generative AI: ellmer\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    R packages: introduction\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 9 9:00am\n    \n    \n    Problem Set 5 Due, Problem Set 6 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    R packages: documentation\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: testing\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Apr 9 9:00am\n    \n    \n    Problem Set 6 Due, Project 2 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: dissemination\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    Web scraping\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    SQL and databases\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Wrap up\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    May 11 - 14\n    \n    \n    Final Project Presentations\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
   },
   {
     "objectID": "in_class/activity1.html",
@@ -2994,5 +3183,26 @@
     "title": "Math 241",
     "section": "Raster as data: example",
     "text": "Raster as data: example\n90m x 90m elevation data in M333 “ecoprovince” (NE Washington, N Idaho, W Montana)\n\n\n\n\n\n\n\n\n\n\nEach pixel is a 90m x 90m square and has an elevation value assigned to it."
+  },
+  {
+    "objectID": "slides/math241_wk06wed.html#week-6-goals",
+    "href": "slides/math241_wk06wed.html#week-6-goals",
+    "title": "Math 241",
+    "section": "Week 6 Goals",
+    "text": "Week 6 Goals\n\n\nMon Lecture\n\nIntroduction to shiny applications\nGet Project 1 group assignments\n\n\nWed Lecture\n\nshiny dashboards with Quarto\nGet all the details about Project 1"
+  },
+  {
+    "objectID": "slides/math241_wk06wed.html#more-reactivity-observe",
+    "href": "slides/math241_wk06wed.html#more-reactivity-observe",
+    "title": "Math 241",
+    "section": "More Reactivity: observe()",
+    "text": "More Reactivity: observe()\n\nLet’s look at another app in the learn-shiny repo.\n\nWithin the ShinyApps folder, it is in “app_biketown”.\n\nFeatures leaflet functions and observe().\nNeed to use leafletProxy() so that the entire map isn’t redrawn with each update to the inputs."
+  },
+  {
+    "objectID": "slides/math241_wk06wed.html#next-week",
+    "href": "slides/math241_wk06wed.html#next-week",
+    "title": "Math 241",
+    "section": "Next Week",
+    "text": "Next Week\n\nLearn even more about data types in R (strings / dates / factors)\nLearn to match strings with regular expressions"
   }
 ]
