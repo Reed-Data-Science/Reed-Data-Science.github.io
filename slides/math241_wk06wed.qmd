@@ -88,6 +88,29 @@ theme_update(text = element_text(size = 20))
 
 ------------------------------------------------------------------------
 
+
+### Annoucements 
+
+::: {.fragment .nonincremental}
+
+- [DataFest 2026 @ Willamette](https://my.willamette.edu/site/computer-science/data-fest)
+    - Great opportunity to meet folks and show off your data science skills! 
+    
+:::
+    
+::: {.fragment .nonincremental}
+    
+- Updated Instructions for turning in Problem Set 4
+    - Turn in the PDF on Gradescope as per usual
+        - You may need to set `#| eval: false` in the chunks that have `leaflet` maps
+    - Also Render your document to **HTML** (with `#| eval: true` for the `leaflet` map chunks)
+    - Push the .qmd and .html to GitHub so the graders can grade your `leaflet` maps and interact with them easily
+    
+:::
+
+
+------------------------------------------------------------------------
+
 ### Recap
 
 :::: .columns
