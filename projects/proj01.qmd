@@ -14,7 +14,6 @@ In this project, your group will create an interactive dashboard using `R` `shin
 * At least one reactive table.
 * A tab/page which includes relevant meta information about the data along with a data citation and link to the data source.
 * Relevant text for your users to navigate your dashboard and extract knowledge from it.
-* A button that pop-ups the source code.
 
 ### Requirements of the data scientist's statement:
 
