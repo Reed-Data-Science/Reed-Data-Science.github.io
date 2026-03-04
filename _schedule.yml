@@ -183,10 +183,10 @@ scheduled-docs:
           docs:
             - type: Reading
               href: readings/readings_wk06.qmd
-            # - type: Slides
-            #   href: slides/math241_wk06wed.qmd
-            # - type: Project I Instructions
-            #   href: projects/proj01.qmd
+            - type: Slides
+              href: slides/math241_wk06wed.qmd
+            - type: Project I Instructions
+              href: projects/proj01.qmd
         - topic: "Problem Set 4 Due"
           display-date: Thursday, Mar 5 9:00am
           date: 3/5/26
