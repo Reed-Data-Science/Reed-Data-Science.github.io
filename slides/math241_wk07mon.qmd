@@ -922,7 +922,9 @@ lyrics <- c("But I would walk 500 miles",
 
 ------------------------------------------------------------------------
 
-How should we modify the code to locate all the numbers from these lyrics of various songs?
+### How should we modify the code to locate all the numbers from these lyrics of various songs?
+
+
 
 ```{r}
 lyrics
@@ -934,7 +936,7 @@ str_view_all(lyrics, "500|1000|2")
 
 ------------------------------------------------------------------------
 
-How should we modify the code to locate all the numbers from these lyrics of various songs?
+### How should we modify the code to locate all the numbers from these lyrics of various songs?
 
 ```{r}
 lyrics
