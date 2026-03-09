@@ -662,11 +662,11 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">today</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-03-08"</code></pre>
+<pre><code>[1] "2026-03-09"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">now</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-03-08 22:21:01 PDT"</code></pre>
+<pre><code>[1] "2026-03-09 09:56:26 PDT"</code></pre>
 </div>
 </div>
 </section></section>
@@ -1269,9 +1269,10 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a>lyrics <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"But I would walk 500 miles"</span>,</span>
 <span id="cb99-2"><a></a>            <span class="st">"Yeah, 360. When you're in the mirror, do you like what you see?"</span>, </span>
-<span id="cb99-3"><a></a>            <span class="st">"When I'm 64"</span>,</span>
+<span id="cb99-3"><a></a>            <span class="st">"I have loved you for a 1000 years, I'll love you for a 1000 more"</span>,</span>
 <span id="cb99-4"><a></a>            <span class="st">"Where 2 and 2 always makes a 5"</span>,</span>
-<span id="cb99-5"><a></a>            <span class="st">"1, 2, 3, 4: Tell me that you love me more"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb99-5"><a></a>            <span class="st">"17-38, ay"</span>,</span>
+<span id="cb99-6"><a></a>            <span class="st">"I'm so 3008, You so 2000 and late"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1280,11 +1281,12 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a>lyrics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "But I would walk 500 miles"                                     
-[2] "Yeah, 360. When you're in the mirror, do you like what you see?"
-[3] "When I'm 64"                                                    
-[4] "Where 2 and 2 always makes a 5"                                 
-[5] "1, 2, 3, 4: Tell me that you love me more"                      </code></pre>
+<pre><code>[1] "But I would walk 500 miles"                                      
+[2] "Yeah, 360. When you're in the mirror, do you like what you see?" 
+[3] "I have loved you for a 1000 years, I'll love you for a 1000 more"
+[4] "Where 2 and 2 always makes a 5"                                  
+[5] "17-38, ay"                                                       
+[6] "I'm so 3008, You so 2000 and late"                               </code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
@@ -1292,9 +1294,10 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] │ But I would walk &lt;500&gt; miles
 [2] │ Yeah, 360. When you're in the mirror, do you like what you see?
-[3] │ When I'm 64
+[3] │ I have loved you for a &lt;1000&gt; years, I'll love you for a &lt;1000&gt; more
 [4] │ Where &lt;2&gt; and &lt;2&gt; always makes a 5
-[5] │ 1, &lt;2&gt;, 3, 4: Tell me that you love me more</code></pre>
+[5] │ 17-38, ay
+[6] │ I'm so 3008, You so &lt;2&gt;000 and late</code></pre>
 </div>
 </div>
 </section>
@@ -1304,21 +1307,23 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a>lyrics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "But I would walk 500 miles"                                     
-[2] "Yeah, 360. When you're in the mirror, do you like what you see?"
-[3] "When I'm 64"                                                    
-[4] "Where 2 and 2 always makes a 5"                                 
-[5] "1, 2, 3, 4: Tell me that you love me more"                      </code></pre>
+<pre><code>[1] "But I would walk 500 miles"                                      
+[2] "Yeah, 360. When you're in the mirror, do you like what you see?" 
+[3] "I have loved you for a 1000 years, I'll love you for a 1000 more"
+[4] "Where 2 and 2 always makes a 5"                                  
+[5] "17-38, ay"                                                       
+[6] "I'm so 3008, You so 2000 and late"                               </code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"500|1000|2|360|64|2|5|1|3|4"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"500|1000|2|360|5|17|38|3008|2000"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] │ But I would walk &lt;500&gt; miles
 [2] │ Yeah, &lt;360&gt;. When you're in the mirror, do you like what you see?
-[3] │ When I'm &lt;64&gt;
+[3] │ I have loved you for a &lt;1000&gt; years, I'll love you for a &lt;1000&gt; more
 [4] │ Where &lt;2&gt; and &lt;2&gt; always makes a &lt;5&gt;
-[5] │ &lt;1&gt;, &lt;2&gt;, &lt;3&gt;, &lt;4&gt;: Tell me that you love me more</code></pre>
+[5] │ &lt;17&gt;-&lt;38&gt;, ay
+[6] │ I'm so &lt;3008&gt;, You so &lt;2&gt;000 and late</code></pre>
 </div>
 </div>
 </section>

@@ -914,9 +914,10 @@ Name the artist and song title for each of the following!
 ```{r}
 lyrics <- c("But I would walk 500 miles",
             "Yeah, 360. When you're in the mirror, do you like what you see?", 
-            "When I'm 64",
+            "I have loved you for a 1000 years, I'll love you for a 1000 more",
             "Where 2 and 2 always makes a 5",
-            "1, 2, 3, 4: Tell me that you love me more")
+            "17-38, ay",
+            "I'm so 3008, You so 2000 and late")
 ```
 
 ------------------------------------------------------------------------
@@ -940,7 +941,7 @@ lyrics
 ```
 
 ```{r}
-str_view_all(lyrics, "500|1000|2|360|64|2|5|1|3|4")
+str_view_all(lyrics, "500|1000|2|360|5|17|38|3008|2000")
 ```
 
 ------------------------------------------------------------------------
