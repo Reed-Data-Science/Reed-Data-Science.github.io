@@ -198,18 +198,14 @@ scheduled-docs:
           display-date: Monday, Mar 9
           date: 3/9/26
           docs:
-            # - type: Reading
-            #   href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math241_wk07mon.qmd
         - topic: "Project 1 Work Day"
           display-date: Wednesday, Mar 11
           date: 3/11/26
           docs:
-            # - type: Reading
-            #   href: readings/readings_wk02wed.qmd
-            # - type: Slides
-            #   href: slides/math141_wk02wed.qmd
+            - type: Slides
+              href: slides/math141_wk07wed.qmd
       # resources:
       #   - 'Some text'
     - week: 8
