@@ -205,7 +205,7 @@ scheduled-docs:
           date: 3/11/26
           docs:
             - type: Slides
-              href: slides/math141_wk07wed.qmd
+              href: slides/math241_wk07wed.qmd
       # resources:
       #   - 'Some text'
     - week: 8
