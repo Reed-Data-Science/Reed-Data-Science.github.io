@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
+
+  <title>Math 241 – Regular Expressions and Text Analysis</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bb035878c9beb80bfc5abc3d5219ce12.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<div class="columns">
+<div class="column center" style="width:60%;">
+<p><img data-src="img/r-hex.jpg" style="width:90.0%"></p>
+</div><div class="column center" style="width:40%;">
+<p><br></p>
+<p><span class="custom-title">Regex and Text Analysis</span></p>
+<p><br> <br></p>
+<p><span class="custom-subtitle">Grayson White</span></p>
+<p><span class="custom-subtitle">Math 241 <br> Week 8 | Spring 2026</span></p>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="annoucements">Annoucements</h3>
+<div class="fragment">
+<ul>
+<li><a href="https://my.willamette.edu/site/computer-science/data-fest">DataFest 2026 @ Willamette</a>
+<ul>
+<li>Great opportunity to meet folks and show off your data science skills!</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Project 1 Rough Draft <strong>Due Wednesday</strong>
+<ul>
+<li>Check the course website for instructions</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="week-8-goals" class="slide level2">
+<h2>Week 8 Goals</h2>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<p><strong>Mon Lecture</strong></p>
+<ul>
+<li>Pattern matching with regular expressions (and some text analysis!)</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<p><strong>Wed Lecture</strong></p>
+<ul>
+<li>Project 1 Rough Draft Presentations and Feedback
+<ul>
+<li>Aim for ~5 min presentations from each group</li>
+<li>Info on group feedback coming soon</li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="recap">Recap:</h3>
+<p>How should we modify the code to locate all the numbers from these lyrics of various songs?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>lyrics <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"But I would walk 500 miles"</span>,</span>
+<span id="cb1-2"><a></a>            <span class="st">"Yeah, 360. When you're in the mirror, do you like what you see?"</span>, </span>
+<span id="cb1-3"><a></a>            <span class="st">"I have loved you for a 1000 years, I'll love you for a 1000 more"</span>,</span>
+<span id="cb1-4"><a></a>            <span class="st">"Where 2 and 2 always makes a 5"</span>,</span>
+<span id="cb1-5"><a></a>            <span class="st">"17-38, ay"</span>,</span>
+<span id="cb1-6"><a></a>            <span class="st">"I'm so 3008, You so 2000 and late"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"500|1000|2|360|5|17|38|3008|2000"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ But I would walk &lt;500&gt; miles
+[2] │ Yeah, &lt;360&gt;. When you're in the mirror, do you like what you see?
+[3] │ I have loved you for a &lt;1000&gt; years, I'll love you for a &lt;1000&gt; more
+[4] │ Where &lt;2&gt; and &lt;2&gt; always makes a &lt;5&gt;
+[5] │ &lt;17&gt;-&lt;38&gt;, ay
+[6] │ I'm so &lt;3008&gt;, You so &lt;2&gt;000 and late</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="recap-1">Recap:</h3>
+<p>But now imagine you had a very long vector and you want to locate any number?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"1|2|3|4..."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Not a good approach!</p>
+</section>
+<section id="regular-expressions" class="slide level2">
+<h2>Regular Expressions</h2>
+<ul>
+<li class="fragment">A concise language for describing patterns in strings.
+<ul>
+<li class="fragment">But not super easy to read.</li>
+<li class="fragment">Good to have cheatsheets and the internet for help!</li>
+</ul></li>
+</ul>
+</section>
+<section id="regular-expressions-1" class="slide level2">
+<h2>Regular Expressions</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"[:digit:]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ But I would walk &lt;5&gt;&lt;0&gt;&lt;0&gt; miles
+[2] │ Yeah, &lt;3&gt;&lt;6&gt;&lt;0&gt;. When you're in the mirror, do you like what you see?
+[3] │ I have loved you for a &lt;1&gt;&lt;0&gt;&lt;0&gt;&lt;0&gt; years, I'll love you for a &lt;1&gt;&lt;0&gt;&lt;0&gt;&lt;0&gt; more
+[4] │ Where &lt;2&gt; and &lt;2&gt; always makes a &lt;5&gt;
+[5] │ &lt;1&gt;&lt;7&gt;-&lt;3&gt;&lt;8&gt;, ay
+[6] │ I'm so &lt;3&gt;&lt;0&gt;&lt;0&gt;&lt;8&gt;, You so &lt;2&gt;&lt;0&gt;&lt;0&gt;&lt;0&gt; and late</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>[:digit:]</code> is a particular <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">Character Class</a></li>
+<li class="fragment">Character classes are a way of specifying that you want to match one of the following characters.</li>
+</ul>
+</section>
+<section id="regular-expressions-2" class="slide level2">
+<h2>Regular Expressions</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">str_view_all</span>(lyrics, <span class="st">"[:digit:]+"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ But I would walk &lt;500&gt; miles
+[2] │ Yeah, &lt;360&gt;. When you're in the mirror, do you like what you see?
+[3] │ I have loved you for a &lt;1000&gt; years, I'll love you for a &lt;1000&gt; more
+[4] │ Where &lt;2&gt; and &lt;2&gt; always makes a &lt;5&gt;
+[5] │ &lt;17&gt;-&lt;38&gt;, ay
+[6] │ I'm so &lt;3008&gt;, You so &lt;2000&gt; and late</code></pre>
+</div>
+</div>
+<ul>
+<li class="fragment"><code>+</code> is a quantifier
+<ul>
+<li class="fragment"><code>+</code>: One or more</li>
+</ul></li>
+</ul>
+</section>
+<section>
+<section id="activity-part-1-regular-expression-sleuthing" class="title-slide slide level1 center">
+<h1>Activity Part 1: Regular Expression Sleuthing</h1>
+<div class="fragment">
+<p><strong>Your Mission</strong>: In groups of 2 - 3, go through the activity to make a “dictionary” of what you believe each of the regular expressions shown is doing, and how it does that.</p>
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_994c82d8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">25</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="regexplain-demo" class="slide level2">
+<h2>RegExplain Demo</h2>
+<ul>
+<li class="fragment">Neat Package and RStudio Addin to help: <a href="https://www.garrickadenbuie.com/project/regexplain/"><code>RegExplain</code></a></li>
+</ul>
+</section></section>
+<section>
+<section id="activity-part-2-comparing-notes" class="title-slide slide level1 center">
+<h1>Activity Part 2: Comparing Notes</h1>
+<div class="fragment">
+<p>Now, make cross-group pairings (groups of size 2) and compare dictionaries. Do you agree on each regexp? If not, try to figure out who of you is correct and consult with RegExplain.</p>
+<p><br> <br></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_8216bc1d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="pattern-matching">Pattern Matching</h3>
+<div class="columns">
+<div class="column">
+<ul>
+<li class="fragment"><p>The <code>str_view_all()</code> is a nice helper function.</p></li>
+<li class="fragment"><p>Now need to learn functions to take <strong>action</strong> based on our regular expression pattern matching.</p></li>
+</ul>
+</div><div class="column">
+<ul>
+<li class="fragment"><p>Functions to take <strong>action</strong> based on our regular expression pattern matching.</p></li>
+<li class="fragment"><p>Detect pattern with:</p>
+<ul>
+<li class="fragment"><code>str_detect()</code></li>
+<li class="fragment"><code>str_subset()</code></li>
+<li class="fragment"><code>str_count()</code></li>
+</ul></li>
+<li class="fragment"><p>Extract pattern with:</p>
+<ul>
+<li class="fragment"><code>str_extract()</code> and <code>str_extract_all()</code></li>
+</ul></li>
+<li class="fragment"><p>Replace pattern with:</p>
+<ul>
+<li class="fragment"><code>str_replace()</code> and <code>str_replace_all()</code></li>
+</ul></li>
+<li class="fragment"><p>Split pattern:</p>
+<ul>
+<li class="fragment"><code>str_split()</code></li>
+</ul></li>
+</ul>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="new-example-taylor-swift-song">New Example: <a href="https://github.com/shaynak/taylor-swift-lyrics">Taylor Swift song</a></h3>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>ts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/shaynak/taylor-swift-lyrics/main/lyrics.csv"</span>)</span>
+<span id="cb9-2"><a></a>shake_it_off <span class="ot">&lt;-</span> ts <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">select</span>(Song, Album, Lyric) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a></a>  <span class="fu">filter</span>(Song <span class="sc">==</span> <span class="st">"Shake It Off (Taylor's Version)"</span>)</span>
+<span id="cb9-5"><a></a>shake_it_off</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 × 3
+   Song                            Album                   Lyric                
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I stay out too late  
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Got nothin' in my br…
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I go on too many dat…
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I can't make the…
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) At least, that's wha…
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I keep cruisin'  
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Can't stop, won't st…
+# ℹ 50 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="detect" class="slide level2">
+<h2>Detect</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">str_detect</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"ake"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
+[13] FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE
+[25] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+[37] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
+[49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="detect-1" class="slide level2">
+<h2>Detect</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">str_subset</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"ake"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "But I can't make them stay"                                                     
+ [2] "Baby, I'm just gonna shake, shake, shake, shake, shake"                         
+ [3] "Shake it off, I shake it off (Ooh)"                                             
+ [4] "Heartbreakers gonna break, break, break, break, break"                          
+ [5] "And the fakers gonna fake, fake, fake, fake, fake"                              
+ [6] "Baby, I'm just gonna shake, shake, shake, shake, shake"                         
+ [7] "I shake it off, I shake it off (Ooh)"                                           
+ [8] "I make the moves up as I go (Moves up as I go)"                                 
+ [9] "I shake it off, I shake it off"                                                 
+[10] "I, I, I shake it off, I shake it off"                                           
+[11] "I, I, I shake it off, I shake it off"                                           
+[12] "I, I, I shake it off, I shake it off (Haha)"                                    
+[13] "She's like, \"Oh, my God\" (Haha), but I'm just gonna shake"                    
+[14] "We could shake, shake, shake"                                                   
+[15] "Baby, I'm just gonna shake, shake, shake, shake, shake"                         
+[16] "I shake it off, I shake it off (Ooh; Hey)"                                      
+[17] "Heartbreakers gonna break, break, break, break, break (Mmm)"                    
+[18] "And the fakers gonna fake, fake, fake, fake, fake (They fake and fake and fake)"
+[19] "Baby, I'm just gonna shake, shake, shake, shake, shake"                         
+[20] "I shake it off, I shake it off (Ooh; Off)"                                      
+[21] "I, I, I shake it off, I shake it off"                                           
+[22] "I, I, I shake it off, I shake it off (Off)"                                     
+[23] "I, I, I shake it off (Yeah), I shake it off"                                    
+[24] "I shake it off, I shake it off"                                                 
+[25] "I, I, I shake it off, I shake it off (You got to)"                              
+[26] "I, I, I shake it off, I shake it off"                                           
+[27] "I, I, I shake it off, I shake it off"                                           </code></pre>
+</div>
+</div>
+</section>
+<section id="detect-2" class="slide level2">
+<h2>Detect</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>shake <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(<span class="at">string =</span> Lyric, <span class="at">pattern =</span> <span class="st">"ake"</span>))</span>
+<span id="cb15-3"><a></a>shake</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 27 × 3
+   Song                            Album                   Lyric                
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I can't make the…
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Baby, I'm just gonna…
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Shake it off, I shak…
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Heartbreakers gonna …
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) And the fakers gonna…
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Baby, I'm just gonna…
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I shake it off, I sh…
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I make the moves up …
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I shake it off, I sh…
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I, I, I shake it off…
+# ℹ 17 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="detect-3" class="slide level2">
+<h2>Detect</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">str_count</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"ake"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 5 2 1 6 5 2 0 0 0 0 0 1 0 0 0 0 0 2 2 2 2 0 0 0
+[39] 0 0 1 0 0 3 0 0 0 5 2 1 9 5 2 2 2 2 2 2 2 2</code></pre>
+</div>
+</div>
+</section>
+<section id="detect-4" class="slide level2">
+<h2>Detect</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_count</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"ake"</span>) <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 22 × 3
+   Song                            Album                   Lyric                
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Baby, I'm just gonna…
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Shake it off, I shak…
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) And the fakers gonna…
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Baby, I'm just gonna…
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I shake it off, I sh…
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I shake it off, I sh…
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I, I, I shake it off…
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I, I, I shake it off…
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I, I, I shake it off…
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) We could shake, shak…
+# ℹ 12 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="extract" class="slide level2">
+<h2>Extract</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">str_subset</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"[:punct:]"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a></a>  <span class="fu">str_extract</span>(<span class="at">pattern =</span> <span class="st">"[:punct:]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "'" "'" "'" "(" "'" "," "'" "'" "'" "'" "'" "'" "," "," "," "," "," "," ","
+[20] "'" "'" "'" "'" "(" "'" "'" "'" "'" "'" "," "," "," "," "," "," "," "'" "-"
+[39] "'" "'" "," "," "'" "," "," "," "," "," "," "," "," "," "," "," "," "," ","</code></pre>
+</div>
+</div>
+</section>
+<section id="extract-1" class="slide level2">
+<h2>Extract</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>all <span class="ot">&lt;-</span> <span class="fu">str_subset</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"[:punct:]"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">str_extract_all</span>(<span class="at">pattern =</span> <span class="st">"[:punct:]"</span>)</span>
+<span id="cb23-3"><a></a><span class="fu">class</span>(all)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "list"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>all</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] "'"
+
+[[2]]
+[1] "'" "," "-"
+
+[[3]]
+[1] "'" "," "-"
+
+[[4]]
+[1] "(" ")"
+
+[[5]]
+[1] "'"
+
+[[6]]
+[1] "," "'" "," "-"
+
+[[7]]
+[1] "'" "," "-"
+
+[[8]]
+[1] "'"
+
+[[9]]
+[1] "'" "," "'" "'"
+
+[[10]]
+[1] "'"
+
+[[11]]
+[1] "'"  ","  "\"" "'"  "\""
+
+[[12]]
+[1] "'" "," "," "," ","
+
+[[13]]
+[1] "," "," "," ","
+
+[[14]]
+[1] "," "'" "," "," "," ","
+
+[[15]]
+[1] "," "(" ")"
+
+[[16]]
+[1] "," "," "," ","
+
+[[17]]
+[1] "," "," "," ","
+
+[[18]]
+[1] "," "'" "," "," "," ","
+
+[[19]]
+[1] "," "(" ")"
+
+[[20]]
+[1] "'" "'"
+
+[[21]]
+[1] "'" "'" "," "-"
+
+[[22]]
+[1] "'" "'" "," "-"
+
+[[23]]
+[1] "'" "'" "(" "'" ")"
+
+[[24]]
+[1] "(" ")"
+
+[[25]]
+[1] "'" "'" "," "-"
+
+[[26]]
+[1] "'" "'" "," "-"
+
+[[27]]
+[1] "'"
+
+[[28]]
+[1] "'" "," "'" "'"
+
+[[29]]
+[1] "'"
+
+[[30]]
+[1] ","
+
+[[31]]
+[1] "," "," ","
+
+[[32]]
+[1] "," "," ","
+
+[[33]]
+[1] "," "," "," "(" ")"
+
+[[34]]
+[1] "," ","
+
+[[35]]
+[1] "," "'" "'"
+
+[[36]]
+[1] ","
+
+[[37]]
+[1] "'" "'"
+
+[[38]]
+[1] "-"
+
+[[39]]
+[1] "'"  ","  "\"" ","  "\"" "("  ")"  ","  "'" 
+
+[[40]]
+[1] "'" "," "?"
+
+[[41]]
+[1] "," ","
+
+[[42]]
+[1] "," ","
+
+[[43]]
+[1] "'" "," "," "," ","
+
+[[44]]
+[1] "," "," "," "," "(" ")"
+
+[[45]]
+[1] "," "'" "," "," "," ","
+
+[[46]]
+[1] "," "(" ";" ")"
+
+[[47]]
+[1] "," "," "," "," "(" ")"
+
+[[48]]
+[1] "," "," "," "," "(" ")"
+
+[[49]]
+[1] "," "'" "," "," "," ","
+
+[[50]]
+[1] "," "(" ";" ")"
+
+[[51]]
+[1] "," "," ","
+
+[[52]]
+[1] "," "," "," "(" ")"
+
+[[53]]
+[1] "," "," "(" ")" ","
+
+[[54]]
+[1] ","
+
+[[55]]
+[1] "," "," "," "(" ")"
+
+[[56]]
+[1] "," "," ","
+
+[[57]]
+[1] "," "," ","</code></pre>
+</div>
+</div>
+</section>
+<section id="extract-2" class="slide level2">
+<h2>Extract</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">str_view_all</span>(shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"(?&lt;= gonna )</span><span class="sc">\\</span><span class="st">w+"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] │ I stay out too late
+ [2] │ Got nothin' in my brain
+ [3] │ That's what people say, mm-mm
+ [4] │ That's what people say, mm-mm
+ [5] │ I go on too many dates (Haha)
+ [6] │ But I can't make them stay
+ [7] │ At least, that's what people say, mm-mm
+ [8] │ That's what people say, mm-mm
+ [9] │ But I keep cruisin'
+[10] │ Can't stop, won't stop movin'
+[11] │ It's like I got this music in my mind
+[12] │ Sayin', "It's gonna &lt;be&gt; alright"
+[13] │ 'Cause the players gonna &lt;play&gt;, play, play, play, play
+[14] │ And the haters gonna &lt;hate&gt;, hate, hate, hate, hate
+[15] │ Baby, I'm just gonna &lt;shake&gt;, shake, shake, shake, shake
+[16] │ Shake it off, I shake it off (Ooh)
+[17] │ Heartbreakers gonna &lt;break&gt;, break, break, break, break
+[18] │ And the fakers gonna &lt;fake&gt;, fake, fake, fake, fake
+[19] │ Baby, I'm just gonna &lt;shake&gt;, shake, shake, shake, shake
+[20] │ I shake it off, I shake it off (Ooh)
+... and 40 more</code></pre>
+</div>
+</div>
+</section>
+<section id="extract-3" class="slide level2">
+<h2>Extract</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(Lyric, <span class="st">"gonna"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a></a>  <span class="fu">mutate</span>(<span class="at">after =</span> <span class="fu">str_extract</span>(Lyric, <span class="st">"(?&lt;= gonna )</span><span class="sc">\\</span><span class="st">w+"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 14 × 4
+   Song                            Album                   Lyric           after
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;           &lt;chr&gt;
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Sayin', \"It'… be   
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "'Cause the pl… play 
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "And the hater… hate 
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm jus… shake
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Heartbreakers… break
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "And the faker… fake 
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm jus… shake
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "She's like, \… shake
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "'Cause the pl… play 
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "And the hater… hate 
+11 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm jus… shake
+12 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Heartbreakers… break
+13 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "And the faker… fake 
+14 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm jus… shake</code></pre>
+</div>
+</div>
+</section>
+<section id="replace" class="slide level2">
+<h2>Replace</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">str_replace</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"shake"</span>, <span class="at">replacement =</span> <span class="st">"bake"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "I stay out too late"                                                            
+ [2] "Got nothin' in my brain"                                                        
+ [3] "That's what people say, mm-mm"                                                  
+ [4] "That's what people say, mm-mm"                                                  
+ [5] "I go on too many dates (Haha)"                                                  
+ [6] "But I can't make them stay"                                                     
+ [7] "At least, that's what people say, mm-mm"                                        
+ [8] "That's what people say, mm-mm"                                                  
+ [9] "But I keep cruisin'"                                                            
+[10] "Can't stop, won't stop movin'"                                                  
+[11] "It's like I got this music in my mind"                                          
+[12] "Sayin', \"It's gonna be alright\""                                              
+[13] "'Cause the players gonna play, play, play, play, play"                          
+[14] "And the haters gonna hate, hate, hate, hate, hate"                              
+[15] "Baby, I'm just gonna bake, shake, shake, shake, shake"                          
+[16] "Shake it off, I bake it off (Ooh)"                                              
+[17] "Heartbreakers gonna break, break, break, break, break"                          
+[18] "And the fakers gonna fake, fake, fake, fake, fake"                              
+[19] "Baby, I'm just gonna bake, shake, shake, shake, shake"                          
+[20] "I bake it off, I shake it off (Ooh)"                                            
+[21] "I never miss a beat"                                                            
+[22] "I'm lightnin' on my feet"                                                       
+[23] "And that's what they don't see, mm-mm"                                          
+[24] "That's what they don't see, mm-mm"                                              
+[25] "I'm dancin' on my own (Dancin' on my own)"                                      
+[26] "I make the moves up as I go (Moves up as I go)"                                 
+[27] "And that's what they don't know, mm-mm"                                         
+[28] "That's what they don't know, mm-mm"                                             
+[29] "But I keep cruisin'"                                                            
+[30] "Can't stop, won't stop groovin'"                                                
+[31] "It's like I got this music in my mind"                                          
+[32] "I bake it off, I shake it off"                                                  
+[33] "I, I, I bake it off, I shake it off"                                            
+[34] "I, I, I bake it off, I shake it off"                                            
+[35] "I, I, I bake it off, I shake it off (Haha)"                                     
+[36] "Hey, hey, hey"                                                                  
+[37] "Just think, while you've been gettin' down and out about the liars"             
+[38] "And the dirty, dirty cheats of the world"                                       
+[39] "You could've been gettin' down to this sick beat"                               
+[40] "My ex-man brought his new girlfriend"                                           
+[41] "She's like, \"Oh, my God\" (Haha), but I'm just gonna bake"                     
+[42] "And to the fella over there with the hella good hair"                           
+[43] "Won't you come on over, baby?"                                                  
+[44] "We could bake, shake, shake"                                                    
+[45] "Yeah, oh, woah"                                                                 
+[46] "'Cause the players gonna play, play, play, play, play"                          
+[47] "And the haters gonna hate, hate, hate, hate, hate (Haters gonna hate)"          
+[48] "Baby, I'm just gonna bake, shake, shake, shake, shake"                          
+[49] "I bake it off, I shake it off (Ooh; Hey)"                                       
+[50] "Heartbreakers gonna break, break, break, break, break (Mmm)"                    
+[51] "And the fakers gonna fake, fake, fake, fake, fake (They fake and fake and fake)"
+[52] "Baby, I'm just gonna bake, shake, shake, shake, shake"                          
+[53] "I bake it off, I shake it off (Ooh; Off)"                                       
+[54] "I, I, I bake it off, I shake it off"                                            
+[55] "I, I, I bake it off, I shake it off (Off)"                                      
+[56] "I, I, I bake it off (Yeah), I shake it off"                                     
+[57] "I bake it off, I shake it off"                                                  
+[58] "I, I, I bake it off, I shake it off (You got to)"                               
+[59] "I, I, I bake it off, I shake it off"                                            
+[60] "I, I, I bake it off, I shake it off"                                            </code></pre>
+</div>
+</div>
+</section>
+<section id="replace-1" class="slide level2">
+<h2>Replace</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">str_replace_all</span>(<span class="at">string =</span> shake_it_off<span class="sc">$</span>Lyric, <span class="at">pattern =</span> <span class="st">"shake"</span>, <span class="at">replacement =</span> <span class="st">"bake"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "I stay out too late"                                                            
+ [2] "Got nothin' in my brain"                                                        
+ [3] "That's what people say, mm-mm"                                                  
+ [4] "That's what people say, mm-mm"                                                  
+ [5] "I go on too many dates (Haha)"                                                  
+ [6] "But I can't make them stay"                                                     
+ [7] "At least, that's what people say, mm-mm"                                        
+ [8] "That's what people say, mm-mm"                                                  
+ [9] "But I keep cruisin'"                                                            
+[10] "Can't stop, won't stop movin'"                                                  
+[11] "It's like I got this music in my mind"                                          
+[12] "Sayin', \"It's gonna be alright\""                                              
+[13] "'Cause the players gonna play, play, play, play, play"                          
+[14] "And the haters gonna hate, hate, hate, hate, hate"                              
+[15] "Baby, I'm just gonna bake, bake, bake, bake, bake"                              
+[16] "Shake it off, I bake it off (Ooh)"                                              
+[17] "Heartbreakers gonna break, break, break, break, break"                          
+[18] "And the fakers gonna fake, fake, fake, fake, fake"                              
+[19] "Baby, I'm just gonna bake, bake, bake, bake, bake"                              
+[20] "I bake it off, I bake it off (Ooh)"                                             
+[21] "I never miss a beat"                                                            
+[22] "I'm lightnin' on my feet"                                                       
+[23] "And that's what they don't see, mm-mm"                                          
+[24] "That's what they don't see, mm-mm"                                              
+[25] "I'm dancin' on my own (Dancin' on my own)"                                      
+[26] "I make the moves up as I go (Moves up as I go)"                                 
+[27] "And that's what they don't know, mm-mm"                                         
+[28] "That's what they don't know, mm-mm"                                             
+[29] "But I keep cruisin'"                                                            
+[30] "Can't stop, won't stop groovin'"                                                
+[31] "It's like I got this music in my mind"                                          
+[32] "I bake it off, I bake it off"                                                   
+[33] "I, I, I bake it off, I bake it off"                                             
+[34] "I, I, I bake it off, I bake it off"                                             
+[35] "I, I, I bake it off, I bake it off (Haha)"                                      
+[36] "Hey, hey, hey"                                                                  
+[37] "Just think, while you've been gettin' down and out about the liars"             
+[38] "And the dirty, dirty cheats of the world"                                       
+[39] "You could've been gettin' down to this sick beat"                               
+[40] "My ex-man brought his new girlfriend"                                           
+[41] "She's like, \"Oh, my God\" (Haha), but I'm just gonna bake"                     
+[42] "And to the fella over there with the hella good hair"                           
+[43] "Won't you come on over, baby?"                                                  
+[44] "We could bake, bake, bake"                                                      
+[45] "Yeah, oh, woah"                                                                 
+[46] "'Cause the players gonna play, play, play, play, play"                          
+[47] "And the haters gonna hate, hate, hate, hate, hate (Haters gonna hate)"          
+[48] "Baby, I'm just gonna bake, bake, bake, bake, bake"                              
+[49] "I bake it off, I bake it off (Ooh; Hey)"                                        
+[50] "Heartbreakers gonna break, break, break, break, break (Mmm)"                    
+[51] "And the fakers gonna fake, fake, fake, fake, fake (They fake and fake and fake)"
+[52] "Baby, I'm just gonna bake, bake, bake, bake, bake"                              
+[53] "I bake it off, I bake it off (Ooh; Off)"                                        
+[54] "I, I, I bake it off, I bake it off"                                             
+[55] "I, I, I bake it off, I bake it off (Off)"                                       
+[56] "I, I, I bake it off (Yeah), I bake it off"                                      
+[57] "I bake it off, I bake it off"                                                   
+[58] "I, I, I bake it off, I bake it off (You got to)"                                
+[59] "I, I, I bake it off, I bake it off"                                             
+[60] "I, I, I bake it off, I bake it off"                                             </code></pre>
+</div>
+</div>
+</section>
+<section id="replace-2" class="slide level2">
+<h2>Replace</h2>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>run_it_off <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a></a>  <span class="fu">mutate</span>(<span class="at">Lyric =</span> <span class="fu">str_replace_all</span>(Lyric, <span class="st">"shake"</span>,</span>
+<span id="cb35-3"><a></a>                                 <span class="st">"run"</span>)) </span>
+<span id="cb35-4"><a></a>run_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb35-5"><a></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(Lyric, <span class="st">"run"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 21 × 3
+   Song                            Album                   Lyric                
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm just gonn…
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Shake it off, I run…
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "Baby, I'm just gonn…
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "I run it off, I run…
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "I run it off, I run…
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "I, I, I run it off,…
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "I, I, I run it off,…
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "I, I, I run it off,…
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "She's like, \"Oh, m…
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) "We could run, run, …
+# ℹ 11 more rows</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="text-analysis-with-tidytext" class="title-slide slide level1 center">
+<h1>Text Analysis with <code>tidytext</code></h1>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/tidytext.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="basic-text-analysis-with-tidytext">Basic Text Analysis with <code>tidytext</code></h3>
+<p>Topics:</p>
+<ul>
+<li class="fragment">Tokenizing to a tidy format</li>
+<li class="fragment">Word frequencies</li>
+<li class="fragment">Sentiment analysis</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="tidy-text">Tidy Text</h3>
+<ul>
+<li class="fragment">A data table with one token per row.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Token</strong>: meaningful unit of text
+<ul>
+<li>What is the unit for <code>shake_it_off</code>?</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a>shake_it_off</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 60 × 3
+   Song                            Album                   Lyric                
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I stay out too late  
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Got nothin' in my br…
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I go on too many dat…
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I can't make the…
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) At least, that's wha…
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I keep cruisin'  
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Can't stop, won't st…
+# ℹ 50 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="tidy-text-1">Tidy Text</h3>
+<ul>
+<li class="fragment"><p>A data table with one token per row.</p></li>
+<li class="fragment"><p><strong>Token</strong>: meaningful unit of text</p>
+<ul>
+<li class="fragment">What is the unit for <code>shake_it_off</code>?</li>
+</ul></li>
+<li class="fragment"><p>Other common tokens are words, sentences, paragraphs.</p></li>
+<li class="fragment"><p>Some text analysis should be done on text data in a non-tidy format.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="tidying-text-data">Tidying Text Data</h3>
+<p><strong>Tokenize</strong>: Break text into individual tokens</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">library</span>(tidytext) </span>
+<span id="cb39-2"><a></a>shake_it_off_words <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric, <span class="at">token =</span> <span class="st">"words"</span>)</span>
+<span id="cb39-4"><a></a>shake_it_off_words</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 490 × 3
+   Song                            Album                   word  
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt; 
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) i     
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay  
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) out   
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) too   
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) late  
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) got   
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) in    
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) my    
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) brain 
+# ℹ 480 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="tidying-text-data-1">Tidying Text Data</h3>
+<p>What is an <code>ngram</code>?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>shake_it_off_ngram <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> ngram, <span class="at">input =</span> Lyric,</span>
+<span id="cb41-3"><a></a>                <span class="at">token =</span> <span class="st">"ngrams"</span>, <span class="at">n =</span> <span class="dv">2</span>)</span>
+<span id="cb41-4"><a></a>shake_it_off_ngram</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 430 × 3
+   Song                            Album                   ngram      
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;      
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) i stay     
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay out   
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) out too    
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) too late   
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) got nothin 
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin in  
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) in my      
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) my brain   
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) that's what
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) what people
+# ℹ 420 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies">Word Frequencies</h3>
+<ul>
+<li class="fragment"><p>Common text mining task</p></li>
+<li class="fragment"><p>What have we learned about the frequency of words in “Shake it Off”?</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Which words in this list do we maybe not care about?</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 113 × 2
+   word      n
+   &lt;chr&gt; &lt;int&gt;
+ 1 i        58
+ 2 shake    54
+ 3 off      32
+ 4 it       30
+ 5 mm       16
+ 6 gonna    15
+ 7 fake     13
+ 8 the      12
+ 9 and      11
+10 hate     11
+# ℹ 103 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-1">Word Frequencies</h3>
+<p><strong>Stop words</strong>: Common words that are not useful for analysis</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="fu">data</span>(<span class="st">"stop_words"</span>)</span>
+<span id="cb45-2"><a></a>stop_words</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,149 × 2
+   word        lexicon
+   &lt;chr&gt;       &lt;chr&gt;  
+ 1 a           SMART  
+ 2 a's         SMART  
+ 3 able        SMART  
+ 4 about       SMART  
+ 5 above       SMART  
+ 6 according   SMART  
+ 7 accordingly SMART  
+ 8 across      SMART  
+ 9 actually    SMART  
+10 after       SMART  
+# ℹ 1,139 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-2">Word Frequencies</h3>
+<ul>
+<li class="fragment">I want remove from <code>shake_it_off_words</code> the rows that contain the stop words.
+<ul>
+<li class="fragment">What sort of <code>join</code> do we need?</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>shake_it_off_words <span class="ot">&lt;-</span> shake_it_off_words <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>)</span>
+<span id="cb47-3"><a></a>shake_it_off_words </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 206 × 3
+   Song                            Album                   word  
+   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt; 
+ 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay  
+ 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) late  
+ 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin
+ 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) brain 
+ 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) people
+ 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
+ 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
+ 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) people
+ 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
+10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
+# ℹ 196 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-3">Word Frequencies</h3>
+<p>What graph should we construct?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 2
+   word      n
+   &lt;chr&gt; &lt;int&gt;
+ 1 shake    54
+ 2 mm       16
+ 3 gonna    15
+ 4 fake     13
+ 5 hate     11
+ 6 break    10
+ 7 play     10
+ 8 baby      5
+ 9 hey       4
+10 ooh       4
+# ℹ 41 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-4">Word Frequencies</h3>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb51-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb51-4"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span></span>
+<span id="cb51-5"><a></a>           <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
+<span id="cb51-6"><a></a>               <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb51-7"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb51-8"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-30-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<ul>
+<li class="fragment">Which <code>forcats</code> function should we use to reorder the bars?</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-5">Word Frequencies</h3>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> </span>
+<span id="cb52-5"><a></a>        <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb52-6"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> </span>
+<span id="cb52-7"><a></a>           <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
+<span id="cb52-8"><a></a>               <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb52-9"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb52-10"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<p>Much better!</p>
+</section>
+<section class="slide level2">
+
+<h3 id="comparisons-across-albumstexts">Comparisons Across Albums/Texts</h3>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>two_albums <span class="ot">&lt;-</span> ts <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a></a>  <span class="fu">select</span>(Song, Album, Lyric) <span class="sc">%&gt;%</span></span>
+<span id="cb53-3"><a></a>  <span class="fu">filter</span>(Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989 (Taylor's Version)"</span>, <span class="st">"reputation"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb53-4"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">str_replace</span>(Album, <span class="st">" </span><span class="sc">\\</span><span class="st">(.+"</span>, <span class="st">""</span>))</span>
+<span id="cb53-5"><a></a></span>
+<span id="cb53-6"><a></a>two_albums</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,865 × 3
+   Song                                   Album Lyric                           
+   &lt;chr&gt;                                  &lt;chr&gt; &lt;chr&gt;                           
+ 1 Welcome To New York (Taylor's Version) 1989  "Walkin' through a crowd, the v…
+ 2 Welcome To New York (Taylor's Version) 1989  "Kaleidoscope of loud heartbeat…
+ 3 Welcome To New York (Taylor's Version) 1989  "Everybody here wanted somethin…
+ 4 Welcome To New York (Taylor's Version) 1989  "Searchin' for a sound we hadn'…
+ 5 Welcome To New York (Taylor's Version) 1989  "And it said"                   
+ 6 Welcome To New York (Taylor's Version) 1989  "\"Welcome to New York, it's be…
+ 7 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, welcome t…
+ 8 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, it's been…
+ 9 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, welcome t…
+10 Welcome To New York (Taylor's Version) 1989  "It's a new soundtrack, I could…
+# ℹ 1,855 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-across-albums">Word Frequencies Across Albums</h3>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>two_albums_tidy <span class="ot">&lt;-</span> two_albums <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric, <span class="at">token =</span> <span class="st">"words"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-3"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb55-4"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>(word <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ah"</span>, <span class="st">"ahh"</span>, <span class="st">"eh"</span>, <span class="st">"uh"</span>, <span class="st">"ooh"</span>,</span>
+<span id="cb55-5"><a></a>                       <span class="st">"huh"</span>, <span class="st">"mmm"</span>, <span class="st">"di"</span>, <span class="st">"ha"</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb55-6"><a></a>  <span class="fu">count</span>(Album, word) <span class="sc">%&gt;%</span></span>
+<span id="cb55-7"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
+<span id="cb55-8"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) </span>
+<span id="cb55-9"><a></a>two_albums_tidy </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,446 × 4
+# Groups:   Album [2]
+   Album word        n     prop
+   &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;    &lt;dbl&gt;
+ 1 1989  1950s       1 0.000418
+ 2 1989  2           3 0.00125 
+ 3 1989  ace         1 0.000418
+ 4 1989  acid        1 0.000418
+ 5 1989  admit       1 0.000418
+ 6 1989  adorned     1 0.000418
+ 7 1989  afraid      1 0.000418
+ 8 1989  aglow       1 0.000418
+ 9 1989  ahead       1 0.000418
+10 1989  aids        4 0.00167 
+# ℹ 1,436 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-across-albums-1">Word Frequencies Across Albums</h3>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb57-2"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb57-4"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb57-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb57-6"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">factor</span>(word),</span>
+<span id="cb57-7"><a></a>         <span class="at">word =</span> <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb57-8"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
+<span id="cb57-9"><a></a>                       <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb57-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb57-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Album) <span class="sc">+</span></span>
+<span id="cb57-12"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="word-frequencies-across-albums-2">Word Frequencies Across Albums</h3>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb58-2"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
+<span id="cb58-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb58-4"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb58-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb58-6"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">factor</span>(word),</span>
+<span id="cb58-7"><a></a>         <span class="at">word =</span> <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
+<span id="cb58-8"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
+<span id="cb58-9"><a></a>                       <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb58-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb58-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Album,</span>
+<span id="cb58-12"><a></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb58-13"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<h3 id="sentiment-analysis">Sentiment Analysis</h3>
+<ul>
+<li class="fragment">Was one album a more negative album than the other?</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Need to add a column that measures the sentiment of each token.
+<ul>
+<li>From <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu and collaborators</a></li>
+<li>Generalizability to other English-speaking countries or time periods?</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>sentiments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6,786 × 2
+   word        sentiment
+   &lt;chr&gt;       &lt;chr&gt;    
+ 1 2-faces     negative 
+ 2 abnormal    negative 
+ 3 abolish     negative 
+ 4 abominable  negative 
+ 5 abominably  negative 
+ 6 abominate   negative 
+ 7 abomination negative 
+ 8 abort       negative 
+ 9 aborted     negative 
+10 aborts      negative 
+# ℹ 6,776 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="sentiment-analysis-1">Sentiment Analysis</h3>
+<p>Keep stop words this time.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>two_albums_tidy <span class="ot">&lt;-</span> two_albums <span class="sc">%&gt;%</span></span>
+<span id="cb61-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric,</span>
+<span id="cb61-3"><a></a>                <span class="at">token =</span> <span class="st">"words"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb61-4"><a></a>  <span class="fu">count</span>(Album, word) <span class="sc">%&gt;%</span></span>
+<span id="cb61-5"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
+<span id="cb61-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) </span>
+<span id="cb61-7"><a></a>two_albums_tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,028 × 4
+# Groups:   Album [2]
+   Album word        n     prop
+   &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;    &lt;dbl&gt;
+ 1 1989  1950s       1 0.000116
+ 2 1989  2           3 0.000348
+ 3 1989  a         116 0.0135  
+ 4 1989  about       9 0.00104 
+ 5 1989  ace         1 0.000116
+ 6 1989  acid        1 0.000116
+ 7 1989  admit       1 0.000116
+ 8 1989  adorned     1 0.000116
+ 9 1989  afraid      1 0.000116
+10 1989  again       5 0.000580
+# ℹ 2,018 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="sentiment-analysis-2">Sentiment Analysis</h3>
+<p>What are the most common <strong>negative words</strong> on each album?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb63-2"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb63-3"><a></a>  <span class="fu">filter</span>(sentiment <span class="sc">==</span> <span class="st">"negative"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb63-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 208 × 5
+# Groups:   Album [2]
+   Album      word        n    prop sentiment
+   &lt;chr&gt;      &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;    
+ 1 1989       shake      54 0.00626 negative 
+ 2 1989       bad        34 0.00394 negative 
+ 3 reputation bad        27 0.00441 negative 
+ 4 1989       lost       16 0.00186 negative 
+ 5 1989       hate       14 0.00162 negative 
+ 6 1989       mad        14 0.00162 negative 
+ 7 1989       fake       13 0.00151 negative 
+ 8 1989       break      11 0.00128 negative 
+ 9 1989       fiction    10 0.00116 negative 
+10 1989       dark        9 0.00104 negative 
+# ℹ 198 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="sentiment-analysis-3">Sentiment Analysis</h3>
+<p>What are the most common <strong>positive words</strong> on each album?</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb65-2"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb65-3"><a></a>  <span class="fu">filter</span>(sentiment <span class="sc">==</span> <span class="st">"positive"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb65-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 106 × 5
+# Groups:   Album [2]
+   Album      word         n    prop sentiment
+   &lt;chr&gt;      &lt;chr&gt;    &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;    
+ 1 1989       love       104 0.0121  positive 
+ 2 1989       like        51 0.00591 positive 
+ 3 reputation like        39 0.00637 positive 
+ 4 1989       clear       28 0.00325 positive 
+ 5 reputation good        25 0.00408 positive 
+ 6 1989       welcome     22 0.00255 positive 
+ 7 1989       good        19 0.00220 positive 
+ 8 reputation gorgeous    17 0.00278 positive 
+ 9 reputation love        16 0.00261 positive 
+10 1989       works       13 0.00151 positive 
+# ℹ 96 more rows</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="what-is-the-distribution-of-positive-and-negative-words">What is the distribution of positive and negative words?</h3>
+<div class="cell columns column-output-location" data-layout-align="center">
+<div class="column">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
+<span id="cb67-2"><a></a>  <span class="fu">inner_join</span>(sentiments, </span>
+<span id="cb67-3"><a></a>             <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb67-4"><a></a>  <span class="fu">group_by</span>(Album, sentiment) <span class="sc">%&gt;%</span></span>
+<span id="cb67-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb67-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb67-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Album, <span class="at">y =</span> prop,</span>
+<span id="cb67-8"><a></a>             <span class="at">fill  =</span> sentiment)) <span class="sc">+</span></span>
+<span id="cb67-9"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div><div class="column fragment">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-40-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div></div>
+<ul>
+<li class="fragment"><p>Remember that words not in the lexicon are dropped!</p></li>
+<li class="fragment"><p>Issue with word-based sentiment analysis?</p></li>
+</ul>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next time</h2>
+<ul>
+<li class="fragment">Don’t forget to add your dashboard to shinyapps.io!
+<ul>
+<li class="fragment">Good to try to put an incomplete version up now to make sure you can get it working.</li>
+</ul></li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'pdfMaxPagesPerSlide': 2,
+'menu': {"side":"right","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true,"numbers":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/www\.reed-data-science\.github\.io\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

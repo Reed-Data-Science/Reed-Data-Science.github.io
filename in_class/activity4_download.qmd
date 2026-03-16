@@ -1,0 +1,354 @@
+---
+title: "Activity 4: Regular Expressions"
+---
+
+## Regular Expressions Activity
+
+First, load the lyrics from class:
+
+```{r}
+lyrics <- c("But I would walk 500 miles",
+            "Yeah, 360. When you're in the mirror, do you like what you see?", 
+            "I have loved you for a 1000 years, I'll love you for a 1000 more",
+            "Where 2 and 2 always makes a 5",
+            "17-38, ay",
+            "I'm so 3008, You so 2000 and late")
+```
+
+```{r}
+str_view_all(lyrics, "500|1000|2|360|5|17|38|3008|2000")
+```
+
+
+
+## Regular Expressions
+
+* `[:digit:]` is a particular [Character Class](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html)
+* Character classes are a way of specifying that you want to match one of the following characters.
+
+```{r}
+str_view_all(lyrics, "[:digit:]")
+```
+
+------------------------------------------------------------------------
+
+## Regular Expressions
+
+::: {.nonincremental}
+
+* `+` is a quantifier
+    * `+`: One or more
+    
+:::
+
+```{r}
+str_view_all(lyrics, "[:digit:]+")
+```
+
+
+# Activity: Regular Expression Sleuthing
+
+::: {.fragment}
+
+In groups of 2 - 3, go through the next slides and make a "dictionary" of what you believe each of the regular expressions shown is doing, and how it does that. 
+
+:::
+
+## Regular Expressions
+
+What does `{n}` do?
+
+```{r}
+str_view_all(lyrics, "[:digit:]{2}")
+```
+
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Quantifiers: What does each of these do? 
+
+Fill out what each of the quantifiers below does. Use the below code chunk to try them out. I got you started by doing 2 of them for you. 
+
+ANSWER:
+
+* `?`: 0 or 1
+* `*`: 
+* `+`: 1 or more
+* `{n}`: 
+* `{n,}`: 
+* `{n,m}`: 
+
+
+
+```{r}
+str_view_all(lyrics, "[:alnum:]{4,}")
+```
+
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:alpha:]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:upper:]")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:alnum:]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:punct:]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:graph:]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[:space:]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Character Classes
+
+* Can also create your own.
+
+* What pattern does this regexp match?
+
+* why no colons on this one? 
+
+```{r}
+str_view_all(lyrics, "[aeiou]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Other Handy Regexps
+
+* What pattern does this regexp match?
+
+* Why do we need an extra `\`?
+
+```{r}
+str_view_all(lyrics, "\\d")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Other Handy Regexps
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "\\W")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Other Handy Regexps
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "Whe[:alpha:]+")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Groups
+
+* What pattern does this regexp match?
+
+* What do you think "\\1" is doing
+
+```{r}
+str_view_all(lyrics, "(\\d)\\1")
+```
+
+
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Groups
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "(\\d)\\1\\1")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Groups
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "([:alnum:])(\\s)[:alnum:]+\\2\\1")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Other Handy Regexps
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "\\b")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Anchors
+
+* What pattern does this regexp match?
+
+* What do you think the "^" is doing? 
+
+```{r}
+str_view_all(lyrics, "^\\d+")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Anchors
+
+* What pattern does this regexp match?
+
+* What do you think the "$" is doing?
+
+```{r}
+str_view_all(lyrics, "\\d+$")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Alternates
+
+* What pattern does this regexp match?
+
+* What is the "^" doing now? Hint: It is different than before. 
+
+```{r}
+str_view_all(lyrics, "[^aeiou]")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Alternates
+
+* What pattern does this regexp match?
+
+```{r}
+str_view_all(lyrics, "[0-2]0")
+```
+
+ANSWER:
+
+
+------------------------------------------------------------------------
+
+## Look Arounds
+
+```{r}
+str_view_all(lyrics, "(?<=\\d )[:alpha:]+")
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+## Look Arounds
+
+```{r}
+str_view_all(lyrics, "[:alpha:]+(?= \\d+)")
+```
+
+ANSWER:
+
+
+
+
+
+
