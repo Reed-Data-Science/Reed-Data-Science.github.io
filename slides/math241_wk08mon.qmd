@@ -175,6 +175,8 @@ str_view_all(lyrics, "[:digit:]+")
 
 **Your Mission**: In groups of 2 - 3, go through the activity to make a "dictionary" of what you believe each of the regular expressions shown is doing, and how it does that. 
 
+When you've become confident you know what a certain regexp is doing, add a checkmark in your team's color to the board. 
+
 <br> <br>
 
 ```{r}
@@ -190,13 +192,29 @@ countdown::countdown(25)
 
 * Neat Package and RStudio Addin to help: [`RegExplain`](https://www.garrickadenbuie.com/project/regexplain/)
 
+::: {.fragment}
+
+```{r}
+#| eval: false
+# install.packages("devtools")
+devtools::install_github("gadenbuie/regexplain")
+library(regexplain)
+regexplain_gadget() # launches in the RStudio Viewer
+regexplain_web() # launches in the browser
+```
+
+
+:::
+
+* A good documentation page for common regular expressions: [Regex Manual](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html)
+
 
 # Activity Part 2: Comparing Notes
 
 
 ::: {.fragment}
 
-Now, make cross-group pairings (groups of size 2) and compare dictionaries. Do you agree on each regexp? If not, try to figure out who of you is correct and consult with RegExplain. 
+Now, make cross-group pairings and compare dictionaries. Do you agree on each regexp? If not, try to figure out who of you is correct by testing the regexp on different strings. As a last resort, consult with RegExplain and the Regex Manual linked on the previous slide. 
 
 <br> <br>
 
