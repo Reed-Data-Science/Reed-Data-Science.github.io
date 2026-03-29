@@ -385,326 +385,326 @@ run_it_off %>%
   filter(str_detect(Lyric, "run"))
 ```
 
-# Text Analysis with `tidytext`
+<!-- # Text Analysis with `tidytext` -->
 
-```{r, echo=FALSE, out.width='20%'}
-knitr::include_graphics("img/tidytext.png")
-```
+<!-- ```{r, echo=FALSE, out.width='20%'} -->
+<!-- knitr::include_graphics("img/tidytext.png") -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Basic Text Analysis with `tidytext`
+<!-- ### Basic Text Analysis with `tidytext` -->
 
-Topics:
+<!-- Topics: -->
 
-* Tokenizing to a tidy format
-* Word frequencies
-* Sentiment analysis
+<!-- * Tokenizing to a tidy format -->
+<!-- * Word frequencies -->
+<!-- * Sentiment analysis -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Tidy Text
+<!-- ### Tidy Text -->
 
-* A data table with one token per row.
+<!-- * A data table with one token per row. -->
 
-::: {.fragment .nonincremental}
+<!-- ::: {.fragment .nonincremental} -->
 
-* **Token**: meaningful unit of text
-    + What is the unit for `shake_it_off`?
+<!-- * **Token**: meaningful unit of text -->
+<!--     + What is the unit for `shake_it_off`? -->
 
-```{r}
-shake_it_off
-```
+<!-- ```{r} -->
+<!-- shake_it_off -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Tidy Text
+<!-- ### Tidy Text -->
 
-* A data table with one token per row.
+<!-- * A data table with one token per row. -->
 
-* **Token**: meaningful unit of text
-    + What is the unit for `shake_it_off`?
+<!-- * **Token**: meaningful unit of text -->
+<!--     + What is the unit for `shake_it_off`? -->
 
-* Other common tokens are words, sentences, paragraphs.
+<!-- * Other common tokens are words, sentences, paragraphs. -->
 
-* Some text analysis should be done on text data in a non-tidy format.
+<!-- * Some text analysis should be done on text data in a non-tidy format. -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Tidying Text Data
+<!-- ### Tidying Text Data -->
 
-**Tokenize**: Break text into individual tokens
+<!-- **Tokenize**: Break text into individual tokens -->
 
-```{r}
-library(tidytext) 
-shake_it_off_words <- shake_it_off %>%
-  unnest_tokens(output = word, input = Lyric, token = "words")
-shake_it_off_words
-```
+<!-- ```{r} -->
+<!-- library(tidytext)  -->
+<!-- shake_it_off_words <- shake_it_off %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, token = "words") -->
+<!-- shake_it_off_words -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Tidying Text Data
+<!-- ### Tidying Text Data -->
 
-What is an `ngram`?
+<!-- What is an `ngram`? -->
 
-```{r}
-shake_it_off_ngram <- shake_it_off %>%
-  unnest_tokens(output = ngram, input = Lyric,
-                token = "ngrams", n = 2)
-shake_it_off_ngram
-```
+<!-- ```{r} -->
+<!-- shake_it_off_ngram <- shake_it_off %>% -->
+<!--   unnest_tokens(output = ngram, input = Lyric, -->
+<!--                 token = "ngrams", n = 2) -->
+<!-- shake_it_off_ngram -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies
+<!-- ### Word Frequencies -->
 
-* Common text mining task
+<!-- * Common text mining task -->
 
-* What have we learned about the frequency of words in "Shake it Off"?
+<!-- * What have we learned about the frequency of words in "Shake it Off"? -->
 
-::: {.fragment .nonincremental}
+<!-- ::: {.fragment .nonincremental} -->
 
-* Which words in this list do we maybe not care about?
+<!-- * Which words in this list do we maybe not care about? -->
 
 
 
-```{r}
-shake_it_off_words %>%
-  count(word, sort = TRUE)
-```
+<!-- ```{r} -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies
+<!-- ### Word Frequencies -->
 
-**Stop words**: Common words that are not useful for analysis
+<!-- **Stop words**: Common words that are not useful for analysis -->
 
-```{r}
-data("stop_words")
-stop_words
-```
+<!-- ```{r} -->
+<!-- data("stop_words") -->
+<!-- stop_words -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies
+<!-- ### Word Frequencies -->
 
-* I want remove from `shake_it_off_words` the rows that contain the stop words.
-    + What sort of `join` do we need? 
+<!-- * I want remove from `shake_it_off_words` the rows that contain the stop words. -->
+<!--     + What sort of `join` do we need?  -->
 
-::: {.fragment}
+<!-- ::: {.fragment} -->
 
-```{r}
-shake_it_off_words <- shake_it_off_words %>%
-  anti_join(stop_words, by = "word")
-shake_it_off_words 
-```
-
-:::
-
-------------------------------------------------------------------------
-
-### Word Frequencies
+<!-- ```{r} -->
+<!-- shake_it_off_words <- shake_it_off_words %>% -->
+<!--   anti_join(stop_words, by = "word") -->
+<!-- shake_it_off_words  -->
+<!-- ``` -->
+
+<!-- ::: -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### Word Frequencies -->
 
-What graph should we construct?
-
-```{r}
-shake_it_off_words %>%
-  count(word, sort = TRUE)
-```
-
-------------------------------------------------------------------------
-
-### Word Frequencies
-
-```{r}
-#| output-location: column
-shake_it_off_words %>%
-  count(word, sort = TRUE) %>%
-  filter(n > 2) %>%
-  ggplot(mapping =
-           aes(x = word,
-               y = n)) +
-  geom_col() +
-  coord_flip()
-```
-
-* Which `forcats` function should we use to reorder the bars?
-
-------------------------------------------------------------------------
-
-### Word Frequencies
-
-```{r}
-#| output-location: column
-shake_it_off_words %>%
-  count(word, sort = TRUE) %>%
-  filter(n > 2) %>%
-  mutate(word = 
-        fct_reorder(word, n)) %>%
-  ggplot(mapping = 
-           aes(x = word,
-               y = n)) +
-  geom_col() +
-  coord_flip()
-```
+<!-- What graph should we construct? -->
+
+<!-- ```{r} -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### Word Frequencies -->
+
+<!-- ```{r} -->
+<!-- #| output-location: column -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) %>% -->
+<!--   filter(n > 2) %>% -->
+<!--   ggplot(mapping = -->
+<!--            aes(x = word, -->
+<!--                y = n)) + -->
+<!--   geom_col() + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+
+<!-- * Which `forcats` function should we use to reorder the bars? -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### Word Frequencies -->
+
+<!-- ```{r} -->
+<!-- #| output-location: column -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) %>% -->
+<!--   filter(n > 2) %>% -->
+<!--   mutate(word =  -->
+<!--         fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping =  -->
+<!--            aes(x = word, -->
+<!--                y = n)) + -->
+<!--   geom_col() + -->
+<!--   coord_flip() -->
+<!-- ``` -->
 
-Much better!
-
-------------------------------------------------------------------------
-
-### Comparisons Across Albums/Texts
-
-```{r}
-two_albums <- ts %>%
-  select(Song, Album, Lyric) %>%
-  filter(Album %in% c("1989 (Taylor's Version)", "reputation")) %>%
-  mutate(Album = str_replace(Album, " \\(.+", ""))
+<!-- Much better! -->
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- ### Comparisons Across Albums/Texts -->
+
+<!-- ```{r} -->
+<!-- two_albums <- ts %>% -->
+<!--   select(Song, Album, Lyric) %>% -->
+<!--   filter(Album %in% c("1989 (Taylor's Version)", "reputation")) %>% -->
+<!--   mutate(Album = str_replace(Album, " \\(.+", "")) -->
 
-two_albums
-```
+<!-- two_albums -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies Across Albums
-
-```{r}
-two_albums_tidy <- two_albums %>%
-  unnest_tokens(output = word, input = Lyric, token = "words") %>%
-  anti_join(stop_words, by = "word") %>%
-  filter(!(word %in% c("ah", "ahh", "eh", "uh", "ooh",
-                       "huh", "mmm", "di", "ha"))) %>%
-  count(Album, word) %>%
-  group_by(Album) %>%
-  mutate(prop = n/sum(n)) 
-two_albums_tidy 
-```
+<!-- ### Word Frequencies Across Albums -->
+
+<!-- ```{r} -->
+<!-- two_albums_tidy <- two_albums %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, token = "words") %>% -->
+<!--   anti_join(stop_words, by = "word") %>% -->
+<!--   filter(!(word %in% c("ah", "ahh", "eh", "uh", "ooh", -->
+<!--                        "huh", "mmm", "di", "ha"))) %>% -->
+<!--   count(Album, word) %>% -->
+<!--   group_by(Album) %>% -->
+<!--   mutate(prop = n/sum(n))  -->
+<!-- two_albums_tidy  -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies Across Albums
+<!-- ### Word Frequencies Across Albums -->
 
-```{r}
-#| output-location: column-fragment
-two_albums_tidy %>%
-  group_by(Album) %>%
-  arrange(desc(n)) %>%
-  slice(1:10) %>%
-  ungroup() %>%
-  mutate(word = factor(word),
-         word = fct_reorder(word, n)) %>%
-  ggplot(mapping = aes(x = word,
-                       y = n)) +
-  geom_col() +
-  facet_wrap(~Album) +
-  coord_flip()
-```
-
-------------------------------------------------------------------------
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   group_by(Album) %>% -->
+<!--   arrange(desc(n)) %>% -->
+<!--   slice(1:10) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(word = factor(word), -->
+<!--          word = fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping = aes(x = word, -->
+<!--                        y = n)) + -->
+<!--   geom_col() + -->
+<!--   facet_wrap(~Album) + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+
+<!-- ------------------------------------------------------------------------ -->
 
-### Word Frequencies Across Albums
+<!-- ### Word Frequencies Across Albums -->
 
-```{r}
-#| output-location: column-fragment
-two_albums_tidy %>%
-  group_by(Album) %>%
-  arrange(desc(n)) %>%
-  slice(1:10) %>%
-  ungroup() %>%
-  mutate(word = factor(word),
-         word = fct_reorder(word, n)) %>%
-  ggplot(mapping = aes(x = word,
-                       y = n)) +
-  geom_col() +
-  facet_wrap(~Album,
-             scales = "free_y") +
-  coord_flip()
-```
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   group_by(Album) %>% -->
+<!--   arrange(desc(n)) %>% -->
+<!--   slice(1:10) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(word = factor(word), -->
+<!--          word = fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping = aes(x = word, -->
+<!--                        y = n)) + -->
+<!--   geom_col() + -->
+<!--   facet_wrap(~Album, -->
+<!--              scales = "free_y") + -->
+<!--   coord_flip() -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Sentiment Analysis
+<!-- ### Sentiment Analysis -->
 
-* Was one album a more negative album than the other?
+<!-- * Was one album a more negative album than the other? -->
 
-::: {.fragment .nonincremental}
+<!-- ::: {.fragment .nonincremental} -->
 
-* Need to add a column that measures the sentiment of each token.
-    + From [Bing Liu and collaborators](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html)
-    + Generalizability to other English-speaking countries or time periods?
+<!-- * Need to add a column that measures the sentiment of each token. -->
+<!--     + From [Bing Liu and collaborators](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html) -->
+<!--     + Generalizability to other English-speaking countries or time periods? -->
 
-```{r}
-sentiments
-```
+<!-- ```{r} -->
+<!-- sentiments -->
+<!-- ``` -->
 
-:::
+<!-- ::: -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Sentiment Analysis
+<!-- ### Sentiment Analysis -->
 
-Keep stop words this time.
+<!-- Keep stop words this time. -->
 
-```{r}
-two_albums_tidy <- two_albums %>%
-  unnest_tokens(output = word, input = Lyric,
-                token = "words") %>%
-  count(Album, word) %>%
-  group_by(Album) %>%
-  mutate(prop = n/sum(n)) 
-two_albums_tidy
-```
+<!-- ```{r} -->
+<!-- two_albums_tidy <- two_albums %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, -->
+<!--                 token = "words") %>% -->
+<!--   count(Album, word) %>% -->
+<!--   group_by(Album) %>% -->
+<!--   mutate(prop = n/sum(n))  -->
+<!-- two_albums_tidy -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Sentiment Analysis
+<!-- ### Sentiment Analysis -->
 
-What are the most common **negative words** on each album?
+<!-- What are the most common **negative words** on each album? -->
 
-```{r}
-two_albums_tidy %>%
-  inner_join(sentiments, by = "word") %>%
-  filter(sentiment == "negative") %>%
-  arrange(desc(n))
-```
+<!-- ```{r} -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments, by = "word") %>% -->
+<!--   filter(sentiment == "negative") %>% -->
+<!--   arrange(desc(n)) -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### Sentiment Analysis
+<!-- ### Sentiment Analysis -->
 
-What are the most common **positive words** on each album?
+<!-- What are the most common **positive words** on each album? -->
 
-```{r}
-two_albums_tidy %>%
-  inner_join(sentiments, by = "word") %>%
-  filter(sentiment == "positive") %>%
-  arrange(desc(n))
-```
+<!-- ```{r} -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments, by = "word") %>% -->
+<!--   filter(sentiment == "positive") %>% -->
+<!--   arrange(desc(n)) -->
+<!-- ``` -->
 
-------------------------------------------------------------------------
+<!-- ------------------------------------------------------------------------ -->
 
-### What is the distribution of positive and negative words?
+<!-- ### What is the distribution of positive and negative words? -->
 
-```{r}
-#| output-location: column-fragment
-two_albums_tidy %>%
-  inner_join(sentiments, 
-             by = "word") %>%
-  group_by(Album, sentiment) %>%
-  summarize(n = sum(n)) %>%
-  mutate(prop = n/sum(n)) %>%
-  ggplot(aes(x = Album, y = prop,
-             fill  = sentiment)) +
-  geom_col()
-```
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments,  -->
+<!--              by = "word") %>% -->
+<!--   group_by(Album, sentiment) %>% -->
+<!--   summarize(n = sum(n)) %>% -->
+<!--   mutate(prop = n/sum(n)) %>% -->
+<!--   ggplot(aes(x = Album, y = prop, -->
+<!--              fill  = sentiment)) + -->
+<!--   geom_col() -->
+<!-- ``` -->
 
-* Remember that words not in the lexicon are dropped!
+<!-- * Remember that words not in the lexicon are dropped! -->
 
-* Issue with word-based sentiment analysis?
+<!-- * Issue with word-based sentiment analysis? -->
 
 ------------------------------------------------------------------------
 

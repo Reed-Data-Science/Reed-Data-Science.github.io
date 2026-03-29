@@ -338,7 +338,7 @@
 <p><br> <br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f2638302" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_95230201" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">25</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -372,7 +372,7 @@
 <p><br> <br></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c95ba362" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e117ef74" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -958,563 +958,231 @@
 # ℹ 11 more rows</code></pre>
 </div>
 </div>
-</section></section>
-<section>
-<section id="text-analysis-with-tidytext" class="title-slide slide level1 center">
-<h1>Text Analysis with <code>tidytext</code></h1>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/tidytext.png" class="quarto-figure quarto-figure-center" style="width:20.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="basic-text-analysis-with-tidytext">Basic Text Analysis with <code>tidytext</code></h3>
-<p>Topics:</p>
-<ul>
-<li class="fragment">Tokenizing to a tidy format</li>
-<li class="fragment">Word frequencies</li>
-<li class="fragment">Sentiment analysis</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="tidy-text">Tidy Text</h3>
-<ul>
-<li class="fragment">A data table with one token per row.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Token</strong>: meaningful unit of text
-<ul>
-<li>What is the unit for <code>shake_it_off</code>?</li>
-</ul></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>shake_it_off</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 60 × 3
-   Song                            Album                   Lyric                
-   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;                
- 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I stay out too late  
- 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Got nothin' in my br…
- 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
- 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
- 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) I go on too many dat…
- 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I can't make the…
- 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) At least, that's wha…
- 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) That's what people s…
- 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) But I keep cruisin'  
-10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) Can't stop, won't st…
-# ℹ 50 more rows</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="tidy-text-1">Tidy Text</h3>
-<ul>
-<li class="fragment"><p>A data table with one token per row.</p></li>
-<li class="fragment"><p><strong>Token</strong>: meaningful unit of text</p>
-<ul>
-<li class="fragment">What is the unit for <code>shake_it_off</code>?</li>
-</ul></li>
-<li class="fragment"><p>Other common tokens are words, sentences, paragraphs.</p></li>
-<li class="fragment"><p>Some text analysis should be done on text data in a non-tidy format.</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="tidying-text-data">Tidying Text Data</h3>
-<p><strong>Tokenize</strong>: Break text into individual tokens</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">library</span>(tidytext) </span>
-<span id="cb40-2"><a></a>shake_it_off_words <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
-<span id="cb40-3"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric, <span class="at">token =</span> <span class="st">"words"</span>)</span>
-<span id="cb40-4"><a></a>shake_it_off_words</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 490 × 3
-   Song                            Album                   word  
-   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt; 
- 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) i     
- 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay  
- 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) out   
- 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) too   
- 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) late  
- 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) got   
- 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin
- 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) in    
- 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) my    
-10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) brain 
-# ℹ 480 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="tidying-text-data-1">Tidying Text Data</h3>
-<p>What is an <code>ngram</code>?</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>shake_it_off_ngram <span class="ot">&lt;-</span> shake_it_off <span class="sc">%&gt;%</span></span>
-<span id="cb42-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> ngram, <span class="at">input =</span> Lyric,</span>
-<span id="cb42-3"><a></a>                <span class="at">token =</span> <span class="st">"ngrams"</span>, <span class="at">n =</span> <span class="dv">2</span>)</span>
-<span id="cb42-4"><a></a>shake_it_off_ngram</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 430 × 3
-   Song                            Album                   ngram      
-   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt;      
- 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) i stay     
- 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay out   
- 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) out too    
- 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) too late   
- 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) got nothin 
- 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin in  
- 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) in my      
- 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) my brain   
- 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) that's what
-10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) what people
-# ℹ 420 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies">Word Frequencies</h3>
-<ul>
-<li class="fragment"><p>Common text mining task</p></li>
-<li class="fragment"><p>What have we learned about the frequency of words in “Shake it Off”?</p></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Which words in this list do we maybe not care about?</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
-<span id="cb44-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 113 × 2
-   word      n
-   &lt;chr&gt; &lt;int&gt;
- 1 i        58
- 2 shake    54
- 3 off      32
- 4 it       30
- 5 mm       16
- 6 gonna    15
- 7 fake     13
- 8 the      12
- 9 and      11
-10 hate     11
-# ℹ 103 more rows</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-1">Word Frequencies</h3>
-<p><strong>Stop words</strong>: Common words that are not useful for analysis</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">data</span>(<span class="st">"stop_words"</span>)</span>
-<span id="cb46-2"><a></a>stop_words</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,149 × 2
-   word        lexicon
-   &lt;chr&gt;       &lt;chr&gt;  
- 1 a           SMART  
- 2 a's         SMART  
- 3 able        SMART  
- 4 about       SMART  
- 5 above       SMART  
- 6 according   SMART  
- 7 accordingly SMART  
- 8 across      SMART  
- 9 actually    SMART  
-10 after       SMART  
-# ℹ 1,139 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-2">Word Frequencies</h3>
-<ul>
-<li class="fragment">I want remove from <code>shake_it_off_words</code> the rows that contain the stop words.
-<ul>
-<li class="fragment">What sort of <code>join</code> do we need?</li>
-</ul></li>
-</ul>
-<div class="fragment">
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>shake_it_off_words <span class="ot">&lt;-</span> shake_it_off_words <span class="sc">%&gt;%</span></span>
-<span id="cb48-2"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>)</span>
-<span id="cb48-3"><a></a>shake_it_off_words </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 206 × 3
-   Song                            Album                   word  
-   &lt;chr&gt;                           &lt;chr&gt;                   &lt;chr&gt; 
- 1 Shake It Off (Taylor's Version) 1989 (Taylor's Version) stay  
- 2 Shake It Off (Taylor's Version) 1989 (Taylor's Version) late  
- 3 Shake It Off (Taylor's Version) 1989 (Taylor's Version) nothin
- 4 Shake It Off (Taylor's Version) 1989 (Taylor's Version) brain 
- 5 Shake It Off (Taylor's Version) 1989 (Taylor's Version) people
- 6 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
- 7 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
- 8 Shake It Off (Taylor's Version) 1989 (Taylor's Version) people
- 9 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
-10 Shake It Off (Taylor's Version) 1989 (Taylor's Version) mm    
-# ℹ 196 more rows</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-3">Word Frequencies</h3>
-<p>What graph should we construct?</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
-<span id="cb50-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 51 × 2
-   word      n
-   &lt;chr&gt; &lt;int&gt;
- 1 shake    54
- 2 mm       16
- 3 gonna    15
- 4 fake     13
- 5 hate     11
- 6 break    10
- 7 play     10
- 8 baby      5
- 9 hey       4
-10 ooh       4
-# ℹ 41 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-4">Word Frequencies</h3>
-<div class="cell columns column-output-location" data-layout-align="center">
-<div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
-<span id="cb52-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb52-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb52-4"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span></span>
-<span id="cb52-5"><a></a>           <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
-<span id="cb52-6"><a></a>               <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb52-7"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb52-8"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div></div>
-<ul>
-<li class="fragment">Which <code>forcats</code> function should we use to reorder the bars?</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-5">Word Frequencies</h3>
-<div class="cell columns column-output-location" data-layout-align="center">
-<div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>shake_it_off_words <span class="sc">%&gt;%</span></span>
-<span id="cb53-2"><a></a>  <span class="fu">count</span>(word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb53-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb53-4"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> </span>
-<span id="cb53-5"><a></a>        <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
-<span id="cb53-6"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> </span>
-<span id="cb53-7"><a></a>           <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
-<span id="cb53-8"><a></a>               <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb53-9"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb53-10"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-32-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div></div>
-<p>Much better!</p>
-</section>
-<section class="slide level2">
-
-<h3 id="comparisons-across-albumstexts">Comparisons Across Albums/Texts</h3>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>two_albums <span class="ot">&lt;-</span> ts <span class="sc">%&gt;%</span></span>
-<span id="cb54-2"><a></a>  <span class="fu">select</span>(Song, Album, Lyric) <span class="sc">%&gt;%</span></span>
-<span id="cb54-3"><a></a>  <span class="fu">filter</span>(Album <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"1989 (Taylor's Version)"</span>, <span class="st">"reputation"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb54-4"><a></a>  <span class="fu">mutate</span>(<span class="at">Album =</span> <span class="fu">str_replace</span>(Album, <span class="st">" </span><span class="sc">\\</span><span class="st">(.+"</span>, <span class="st">""</span>))</span>
-<span id="cb54-5"><a></a></span>
-<span id="cb54-6"><a></a>two_albums</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,865 × 3
-   Song                                   Album Lyric                           
-   &lt;chr&gt;                                  &lt;chr&gt; &lt;chr&gt;                           
- 1 Welcome To New York (Taylor's Version) 1989  "Walkin' through a crowd, the v…
- 2 Welcome To New York (Taylor's Version) 1989  "Kaleidoscope of loud heartbeat…
- 3 Welcome To New York (Taylor's Version) 1989  "Everybody here wanted somethin…
- 4 Welcome To New York (Taylor's Version) 1989  "Searchin' for a sound we hadn'…
- 5 Welcome To New York (Taylor's Version) 1989  "And it said"                   
- 6 Welcome To New York (Taylor's Version) 1989  "\"Welcome to New York, it's be…
- 7 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, welcome t…
- 8 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, it's been…
- 9 Welcome To New York (Taylor's Version) 1989  "Welcome to New York, welcome t…
-10 Welcome To New York (Taylor's Version) 1989  "It's a new soundtrack, I could…
-# ℹ 1,855 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-across-albums">Word Frequencies Across Albums</h3>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>two_albums_tidy <span class="ot">&lt;-</span> two_albums <span class="sc">%&gt;%</span></span>
-<span id="cb56-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric, <span class="at">token =</span> <span class="st">"words"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-3"><a></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-4"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span>(word <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"ah"</span>, <span class="st">"ahh"</span>, <span class="st">"eh"</span>, <span class="st">"uh"</span>, <span class="st">"ooh"</span>,</span>
-<span id="cb56-5"><a></a>                       <span class="st">"huh"</span>, <span class="st">"mmm"</span>, <span class="st">"di"</span>, <span class="st">"ha"</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb56-6"><a></a>  <span class="fu">count</span>(Album, word) <span class="sc">%&gt;%</span></span>
-<span id="cb56-7"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
-<span id="cb56-8"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) </span>
-<span id="cb56-9"><a></a>two_albums_tidy </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,446 × 4
-# Groups:   Album [2]
-   Album word        n     prop
-   &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;    &lt;dbl&gt;
- 1 1989  1950s       1 0.000418
- 2 1989  2           3 0.00125 
- 3 1989  ace         1 0.000418
- 4 1989  acid        1 0.000418
- 5 1989  admit       1 0.000418
- 6 1989  adorned     1 0.000418
- 7 1989  afraid      1 0.000418
- 8 1989  aglow       1 0.000418
- 9 1989  ahead       1 0.000418
-10 1989  aids        4 0.00167 
-# ℹ 1,436 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-across-albums-1">Word Frequencies Across Albums</h3>
-<div class="cell columns column-output-location" data-layout-align="center">
-<div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb58-2"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
-<span id="cb58-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb58-4"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb58-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb58-6"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">factor</span>(word),</span>
-<span id="cb58-7"><a></a>         <span class="at">word =</span> <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
-<span id="cb58-8"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
-<span id="cb58-9"><a></a>                       <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb58-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb58-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Album) <span class="sc">+</span></span>
-<span id="cb58-12"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-35-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="word-frequencies-across-albums-2">Word Frequencies Across Albums</h3>
-<div class="cell columns column-output-location" data-layout-align="center">
-<div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb59-2"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
-<span id="cb59-3"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb59-4"><a></a>  <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb59-5"><a></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb59-6"><a></a>  <span class="fu">mutate</span>(<span class="at">word =</span> <span class="fu">factor</span>(word),</span>
-<span id="cb59-7"><a></a>         <span class="at">word =</span> <span class="fu">fct_reorder</span>(word, n)) <span class="sc">%&gt;%</span></span>
-<span id="cb59-8"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> word,</span>
-<span id="cb59-9"><a></a>                       <span class="at">y =</span> n)) <span class="sc">+</span></span>
-<span id="cb59-10"><a></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb59-11"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Album,</span>
-<span id="cb59-12"><a></a>             <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb59-13"><a></a>  <span class="fu">coord_flip</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-36-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div></div>
-</section>
-<section class="slide level2">
-
-<h3 id="sentiment-analysis">Sentiment Analysis</h3>
-<ul>
-<li class="fragment">Was one album a more negative album than the other?</li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Need to add a column that measures the sentiment of each token.
-<ul>
-<li>From <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu and collaborators</a></li>
-<li>Generalizability to other English-speaking countries or time periods?</li>
-</ul></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>sentiments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6,786 × 2
-   word        sentiment
-   &lt;chr&gt;       &lt;chr&gt;    
- 1 2-faces     negative 
- 2 abnormal    negative 
- 3 abolish     negative 
- 4 abominable  negative 
- 5 abominably  negative 
- 6 abominate   negative 
- 7 abomination negative 
- 8 abort       negative 
- 9 aborted     negative 
-10 aborts      negative 
-# ℹ 6,776 more rows</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="sentiment-analysis-1">Sentiment Analysis</h3>
-<p>Keep stop words this time.</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>two_albums_tidy <span class="ot">&lt;-</span> two_albums <span class="sc">%&gt;%</span></span>
-<span id="cb62-2"><a></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word, <span class="at">input =</span> Lyric,</span>
-<span id="cb62-3"><a></a>                <span class="at">token =</span> <span class="st">"words"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb62-4"><a></a>  <span class="fu">count</span>(Album, word) <span class="sc">%&gt;%</span></span>
-<span id="cb62-5"><a></a>  <span class="fu">group_by</span>(Album) <span class="sc">%&gt;%</span></span>
-<span id="cb62-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) </span>
-<span id="cb62-7"><a></a>two_albums_tidy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2,028 × 4
-# Groups:   Album [2]
-   Album word        n     prop
-   &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;    &lt;dbl&gt;
- 1 1989  1950s       1 0.000116
- 2 1989  2           3 0.000348
- 3 1989  a         116 0.0135  
- 4 1989  about       9 0.00104 
- 5 1989  ace         1 0.000116
- 6 1989  acid        1 0.000116
- 7 1989  admit       1 0.000116
- 8 1989  adorned     1 0.000116
- 9 1989  afraid      1 0.000116
-10 1989  again       5 0.000580
-# ℹ 2,018 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="sentiment-analysis-2">Sentiment Analysis</h3>
-<p>What are the most common <strong>negative words</strong> on each album?</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb64-2"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb64-3"><a></a>  <span class="fu">filter</span>(sentiment <span class="sc">==</span> <span class="st">"negative"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb64-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 208 × 5
-# Groups:   Album [2]
-   Album      word        n    prop sentiment
-   &lt;chr&gt;      &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;    
- 1 1989       shake      54 0.00626 negative 
- 2 1989       bad        34 0.00394 negative 
- 3 reputation bad        27 0.00441 negative 
- 4 1989       lost       16 0.00186 negative 
- 5 1989       hate       14 0.00162 negative 
- 6 1989       mad        14 0.00162 negative 
- 7 1989       fake       13 0.00151 negative 
- 8 1989       break      11 0.00128 negative 
- 9 1989       fiction    10 0.00116 negative 
-10 1989       dark        9 0.00104 negative 
-# ℹ 198 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="sentiment-analysis-3">Sentiment Analysis</h3>
-<p>What are the most common <strong>positive words</strong> on each album?</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb66-2"><a></a>  <span class="fu">inner_join</span>(sentiments, <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb66-3"><a></a>  <span class="fu">filter</span>(sentiment <span class="sc">==</span> <span class="st">"positive"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb66-4"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 106 × 5
-# Groups:   Album [2]
-   Album      word         n    prop sentiment
-   &lt;chr&gt;      &lt;chr&gt;    &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;    
- 1 1989       love       104 0.0121  positive 
- 2 1989       like        51 0.00591 positive 
- 3 reputation like        39 0.00637 positive 
- 4 1989       clear       28 0.00325 positive 
- 5 reputation good        25 0.00408 positive 
- 6 1989       welcome     22 0.00255 positive 
- 7 1989       good        19 0.00220 positive 
- 8 reputation gorgeous    17 0.00278 positive 
- 9 reputation love        16 0.00261 positive 
-10 1989       works       13 0.00151 positive 
-# ℹ 96 more rows</code></pre>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<h3 id="what-is-the-distribution-of-positive-and-negative-words">What is the distribution of positive and negative words?</h3>
-<div class="cell columns column-output-location" data-layout-align="center">
-<div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>two_albums_tidy <span class="sc">%&gt;%</span></span>
-<span id="cb68-2"><a></a>  <span class="fu">inner_join</span>(sentiments, </span>
-<span id="cb68-3"><a></a>             <span class="at">by =</span> <span class="st">"word"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb68-4"><a></a>  <span class="fu">group_by</span>(Album, sentiment) <span class="sc">%&gt;%</span></span>
-<span id="cb68-5"><a></a>  <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb68-6"><a></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb68-7"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Album, <span class="at">y =</span> prop,</span>
-<span id="cb68-8"><a></a>             <span class="at">fill  =</span> sentiment)) <span class="sc">+</span></span>
-<span id="cb68-9"><a></a>  <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div><div class="column fragment">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="math241_wk08mon_files/figure-revealjs/unnamed-chunk-41-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div></div>
-<ul>
-<li class="fragment"><p>Remember that words not in the lexicon are dropped!</p></li>
-<li class="fragment"><p>Issue with word-based sentiment analysis?</p></li>
-</ul>
+<!-- # Text Analysis with `tidytext` -->
+<!-- ```{r, echo=FALSE, out.width='20%'} -->
+<!-- knitr::include_graphics("img/tidytext.png") -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Basic Text Analysis with `tidytext` -->
+<!-- Topics: -->
+<!-- * Tokenizing to a tidy format -->
+<!-- * Word frequencies -->
+<!-- * Sentiment analysis -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Tidy Text -->
+<!-- * A data table with one token per row. -->
+<!-- ::: {.fragment .nonincremental} -->
+<!-- * **Token**: meaningful unit of text -->
+<!--     + What is the unit for `shake_it_off`? -->
+<!-- ```{r} -->
+<!-- shake_it_off -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Tidy Text -->
+<!-- * A data table with one token per row. -->
+<!-- * **Token**: meaningful unit of text -->
+<!--     + What is the unit for `shake_it_off`? -->
+<!-- * Other common tokens are words, sentences, paragraphs. -->
+<!-- * Some text analysis should be done on text data in a non-tidy format. -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Tidying Text Data -->
+<!-- **Tokenize**: Break text into individual tokens -->
+<!-- ```{r} -->
+<!-- library(tidytext)  -->
+<!-- shake_it_off_words <- shake_it_off %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, token = "words") -->
+<!-- shake_it_off_words -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Tidying Text Data -->
+<!-- What is an `ngram`? -->
+<!-- ```{r} -->
+<!-- shake_it_off_ngram <- shake_it_off %>% -->
+<!--   unnest_tokens(output = ngram, input = Lyric, -->
+<!--                 token = "ngrams", n = 2) -->
+<!-- shake_it_off_ngram -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- * Common text mining task -->
+<!-- * What have we learned about the frequency of words in "Shake it Off"? -->
+<!-- ::: {.fragment .nonincremental} -->
+<!-- * Which words in this list do we maybe not care about? -->
+<!-- ```{r} -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- **Stop words**: Common words that are not useful for analysis -->
+<!-- ```{r} -->
+<!-- data("stop_words") -->
+<!-- stop_words -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- * I want remove from `shake_it_off_words` the rows that contain the stop words. -->
+<!--     + What sort of `join` do we need?  -->
+<!-- ::: {.fragment} -->
+<!-- ```{r} -->
+<!-- shake_it_off_words <- shake_it_off_words %>% -->
+<!--   anti_join(stop_words, by = "word") -->
+<!-- shake_it_off_words  -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- What graph should we construct? -->
+<!-- ```{r} -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- ```{r} -->
+<!-- #| output-location: column -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) %>% -->
+<!--   filter(n > 2) %>% -->
+<!--   ggplot(mapping = -->
+<!--            aes(x = word, -->
+<!--                y = n)) + -->
+<!--   geom_col() + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+<!-- * Which `forcats` function should we use to reorder the bars? -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies -->
+<!-- ```{r} -->
+<!-- #| output-location: column -->
+<!-- shake_it_off_words %>% -->
+<!--   count(word, sort = TRUE) %>% -->
+<!--   filter(n > 2) %>% -->
+<!--   mutate(word =  -->
+<!--         fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping =  -->
+<!--            aes(x = word, -->
+<!--                y = n)) + -->
+<!--   geom_col() + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+<!-- Much better! -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Comparisons Across Albums/Texts -->
+<!-- ```{r} -->
+<!-- two_albums <- ts %>% -->
+<!--   select(Song, Album, Lyric) %>% -->
+<!--   filter(Album %in% c("1989 (Taylor's Version)", "reputation")) %>% -->
+<!--   mutate(Album = str_replace(Album, " \\(.+", "")) -->
+<!-- two_albums -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies Across Albums -->
+<!-- ```{r} -->
+<!-- two_albums_tidy <- two_albums %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, token = "words") %>% -->
+<!--   anti_join(stop_words, by = "word") %>% -->
+<!--   filter(!(word %in% c("ah", "ahh", "eh", "uh", "ooh", -->
+<!--                        "huh", "mmm", "di", "ha"))) %>% -->
+<!--   count(Album, word) %>% -->
+<!--   group_by(Album) %>% -->
+<!--   mutate(prop = n/sum(n))  -->
+<!-- two_albums_tidy  -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies Across Albums -->
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   group_by(Album) %>% -->
+<!--   arrange(desc(n)) %>% -->
+<!--   slice(1:10) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(word = factor(word), -->
+<!--          word = fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping = aes(x = word, -->
+<!--                        y = n)) + -->
+<!--   geom_col() + -->
+<!--   facet_wrap(~Album) + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Word Frequencies Across Albums -->
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   group_by(Album) %>% -->
+<!--   arrange(desc(n)) %>% -->
+<!--   slice(1:10) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(word = factor(word), -->
+<!--          word = fct_reorder(word, n)) %>% -->
+<!--   ggplot(mapping = aes(x = word, -->
+<!--                        y = n)) + -->
+<!--   geom_col() + -->
+<!--   facet_wrap(~Album, -->
+<!--              scales = "free_y") + -->
+<!--   coord_flip() -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Sentiment Analysis -->
+<!-- * Was one album a more negative album than the other? -->
+<!-- ::: {.fragment .nonincremental} -->
+<!-- * Need to add a column that measures the sentiment of each token. -->
+<!--     + From [Bing Liu and collaborators](https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html) -->
+<!--     + Generalizability to other English-speaking countries or time periods? -->
+<!-- ```{r} -->
+<!-- sentiments -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Sentiment Analysis -->
+<!-- Keep stop words this time. -->
+<!-- ```{r} -->
+<!-- two_albums_tidy <- two_albums %>% -->
+<!--   unnest_tokens(output = word, input = Lyric, -->
+<!--                 token = "words") %>% -->
+<!--   count(Album, word) %>% -->
+<!--   group_by(Album) %>% -->
+<!--   mutate(prop = n/sum(n))  -->
+<!-- two_albums_tidy -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Sentiment Analysis -->
+<!-- What are the most common **negative words** on each album? -->
+<!-- ```{r} -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments, by = "word") %>% -->
+<!--   filter(sentiment == "negative") %>% -->
+<!--   arrange(desc(n)) -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### Sentiment Analysis -->
+<!-- What are the most common **positive words** on each album? -->
+<!-- ```{r} -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments, by = "word") %>% -->
+<!--   filter(sentiment == "positive") %>% -->
+<!--   arrange(desc(n)) -->
+<!-- ``` -->
+<!-- ------------------------------------------------------------------------ -->
+<!-- ### What is the distribution of positive and negative words? -->
+<!-- ```{r} -->
+<!-- #| output-location: column-fragment -->
+<!-- two_albums_tidy %>% -->
+<!--   inner_join(sentiments,  -->
+<!--              by = "word") %>% -->
+<!--   group_by(Album, sentiment) %>% -->
+<!--   summarize(n = sum(n)) %>% -->
+<!--   mutate(prop = n/sum(n)) %>% -->
+<!--   ggplot(aes(x = Album, y = prop, -->
+<!--              fill  = sentiment)) + -->
+<!--   geom_col() -->
+<!-- ``` -->
+<!-- * Remember that words not in the lexicon are dropped! -->
+<!-- * Issue with word-based sentiment analysis? -->
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>

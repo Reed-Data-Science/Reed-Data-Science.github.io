@@ -1,0 +1,110 @@
+---
+title: "Activity 5: Control Flow"
+editor: source
+---
+
+# Activity: Control Flow Practice
+
+## Problem 1: Element-wise vs. single-element comparisons
+
+
+```{r}
+a <- TRUE
+b <- c(FALSE, TRUE)
+```
+
+Consider the two expressions below. Why might the first expression evaluate but the second one throw an error? Shouldn't the first one throw an error as well because these are single-element comparisons??
+
+```{r}
+a || b
+
+a && b
+```
+
+ANSWER:
+
+------------------------------------------------------------------------
+
+
+### Missing Values
+
+* Missing values are important in statistics.
+    + A missing value doesn't mean 0
+* As we've seen, `NA` = missing value in `R`.
+* But the class of the `NA` depends on the atomic vector.
+
+```{r}
+class(NA)
+class(NA + 1)
+class(c(NA, "cat"))
+```
+
+------------------------------------------------------------------------
+
+### Missing Values
+
+We need to make sure we control how `NA` are handled because they impact calculations.
+
+```{r}
+x <- c(82, 74, 95, NA)
+x + 5
+mean(x)
+mean(x, na.rm = TRUE)
+```
+
+------------------------------------------------------------------------
+
+### Missing Values and Logicals
+
+`NA`s and logicals can exhibit interesting behavior.
+
+```{r}
+TRUE & NA
+FALSE & NA
+TRUE | NA
+FALSE | NA
+```
+
+------------------------------------------------------------------------
+
+### Conditionals and Missing Values
+
+Need to handle `NA`s carefully when writing conditionals.
+
+```{r, error=TRUE}
+y <- 80
+if(y != NA) {
+  print("Took the exam.")
+}
+
+x <- c(82, 74, 95, NA)
+if (all(x >= 60)){
+  print("Everyone passed! :)")
+} 
+
+if (any(x >= 60)){
+  print("At least one student passed.")
+}
+```
+
+------------------------------------------------------------------------
+
+### Test for Missing Values
+
+* After testing for `NA`s, how you handle vectors with or without `NA`s might differ.
+
+```{r}
+is.na(NA)
+
+y <- 80
+if(is.na(y)) {
+  print("Took the exam.")
+}
+
+any(is.na(x))
+all(is.na(x))
+```
+
+------------------------------------------------------------------------
+
+

@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 3/29/26
+  draft-after: 3/30/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -241,10 +241,8 @@ scheduled-docs:
           display-date: Monday, Mar 30
           date: 3/30/26
           docs:
-            - type: Reading
-              href: readings/readings_wk02mon.qmd
             - type: Slides
-              href: slides/math141_wk02mon.qmd
+              href: slides/math241_wk09mon.qmd
         - topic: "Functions"
           display-date: Wednesday, Apr 1
           date: 4/1/26
