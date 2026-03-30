@@ -251,12 +251,6 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 5 Released"
-          display-date: Thursday, Apr 2 9:00am
-          date: 4/2/26
-          docs:
-            - type: Problem Set 5
-              href: psets/pset05.qmd
         - topic: "Project I Final Product and Data Scientist Statement Due (10pm)"
           display-date: Sunday, Apr 5
           date: 4/5/26
@@ -272,7 +266,13 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "Debugging and code smells"
+        - topic: "Problem Set 5 Released"
+          display-date: Tuesday, Apr 7 9:00am
+          date: 4/7/26
+          docs:
+            - type: Problem Set 5
+              href: psets/pset05.qmd
+        - topic: "Ethics and generative AI"
           display-date: Wednesday, Apr 8
           date: 4/8/26
           docs:
@@ -280,17 +280,11 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 5 Due, Problem Set 6 Released"
-          display-date: Thursday, Apr 9 9:00am
-          date: 4/9/26
-          docs:
-            - type: Problem Set 6
-              href: psets/pset06.qmd
       # resources:
       #   - 'Some text'
     - week: 11
       days:
-        - topic: "R packages: introduction"
+        - topic: "Ethics and generative AI"
           display-date: Monday, Apr 13
           date: 4/13/26
           docs:
@@ -298,7 +292,13 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "R packages: documentation"
+        - topic: "Problem Set 6 Released"
+          display-date: Tuesday, Apr 14 9:00am
+          date: 4/14/26
+          docs:
+            - type: Problem Set 6
+              href: psets/pset06.qmd
+        - topic: "R packages: introduction (Problem Set 5 Due at 10pm)"
           display-date: Wednesday, Apr 15
           date: 4/15/26
           docs:
@@ -306,17 +306,11 @@ scheduled-docs:
               href: readings/readings_wk02wed.qmd
             - type: Slides
               href: slides/math141_wk02wed.qmd
-        - topic: "Problem Set 6 Due, Project 2 Released"
-          display-date: Thursday, Apr 9 9:00am
-          date: 4/9/26
-          docs:
-            - type: Problem Set 6
-              href: projects/proj02.qmd
       # resources:
       #   - 'Some text'
     - week: 12
       days:
-        - topic: "R packages: testing"
+        - topic: "R packages: documentation + testing"
           display-date: Monday, Apr 20
           date: 4/20/26
           docs:
@@ -324,7 +318,13 @@ scheduled-docs:
               href: readings/readings_wk02mon.qmd
             - type: Slides
               href: slides/math141_wk02mon.qmd
-        - topic: "R packages: dissemination"
+        - topic: "Project 2 Released"
+          display-date: Tuesday, Apr 21 9:00am
+          date: 4/21/26
+          docs:
+            - type: Problem Set 6
+              href: projects/proj02.qmd
+        - topic: "R packages: dissemination (Problem Set 6 Due at 10pm)"
           display-date: Wednesday, Apr 22
           date: 4/22/26
           docs:
@@ -336,7 +336,7 @@ scheduled-docs:
       #   - 'Some text'
     - week: 13
       days:
-        - topic: "Web scraping"
+        - topic: "Project II Work Day"
           display-date: Monday, Apr 27
           date: 4/27/26
           docs:
@@ -356,8 +356,8 @@ scheduled-docs:
       #   - 'Some text'
     - week: Finals
       days:
-        - topic: "Final Project Presentations"
-          display-date: May 11 - 14
+        - topic: "<p>Final Project Presentations</p> <p>All projects materials due at noon, presentations starting at 1pm.</p>"
+          display-date: Wednesday, May 13 1pm - 4pm
           date: 5/11/26
           docs:
             # - type: Reading
