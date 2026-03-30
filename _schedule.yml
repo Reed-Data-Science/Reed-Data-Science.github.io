@@ -258,8 +258,8 @@ scheduled-docs:
             - type: Problem Set 5
               href: psets/pset05.qmd
         - topic: "Project I Final Product and Data Scientist Statement Due (10pm)"
-          display-date: Friday, Apr 3
-          date: 4/3/26
+          display-date: Sunday, Apr 5
+          date: 4/5/26
       # resources:
       #   - 'Some text'
     - week: 10

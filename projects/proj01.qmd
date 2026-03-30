@@ -69,7 +69,7 @@ Once you have chosen a data source, the next step is to plan out your dashboard.
     + Each person will provide feedback on the dashboards of **two** groups.
     + More guidance on providing feedback will be given in class that week.
     + Peer feedback is due 3/20 at 10pm.
-* 4/3 10pm: Link for the final version of dashboard should be added to [this spreadsheet](https://docs.google.com/spreadsheets/d/1syq0LKBqLVZDkp2qKqD1DGom_Rsmvvrn8s49BOqvzWw/edit?usp=sharing) and PDF of your data scientist's statement should be submitted on Gradescope.
-* 4/5 10pm: Group member feedback form due.
+* ~~4/3~~ 4/5 10pm: Link for the final version of dashboard should be added to [this spreadsheet](https://docs.google.com/spreadsheets/d/1syq0LKBqLVZDkp2qKqD1DGom_Rsmvvrn8s49BOqvzWw/edit?usp=sharing) and PDF of your data scientist's statement should be submitted on Gradescope.
+* ~~4/5~~ 4/7 10pm: Group member feedback form due.
 
 
