@@ -343,7 +343,7 @@
 <span id="cb5-5"><a></a>    <span class="fu">print</span>(die_roll)</span>
 <span id="cb5-6"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -583,24 +583,55 @@
 </section>
 <section class="slide level2">
 
+<h3 id="sidebar-operators-as-functions">Sidebar: Operators as functions</h3>
+<ul>
+<li class="fragment">Operators are just functions with funky notation</li>
+<li class="fragment">Typically, we use operators with <strong>infix</strong> notation:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>x <span class="sc">==</span> y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE FALSE</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment">However, we can use <strong>prefix</strong> notation just like other functions we are used to:</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="st">`</span><span class="at">==</span><span class="st">`</span>(x, y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE FALSE</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li class="fragment"><p>Note the use of backticks.</p></li>
+<li class="fragment"><p>This works for all operators!</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
 <h3 id="conditional-control-flow">Conditional Control Flow</h3>
 <p><code>R</code> will conditionally execute code via <code>if</code> statements.</p>
 <p>The basic one-line form is:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="cf">if</span> (condition) true_action</span>
-<span id="cb57-2"><a></a><span class="cf">if</span> (condition) true_action <span class="cf">else</span> false_action</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="cf">if</span> (condition) true_action</span>
+<span id="cb61-2"><a></a><span class="cf">if</span> (condition) true_action <span class="cf">else</span> false_action</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The basic multi-line form is:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="cf">if</span> (condition) {</span>
-<span id="cb58-2"><a></a>  true_action</span>
-<span id="cb58-3"><a></a>}</span>
-<span id="cb58-4"><a></a></span>
-<span id="cb58-5"><a></a><span class="cf">if</span> (condition) {</span>
-<span id="cb58-6"><a></a>  true_action</span>
-<span id="cb58-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb58-8"><a></a>  false_action</span>
-<span id="cb58-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="cf">if</span> (condition) {</span>
+<span id="cb62-2"><a></a>  true_action</span>
+<span id="cb62-3"><a></a>}</span>
+<span id="cb62-4"><a></a></span>
+<span id="cb62-5"><a></a><span class="cf">if</span> (condition) {</span>
+<span id="cb62-6"><a></a>  true_action</span>
+<span id="cb62-7"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb62-8"><a></a>  false_action</span>
+<span id="cb62-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -609,27 +640,27 @@
 <p><code>R</code> will conditionally execute code via <code>if</code> statements.</p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb59-2"><a></a></span>
-<span id="cb59-3"><a></a><span class="cf">if</span> (<span class="dv">3</span> <span class="sc">%in%</span> x){</span>
-<span id="cb59-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb59-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb63-2"><a></a></span>
+<span id="cb63-3"><a></a><span class="cf">if</span> (<span class="dv">3</span> <span class="sc">%in%</span> x){</span>
+<span id="cb63-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb63-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Vector contains 3."</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="cf">if</span> (<span class="dv">4</span> <span class="sc">%in%</span> x){</span>
-<span id="cb61-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 4."</span>)</span>
-<span id="cb61-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="cf">if</span> (<span class="dv">4</span> <span class="sc">%in%</span> x){</span>
+<span id="cb65-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 4."</span>)</span>
+<span id="cb65-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <p><br></p>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="cf">if</span> (<span class="dv">4</span> <span class="sc">%in%</span> x){</span>
-<span id="cb62-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 4."</span>)</span>
-<span id="cb62-3"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb62-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector does not contain 4."</span>)</span>
-<span id="cb62-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="cf">if</span> (<span class="dv">4</span> <span class="sc">%in%</span> x){</span>
+<span id="cb66-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 4."</span>)</span>
+<span id="cb66-3"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb66-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector does not contain 4."</span>)</span>
+<span id="cb66-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Vector does not contain 4."</code></pre>
 </div>
@@ -641,18 +672,18 @@
 <h3 id="conditional-control-flow-2">Conditional Control Flow</h3>
 <p><code>if()</code> is not vectorized!</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb64-2"><a></a></span>
-<span id="cb64-3"><a></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>){</span>
-<span id="cb64-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 1."</span>)</span>
-<span id="cb64-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb68-2"><a></a></span>
+<span id="cb68-3"><a></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">1</span>){</span>
+<span id="cb68-4"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 1."</span>)</span>
+<span id="cb68-5"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `if (x == 1) ...`:
 ! the condition has length &gt; 1</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">3</span>){</span>
-<span id="cb66-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb66-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">3</span>){</span>
+<span id="cb70-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb70-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `if (x == 3) ...`:
 ! the condition has length &gt; 1</code></pre>
@@ -667,9 +698,9 @@
 <h3 id="conditional-control-flow-3">Conditional Control Flow</h3>
 <p><code>if()</code> is not vectorized! Alternative condition?</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
-<span id="cb68-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb68-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
+<span id="cb72-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb72-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -677,9 +708,9 @@
 <h3 id="conditional-control-flow-4">Conditional Control Flow</h3>
 <p><code>if()</code> is not vectorized! Alternative condition?</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
-<span id="cb69-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb69-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
+<span id="cb73-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb73-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `if (x %in% 3) ...`:
 ! the condition has length &gt; 1</code></pre>
@@ -691,9 +722,9 @@
 <h3 id="conditional-control-flow-5">Conditional Control Flow</h3>
 <p><code>if()</code> is not vectorized! Alternative condition?</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
-<span id="cb71-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb71-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="cf">if</span> (x <span class="sc">%in%</span> <span class="dv">3</span>){</span>
+<span id="cb75-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb75-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `if (x %in% 3) ...`:
 ! the condition has length &gt; 1</code></pre>
@@ -701,9 +732,9 @@
 </div>
 <p><br></p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="cf">if</span> (<span class="dv">3</span> <span class="sc">%in%</span> x){</span>
-<span id="cb73-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb73-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="cf">if</span> (<span class="dv">3</span> <span class="sc">%in%</span> x){</span>
+<span id="cb77-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb77-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Vector contains 3."</code></pre>
 </div>
@@ -720,31 +751,31 @@
 <div class="columns">
 <div class="column fragment" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb75-2"><a></a><span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb79-2"><a></a><span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">1</span>)){</span>
-<span id="cb77-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 1."</span>)</span>
-<span id="cb77-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">1</span>)){</span>
+<span id="cb81-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 1."</span>)</span>
+<span id="cb81-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Vector contains 1."</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">3</span>)){</span>
-<span id="cb79-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
-<span id="cb79-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="cf">if</span> (<span class="fu">any</span>(x <span class="sc">==</span> <span class="dv">3</span>)){</span>
+<span id="cb83-2"><a></a>  <span class="fu">print</span>(<span class="st">"Vector contains 3."</span>)</span>
+<span id="cb83-3"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Vector contains 3."</code></pre>
 </div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="fu">all</span>(x <span class="sc">&lt;=</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a><span class="fu">all</span>(x <span class="sc">&lt;=</span> <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a><span class="fu">all</span>(x <span class="sc">&lt;=</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a><span class="fu">all</span>(x <span class="sc">&lt;=</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
@@ -757,30 +788,30 @@
 <div class="columns">
 <div class="column fragment" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a></a>x <span class="ot">=</span> <span class="dv">3</span></span>
-<span id="cb85-2"><a></a></span>
-<span id="cb85-3"><a></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb85-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative"</span>)</span>
-<span id="cb85-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb85-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive"</span>)</span>
-<span id="cb85-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb85-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero"</span>)</span>
-<span id="cb85-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>x <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb89-2"><a></a></span>
+<span id="cb89-3"><a></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb89-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative"</span>)</span>
+<span id="cb89-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb89-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive"</span>)</span>
+<span id="cb89-7"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb89-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero"</span>)</span>
+<span id="cb89-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x is positive"</code></pre>
 </div>
 </div>
 </div><div class="column fragment" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a></a>x <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb87-2"><a></a></span>
-<span id="cb87-3"><a></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb87-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative"</span>)</span>
-<span id="cb87-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb87-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive"</span>)</span>
-<span id="cb87-7"><a></a>} <span class="cf">else</span> {</span>
-<span id="cb87-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero"</span>)</span>
-<span id="cb87-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a>x <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb91-2"><a></a></span>
+<span id="cb91-3"><a></a><span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb91-4"><a></a>  <span class="fu">print</span>(<span class="st">"x is negative"</span>)</span>
+<span id="cb91-5"><a></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb91-6"><a></a>  <span class="fu">print</span>(<span class="st">"x is positive"</span>)</span>
+<span id="cb91-7"><a></a>} <span class="cf">else</span> {</span>
+<span id="cb91-8"><a></a>  <span class="fu">print</span>(<span class="st">"x is zero"</span>)</span>
+<span id="cb91-9"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x is zero"</code></pre>
 </div>
@@ -793,32 +824,32 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="dv">82</span></span>
-<span id="cb89-2"><a></a><span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">84</span>) {</span>
-<span id="cb89-3"><a></a>    <span class="st">"Center"</span></span>
-<span id="cb89-4"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">78</span>) {</span>
-<span id="cb89-5"><a></a>    <span class="st">"Forward"</span></span>
-<span id="cb89-6"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">75</span>) {</span>
-<span id="cb89-7"><a></a>    <span class="st">"Shooting Guard"</span></span>
-<span id="cb89-8"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb89-9"><a></a>    <span class="st">"Point Guard"</span></span>
-<span id="cb89-10"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="dv">82</span></span>
+<span id="cb93-2"><a></a><span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">84</span>) {</span>
+<span id="cb93-3"><a></a>    <span class="st">"Center"</span></span>
+<span id="cb93-4"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">78</span>) {</span>
+<span id="cb93-5"><a></a>    <span class="st">"Forward"</span></span>
+<span id="cb93-6"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">75</span>) {</span>
+<span id="cb93-7"><a></a>    <span class="st">"Shooting Guard"</span></span>
+<span id="cb93-8"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb93-9"><a></a>    <span class="st">"Point Guard"</span></span>
+<span id="cb93-10"><a></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Forward"</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">84</span>) {</span>
-<span id="cb91-2"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Center"</span></span>
-<span id="cb91-3"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">78</span>) {</span>
-<span id="cb91-4"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Forward"</span></span>
-<span id="cb91-5"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">75</span>) {</span>
-<span id="cb91-6"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Shooting Guard"</span></span>
-<span id="cb91-7"><a></a>  } <span class="cf">else</span> {</span>
-<span id="cb91-8"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Point Guard"</span></span>
-<span id="cb91-9"><a></a>  }</span>
-<span id="cb91-10"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a><span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">84</span>) {</span>
+<span id="cb95-2"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Center"</span></span>
+<span id="cb95-3"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">78</span>) {</span>
+<span id="cb95-4"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Forward"</span></span>
+<span id="cb95-5"><a></a>  } <span class="cf">else</span> <span class="cf">if</span> (height_in <span class="sc">&gt;=</span> <span class="dv">75</span>) {</span>
+<span id="cb95-6"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Shooting Guard"</span></span>
+<span id="cb95-7"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb95-8"><a></a>    position <span class="ot">&lt;-</span> <span class="st">"Point Guard"</span></span>
+<span id="cb95-9"><a></a>  }</span>
+<span id="cb95-10"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Forward"</code></pre>
 </div>
@@ -834,11 +865,11 @@
 <li><code>ifelse()</code> runs operations on an entire vector.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
-<span id="cb93-2"><a></a>position <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(height_in <span class="sc">&gt;=</span> <span class="dv">84</span>,</span>
-<span id="cb93-3"><a></a>                   <span class="st">"Center"</span>,</span>
-<span id="cb93-4"><a></a>                   <span class="st">"not Center"</span>)</span>
-<span id="cb93-5"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
+<span id="cb97-2"><a></a>position <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(height_in <span class="sc">&gt;=</span> <span class="dv">84</span>,</span>
+<span id="cb97-3"><a></a>                   <span class="st">"Center"</span>,</span>
+<span id="cb97-4"><a></a>                   <span class="st">"not Center"</span>)</span>
+<span id="cb97-5"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "not Center" "not Center" "Center"    </code></pre>
 </div>
@@ -848,13 +879,13 @@
 <li><code>case_when()</code> provides a more flexible alternative.</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a>position <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
-<span id="cb95-2"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">84</span> <span class="sc">~</span> <span class="st">"Center"</span>,</span>
-<span id="cb95-3"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">78</span> <span class="sc">~</span> <span class="st">"Forward"</span>,</span>
-<span id="cb95-4"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Shooting Guard"</span>,</span>
-<span id="cb95-5"><a></a>  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Point Guard"</span></span>
-<span id="cb95-6"><a></a>)</span>
-<span id="cb95-7"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a>position <span class="ot">&lt;-</span> <span class="fu">case_when</span>(</span>
+<span id="cb99-2"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">84</span> <span class="sc">~</span> <span class="st">"Center"</span>,</span>
+<span id="cb99-3"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">78</span> <span class="sc">~</span> <span class="st">"Forward"</span>,</span>
+<span id="cb99-4"><a></a>  height_in <span class="sc">&gt;=</span> <span class="dv">75</span> <span class="sc">~</span> <span class="st">"Shooting Guard"</span>,</span>
+<span id="cb99-5"><a></a>  <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Point Guard"</span></span>
+<span id="cb99-6"><a></a>)</span>
+<span id="cb99-7"><a></a>position</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Forward"     "Point Guard" "Center"     </code></pre>
 </div>
@@ -873,13 +904,13 @@
 </ul>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
-<span id="cb97-2"><a></a><span class="fu">stopifnot</span>(<span class="fu">is.character</span>(height_in))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
+<span id="cb101-2"><a></a><span class="fu">stopifnot</span>(<span class="fu">is.character</span>(height_in))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
 ! is.character(height_in) is not TRUE</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(height_in))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a><span class="fu">stopifnot</span>(<span class="fu">is.numeric</span>(height_in))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <ul>
@@ -896,11 +927,11 @@
 </ul>
 <div class="fragment">
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
-<span id="cb100-2"><a></a> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.character</span>(height_in)) {</span>
-<span id="cb100-3"><a></a>    <span class="fu">stop</span>(<span class="st">'This function only works for character inputs.</span><span class="sc">\n</span><span class="st">'</span>,</span>
-<span id="cb100-4"><a></a>         <span class="st">'You have provided an object of class: '</span>, <span class="fu">class</span>(x))</span>
-<span id="cb100-5"><a></a> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a>height_in <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">87</span>)</span>
+<span id="cb104-2"><a></a> <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.character</span>(height_in)) {</span>
+<span id="cb104-3"><a></a>    <span class="fu">stop</span>(<span class="st">'This function only works for character inputs.</span><span class="sc">\n</span><span class="st">'</span>,</span>
+<span id="cb104-4"><a></a>         <span class="st">'You have provided an object of class: '</span>, <span class="fu">class</span>(x))</span>
+<span id="cb104-5"><a></a> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
 ! This function only works for character inputs.

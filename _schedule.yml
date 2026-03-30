@@ -243,6 +243,8 @@ scheduled-docs:
           docs:
             - type: Slides
               href: slides/math241_wk09mon.qmd
+            - type: Activity (Download)
+              href: in_class/activity5_download.qmd
         - topic: "Functions"
           display-date: Wednesday, Apr 1
           date: 4/1/26

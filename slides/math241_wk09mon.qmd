@@ -427,6 +427,38 @@ x %in% z
 
 ------------------------------------------------------------------------
 
+### Sidebar: Operators as functions
+
+
+- Operators are just functions with funky notation
+- Typically, we use operators with **infix** notation:
+
+::: {.fragment}
+
+```{r}
+x == y
+```
+
+:::
+
+
+- However, we can use **prefix** notation just like other functions we are used to:
+
+::: {.fragment}
+
+```{r}
+`==`(x, y)
+```
+
+:::
+
+- Note the use of backticks. 
+
+- This works for all operators! 
+
+
+------------------------------------------------------------------------
+
 ### Conditional Control Flow
 
 `R` will conditionally execute code via `if` statements.
