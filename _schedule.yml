@@ -251,6 +251,8 @@ scheduled-docs:
           docs:
             - type: Slides
               href: slides/math241_wk09wed.qmd
+            - type: Activity (Download)
+              href: in_class/activity6_download.qmd
         - topic: "Project I Final Product and Data Scientist Statement Due (10pm)"
           display-date: Sunday, Apr 5
           date: 4/5/26
