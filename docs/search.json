@@ -70,6 +70,13 @@
     "text": "Footnotes\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0.↩︎"
   },
   {
+    "objectID": "slides/math241_wk10mon.html#week-10-goals",
+    "href": "slides/math241_wk10mon.html#week-10-goals",
+    "title": "Math 241",
+    "section": "Week 10 Goals",
+    "text": "Week 10 Goals\n\n\nMonday Lecture:\n\nIteration\n\nfor() and while() loops\nFunctional programming\n\n\n\nWednesday Lecture:\n\nParallelism\nEthics\nAI"
+  },
+  {
     "objectID": "slides/math241_wk09mon.html#post-spring-break-big-picture-goals",
     "href": "slides/math241_wk09mon.html#post-spring-break-big-picture-goals",
     "title": "Math 241",
@@ -1579,7 +1586,7 @@
     "href": "index.html",
     "title": "Math 241",
     "section": "",
-    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Groups\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Instructions\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    Different classes in R\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    Project 1 Work Day\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Control flow\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Functions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Sunday, Apr 5\n    \n    \n    Project I Final Product and Data Scientist Statement Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Iteration\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 7 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    Ethics and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    Ethics and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 14 9:00am\n    \n    \n    Problem Set 6 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: introduction (Problem Set 5 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: documentation + testing\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 21 9:00am\n    \n    \n    Project 2 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    R packages: dissemination (Problem Set 6 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    Project II Work Day\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Building your data science portfolio\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    Wednesday, May 13 1pm - 4pm\n    \n    \n    Final Project Presentations All projects materials due at noon, presentations starting at 1pm.\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
+    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Groups\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Instructions\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    Different classes in R\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    Project 1 Work Day\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Control flow\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Functions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Sunday, Apr 5\n    \n    \n    Project I Final Product and Data Scientist Statement Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Iteration: loops and functional programming\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 7 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    Parallel computing, ethics, and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    Ethics and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 14 9:00am\n    \n    \n    Problem Set 6 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: introduction (Problem Set 5 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: documentation + testing\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 21 9:00am\n    \n    \n    Project 2 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    R packages: dissemination (Problem Set 6 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    Project II Work Day\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Building your data science portfolio\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    Wednesday, May 13 1pm - 4pm\n    \n    \n    Final Project Presentations All projects materials due at noon, presentations starting at 1pm.\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
   },
   {
     "objectID": "in_class/activity1.html",
@@ -3456,5 +3463,208 @@
     "title": "Math 241",
     "section": "Mac and Cheese",
     "text": "Mac and Cheese"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#week-10-goals",
+    "href": "slides/math241_wk10wed.html#week-10-goals",
+    "title": "Math 241",
+    "section": "Week 10 Goals",
+    "text": "Week 10 Goals\n\n\nMonday Lecture:\n\nIteration\n\nfor() and while() loops\nFunctional programming\n\n\n\nWednesday Lecture:\n\nParallelism\nEthics\nAI"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#integrity-of-data-and-methods",
+    "href": "slides/math241_wk10wed.html#integrity-of-data-and-methods",
+    "title": "Math 241",
+    "section": "Integrity of Data and Methods",
+    "text": "Integrity of Data and Methods\n\n“The ethical statistical practitioner seeks to understand and mitigate known or suspected limitations, defects, or biases in the data or methods and communicates potential impacts on the interpretation, conclusions, recommendations, decisions, or other results of statistical practices.”\n\n\n“For models and algorithms designed to inform or implement decisions repeatedly, develops and/or implements plans to validate assumptions and assess performance over time, as needed. Considers criteria and mitigation plans for model or algorithm failure and retirement.”"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms",
+    "href": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms",
+    "title": "Math 241",
+    "section": "Ethical considerations of using LLMs…",
+    "text": "Ethical considerations of using LLMs…\n\n\nEthical considerations:\n\nAlgorithmic bias\nFair use / copyright considerations\n\n\n\nEnvironmental concerns:\n\nWater\nElectricity\nCarbon emissions\n\n\n\n\nOthers?\n\nOne of my biggest worries: learning\n\n\n\nHelpful context: our readings for today\n\nHannah Ritchie’s blog post\nSimon Couch’s blog post\n\n\nGood for understanding environmental concerns. Algorithmic bias and fair use on the other hand…"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms-1",
+    "href": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms-1",
+    "title": "Math 241",
+    "section": "Ethical considerations of using LLMs…",
+    "text": "Ethical considerations of using LLMs…\n\nData Science is a uniquely humanistic field situated behind a laptop. We have responsibility to understand and mitigate algorithmic bias by asking questions such as:\n\n\n\nWho are represented in the sample?\nWho are not represented in the sample?\nWhat biases might my methods (including generative AI!) introduce?\nHow can I safeguard against those biases?"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms-2",
+    "href": "slides/math241_wk10wed.html#ethical-considerations-of-using-llms-2",
+    "title": "Math 241",
+    "section": "Ethical considerations of using LLMs…",
+    "text": "Ethical considerations of using LLMs…\n\nGenerative AI tools are being used in horrific and unethical ways as we speak (e.g., Flock cameras). Not to mentioned they are trained on people’s intellectual content without their consent.\n\n\n\nMy goals:\n\nTeach how to use generative AI as an ethical data scientist\n\nConsider productive (and unproductive) use-cases for this technology\n\nHelp you be informed on the current state of generative AI and large language models\n\nOnly informed people can help change policy."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#what-is-a-large-language-model-1",
+    "href": "slides/math241_wk10wed.html#what-is-a-large-language-model-1",
+    "title": "Math 241",
+    "section": "What is a large language model?",
+    "text": "What is a large language model?\n\nAt it’s most simple form…\n\ntalk about how it is a big matrix of weights\nbig matrix –&gt; too big for your computer (local llm’s are cool but need a good MBP)\nhosted on someone else’s server –&gt; need to have an API key to access that server\nquerying a LLM is an “expensive computation”: matrix algebra on large matrix\ncomputing takes electricity –&gt; you pay for the electricity\nor, you give your data to be trained on and get some stuff for free"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer",
+    "href": "slides/math241_wk10wed.html#ellmer",
+    "title": "Math 241",
+    "section": "ellmer",
+    "text": "ellmer\nAn R package for interacting with LLMs in R\n\n  \nToday, we’ll use ellmer to do three different types of tasks one may want to with an LLM:\n\nStructured data\nTool calling\nCoding"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-setup",
+    "href": "slides/math241_wk10wed.html#ellmer-setup",
+    "title": "Math 241",
+    "section": "ellmer: Setup",
+    "text": "ellmer: Setup\nIn order to interact with LLMs hosted on a server, we need to first set up an API key.\n\nCerebras provides “free” access to some LLMs they host, but you still need to get an API key.\n\nThis “free” access has rate limits\nModels will likely be trained on the data you give it at this free tier.\n\n\n\nSteps:\n\nGo to https://www.cerebras.ai/ and click “Get Started” to create an account.\n\n\n\n\nOnce your account is created, find your API key and set it in your R environment:\n\n\n# This will open a file called .Renviron\nusethis::edit_r_environ()\n\nThen add:\nOPENAI_API_KEY=INSERT_YOUR_KEY_HERE\nto your .Renviron file. Save it.\n\n\nRestart R."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-basics",
+    "href": "slides/math241_wk10wed.html#ellmer-basics",
+    "title": "Math 241",
+    "section": "ellmer: basics",
+    "text": "ellmer: basics\n\nlibrary(ellmer)\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\"\n)\n\nchat$chat(\"Who are you?\")\n#&gt; Hello! I'm Qwen, a large-scale language model independently developed by the \n#&gt; Tongyi Lab under Alibaba Group. I can assist you with answering questions, \n#&gt; writing, logical reasoning, programming, and more. I aim to provide helpful and \n#&gt; accurate information. Feel free to let me know if you have any questions or need\n#&gt; assistance!\n\n\n\n“qwen-3-235b-a22b-instruct-2507” has relatively relaxed rate limits, allowing 30 requests per minute, and 14,400 requests per day."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-structured-data",
+    "href": "slides/math241_wk10wed.html#ellmer-structured-data",
+    "title": "Math 241",
+    "section": "ellmer: Structured data",
+    "text": "ellmer: Structured data\nHow would you extract name and age from this data?\n\nprompts &lt;- list(\n  \"I go by Alex. 42 years on this planet and counting.\",\n  \"Pleased to meet you! I'm Jamal, age 27.\",\n  \"They call me Li Wei. Nineteen years young.\",\n  \"Fatima here. Just celebrated my 35th birthday last week.\",\n  \"The name's Robert - 51 years old and proud of it.\",\n  \"Kwame here - just hit the big 5-0 this year.\"\n)\n\n\nRegular expressions?"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-structured-data-1",
+    "href": "slides/math241_wk10wed.html#ellmer-structured-data-1",
+    "title": "Math 241",
+    "section": "ellmer: Structured data",
+    "text": "ellmer: Structured data\nLLMs are generally good at this sort of task\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\",\n)\nchat$chat(\"Extract the name and age from each sentence I give you\")\nchat$chat(prompts[[1]])\n#&gt; **Name: Alex, Age: 42**\nchat$chat(prompts[[2]])\n#&gt; **Name: Jamal, Age: 27**\nchat$chat(prompts[[3]])\n#&gt; **Name: Li Wei, Age: 19**"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-structured-data-2",
+    "href": "slides/math241_wk10wed.html#ellmer-structured-data-2",
+    "title": "Math 241",
+    "section": "ellmer: Structured data",
+    "text": "ellmer: Structured data\nBut wouldn’t it be nice to get an R data structure?\n\nchat$chat(prompts[[3]])\n\n# Want this:\n#&gt; list(\n#&gt;   name = \"Li Wei\",\n#&gt;   age = 19\n#&gt; )\n\n# Instead of:\n#&gt; **Name: Li Wei, Age: 19**\n\n\n\nellmer let’s us do this with chat_structured()!\n\ntype_person &lt;- type_object(\n  name = type_string(),\n  age = type_number()\n)\n\nchat$chat_structured(prompts[[1]], type = type_person)\n#&gt; List of 2\n#&gt;  $ name: chr \"Alex\"\n#&gt;  $ age : int 42"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-structured-data-3",
+    "href": "slides/math241_wk10wed.html#ellmer-structured-data-3",
+    "title": "Math 241",
+    "section": "ellmer: Structured data",
+    "text": "ellmer: Structured data\nparallel_chat_structured(): many prompts at once\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\",\n  params   = params(max_tokens = 500)\n)\nparallel_chat_structured(chat, prompts, type = type_person, rpm = 30)\n#&gt;     name age\n#&gt; 1   Alex  42\n#&gt; 2  Jamal  27\n#&gt; 3 Li Wei  19\n#&gt; 4 Fatima  35\n#&gt; 5 Robert  51\n#&gt; 6  Kwame  50\n\n\nNot parallel in the sense of parallelized R code: just sending many API calls at once.\nHave to set params in order to avoid getting rate-limited automatically."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-structured-data-4",
+    "href": "slides/math241_wk10wed.html#ellmer-structured-data-4",
+    "title": "Math 241",
+    "section": "ellmer: Structured data",
+    "text": "ellmer: Structured data\nCan also send attach images or other files by pointing to their directory on your computer.\n\npaths &lt;- dir(\"animals\", full.names = TRUE)\nimages &lt;- map(paths, ~ list(content_image_file(.x)))\n\ntype_animal_photo &lt;- type_object(\n  animal = type_string(),\n  background_colour = type_string()\n)\n\nparallel_chat_structured(chat, images, type = type_animal_photo)"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-tool-calling",
+    "href": "slides/math241_wk10wed.html#ellmer-tool-calling",
+    "title": "Math 241",
+    "section": "ellmer: Tool calling",
+    "text": "ellmer: Tool calling\n\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\"\n)\n\nchat$chat(\"What day is it?\")\n#&gt; I don't have access to real-time information, so I can't tell you today's\n#&gt; date. You can check the current date on your device's calendar or by \n#&gt; asking a voice assistant like Siri, Google Assistant, or Alexa."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-tool-calling-1",
+    "href": "slides/math241_wk10wed.html#ellmer-tool-calling-1",
+    "title": "Math 241",
+    "section": "ellmer: Tool calling",
+    "text": "ellmer: Tool calling\n\ntoday &lt;- tool(\n  function() Sys.Date(),\n  name = \"today\",\n  description = \"Get the current date\",\n  arguments = list()\n)\nchat$register_tool(today)"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#ellmer-tool-calling-2",
+    "href": "slides/math241_wk10wed.html#ellmer-tool-calling-2",
+    "title": "Math 241",
+    "section": "ellmer: Tool calling",
+    "text": "ellmer: Tool calling\n\n\nchat$chat(\"What day is it today?\")\n#&gt; ◯ [tool call] today()\n#&gt; ● #&gt; \"2026-04-05\"\n#&gt; Today is Sunday, April 5, 2026."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agent-llm-calling-tools-in-a-loop",
+    "href": "slides/math241_wk10wed.html#coding-agent-llm-calling-tools-in-a-loop",
+    "title": "Math 241",
+    "section": "Coding agent = LLM calling tools in a loop",
+    "text": "Coding agent = LLM calling tools in a loop\n…usually giving models the ability to read and write state"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-1",
+    "href": "slides/math241_wk10wed.html#coding-agents-1",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\"\n)\nchat$chat(\"Delete the csv files in my working directory\")\n#&gt; I **cannot** delete files from your computer or working directory. I don't have \n#&gt; access to your file system for security reasons.\n#&gt; \n#&gt; However, here are safe ways you can delete CSV files in your working directory \n#&gt; depending on your environment:\n#&gt; \n#&gt; ### Option 1: Using Python\n#&gt; If you're using Python and want to delete all `.csv` files in the current \n#&gt; directory:\n#&gt; ..."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-2",
+    "href": "slides/math241_wk10wed.html#coding-agents-2",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\nchat &lt;- chat_openai_compatible(\n  base_url = \"https://api.cerebras.ai/v1\",\n  model    = \"qwen-3-235b-a22b-instruct-2507\"\n)\nchat$chat(\"Delete the csv files in my working directory\")\n\nNeeds to be able to:\n\nFind files (read state)\nDelete files (write state)"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-3",
+    "href": "slides/math241_wk10wed.html#coding-agents-3",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\nchat$register_tool(tool(\n  function() dir(),\n  name = \"ls\",\n  description = \"Lists the files in the current directory\"\n))\n\n\n\n\nchat$register_tool(tool(\n  function(path) unlink(path),\n  name = \"rm\",\n  description = \"Delete one or more files\",\n  arguments = list(\n    path = type_array(type_string())\n  )\n))"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-4",
+    "href": "slides/math241_wk10wed.html#coding-agents-4",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\ndir()\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-5",
+    "href": "slides/math241_wk10wed.html#coding-agents-5",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-6",
+    "href": "slides/math241_wk10wed.html#coding-agents-6",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()\n#&gt; ● #&gt; 1-coding-boilerplate.R\n#&gt;   #&gt; a.csv\n#&gt;   #&gt; b.csv\n#&gt;   #&gt; …"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-7",
+    "href": "slides/math241_wk10wed.html#coding-agents-7",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()\n#&gt; ● #&gt; 1-coding-boilerplate.R\n#&gt;   #&gt; a.csv\n#&gt;   #&gt; b.csv\n#&gt;   #&gt; …\n#&gt; Now I'll delete the CSV files I found (a.csv and b.csv):"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-8",
+    "href": "slides/math241_wk10wed.html#coding-agents-8",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()\n#&gt; ● #&gt; 1-coding-boilerplate.R\n#&gt;   #&gt; a.csv\n#&gt;   #&gt; b.csv\n#&gt;   #&gt; …\n#&gt; Now I'll delete the CSV files I found (a.csv and b.csv):\n#&gt; ◯ [tool call] rm(path = c(\"a.csv\", \"b.csv\"))"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-9",
+    "href": "slides/math241_wk10wed.html#coding-agents-9",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()\n#&gt; ● #&gt; 1-coding-boilerplate.R\n#&gt;   #&gt; a.csv\n#&gt;   #&gt; b.csv\n#&gt;   #&gt; …\n#&gt; Now I'll delete the CSV files I found (a.csv and b.csv):\n#&gt; ◯ [tool call] rm(path = c(\"a.csv\", \"b.csv\"))\n#&gt; ● #&gt; true"
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-10",
+    "href": "slides/math241_wk10wed.html#coding-agents-10",
+    "title": "Math 241",
+    "section": "Coding agents",
+    "text": "Coding agents\n\n\nchat$chat(\"Delete all the csv files in the current directory\")\n#&gt; I'll first check what files are in the current directory,\n#&gt; then delete any CSV files.\n#&gt; ◯ [tool call] ls()\n#&gt; ● #&gt; 1-coding-boilerplate.R\n#&gt;   #&gt; a.csv\n#&gt;   #&gt; b.csv\n#&gt;   #&gt; …\n#&gt; Now I'll delete the CSV files I found (a.csv and b.csv):\n#&gt; ◯ [tool call] rm(path = c(\"a.csv\", \"b.csv\"))\n#&gt; ● #&gt; true\n#&gt; Done. Deleted `a.csv` and `b.csv`."
+  },
+  {
+    "objectID": "slides/math241_wk10wed.html#coding-agents-databot",
+    "href": "slides/math241_wk10wed.html#coding-agents-databot",
+    "title": "Math 241",
+    "section": "Coding agents: Databot",
+    "text": "Coding agents: Databot"
   }
 ]
