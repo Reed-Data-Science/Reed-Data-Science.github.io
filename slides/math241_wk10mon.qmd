@@ -62,7 +62,10 @@ ggplot2::theme_update(text = ggplot2::element_text(size = 20))
 ### Annoucements 
 
 
+- **Welcome** to the visitors!
+
 - Peer / Self Feedback due **tomorrow**!
+    - I also extended the deadline for the data scientist statement until tomorrow.
 
 - Problem Set 5 released tomorrow.
 
