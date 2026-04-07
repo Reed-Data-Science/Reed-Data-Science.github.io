@@ -573,19 +573,24 @@ knitr::include_graphics("img/compas.png")
 
 **Helpful context**: our readings for today
 
-- [Hannah Ritchie's blog post](https://hannahritchie.substack.com/p/ai-footprint-august-2025)
+- [Explained: Generative AI’s environmental impact](https://news.mit.edu/2025/explained-generative-ai-environmental-impact-0117)
 
-- [Simon Couch's blog post](https://www.simonpcouch.com/blog/2026-01-20-cc-impact/)
+- [A software engineer's "typical" electricity useage from LLMs](https://www.simonpcouch.com/blog/2026-01-20-cc-impact/)
+
+- [Gruelling, low-paid human work behind generative AI curtain](https://www.ctvnews.ca/sci-tech/article/gruelling-low-paid-human-work-behind-generative-ai-curtain/)
 
 :::
 
-- Good for understanding environmental concerns. **Algorithmic bias** and **fair use** on the other hand...
+- Good for understanding environmental and human welfare concerns. **Algorithmic bias** and **fair use** on the other hand...
 
 
 :::
 
 
 ::::
+
+
+# Discussion time
 
 ------------------------------------------------------------------------
 
