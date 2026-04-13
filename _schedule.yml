@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 4/8/26
+  draft-after: 4/13/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -284,14 +284,14 @@ scheduled-docs:
       #   - 'Some text'
     - week: 11
       days:
-        - topic: "Ethics and generative AI"
+        - topic: "Local LLMs and `ellmer` Extensions"
           display-date: Monday, Apr 13
           date: 4/13/26
           docs:
-            - type: Reading
-              href: readings/readings_wk02mon.qmd
             - type: Slides
-              href: slides/math141_wk02mon.qmd
+              href: slides/math241_wk11mon.qmd
+            - type: Activity (Download)
+              href: in_class/activity7_download.qmd
         - topic: "Problem Set 6 Released"
           display-date: Tuesday, Apr 14 9:00am
           date: 4/14/26
@@ -303,9 +303,9 @@ scheduled-docs:
           date: 4/15/26
           docs:
             - type: Reading
-              href: readings/readings_wk02wed.qmd
+              href: readings/readings_wk11wed.qmd
             - type: Slides
-              href: slides/math141_wk02wed.qmd
+              href: slides/math241_wk11wed.qmd
       # resources:
       #   - 'Some text'
     - week: 12
