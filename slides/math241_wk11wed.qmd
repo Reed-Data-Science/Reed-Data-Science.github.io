@@ -70,6 +70,13 @@ ggplot2::theme_update(text = ggplot2::element_text(size = 20))
 
 :::
 
+------------------------------------------------------------------------
+
+## Announcements
+
+![](img/Advising Workshop - 041626.png){width="40%" fig-align='center'}
+
+
 
 ------------------------------------------------------------------------
 
