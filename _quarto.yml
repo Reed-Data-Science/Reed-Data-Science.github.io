@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "!*_download.qmd"
     - "!admin/*"
+    - "!*.geojson"
 
 website:
   title: "Math 241"

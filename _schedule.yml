@@ -300,6 +300,8 @@ scheduled-docs:
               href: slides/math241_wk11wed.qmd
             - type: R Packages Handout
               href: in_class/R_Package.qmd
+            - type: PDX Potholes Data
+              href: slides/data/potholes.geojson
         - topic: "Problem Set 6 Released and Problem Set 5 Due"
           display-date: Wednesday, Apr 15 10:00pm
           date: 4/15/26
