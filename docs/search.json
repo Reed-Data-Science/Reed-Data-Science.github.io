@@ -70,6 +70,55 @@
     "text": "Footnotes\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0.↩︎"
   },
   {
+    "objectID": "slides/math241_wk12mon.html#weeks-goals",
+    "href": "slides/math241_wk12mon.html#weeks-goals",
+    "title": "Math 241",
+    "section": "Week’s Goals",
+    "text": "Week’s Goals\n\n\nMon Lecture\n\nR package documentation and metadata\n\n\nWed Lecture\n\nR package testing\nR package dissemination:\n\nVignettes, and\npackage websites"
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2",
+    "href": "slides/math241_wk12mon.html#project-2",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\nIn this project, your group will create an R package and give a 10 minute presentation about your package. You have two options for your package:\n\nOption 1: a package that primarily shares a suite of functions but also includes data for demoing functionality.\nOption 2: a package that primarily shares a dataset or dataset(s) but also includes a couple functions that help the user interact with the data effectively."
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2-1",
+    "href": "slides/math241_wk12mon.html#project-2-1",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\n\n\nRequirements specific to Option 1:\n\nAt least 4 functions.\nAt least 8 unit tests.\nA dataset for demonstrating how to use the functions in the package.\n\nThere are no requirements on the size of the dataset.\n\nA 400 - 800 word vignette with at least 1 example that showcases a problem that your package is designed to solve.\n\nNote: It is completely fine to use additional packages and functions in the vignette.\n\n\n\nRequirements specific to Option 2:\n\nA dataset with at least 8 variables and at least 30 observations.\nAt least 2 functions, such as ones that carry out common operations of interest on the dataset.\n\nAt least 1 of these functions should create a polished, well-constructed graph.\n\nAt least 2 unit tests.\nA 600 - 1000 word vignette with at least 3 examples that showcase the questions you can answer with the provided dataset and functions.\n\nNote: It is completely fine to use additional packages and functions in the vignette."
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2-2",
+    "href": "slides/math241_wk12mon.html#project-2-2",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\nRequirements for Both Options:\n\nPackage contains\n\nA complete and informative DESCRIPTION file.\nA README (both the Rmd and md) which answers the questions: Why should I use this package? How do I access the package? How do I use the package?\n\nThe README should include 1-2 brief examples. Place more extended examples in the vignette.\n\nAn R documentation file for each function and each dataset.\nA reasonable name that is not already in use on CRAN or GitHub.\n\n\nA ten minute presentation about the package, with slides. Similar to the README, the presentation should motivate the viewer to use the package and should include an example of how to use the package.\nA data-raw folder for handling data wrangling, that allows for going from raw data to the polished data you include in the package.\nA data folder for holding the finalized, polished dataset.\n\n\nExtra Credit:\n\nA hex sticker that contains the package name and a design that relates to the package in some way."
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2-3",
+    "href": "slides/math241_wk12mon.html#project-2-3",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\nR Package Ideas:\n\nFunctions for learning the concepts in Math 141 or some other course.\nFunctions that facilitate common tasks you do in your research.\nFunctions that pull open data and allow the user to easily create useful visuals and compute relevant summary statistics.\nFunctions that pull in data from an API and then convert the data into useful R objects, like data.frame()s.\nWrapper functions for common, useful tasks.\nWrapper functions for cumbersome, difficult to use functions."
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2-4",
+    "href": "slides/math241_wk12mon.html#project-2-4",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\nTips for getting started:\n\nAs a group, brainstorm ideas and decide whether you want to focus more on functions (Option 1) or data (Option 2) in your package.\nRemember to use class resources:\n\nThe Week 10 & Week 11 lecture slides\nThe Creating an R Package handout which outlines the initial steps.\nThe pdxHoles package we live-coded in lecture. (Note: pdxHoles is still mostly the skeleton of a package.)\n\nCheck out well-written and well-documented R packages. Here are some examples:\n\nhttps://reprex.tidyverse.org/ and the reprex GitHub repo\nhttps://glue.tidyverse.org/ and the glue GitHub repo\nhttps://allisonhorst.github.io/palmerpenguins/ and the palmerpenguins GitHub repo\n\nCreate a sandbox folder and add it to the .Rbuildignore. Use this folder for exploring different ideas and creating MVPs."
+  },
+  {
+    "objectID": "slides/math241_wk12mon.html#project-2-5",
+    "href": "slides/math241_wk12mon.html#project-2-5",
+    "title": "Math 241",
+    "section": "Project 2",
+    "text": "Project 2\nTimeline:\n\n4/20: Receive project instructions, group assignment, and invite to your group’s GitHub repo.\n4/27: Come to class for a project work day instead of lecture.\n5/13 (noon): Make sure the final version of your package is in your GitHub repo.\n5/13 (1pm): Give a 10 minute presentation of your package during our final exam time slot, in Library 389 (our classroom).\n5/13: Decide as a group whether or not you want to make your GitHub repo (and so R package) public.\n\nIf at least one group member does not want to make the repo public, you must leave it private.\nEmail me with your decision.\nYour grade on this project does not at all depend on this decision."
+  },
+  {
     "objectID": "slides/math241_wk11mon.html#announcements",
     "href": "slides/math241_wk11mon.html#announcements",
     "title": "Math 241",
@@ -1575,158 +1624,200 @@
     "text": "Next time\nWe’ll start decomposing graphics and discussing best practices for creating graphics!"
   },
   {
-    "objectID": "readings/readings_wk08mon.html",
-    "href": "readings/readings_wk08mon.html",
-    "title": "Math 241: Suggested readings for March 15, 2026",
+    "objectID": "readings/readings_wk10wed.html",
+    "href": "readings/readings_wk10wed.html",
+    "title": "Math 241: Required readings for April 8, 2026",
     "section": "",
-    "text": "A helpful reference for regular expressions and text analysis:\nMDSR, Chapter 19"
+    "text": "Explained: Generative AI’s environmental impact\nA software engineer’s “typical” electricity useage from LLMs\nGruelling, low-paid human work behind generative AI curtain"
   },
   {
-    "objectID": "readings/readings_wk08mon.html#reading",
-    "href": "readings/readings_wk08mon.html#reading",
-    "title": "Math 241: Suggested readings for March 15, 2026",
+    "objectID": "readings/readings_wk10wed.html#reading",
+    "href": "readings/readings_wk10wed.html#reading",
+    "title": "Math 241: Required readings for April 8, 2026",
     "section": "",
-    "text": "A helpful reference for regular expressions and text analysis:\nMDSR, Chapter 19"
+    "text": "Explained: Generative AI’s environmental impact\nA software engineer’s “typical” electricity useage from LLMs\nGruelling, low-paid human work behind generative AI curtain"
   },
   {
-    "objectID": "readings/readings_wk05wed.html",
-    "href": "readings/readings_wk05wed.html",
-    "title": "Math 241: Suggested readings for February 25, 2026",
+    "objectID": "readings/readings_wk06.html",
+    "href": "readings/readings_wk06.html",
+    "title": "Math 241: Suggested reading for Monday and Wednesday, Week 6",
+    "section": "",
+    "text": "Math 241: Suggested reading for Monday and Wednesday, Week 6\nFor reference on shiny: Hadley Wickham’s Mastering Shiny."
+  },
+  {
+    "objectID": "readings/readings_wk05mon.html",
+    "href": "readings/readings_wk05mon.html",
+    "title": "Math 241: Suggested readings for February 23, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 17 and 18"
   },
   {
-    "objectID": "readings/readings_wk05wed.html#reading",
-    "href": "readings/readings_wk05wed.html#reading",
-    "title": "Math 241: Suggested readings for February 25, 2026",
+    "objectID": "readings/readings_wk05mon.html#reading",
+    "href": "readings/readings_wk05mon.html#reading",
+    "title": "Math 241: Suggested readings for February 23, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 17 and 18"
   },
   {
-    "objectID": "readings/readings_wk04wed.html",
-    "href": "readings/readings_wk04wed.html",
-    "title": "Math 241: Suggested readings for February 18, 2026",
-    "section": "",
-    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 5 and 6."
-  },
-  {
-    "objectID": "readings/readings_wk04wed.html#reading",
-    "href": "readings/readings_wk04wed.html#reading",
-    "title": "Math 241: Suggested readings for February 18, 2026",
-    "section": "",
-    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 5 and 6."
-  },
-  {
-    "objectID": "readings/readings_wk03mon.html",
-    "href": "readings/readings_wk03mon.html",
-    "title": "Math 241: Suggested readings for February 9, 2026",
+    "objectID": "readings/readings_wk03wed.html",
+    "href": "readings/readings_wk03wed.html",
+    "title": "Math 241: Suggested readings for February 11, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 4"
   },
   {
-    "objectID": "readings/readings_wk03mon.html#reading",
-    "href": "readings/readings_wk03mon.html#reading",
-    "title": "Math 241: Suggested readings for February 9, 2026",
+    "objectID": "readings/readings_wk03wed.html#reading",
+    "href": "readings/readings_wk03wed.html#reading",
+    "title": "Math 241: Suggested readings for February 11, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 4"
   },
   {
-    "objectID": "readings/readings_wk02mon.html",
-    "href": "readings/readings_wk02mon.html",
-    "title": "Math 241: Suggested readings for February 2, 2026",
+    "objectID": "readings/readings_wk02wed.html",
+    "href": "readings/readings_wk02wed.html",
+    "title": "Math 241: Suggested readings for February 4, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 3"
   },
   {
-    "objectID": "readings/readings_wk02mon.html#reading",
-    "href": "readings/readings_wk02mon.html#reading",
-    "title": "Math 241: Suggested readings for February 2, 2026",
+    "objectID": "readings/readings_wk02wed.html#reading",
+    "href": "readings/readings_wk02wed.html#reading",
+    "title": "Math 241: Suggested readings for February 4, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 3"
   },
   {
-    "objectID": "psets/pset06.html",
-    "href": "psets/pset06.html",
-    "title": "The Final Problem Set",
+    "objectID": "readings/readings_wk01wed.html",
+    "href": "readings/readings_wk01wed.html",
+    "title": "Math 241: Suggested readings for January 28, 2026",
     "section": "",
-    "text": "To be released on Wednesday April 15th before 10pm PT.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 2"
   },
   {
-    "objectID": "psets/pset06.html#due-wednesday-apr-22nd-10pm-pt-on-gradescope.",
-    "href": "psets/pset06.html#due-wednesday-apr-22nd-10pm-pt-on-gradescope.",
-    "title": "The Final Problem Set",
+    "objectID": "readings/readings_wk01wed.html#reading",
+    "href": "readings/readings_wk01wed.html#reading",
+    "title": "Math 241: Suggested readings for January 28, 2026",
     "section": "",
-    "text": "To be released on Wednesday April 15th before 10pm PT.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 2"
   },
   {
-    "objectID": "psets/pset04.html",
-    "href": "psets/pset04.html",
-    "title": "Spatial Data",
+    "objectID": "psets/pset05.html",
+    "href": "psets/pset05.html",
+    "title": "Control Flow, Functions, and Iteration",
     "section": "",
-    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "To be released on Tuesday April 7th at 9am.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset04.html#due-thursday-mar-5th-9am-pt-on-gradescope.",
-    "href": "psets/pset04.html#due-thursday-mar-5th-9am-pt-on-gradescope.",
-    "title": "Spatial Data",
+    "objectID": "psets/pset05.html#due-wednesday-apr-15th-10pm-pt-on-gradescope.",
+    "href": "psets/pset05.html#due-wednesday-apr-15th-10pm-pt-on-gradescope.",
+    "title": "Control Flow, Functions, and Iteration",
     "section": "",
-    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "To be released on Tuesday April 7th at 9am.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset02.html",
-    "href": "psets/pset02.html",
-    "title": "Interactive Data Visualization and Data Wrangling",
-    "section": "",
-    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
-  },
-  {
-    "objectID": "psets/pset02.html#due-thursday-feb-19th-9am-pt-on-gradescope.",
-    "href": "psets/pset02.html#due-thursday-feb-19th-9am-pt-on-gradescope.",
-    "title": "Interactive Data Visualization and Data Wrangling",
+    "objectID": "psets/pset03.html",
+    "href": "psets/pset03.html",
+    "title": "Data Wrangling",
     "section": "",
     "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset00.html",
-    "href": "psets/pset00.html",
-    "title": "Setup and Data Viz Considerations",
+    "objectID": "psets/pset03.html#due-thursday-feb-26th-9am-pt-on-gradescope.",
+    "href": "psets/pset03.html#due-thursday-feb-26th-9am-pt-on-gradescope.",
+    "title": "Data Wrangling",
     "section": "",
-    "text": "NOTE: for this problem set only, this is due on WEDNESDAY 9am, not THURSDAY 9am!"
+    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset00.html#due-wednesday-feb-4th-9am-pt.",
-    "href": "psets/pset00.html#due-wednesday-feb-4th-9am-pt.",
-    "title": "Setup and Data Viz Considerations",
+    "objectID": "psets/pset01.html",
+    "href": "psets/pset01.html",
+    "title": "Data Visualization",
     "section": "",
-    "text": "NOTE: for this problem set only, this is due on WEDNESDAY 9am, not THURSDAY 9am!"
+    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset00.html#problem-1-setup",
-    "href": "psets/pset00.html#problem-1-setup",
-    "title": "Setup and Data Viz Considerations",
-    "section": "Problem 1: Setup",
-    "text": "Problem 1: Setup\nIn this class, we’ll encounter a variety of technologies. This problem aims to help you navigate setting up some of those technologies.\n\npart a: GitHub\nWe’ll use GitHub for collaboration and portfolio building, so each of you need to have a GitHub profile. If you don’t have a GitHub profile already, go to https://github.com/ and sign up for one. Once you’ve signed up for an account, please add it to the Google Sheet so that I can add you to the Reed-Data-Science organization. Note: you’ll need to be logged in to your Reed Google account to edit the Google Sheet.\n\n\npart b: R and RStudio (or Positron!)\nWe’ll use R and RStudio/Positron for computing in this class. R is a statistical programming language, while RStudio and Positron are Integrated Development Environments (IDEs) that allow you to run R, view files, view R code output, and much more! Reed has an RStudio Server where you can run R and RStudio in the cloud, but for this class I would recommend a local installation of both R and RStudio. Positron is a new IDE from Posit (the company that makes RStudio) you are welcomed and encouraged to try out Positron, although I may not be able to provide as good of problem solving for any issues related to your IDE if you use Positron. Positron seems to be the hot new thing, and I imagine in the next ~5 years we will see a steep decline of RStudio use in favor of Positron for R users and data scientists.\nTo install R and RStudio, follow the directions from Posit’s website.\nTo install Positron, see this link from Posit’s website.\nNote: always make sure to have R installed before installing your IDE.\n\n\npart c: Connect git, GitHub and RStudio (or Positron)\nThese instructions are based on pieces of Happy git with R, in particular chapters 6, 7, and 9. Depending on your computer, setup, or just luck, this step can become difficult/frustrating. If you are having trouble with this step, please come to office hours for help!\nIn order to have your computer talk with GitHub, you’ll need to install git on your computer. Sometimes, git is already installed on your computer, and you can check it by running\nwhich git\nin a Terminal or shell window. If you have git installed, you should see something like “/usr/bin/git” returned to you. If you don’t have git installed, you might see something like “git: command not found” or nothing at all. If you have git installed, congrats! If not, follow the steps in Happy git with R, Chapter 6 to install git.\nNext, up you have to introduce yourself to git. Again, following Happy git with R, in Chapter 7 we can run the following in an R session/console\n\n## install if needed (do this exactly once):\n## install.packages(\"usethis\")\n\nlibrary(usethis)\nuse_git_config(user.name = \"Jane Doe\", user.email = \"jane@example.org\")\n\nwhere Jane Doe is replaced with your full name and jane@example.org is replaced with the email you used to sign up for GitHub.\nNext, you’ll have to authenticate yourself (i.e., give your computer permission to make changes to GitHub projects when you ask it to). To do this, run the following in an R session/console:\n\nusethis::create_github_token()\n\nThis should open a new browser window where you can create your token. I often set no expiration date and check all of the boxes, but that is up to you. Note that when your token expires you’ll have to make a new one if you’re still using the same computer. Now, your token is created (it will start with “ghp_”)! Copy it down somewhere so that you don’t lose it.\nThe final step is to run\n\n## install if needed (do this exactly once):\n## install.packages(\"gitcreds\")\n\ngitcreds::gitcreds_set()\n\nand then enter the token when prompted. If also this has gone well, you are set!\nUnless… you’re running Linux. If you’re running Linux, I am happy to help you get git working correctly, but I’d say the first step is to read and follow Danielle Navarro’s blog post, in addition to the steps above.\n\n\npart d: testing\nTo make sure everything is working correctly, run\n\ngitcreds::gitcreds_get()\n\nin an R session/console. You should see something like\n&lt;gitcreds&gt;\n  protocol: https\n  host    : github.com\n  username: PersonalAccessToken\n  password: &lt;-- hidden --&gt;\nbut if you see\nError in throw(new_error(\"gitcreds_no_credentials\", url = url)) : \n  Could not find any credentials\nsomething has gone wrong.\n\n\npart e: congrats!\nIf you’ve made it this far, congrats! You’ve successfully set up git, GitHub, and your IDE on your local machine! We’ll spend time in class during week 2 talking about how to use all of these tools, but for now you are good to go.\nIf you’ve had trouble with any of these steps, please come to office hours so that we can debug and get you set up."
-  },
-  {
-    "objectID": "psets/pset00.html#problem-2-data-visualization",
-    "href": "psets/pset00.html#problem-2-data-visualization",
-    "title": "Setup and Data Viz Considerations",
-    "section": "Problem 2: Data Visualization",
-    "text": "Problem 2: Data Visualization\nOn Wednesday in class we talked about considerations for data visualization. In this problem, I’d like you to find two data visualizations “in the wild”. In particular, I’d like you to find one data visualization that you think is very good at accurately portraying the story/answering the research question at hand, and another that is quite bad at the task. For both data visualizations, make sure they are portraying real data, and not simulated or fake data. Once you’ve found your visualizations, post an image (or link to, if interactive) in our datasci-in-the-wild Slack channel, along with a few sentences about why you believe the data visualization to be quite good/bad. In your discussion of the graphs, make sure to mention the aesthetic mappings and other attributes of the graphs. Also, make sure to respond to and engage with at least one data viz from two other people in the channel.\nIf you’re having trouble finding a data visualization, some places to consider might be:\n\nThe New York Times, in particular their What’s going on in this graph? column.\nInformation is beautiful\nr/dataisbeautiful or its other half, r/dataisugly"
-  },
-  {
-    "objectID": "projects/proj01_groups.html",
-    "href": "projects/proj01_groups.html",
-    "title": "Math 241: Project I Group Assignments",
+    "objectID": "psets/pset01.html#due-thursday-feb-12th-9am-pt-on-gradescope.",
+    "href": "psets/pset01.html#due-thursday-feb-12th-9am-pt-on-gradescope.",
+    "title": "Data Visualization",
     "section": "",
-    "text": "Math 241: Project I Group Assignments\nGroup 1: Kaitlyn / Brendan / Emily\nGroup 2: James B. / Mika\nGroup 3: Fae / Kenta / Nicola\nGroup 4: Luna / Ella / Elijah\nGroup 5: Ryann\nGroup 6: Anne / Cassia / Eleanor\nGroup 7: Rehaan / Eddie\nGroup 8: Merideth / Amber / Colin\nGroup 9: Alex / Kaishin\nGroup 10: James H. / Tyler"
+    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "office_hours.html",
-    "href": "office_hours.html",
-    "title": "Office Hours",
+    "objectID": "projects/proj02_groups.html",
+    "href": "projects/proj02_groups.html",
+    "title": "Math 241: Project II Group Assignments",
     "section": "",
-    "text": "Please stop by to introduce yourself or ask some questions about the course!\nWe offer two types of office hours for Math 241:\n\nInstructor office hours, which occur in Library 390.\nCourse Assistant office hours, which occur in ETC 105B.\n\nInstructor office hours are a great place to ask questions about the content or course in general. They’re also a great place to get help on problems that you are stuck on.\nCourse Assistant office hours are a great place to work on your assignments with fellow students and seek the help of the course assistants whenever you get stuck.\nFurther, each Reed student is entitled to one hour of individual tutoring per course per week. You can sign up for individual tutoring in iris.\nBelow is the schedule of office hours for the week. We will update this calendar in case office hours need to change times or locations."
+    "text": "Math 241: Project II Group Assignments\nGroup 1: Alex / Kaishin / Ryann\nGroup 2: Anne / Cassia\nGroup 3: Mika / James B.\nGroup 4: Colin / Amber / Meredith\nGroup 5: Kenta / Rehaan / James H.\nGroup 6: Luna / Ella\nGroup 7: Brendan / Emily / Tyler\nGroup 8: Fae / Nicola / Elijah\nGroup 9: Eleanor / Kaitlyn"
+  },
+  {
+    "objectID": "projects/proj01_peerfeedback.html",
+    "href": "projects/proj01_peerfeedback.html",
+    "title": "Peer Feedback Instructions",
+    "section": "",
+    "text": "You are required to provide written feedback for two shiny apps presented to you in class today. Please be conscious to the fact that we are looking for both positive and constructive feedback, and everyone has put a great deal of time and effort into their project. The feedback should go something like this:"
+  },
+  {
+    "objectID": "projects/proj01_peerfeedback.html#stage-1-groups-present-their-draft-projects",
+    "href": "projects/proj01_peerfeedback.html#stage-1-groups-present-their-draft-projects",
+    "title": "Peer Feedback Instructions",
+    "section": "Stage 1: Groups present their draft projects",
+    "text": "Stage 1: Groups present their draft projects\nAt this stage, you should be paying attention to their dashboard, jotting down any questions you might have, and starting to think about both what you like about the groups dashboard and any constructive criticism you may have."
+  },
+  {
+    "objectID": "projects/proj01_peerfeedback.html#stage-2-speed-sharing",
+    "href": "projects/proj01_peerfeedback.html#stage-2-speed-sharing",
+    "title": "Peer Feedback Instructions",
+    "section": "Stage 2: Speed sharing",
+    "text": "Stage 2: Speed sharing\nAfter every group has presented, we’ll pair up in groups of 2 to discuss dashboard impressions. This is a great time to ask questions you may have had about the project, learn about the group’s plan for the final product, and start to discuss feedback. After about 5 minutes, we’ll pivot to different groups of 2."
+  },
+  {
+    "objectID": "projects/proj01_peerfeedback.html#stage-3-writing-up-feedback",
+    "href": "projects/proj01_peerfeedback.html#stage-3-writing-up-feedback",
+    "title": "Peer Feedback Instructions",
+    "section": "Stage 3: Writing up feedback",
+    "text": "Stage 3: Writing up feedback\nWe’ll have time towards the end of class to spend some time writing up feedback while it is fresh in your mind. Click the link below to download a Quarto template for writing feedback. Note that you’ll need two copies, one for each group.\nTemplate Download"
+  },
+  {
+    "objectID": "projects/proj01.html",
+    "href": "projects/proj01.html",
+    "title": "Math 241",
+    "section": "",
+    "text": "In this project, your group will create an interactive dashboard using R shiny or Quarto shiny dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nAlong with the dashboard and data scientist’s statement, you will be submitting group member evaluations once the project is complete.\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, I recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nOne suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
+  },
+  {
+    "objectID": "projects/proj01.html#project-guidelines",
+    "href": "projects/proj01.html#project-guidelines",
+    "title": "Math 241",
+    "section": "",
+    "text": "In this project, your group will create an interactive dashboard using R shiny or Quarto shiny dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nAlong with the dashboard and data scientist’s statement, you will be submitting group member evaluations once the project is complete.\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, I recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nOne suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
+  },
+  {
+    "objectID": "projects/proj01.html#timeline",
+    "href": "projects/proj01.html#timeline",
+    "title": "Math 241",
+    "section": "Timeline",
+    "text": "Timeline\n\n3/2: Receive project groups released\n3/4: Receive project instructions and invite to your group’s GitHub repo.\n\nPlease use your assigned Math 241 GitHub repo for this project.\n\n3/18 (noon): Post a working draft of your dashboard to https://www.shinyapps.io/\n\nWorking draft must:\n\nMake use of at least one real-world dataset.\nHave at least one user input.\nHave at least one reactive graph (or map) and at least one reactive table.\nHave relevant text so that your peers can navigate around the dashboard independently.\n\nOnly one group member needs to post the group’s app to shinyapps.io.\n\n3/18 (noon): Post the link to the group’s dashboard to this spreadsheet.\n3/18 - 3/20: Peer feedback period\n\nEach person will provide feedback on the dashboards of two groups.\nMore guidance on providing feedback will be given in class that week.\nPeer feedback is due 3/20 at 10pm.\n\n4/3 4/5 10pm: Link for the final version of dashboard should be added to this spreadsheet and PDF of your data scientist’s statement should be submitted on Gradescope.\n4/5 4/7 10pm: Group member feedback form due."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Math 241",
+    "section": "",
+    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Groups\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Instructions\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    Different classes in R\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    Project 1 Work Day\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Control flow\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Functions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Sunday, Apr 5\n    \n    \n    Project I Final Product and Data Scientist Statement Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Iteration: loops and functional programming\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 7 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    Parallel computing, ethics, and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    Local LLMs and `ellmer` Extensions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: introduction\n    \n      \n        \n          Slides\n        \n      \n        \n          R Packages Handout\n        \n      \n        \n          PDX Potholes Data\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15 10:00pm\n    \n    \n    Problem Set 6 Released and Problem Set 5 Due\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: documentation\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    R packages: testing and dissemination (Problem Set 6 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    Project II Work Day\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Building your data science portfolio\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    Wednesday, May 13 1pm - 4pm\n    \n    \n    Final Project Presentations All projects materials due at noon, presentations starting at 1pm.\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
+  },
+  {
+    "objectID": "in_class/activity1.html",
+    "href": "in_class/activity1.html",
+    "title": "Activity: Data Viz Principles",
+    "section": "",
+    "text": "In the article “One Dataset, Visualized 25 Ways”, Nathan Yau presents several graphs of life expectancy data from the World Health Organization.\n\nGet into groups of two or three. In your groups, take a look at the graphs from the article.\nOnce you’ve familiarized yourself with the graphs, select three graphs. One that conveys the clearest story, another that is the most memorable, and another that is the best overall. Be ready to share with the class.\nWith your three graphs, identify how the variables are mapped to the aesthetics of the geometric objects (i.e. shapes) and to consider how well (or not well) it is at telling a story. Here’s an example:\n\nGraph Number: 1\nGeometric Object: line\nMapping: Year to x axis, life expectancy at birth to y axis\nStory?: The life expectancy of all (most?) countries have increased over time. Those with lower initial life expectancies in 2000 have seen greater marginal improvements than those who started with a higher life expectancy.\nEffective at telling the story?: Generally yes but it leaves several questions (which countries correspond to each line) and room for improvement (use of transparency to better see stacking/density)."
+  },
+  {
+    "objectID": "in_class/R_Package.html",
+    "href": "in_class/R_Package.html",
+    "title": "Creating an R Package",
+    "section": "",
+    "text": "Step 1: Create a version control R package.\n\nThere are a couple of ways to do this step. For this demo and Project 2, we are going to clone a starter repo from GitHub.\nIn the future, you should consider using usethis::create_package().\n\nStep 2: Create a version control RStudio Project with the same name as the GitHub repo.\n\nShould now have a Git pane and a Build pane in the upper-right window of your RStudio session.\n\nRestart your R Session if either is missing.\n\n\nStep 3: If you want to include data in the package, add the raw data and wrangle it into the version the package will share.\n\nRun usethis::use_data_raw() to create a data-raw folder and the DATASET.R file.\nAdd the raw data files to the data-raw folder.\nUse the file DATASET.R to load and wrangle the raw data.\n\nInstead of loading packages with library(package_name), use package_name::function_name().\nAt the bottom, include the following code to create a tidy .Rda file:\n\n\n\nusethis::use_data(insert_data_name, overwrite = TRUE)\n\n\nRun the code in DATASET.R to create a new folder called data that contains the tidy data.\nRun usethis::use_r(\"insert_data_name\") to create a blank script file.\n\nWe will add the data codebook to this file in Step 5.\n\n\nStep 4: Add your functions to the R folder.\n\nFor each user-facing function in your package, run usethis::use_r(\"insert_function_name\") to create a new script file.\nWithin each function, instead of loading packages with library(package_name), use package_name::function_name().\nFor any packages your functions depends on, run usethis::use_package(\"package_name\").\n\nStep 5: Create documentation.\n\nFor each of your function scripts in the R folder, add some template documentation code by going to Code &gt; Insert roxygen skeleton.\nFor each of your data scripts, you will need to write it from scratch.\n\nMimic examples!\nMake sure to include @format and @source.\nInclude the dataset name in quotes at the bottom of the script.\n\nAdd roxygen comments that document your function or dataset.\n\nHere’s a data example.\nHere’s a function example.\nSee the Object Documentation Chapter of R packages for more information on the syntax.\n\nTo create the output help files, run devtools::document().\n\nNotice that there is now a man folder with Rd help files.\n\n\nStep 6: Test drive your package functions.\n\nRestart your R Session and run devtools::load_all() to make the package functions and data available.\nTest out the functions.\n\nReturn to earlier steps if you find any bugs.\n\nType ?insert_function_name or ?insert_data_name to make sure the help file pops up and to see if it is formatted correctly.\n\nStep 7: Run a more formal check of your package with devtools::check().\n\nFix any errors or warnings. (Note: The package will still compile when there are warnings and notes.)\n\nStep 8: Try installing the package with devtools::install().\nStep Often: Commit and push the changes to the GitHub repository.\nSteps to Come:\n\nPackage metadata\n\nDESCRIPTION\nNAMESPACE\nLicense\n\nDocumentation\n\nBest practices for the help files\nVignettes\nEffective Readme\nWebsite\n\nTesting\nDeleting or ignoring extraneous files"
   },
   {
     "objectID": "in_class/activity2.html",
@@ -1764,193 +1855,193 @@
     "text": "Problem 2: Flights\nUse the nycflights13 package and the flights data frame to answer the following questions:\n\nWhat plane (specified by the tailnum variable) traveled the most times from New York City airports in 2013?\nPlot the number of trips per week over the year.\n\n\ndata(flights)\nhead(flights)\n\n# A tibble: 6 × 19\n   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n1  2013     1     1      517            515         2      830            819\n2  2013     1     1      533            529         4      850            830\n3  2013     1     1      542            540         2      923            850\n4  2013     1     1      544            545        -1     1004           1022\n5  2013     1     1      554            600        -6      812            837\n6  2013     1     1      554            558        -4      740            728\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;"
   },
   {
-    "objectID": "in_class/R_Package.html",
-    "href": "in_class/R_Package.html",
-    "title": "Creating an R Package",
+    "objectID": "office_hours.html",
+    "href": "office_hours.html",
+    "title": "Office Hours",
     "section": "",
-    "text": "Step 1: Create a version control R package.\n\nThere are a couple of ways to do this step. For this demo and Project 2, we are going to clone a starter repo from GitHub.\nIn the future, you should consider using usethis::create_package().\n\nStep 2: Create a version control RStudio Project with the same name as the GitHub repo.\n\nShould now have a Git pane and a Build pane in the upper-right window of your RStudio session.\n\nRestart your R Session if either is missing.\n\n\nStep 3: If you want to include data in the package, add the raw data and wrangle it into the version the package will share.\n\nRun usethis::use_data_raw() to create a data-raw folder and the DATASET.R file.\nAdd the raw data files to the data-raw folder.\nUse the file DATASET.R to load and wrangle the raw data.\n\nInstead of loading packages with library(package_name), use package_name::function_name().\nAt the bottom, include the following code to create a tidy .Rda file:\n\n\n\nusethis::use_data(insert_data_name, overwrite = TRUE)\n\n\nRun the code in DATASET.R to create a new folder called data that contains the tidy data.\nRun usethis::use_r(\"insert_data_name\") to create a blank script file.\n\nWe will add the data codebook to this file in Step 5.\n\n\nStep 4: Add your functions to the R folder.\n\nFor each user-facing function in your package, run usethis::use_r(\"insert_function_name\") to create a new script file.\nWithin each function, instead of loading packages with library(package_name), use package_name::function_name().\nFor any packages your functions depends on, run usethis::use_package(\"package_name\").\n\nStep 5: Create documentation.\n\nFor each of your function scripts in the R folder, add some template documentation code by going to Code &gt; Insert roxygen skeleton.\nFor each of your data scripts, you will need to write it from scratch.\n\nMimic examples!\nMake sure to include @format and @source.\nInclude the dataset name in quotes at the bottom of the script.\n\nAdd roxygen comments that document your function or dataset.\n\nHere’s a data example.\nHere’s a function example.\nSee the Object Documentation Chapter of R packages for more information on the syntax.\n\nTo create the output help files, run devtools::document().\n\nNotice that there is now a man folder with Rd help files.\n\n\nStep 6: Test drive your package functions.\n\nRestart your R Session and run devtools::load_all() to make the package functions and data available.\nTest out the functions.\n\nReturn to earlier steps if you find any bugs.\n\nType ?insert_function_name or ?insert_data_name to make sure the help file pops up and to see if it is formatted correctly.\n\nStep 7: Run a more formal check of your package with devtools::check().\n\nFix any errors or warnings. (Note: The package will still compile when there are warnings and notes.)\n\nStep 8: Try installing the package with devtools::install().\nStep Often: Commit and push the changes to the GitHub repository.\nSteps to Come:\n\nPackage metadata\n\nDESCRIPTION\nNAMESPACE\nLicense\n\nDocumentation\n\nBest practices for the help files\nVignettes\nEffective Readme\nWebsite\n\nTesting\nDeleting or ignoring extraneous files"
+    "text": "Please stop by to introduce yourself or ask some questions about the course!\nWe offer two types of office hours for Math 241:\n\nInstructor office hours, which occur in Library 390.\nCourse Assistant office hours, which occur in ETC 105B.\n\nInstructor office hours are a great place to ask questions about the content or course in general. They’re also a great place to get help on problems that you are stuck on.\nCourse Assistant office hours are a great place to work on your assignments with fellow students and seek the help of the course assistants whenever you get stuck.\nFurther, each Reed student is entitled to one hour of individual tutoring per course per week. You can sign up for individual tutoring in iris.\nBelow is the schedule of office hours for the week. We will update this calendar in case office hours need to change times or locations."
   },
   {
-    "objectID": "in_class/activity1.html",
-    "href": "in_class/activity1.html",
-    "title": "Activity: Data Viz Principles",
+    "objectID": "projects/proj01_groups.html",
+    "href": "projects/proj01_groups.html",
+    "title": "Math 241: Project I Group Assignments",
     "section": "",
-    "text": "In the article “One Dataset, Visualized 25 Ways”, Nathan Yau presents several graphs of life expectancy data from the World Health Organization.\n\nGet into groups of two or three. In your groups, take a look at the graphs from the article.\nOnce you’ve familiarized yourself with the graphs, select three graphs. One that conveys the clearest story, another that is the most memorable, and another that is the best overall. Be ready to share with the class.\nWith your three graphs, identify how the variables are mapped to the aesthetics of the geometric objects (i.e. shapes) and to consider how well (or not well) it is at telling a story. Here’s an example:\n\nGraph Number: 1\nGeometric Object: line\nMapping: Year to x axis, life expectancy at birth to y axis\nStory?: The life expectancy of all (most?) countries have increased over time. Those with lower initial life expectancies in 2000 have seen greater marginal improvements than those who started with a higher life expectancy.\nEffective at telling the story?: Generally yes but it leaves several questions (which countries correspond to each line) and room for improvement (use of transparency to better see stacking/density)."
+    "text": "Math 241: Project I Group Assignments\nGroup 1: Kaitlyn / Brendan / Emily\nGroup 2: James B. / Mika\nGroup 3: Fae / Kenta / Nicola\nGroup 4: Luna / Ella / Elijah\nGroup 5: Ryann\nGroup 6: Anne / Cassia / Eleanor\nGroup 7: Rehaan / Eddie\nGroup 8: Merideth / Amber / Colin\nGroup 9: Alex / Kaishin\nGroup 10: James H. / Tyler"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "projects/proj02.html",
+    "href": "projects/proj02.html",
     "title": "Math 241",
     "section": "",
-    "text": "Data Science\n\nMath 241 Reed College, Spring 2026\n\n\n\n\n\n\n  Week 1\n  \n  \n\n  \n    \n    Monday, Jan 26\n    \n    \n    Course Introduction & Statistical Computing\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Jan 28\n    \n    \n    Data Visualization I: Principles\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Jan 29 9:00am\n    \n    \n    Problem Set 0 Released\n    \n      \n        \n          Problem Set 0\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Join Slack\n    \n      Gradescope course entry code: ZJPD33\n    \n  \n  \n  \n  \n\n  Week 2\n  \n  \n\n  \n    \n    Monday, Feb 2\n    \n    \n    Data Visualization II: Plotting with ggplot2\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 4\n    \n    \n    Data Visualization III: Advanced ggplot2 and customization\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 5 9:00am\n    \n    \n    Problem Set 0 Due, Problem Set 1 Released\n    \n      \n        \n          Problem Set 1\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 3\n  \n  \n\n  \n    \n    Monday, Feb 9\n    \n    \n    Data Wrangling and asking good questions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (instructions)\n        \n      \n        \n          Activity (download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 11\n    \n    \n    Animation and interactivity\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 12 9:00am\n    \n    \n    Problem Set 1 Due, Problem Set 2 Released\n    \n      \n        \n          Problem Set 2\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 4\n  \n  \n\n  \n    \n    Monday, Feb 16\n    \n    \n    Data types and more wrangling\n    \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 18\n    \n    \n    Joins and reshaping data\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 19 9:00am\n    \n    \n    Problem Set 2 Due, Problem Set 3 Released\n    \n      \n        \n          Problem Set 3\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 5\n  \n  \n\n  \n    \n    Monday, Feb 23\n    \n    \n    Spatial data I\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Feb 25\n    \n    \n    Spatial data II\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Slides (PDF)\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Feb 26 9:00am\n    \n    \n    Problem Set 3 Due, Problem Set 4 Released\n    \n      \n        \n          Problem Set 4\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    \n      Fill out the Project 1 Preferences Form\n    \n  \n  \n  \n  \n\n  Week 6\n  \n  \n\n  \n    \n    Monday, Mar 2\n    \n    \n    shiny I (Project I Groups Assigned)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Groups\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 4\n    \n    \n    shiny II (Project I Instructions Released)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Project I Instructions\n        \n      \n    \n    \n    \n    \n  \n    \n    Thursday, Mar 5 9:00am\n    \n    \n    Problem Set 4 Due\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 7\n  \n  \n\n  \n    \n    Monday, Mar 9\n    \n    \n    Different classes in R\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 11\n    \n    \n    Project 1 Work Day\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 8\n  \n  \n\n  \n    \n    Monday, Mar 16\n    \n    \n    string manipulation and regular expressions\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Mar 18\n    \n    \n    Project 1 Peer Feedback Day (Project 1 DRAFT due)\n    \n      \n        \n          Project I Peer Feedback\n        \n      \n    \n    \n    \n    \n  \n    \n    Friday, Mar 20\n    \n    \n    Project I Written Peer Feedback Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Spring Break\n  \n  \n\n  \n    \n    Saturday, Mar 21 - Sunday, Mar 29\n    \n    \n    No Class\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 9\n  \n  \n\n  \n    \n    Monday, Mar 30\n    \n    \n    Control flow\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 1\n    \n    \n    Functions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Sunday, Apr 5\n    \n    \n    Project I Final Product and Data Scientist Statement Due (10pm)\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 10\n  \n  \n\n  \n    \n    Monday, Apr 6\n    \n    \n    Iteration: loops and functional programming\n    \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 7 9:00am\n    \n    \n    Problem Set 5 Released\n    \n      \n        \n          Problem Set 5\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 8\n    \n    \n    Parallel computing, ethics, and generative AI\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 11\n  \n  \n\n  \n    \n    Monday, Apr 13\n    \n    \n    Local LLMs and `ellmer` Extensions\n    \n      \n        \n          Slides\n        \n      \n        \n          Activity (Download)\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15\n    \n    \n    R packages: introduction\n    \n      \n        \n          Slides\n        \n      \n        \n          R Packages Handout\n        \n      \n        \n          PDX Potholes Data\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 15 10:00pm\n    \n    \n    Problem Set 6 Released and Problem Set 5 Due\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 12\n  \n  \n\n  \n    \n    Monday, Apr 20\n    \n    \n    R packages: documentation + testing\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Tuesday, Apr 21 9:00am\n    \n    \n    Project 2 Released\n    \n      \n        \n          Problem Set 6\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 22\n    \n    \n    R packages: dissemination (Problem Set 6 Due at 10pm)\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week 13\n  \n  \n\n  \n    \n    Monday, Apr 27\n    \n    \n    Project II Work Day\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n    \n    Wednesday, Apr 29\n    \n    \n    Building your data science portfolio\n    \n      \n        \n          Reading\n        \n      \n        \n          Slides\n        \n      \n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\n  Week Finals\n  \n  \n\n  \n    \n    Wednesday, May 13 1pm - 4pm\n    \n    \n    Final Project Presentations All projects materials due at noon, presentations starting at 1pm.\n    \n    \n    \n    \n  \n  \n  \n  \n  Resources\n  \n  \n    None this week\n  \n  \n  \n  \n\nNo matching items"
+    "text": "In this project, your group will create an R package and give a 10 minute presentation about your package. You have two options for your package:\n\nOption 1: a package that primarily shares a suite of functions but also includes data for demoing functionality.\nOption 2: a package that primarily shares a dataset or dataset(s) but also includes a couple functions that help the user interact with the data effectively.\n\n\n\n\nPackage contains\n\nA complete and informative DESCRIPTION file.\nA README (both the Rmd and md) which answers the questions: Why should I use this package? How do I access the package? How do I use the package?\n\nThe README should include 1-2 brief examples. Place more extended examples in the vignette.\n\nAn R documentation file for each function and each dataset.\nA reasonable name that is not already in use on CRAN or GitHub.\n\n\nA ten minute presentation about the package, with slides. Similar to the README, the presentation should motivate the viewer to use the package and should include an example of how to use the package.\nA data-raw folder for handling data wrangling, that allows for going from raw data to the polished data you include in the package.\nA data folder for holding the finalized, polished dataset.\n\n\n\n\n\nAt least 4 functions.\nAt least 8 unit tests.\nA dataset for demonstrating how to use the functions in the package.\n\nThere are no requirements on the size of the dataset.\n\nA 400 - 800 word vignette with at least 1 example that showcases a problem that your package is designed to solve.\n\nNote: It is completely fine to use additional packages and functions in the vignette.\n\n\n\n\n\n\nA dataset with at least 8 variables and at least 30 observations.\nAt least 2 functions, such as ones that carry out common operations of interest on the dataset.\n\nAt least 1 of these functions should create a polished, well-constructed graph.\n\nAt least 2 unit tests.\nA 600 - 1000 word vignette with at least 3 examples that showcase the questions you can answer with the provided dataset and functions.\n\nNote: It is completely fine to use additional packages and functions in the vignette.\n\n\n\n\n\n\nA hex sticker that contains the package name and a design that relates to the package in some way.\n\n\n\n\n\nAs a group, brainstorm ideas and decide whether you want to focus more on functions (Option 1) or data (Option 2) in your package.\nRemember to use class resources:\n\nThe Week 10 & Week 11 lecture slides\nThe Creating an R Package handout which outlines the initial steps.\nThe pdxHoles package we live-coded in lecture. (Note: pdxHoles is still mostly the skeleton of a package.)\n\nCheck out well-written and well-documented R packages. Here are some examples:\n\nhttps://reprex.tidyverse.org/ and the reprex GitHub repo\nhttps://glue.tidyverse.org/ and the glue GitHub repo\nhttps://allisonhorst.github.io/palmerpenguins/ and the palmerpenguins GitHub repo\n\nCreate a sandbox folder and add it to the .Rbuildignore. Use this folder for exploring different ideas and creating MVPs."
   },
   {
-    "objectID": "projects/proj01.html",
-    "href": "projects/proj01.html",
+    "objectID": "projects/proj02.html#project-guidelines",
+    "href": "projects/proj02.html#project-guidelines",
     "title": "Math 241",
     "section": "",
-    "text": "In this project, your group will create an interactive dashboard using R shiny or Quarto shiny dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nAlong with the dashboard and data scientist’s statement, you will be submitting group member evaluations once the project is complete.\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, I recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nOne suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
+    "text": "In this project, your group will create an R package and give a 10 minute presentation about your package. You have two options for your package:\n\nOption 1: a package that primarily shares a suite of functions but also includes data for demoing functionality.\nOption 2: a package that primarily shares a dataset or dataset(s) but also includes a couple functions that help the user interact with the data effectively.\n\n\n\n\nPackage contains\n\nA complete and informative DESCRIPTION file.\nA README (both the Rmd and md) which answers the questions: Why should I use this package? How do I access the package? How do I use the package?\n\nThe README should include 1-2 brief examples. Place more extended examples in the vignette.\n\nAn R documentation file for each function and each dataset.\nA reasonable name that is not already in use on CRAN or GitHub.\n\n\nA ten minute presentation about the package, with slides. Similar to the README, the presentation should motivate the viewer to use the package and should include an example of how to use the package.\nA data-raw folder for handling data wrangling, that allows for going from raw data to the polished data you include in the package.\nA data folder for holding the finalized, polished dataset.\n\n\n\n\n\nAt least 4 functions.\nAt least 8 unit tests.\nA dataset for demonstrating how to use the functions in the package.\n\nThere are no requirements on the size of the dataset.\n\nA 400 - 800 word vignette with at least 1 example that showcases a problem that your package is designed to solve.\n\nNote: It is completely fine to use additional packages and functions in the vignette.\n\n\n\n\n\n\nA dataset with at least 8 variables and at least 30 observations.\nAt least 2 functions, such as ones that carry out common operations of interest on the dataset.\n\nAt least 1 of these functions should create a polished, well-constructed graph.\n\nAt least 2 unit tests.\nA 600 - 1000 word vignette with at least 3 examples that showcase the questions you can answer with the provided dataset and functions.\n\nNote: It is completely fine to use additional packages and functions in the vignette.\n\n\n\n\n\n\nA hex sticker that contains the package name and a design that relates to the package in some way.\n\n\n\n\n\nAs a group, brainstorm ideas and decide whether you want to focus more on functions (Option 1) or data (Option 2) in your package.\nRemember to use class resources:\n\nThe Week 10 & Week 11 lecture slides\nThe Creating an R Package handout which outlines the initial steps.\nThe pdxHoles package we live-coded in lecture. (Note: pdxHoles is still mostly the skeleton of a package.)\n\nCheck out well-written and well-documented R packages. Here are some examples:\n\nhttps://reprex.tidyverse.org/ and the reprex GitHub repo\nhttps://glue.tidyverse.org/ and the glue GitHub repo\nhttps://allisonhorst.github.io/palmerpenguins/ and the palmerpenguins GitHub repo\n\nCreate a sandbox folder and add it to the .Rbuildignore. Use this folder for exploring different ideas and creating MVPs."
   },
   {
-    "objectID": "projects/proj01.html#project-guidelines",
-    "href": "projects/proj01.html#project-guidelines",
-    "title": "Math 241",
-    "section": "",
-    "text": "In this project, your group will create an interactive dashboard using R shiny or Quarto shiny dashboards. Additionally, each group member will individually write a “data scientist’s statement” (400-800 words) that communicates the intention behind the created work.\n\n\n\nRelies on at least one real-world dataset.\nAt least three user inputs.\nAt least two reactive graph or maps.\nAt least one reactive table.\nA tab/page which includes relevant meta information about the data along with a data citation and link to the data source.\nRelevant text for your users to navigate your dashboard and extract knowledge from it.\n\n\n\n\n\nAddresses the purpose of the dashboard, including your motivations for focusing on the selected data and the intended audience.\nDiscusses how you hope users will engage with the dashboard.\nArticulates why certain design choices, especially with respect to the interactivity, were made.\nPresents your desired take-away messages.\n\n\n\n\n\nAlong with the dashboard and data scientist’s statement, you will be submitting group member evaluations once the project is complete.\nTo facilitate feedback (and for resume building!), we will be posting the dashboards to Posit’s app server https://www.shinyapps.io/.\n\nTherefore, I recommend utilizing non-sensitive data for your dashboard.\n\n\n\n\n\nI encourage you to use a data source that interests you and your group members for your project. If you are looking for data sources, here are a few good places to look:\n\nData is Plural\nData.gov\nTidyTuesday\nOpportunity Insights\nThe ASA SSDSE Dataset Repository\n\n\n\n\nOnce you have chosen a data source, the next step is to plan out your dashboard.\n\nExplore the data to get a sense of the variables and relationships between variables that you find most interesting/important.\nMake some static plots that you think convey key messages/findings from the data. Use these as a jumping off point for curating the reactive graphs/maps you will put on your dashboard.\nCreate some wrangled data tables; this can help you identify what data would be useful to display to a user in a tabular format. Think about how you intend for users to interact with a data table.\nOne suggestion for getting started: do the initial data exploration individually and then meet to discuss what each person learned. You may have each discovered different angles on the data to incorporate into the dashboard!\nThen as we discussed in class, create an ugly, basic dashboard that has the main types of interactivity/reactivity that you want.\nSlowly add customizations or more advanced reactivity."
-  },
-  {
-    "objectID": "projects/proj01.html#timeline",
-    "href": "projects/proj01.html#timeline",
+    "objectID": "projects/proj02.html#timeline",
+    "href": "projects/proj02.html#timeline",
     "title": "Math 241",
     "section": "Timeline",
-    "text": "Timeline\n\n3/2: Receive project groups released\n3/4: Receive project instructions and invite to your group’s GitHub repo.\n\nPlease use your assigned Math 241 GitHub repo for this project.\n\n3/18 (noon): Post a working draft of your dashboard to https://www.shinyapps.io/\n\nWorking draft must:\n\nMake use of at least one real-world dataset.\nHave at least one user input.\nHave at least one reactive graph (or map) and at least one reactive table.\nHave relevant text so that your peers can navigate around the dashboard independently.\n\nOnly one group member needs to post the group’s app to shinyapps.io.\n\n3/18 (noon): Post the link to the group’s dashboard to this spreadsheet.\n3/18 - 3/20: Peer feedback period\n\nEach person will provide feedback on the dashboards of two groups.\nMore guidance on providing feedback will be given in class that week.\nPeer feedback is due 3/20 at 10pm.\n\n4/3 4/5 10pm: Link for the final version of dashboard should be added to this spreadsheet and PDF of your data scientist’s statement should be submitted on Gradescope.\n4/5 4/7 10pm: Group member feedback form due."
+    "text": "Timeline\n\n4/20: Receive project instructions, group assignment, and invite to your group’s GitHub repo.\n4/27: Come to class for a project work day instead of lecture.\n5/13 (noon): Make sure the final version of your package is in your GitHub repo.\n5/13 (1pm): Give a 10 minute presentation of your package during our final exam time slot, in Library 389 (our classroom).\n5/13: Decide as a group whether or not you want to make your GitHub repo (and so R package) public.\n\nIf at least one group member does not want to make the repo public, you must leave it private.\nEmail me with your decision.\nYour grade on this project does not at all depend on this decision."
   },
   {
-    "objectID": "projects/proj01_peerfeedback.html",
-    "href": "projects/proj01_peerfeedback.html",
-    "title": "Peer Feedback Instructions",
+    "objectID": "psets/pset00.html",
+    "href": "psets/pset00.html",
+    "title": "Setup and Data Viz Considerations",
     "section": "",
-    "text": "You are required to provide written feedback for two shiny apps presented to you in class today. Please be conscious to the fact that we are looking for both positive and constructive feedback, and everyone has put a great deal of time and effort into their project. The feedback should go something like this:"
+    "text": "NOTE: for this problem set only, this is due on WEDNESDAY 9am, not THURSDAY 9am!"
   },
   {
-    "objectID": "projects/proj01_peerfeedback.html#stage-1-groups-present-their-draft-projects",
-    "href": "projects/proj01_peerfeedback.html#stage-1-groups-present-their-draft-projects",
-    "title": "Peer Feedback Instructions",
-    "section": "Stage 1: Groups present their draft projects",
-    "text": "Stage 1: Groups present their draft projects\nAt this stage, you should be paying attention to their dashboard, jotting down any questions you might have, and starting to think about both what you like about the groups dashboard and any constructive criticism you may have."
-  },
-  {
-    "objectID": "projects/proj01_peerfeedback.html#stage-2-speed-sharing",
-    "href": "projects/proj01_peerfeedback.html#stage-2-speed-sharing",
-    "title": "Peer Feedback Instructions",
-    "section": "Stage 2: Speed sharing",
-    "text": "Stage 2: Speed sharing\nAfter every group has presented, we’ll pair up in groups of 2 to discuss dashboard impressions. This is a great time to ask questions you may have had about the project, learn about the group’s plan for the final product, and start to discuss feedback. After about 5 minutes, we’ll pivot to different groups of 2."
-  },
-  {
-    "objectID": "projects/proj01_peerfeedback.html#stage-3-writing-up-feedback",
-    "href": "projects/proj01_peerfeedback.html#stage-3-writing-up-feedback",
-    "title": "Peer Feedback Instructions",
-    "section": "Stage 3: Writing up feedback",
-    "text": "Stage 3: Writing up feedback\nWe’ll have time towards the end of class to spend some time writing up feedback while it is fresh in your mind. Click the link below to download a Quarto template for writing feedback. Note that you’ll need two copies, one for each group.\nTemplate Download"
-  },
-  {
-    "objectID": "psets/pset01.html",
-    "href": "psets/pset01.html",
-    "title": "Data Visualization",
+    "objectID": "psets/pset00.html#due-wednesday-feb-4th-9am-pt.",
+    "href": "psets/pset00.html#due-wednesday-feb-4th-9am-pt.",
+    "title": "Setup and Data Viz Considerations",
     "section": "",
-    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "NOTE: for this problem set only, this is due on WEDNESDAY 9am, not THURSDAY 9am!"
   },
   {
-    "objectID": "psets/pset01.html#due-thursday-feb-12th-9am-pt-on-gradescope.",
-    "href": "psets/pset01.html#due-thursday-feb-12th-9am-pt-on-gradescope.",
-    "title": "Data Visualization",
+    "objectID": "psets/pset00.html#problem-1-setup",
+    "href": "psets/pset00.html#problem-1-setup",
+    "title": "Setup and Data Viz Considerations",
+    "section": "Problem 1: Setup",
+    "text": "Problem 1: Setup\nIn this class, we’ll encounter a variety of technologies. This problem aims to help you navigate setting up some of those technologies.\n\npart a: GitHub\nWe’ll use GitHub for collaboration and portfolio building, so each of you need to have a GitHub profile. If you don’t have a GitHub profile already, go to https://github.com/ and sign up for one. Once you’ve signed up for an account, please add it to the Google Sheet so that I can add you to the Reed-Data-Science organization. Note: you’ll need to be logged in to your Reed Google account to edit the Google Sheet.\n\n\npart b: R and RStudio (or Positron!)\nWe’ll use R and RStudio/Positron for computing in this class. R is a statistical programming language, while RStudio and Positron are Integrated Development Environments (IDEs) that allow you to run R, view files, view R code output, and much more! Reed has an RStudio Server where you can run R and RStudio in the cloud, but for this class I would recommend a local installation of both R and RStudio. Positron is a new IDE from Posit (the company that makes RStudio) you are welcomed and encouraged to try out Positron, although I may not be able to provide as good of problem solving for any issues related to your IDE if you use Positron. Positron seems to be the hot new thing, and I imagine in the next ~5 years we will see a steep decline of RStudio use in favor of Positron for R users and data scientists.\nTo install R and RStudio, follow the directions from Posit’s website.\nTo install Positron, see this link from Posit’s website.\nNote: always make sure to have R installed before installing your IDE.\n\n\npart c: Connect git, GitHub and RStudio (or Positron)\nThese instructions are based on pieces of Happy git with R, in particular chapters 6, 7, and 9. Depending on your computer, setup, or just luck, this step can become difficult/frustrating. If you are having trouble with this step, please come to office hours for help!\nIn order to have your computer talk with GitHub, you’ll need to install git on your computer. Sometimes, git is already installed on your computer, and you can check it by running\nwhich git\nin a Terminal or shell window. If you have git installed, you should see something like “/usr/bin/git” returned to you. If you don’t have git installed, you might see something like “git: command not found” or nothing at all. If you have git installed, congrats! If not, follow the steps in Happy git with R, Chapter 6 to install git.\nNext, up you have to introduce yourself to git. Again, following Happy git with R, in Chapter 7 we can run the following in an R session/console\n\n## install if needed (do this exactly once):\n## install.packages(\"usethis\")\n\nlibrary(usethis)\nuse_git_config(user.name = \"Jane Doe\", user.email = \"jane@example.org\")\n\nwhere Jane Doe is replaced with your full name and jane@example.org is replaced with the email you used to sign up for GitHub.\nNext, you’ll have to authenticate yourself (i.e., give your computer permission to make changes to GitHub projects when you ask it to). To do this, run the following in an R session/console:\n\nusethis::create_github_token()\n\nThis should open a new browser window where you can create your token. I often set no expiration date and check all of the boxes, but that is up to you. Note that when your token expires you’ll have to make a new one if you’re still using the same computer. Now, your token is created (it will start with “ghp_”)! Copy it down somewhere so that you don’t lose it.\nThe final step is to run\n\n## install if needed (do this exactly once):\n## install.packages(\"gitcreds\")\n\ngitcreds::gitcreds_set()\n\nand then enter the token when prompted. If also this has gone well, you are set!\nUnless… you’re running Linux. If you’re running Linux, I am happy to help you get git working correctly, but I’d say the first step is to read and follow Danielle Navarro’s blog post, in addition to the steps above.\n\n\npart d: testing\nTo make sure everything is working correctly, run\n\ngitcreds::gitcreds_get()\n\nin an R session/console. You should see something like\n&lt;gitcreds&gt;\n  protocol: https\n  host    : github.com\n  username: PersonalAccessToken\n  password: &lt;-- hidden --&gt;\nbut if you see\nError in throw(new_error(\"gitcreds_no_credentials\", url = url)) : \n  Could not find any credentials\nsomething has gone wrong.\n\n\npart e: congrats!\nIf you’ve made it this far, congrats! You’ve successfully set up git, GitHub, and your IDE on your local machine! We’ll spend time in class during week 2 talking about how to use all of these tools, but for now you are good to go.\nIf you’ve had trouble with any of these steps, please come to office hours so that we can debug and get you set up."
+  },
+  {
+    "objectID": "psets/pset00.html#problem-2-data-visualization",
+    "href": "psets/pset00.html#problem-2-data-visualization",
+    "title": "Setup and Data Viz Considerations",
+    "section": "Problem 2: Data Visualization",
+    "text": "Problem 2: Data Visualization\nOn Wednesday in class we talked about considerations for data visualization. In this problem, I’d like you to find two data visualizations “in the wild”. In particular, I’d like you to find one data visualization that you think is very good at accurately portraying the story/answering the research question at hand, and another that is quite bad at the task. For both data visualizations, make sure they are portraying real data, and not simulated or fake data. Once you’ve found your visualizations, post an image (or link to, if interactive) in our datasci-in-the-wild Slack channel, along with a few sentences about why you believe the data visualization to be quite good/bad. In your discussion of the graphs, make sure to mention the aesthetic mappings and other attributes of the graphs. Also, make sure to respond to and engage with at least one data viz from two other people in the channel.\nIf you’re having trouble finding a data visualization, some places to consider might be:\n\nThe New York Times, in particular their What’s going on in this graph? column.\nInformation is beautiful\nr/dataisbeautiful or its other half, r/dataisugly"
+  },
+  {
+    "objectID": "psets/pset02.html",
+    "href": "psets/pset02.html",
+    "title": "Interactive Data Visualization and Data Wrangling",
     "section": "",
     "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset03.html",
-    "href": "psets/pset03.html",
-    "title": "Data Wrangling",
+    "objectID": "psets/pset02.html#due-thursday-feb-19th-9am-pt-on-gradescope.",
+    "href": "psets/pset02.html#due-thursday-feb-19th-9am-pt-on-gradescope.",
+    "title": "Interactive Data Visualization and Data Wrangling",
     "section": "",
     "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset03.html#due-thursday-feb-26th-9am-pt-on-gradescope.",
-    "href": "psets/pset03.html#due-thursday-feb-26th-9am-pt-on-gradescope.",
-    "title": "Data Wrangling",
+    "objectID": "psets/pset04.html",
+    "href": "psets/pset04.html",
+    "title": "Spatial Data",
     "section": "",
     "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset05.html",
-    "href": "psets/pset05.html",
-    "title": "Control Flow, Functions, and Iteration",
+    "objectID": "psets/pset04.html#due-thursday-mar-5th-9am-pt-on-gradescope.",
+    "href": "psets/pset04.html#due-thursday-mar-5th-9am-pt-on-gradescope.",
+    "title": "Spatial Data",
     "section": "",
-    "text": "To be released on Tuesday April 7th at 9am.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "Please access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "psets/pset05.html#due-wednesday-apr-15th-10pm-pt-on-gradescope.",
-    "href": "psets/pset05.html#due-wednesday-apr-15th-10pm-pt-on-gradescope.",
-    "title": "Control Flow, Functions, and Iteration",
+    "objectID": "psets/pset06.html",
+    "href": "psets/pset06.html",
+    "title": "The Final Problem Set",
     "section": "",
-    "text": "To be released on Tuesday April 7th at 9am.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
+    "text": "To be released on Wednesday April 15th before 10pm PT.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "readings/readings_wk01wed.html",
-    "href": "readings/readings_wk01wed.html",
-    "title": "Math 241: Suggested readings for January 28, 2026",
+    "objectID": "psets/pset06.html#due-wednesday-apr-22nd-10pm-pt-on-gradescope.",
+    "href": "psets/pset06.html#due-wednesday-apr-22nd-10pm-pt-on-gradescope.",
+    "title": "The Final Problem Set",
     "section": "",
-    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 2"
+    "text": "To be released on Wednesday April 15th before 10pm PT.\nPlease access the problem set through our GitHub organization by following the directions given in class on Week 2 Wednesday. If you have any trouble accessing the problem set, please reach out on Slack, come to office hours, or otherwise seek help from a peer. We are here to help! :)"
   },
   {
-    "objectID": "readings/readings_wk01wed.html#reading",
-    "href": "readings/readings_wk01wed.html#reading",
-    "title": "Math 241: Suggested readings for January 28, 2026",
-    "section": "",
-    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 2"
-  },
-  {
-    "objectID": "readings/readings_wk02wed.html",
-    "href": "readings/readings_wk02wed.html",
-    "title": "Math 241: Suggested readings for February 4, 2026",
+    "objectID": "readings/readings_wk02mon.html",
+    "href": "readings/readings_wk02mon.html",
+    "title": "Math 241: Suggested readings for February 2, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 3"
   },
   {
-    "objectID": "readings/readings_wk02wed.html#reading",
-    "href": "readings/readings_wk02wed.html#reading",
-    "title": "Math 241: Suggested readings for February 4, 2026",
+    "objectID": "readings/readings_wk02mon.html#reading",
+    "href": "readings/readings_wk02mon.html#reading",
+    "title": "Math 241: Suggested readings for February 2, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 3"
   },
   {
-    "objectID": "readings/readings_wk03wed.html",
-    "href": "readings/readings_wk03wed.html",
-    "title": "Math 241: Suggested readings for February 11, 2026",
+    "objectID": "readings/readings_wk03mon.html",
+    "href": "readings/readings_wk03mon.html",
+    "title": "Math 241: Suggested readings for February 9, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 4"
   },
   {
-    "objectID": "readings/readings_wk03wed.html#reading",
-    "href": "readings/readings_wk03wed.html#reading",
-    "title": "Math 241: Suggested readings for February 11, 2026",
+    "objectID": "readings/readings_wk03mon.html#reading",
+    "href": "readings/readings_wk03mon.html#reading",
+    "title": "Math 241: Suggested readings for February 9, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 4"
   },
   {
-    "objectID": "readings/readings_wk05mon.html",
-    "href": "readings/readings_wk05mon.html",
-    "title": "Math 241: Suggested readings for February 23, 2026",
+    "objectID": "readings/readings_wk04wed.html",
+    "href": "readings/readings_wk04wed.html",
+    "title": "Math 241: Suggested readings for February 18, 2026",
+    "section": "",
+    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 5 and 6."
+  },
+  {
+    "objectID": "readings/readings_wk04wed.html#reading",
+    "href": "readings/readings_wk04wed.html#reading",
+    "title": "Math 241: Suggested readings for February 18, 2026",
+    "section": "",
+    "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 5 and 6."
+  },
+  {
+    "objectID": "readings/readings_wk05wed.html",
+    "href": "readings/readings_wk05wed.html",
+    "title": "Math 241: Suggested readings for February 25, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 17 and 18"
   },
   {
-    "objectID": "readings/readings_wk05mon.html#reading",
-    "href": "readings/readings_wk05mon.html#reading",
-    "title": "Math 241: Suggested readings for February 23, 2026",
+    "objectID": "readings/readings_wk05wed.html#reading",
+    "href": "readings/readings_wk05wed.html#reading",
+    "title": "Math 241: Suggested readings for February 25, 2026",
     "section": "",
     "text": "Before coming to lecture today, please read the following material:\n\nMDSR Chapter 17 and 18"
   },
   {
-    "objectID": "readings/readings_wk06.html",
-    "href": "readings/readings_wk06.html",
-    "title": "Math 241: Suggested reading for Monday and Wednesday, Week 6",
+    "objectID": "readings/readings_wk08mon.html",
+    "href": "readings/readings_wk08mon.html",
+    "title": "Math 241: Suggested readings for March 15, 2026",
     "section": "",
-    "text": "Math 241: Suggested reading for Monday and Wednesday, Week 6\nFor reference on shiny: Hadley Wickham’s Mastering Shiny."
+    "text": "A helpful reference for regular expressions and text analysis:\nMDSR, Chapter 19"
   },
   {
-    "objectID": "readings/readings_wk10wed.html",
-    "href": "readings/readings_wk10wed.html",
-    "title": "Math 241: Required readings for April 8, 2026",
+    "objectID": "readings/readings_wk08mon.html#reading",
+    "href": "readings/readings_wk08mon.html#reading",
+    "title": "Math 241: Suggested readings for March 15, 2026",
     "section": "",
-    "text": "Explained: Generative AI’s environmental impact\nA software engineer’s “typical” electricity useage from LLMs\nGruelling, low-paid human work behind generative AI curtain"
+    "text": "A helpful reference for regular expressions and text analysis:\nMDSR, Chapter 19"
   },
   {
-    "objectID": "readings/readings_wk10wed.html#reading",
-    "href": "readings/readings_wk10wed.html#reading",
-    "title": "Math 241: Required readings for April 8, 2026",
+    "objectID": "readings/readings_wk12.html",
+    "href": "readings/readings_wk12.html",
+    "title": "Math 241: Required readings for Week 12",
     "section": "",
-    "text": "Explained: Generative AI’s environmental impact\nA software engineer’s “typical” electricity useage from LLMs\nGruelling, low-paid human work behind generative AI curtain"
+    "text": "A helpful reference for Week 12 / R package content and Project 2 is R Packages, by Hadley Wickham and Jenny Bryan."
+  },
+  {
+    "objectID": "readings/readings_wk12.html#reading",
+    "href": "readings/readings_wk12.html#reading",
+    "title": "Math 241: Required readings for Week 12",
+    "section": "",
+    "text": "A helpful reference for Week 12 / R package content and Project 2 is R Packages, by Hadley Wickham and Jenny Bryan."
   },
   {
     "objectID": "slides/math241_wk01wed.html#week-1-goals",
@@ -3862,5 +3953,19 @@
     "title": "Math 241",
     "section": "R Packages",
     "text": "R Packages\nWhat is an R package?\n\n\n“R packages are the fundamental unit of R-ness”. – Jenny Bryan\n\n\n\n\nContains (usually) functions, (possibly) datasets, documentation, and tests.\n“base R”: a handful of base packages that are preloaded.\nCRAN has &gt; 23,000 more packages\n\ninstall.packages(\"dplyr\")\nlibrary(dplyr)\n\nAnd then there are all the packages on GitHub:\n\ndevtools::install_github(\"hadley/genzplyr\")\nlibrary(genzplyr)"
+  },
+  {
+    "objectID": "slides/math241_wk12wed.html#weeks-goals",
+    "href": "slides/math241_wk12wed.html#weeks-goals",
+    "title": "Math 241",
+    "section": "Week’s Goals",
+    "text": "Week’s Goals\n\n\nMon Lecture\n\nR package documentation and metadata\n\n\nWed Lecture\n\nR package testing\nR package dissemination:\n\nVignettes, and\npackage websites"
+  },
+  {
+    "objectID": "slides/math241_wk12wed.html#next-week",
+    "href": "slides/math241_wk12wed.html#next-week",
+    "title": "Math 241",
+    "section": "Next week",
+    "text": "Next week\n\nThe final week of classes… 😢\nSome project work time (Monday)\nBuilding your data science profile (Wednesday)"
   }
 ]

@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 4/15/26
+  draft-after: 4/20/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -312,28 +312,26 @@ scheduled-docs:
       #   - 'Some text'
     - week: 12
       days:
-        - topic: "R packages: documentation + testing"
+        - topic: "R packages: documentation"
           display-date: Monday, Apr 20
           date: 4/20/26
           docs:
             - type: Reading
-              href: readings/readings_wk02mon.qmd
+              href: readings/readings_wk12.qmd
             - type: Slides
-              href: slides/math141_wk02mon.qmd
-        - topic: "Project 2 Released"
-          display-date: Tuesday, Apr 21 9:00am
-          date: 4/21/26
-          docs:
-            - type: Problem Set 6
-              href: projects/proj02.qmd
-        - topic: "R packages: dissemination (Problem Set 6 Due at 10pm)"
+              href: slides/math241_wk12mon.qmd
+            # - type: Project II Groups
+            #   href: projects/proj02_groups.qmd
+            # - type: Project II Instructions
+            #   href: projects/proj02.qmd
+        - topic: "R packages: testing and dissemination (Problem Set 6 Due at 10pm)"
           display-date: Wednesday, Apr 22
           date: 4/22/26
           docs:
             - type: Reading
-              href: readings/readings_wk02wed.qmd
+              href: readings/readings_wk12.qmd
             - type: Slides
-              href: slides/math141_wk02wed.qmd
+              href: slides/math241_wk12wed.qmd
       # resources:
       #   - 'Some text'
     - week: 13

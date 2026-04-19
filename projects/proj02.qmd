@@ -1,0 +1,75 @@
+---
+editor: source
+---
+
+## Project Guidelines
+
+In this project, your group will create an `R` package and give a 10 minute presentation about your package. You have two options for your package: 
+
+* **Option 1**: a package that primarily shares a suite of functions but also includes data for demoing functionality.
+* **Option 2**: a package that primarily shares a dataset or dataset(s) but also includes a couple functions that help the user interact with the data effectively.
+
+
+### Requirements for Both Options:
+
+* Package contains 
+    + A complete and informative `DESCRIPTION` file.
+    + A README (both the `Rmd` and `md`) which answers the questions: Why should I use this package? How do I access the package? How do I use the package?
+        + The README should include 1-2 brief examples. Place more extended examples in the vignette.
+    + An R documentation file for each function and each dataset.
+    + A reasonable name that is not already in use on CRAN or GitHub.  
+* A ten minute presentation about the package, with slides. Similar to the README, the presentation should motivate the viewer to use the package and should include an example of how to use the package.
+* A `data-raw` folder for handling data wrangling, that allows for going from raw data to the polished data you include in the package.
+* A `data` folder for holding the finalized, polished dataset.
+
+
+### Requirements specific to Option 1:
+
+* At least 4 functions.
+* At least 8 unit tests.
+* A dataset for demonstrating how to use the functions in the package.
+    + There are no requirements on the size of the dataset.
+* A 400 - 800 word vignette with at least 1 example that showcases a problem that your package is designed to solve.
+    + Note: It is completely fine to use additional packages and functions in the vignette.
+
+
+### Requirements specific to Option 2:
+
+* A dataset with at least 8 variables and at least 30 observations.
+* At least 2 functions, such as ones that carry out common operations of interest on the dataset.
+    + At least 1 of these functions should create a polished, well-constructed graph.
+* At least 2 unit tests.
+* A 600 - 1000 word vignette with at least 3 examples that showcase the questions you can answer with the provided dataset and functions.
+    + Note: It is completely fine to use additional packages and functions in the vignette.
+
+### Extra Credit
+
+* A hex sticker that contains the package name and a design that relates to the package in some way.
+
+
+### Tips for getting started
+
+* As a group, brainstorm ideas and decide whether you want to focus more on functions (Option 1) or data (Option 2) in your package.
+* Remember to use class resources:
+    + The Week 10 & Week 11 lecture slides
+    + The [Creating an R Package handout](../in_class/R_Package.qmd) which outlines the initial steps.
+    + The [`pdxHoles` package](https://github.com/Reed-Data-Science/pdxHoles) we live-coded in lecture.  (Note: `pdxHoles` is still mostly the skeleton of a package.)
+* Check out well-written and well-documented `R` packages.  Here are some examples:
+    + [https://reprex.tidyverse.org/](https://reprex.tidyverse.org/) and the [`reprex` GitHub repo](https://github.com/tidyverse/reprex)
+    + [https://glue.tidyverse.org/](https://glue.tidyverse.org/) and the [`glue` GitHub repo](https://github.com/tidyverse/glue)
+    + [https://allisonhorst.github.io/palmerpenguins/](https://allisonhorst.github.io/palmerpenguins/) and the [`palmerpenguins` GitHub repo](https://github.com/allisonhorst/palmerpenguins)
+* Create a `sandbox` folder and add it to the `.Rbuildignore`.  Use this folder for exploring different ideas and creating MVPs.
+    
+
+
+## Timeline
+
+* 4/20: Receive project instructions, [group assignment](proj02_groups.qmd), and invite to your group's GitHub repo.
+* 4/27: Come to class for a project work day instead of lecture.
+* 5/13 (noon): Make sure the final version of your package is in your GitHub repo.
+* 5/13 (1pm): Give a 10 minute presentation of your package during our final exam time slot, in Library 389 (our classroom).
+* 5/13: Decide as a group whether or not you want to make your GitHub repo (and so `R` package) public.  
+    + If at least one group member does not want to make the repo public, you must leave it private.
+    + Email me with your decision.
+    + Your grade on this project does not at all depend on this decision.  
+
