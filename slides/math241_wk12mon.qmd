@@ -218,7 +218,7 @@ In this project, your group will create an `R` package and give a 10 minute pres
 
 **Timeline**:
 
-* 4/20: Receive project instructions, [group assignment](proj02_groups.qmd), and invite to your group's GitHub repo.
+* 4/20: Receive project instructions, [group assignment](../projects/proj02_groups.qmd), and invite to your group's GitHub repo.
 * 4/27: Come to class for a project work day instead of lecture.
 * 5/13 (noon): Make sure the final version of your package is in your GitHub repo.
 * 5/13 (1pm): Give a 10 minute presentation of your package during our final exam time slot, in Library 389 (our classroom).
