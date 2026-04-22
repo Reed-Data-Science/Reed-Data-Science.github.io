@@ -2,6 +2,8 @@
 editor: source
 ---
 
+**You may not use any form of generative AI to complete your project**
+
 ## Project Guidelines
 
 In this project, your group will create an `R` package and give a 10 minute presentation about your package. You have two options for your package: 
