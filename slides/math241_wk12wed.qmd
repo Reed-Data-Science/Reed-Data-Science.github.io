@@ -372,17 +372,6 @@ test_that("check class", {
 
 :::
 
-<br>
-
-::: {.fragment}
-
-```{r}
-test_that("check class", {
-  expect_s3_class(plot_holes(), "ggplot", exact = FALSE)
-})
-```
-
-:::
 
 ------------------------------------------------------------------------
 
