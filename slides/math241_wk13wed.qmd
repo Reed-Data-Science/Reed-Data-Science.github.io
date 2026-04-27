@@ -1,0 +1,84 @@
+---
+pagetitle: "Building a Data Science Portfolio"
+editor: source
+format: 
+  revealjs:
+    html-math-method: mathjax
+    chalkboard: true
+    incremental: true
+    theme: [default, custom.scss]
+    height: 900
+    width: 1600
+    slide-number: c
+    auto-stretch: false
+    callout-appearance: simple
+    pdf-max-pages-per-slide: 2
+    menu: 
+      side: right
+      numbers: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      fig.retina = 3, fig.align = 'center',
+                      fig.asp = 0.75, fig.width = 8)
+library(knitr)
+library(tidyverse)
+# 
+# options(htmltools.preserve.raw = FALSE)
+ggplot2::theme_update(text = ggplot2::element_text(size = 20))
+```
+
+::::: columns
+::: {.column .center width="60%"}
+![](img/r-hex.jpg){width="90%"}
+:::
+
+::: {.column .center width="40%"}
+<br>
+
+[Building a Data Science Portfolio]{.custom-title}
+
+<br> <br>
+
+[Grayson White]{.custom-subtitle}
+
+[Math 241 <br> Week 13 \| Spring 2026]{.custom-subtitle}
+:::
+:::::
+
+
+------------------------------------------------------------------------
+
+
+## Announcements 
+
+
+- project 1 reminders
+
+
+------------------------------------------------------------------------
+
+
+## Oh Look How Far You've Come!
+
+
+------------------------------------------------------------------------
+
+
+## Building Your (Data Science) Profile
+
+
+------------------------------------------------------------------------
+
+# Enjoy your summer!
+
+

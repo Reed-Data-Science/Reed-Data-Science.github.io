@@ -1,0 +1,19 @@
+{
+  "hash": "ec1fd94487203a8062bef20237747e67",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\npagetitle: \"Building a Data Science Portfolio\"\neditor: source\nformat: \n  revealjs:\n    html-math-method: mathjax\n    chalkboard: true\n    incremental: true\n    theme: [default, custom.scss]\n    height: 900\n    width: 1600\n    slide-number: c\n    auto-stretch: false\n    callout-appearance: simple\n    pdf-max-pages-per-slide: 2\n    menu: \n      side: right\n      numbers: true\nexecute:\n  echo: true\n  warning: false\n  message: false\n---\n\n\n\n::::: columns\n::: {.column .center width=\"60%\"}\n![](img/r-hex.jpg){width=\"90%\"}\n:::\n\n::: {.column .center width=\"40%\"}\n<br>\n\n[Building a Data Science Portfolio]{.custom-title}\n\n<br> <br>\n\n[Grayson White]{.custom-subtitle}\n\n[Math 241 <br> Week 13 \\| Spring 2026]{.custom-subtitle}\n:::\n:::::\n\n\n------------------------------------------------------------------------\n\n\n## Announcements \n\n\n- project 1 reminders\n\n\n------------------------------------------------------------------------\n\n\n## Oh Look How Far You've Come!\n\n\n------------------------------------------------------------------------\n\n\n## Building Your (Data Science) Profile\n\n\n------------------------------------------------------------------------\n\n# Enjoy your summer!\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

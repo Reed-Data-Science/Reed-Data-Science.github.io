@@ -1,5 +1,5 @@
 scheduled-docs:
-  draft-after: 4/22/26
+  draft-after: 4/27/26
   timezone: "-08:00"
   autonav:
     hybrid:
@@ -339,19 +339,12 @@ scheduled-docs:
         - topic: "Project II Work Day"
           display-date: Monday, Apr 27
           date: 4/27/26
-          docs:
-            - type: Reading
-              href: readings/readings_wk02mon.qmd
-            - type: Slides
-              href: slides/math141_wk02mon.qmd
         - topic: "Building your data science portfolio"
           display-date: Wednesday, Apr 29
           date: 4/29/26
           docs:
-            - type: Reading
-              href: readings/readings_wk02wed.qmd
             - type: Slides
-              href: slides/math141_wk02wed.qmd
+              href: slides/math241_wk13wed.qmd
       # resources:
       #   - 'Some text'
     - week: Finals
