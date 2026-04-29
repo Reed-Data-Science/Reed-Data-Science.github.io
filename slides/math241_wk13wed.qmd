@@ -65,6 +65,9 @@ ggplot2::theme_update(text = ggplot2::element_text(size = 20))
 - Project 2 reminders:
     - Final presentations will be during our final exam time slot. Make sure to get here on time! 
     - We will not use the full 4 hours. 
+    
+- Next week:
+    - No official office hours, but **email me** if you'd like to find a time to meet about Project 2.
 
 
 ------------------------------------------------------------------------
